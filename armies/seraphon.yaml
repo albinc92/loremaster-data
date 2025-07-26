@@ -1,0 +1,1160 @@
+type: army
+id: seraphon
+name: Seraphon
+battleTraits:
+  - abilities:
+      - id: the-great-plan
+        type: normal
+        name: The Great Plan
+        timing: Once Per Battle, Deployment Phase
+        availablePhases:
+          - deployment
+        declare: Pick an <strong>Asterism</strong> ability.
+        effect: That <strong>Asterism</strong> ability can be used for the rest of the battle, but the others cannot, unless allowed by the 'Further the Great Plan' ability.
+      - id: further-the-great-plan
+        type: normal
+        name: Further The Great Plan
+        timing: Once Per Battle, Start of Third Battle Round
+        availablePhases:
+          - thirdStartOfBattleRound
+        declare: >-
+          You can use this ability if you meet the condition below that
+          corresponds to the <strong>Asterism</strong> you picked in the
+          deployment phase.<br><br><strong>Itzl the Tamer:</strong> 3 or more
+          enemy units have been destroyed.<br><br><strong>Quetzl the
+          Preserver:</strong> There are no enemy units wholly within friendly
+          territory.<br><br><strong>SOTEK THE DELIVERER: </strong>The enemy
+          general is in combat or has been destroyed.<br><br><strong>TEPOK THE
+          SEER: </strong>There are any friendly SLANN units on the battlefield
+          and no friendly SLANN units are in combat or have been destroyed.
+        effect: Pick a different <strong>Asterism</strong> ability. It can be used in addition to the one you picked in the deployment phase.
+        restrictions: Start of Third Battle Round
+      - id: itzl-the-tamer
+        type: passive
+        name: Itzl the Tamer
+        timing: Passive
+        availablePhases:
+          - anyShooting
+          - anyCombat
+        effect: <strong>Companion</strong> weapons used by friendly <strong>Seraphon</strong> units have <strong>Crit (2 Hits)</strong>.
+        keywords:
+          - ASTERISM
+      - id: quetzl-the-preserver
+        type: passive
+        name: Quetzl the Preserver
+        timing: Passive
+        availablePhases:
+          - anyShooting
+          - anyCombat
+        effect: Subtract 1 from the Rend characteristic of melee weapons for attacks that target friendly <strong>Seraphon</strong> units that are wholly within friendly territory.
+        keywords:
+          - ASTERISM
+      - id: sotek-the-deliverer
+        type: passive
+        name: Sotek the Deliverer
+        timing: Passive
+        availablePhases:
+          - anyMovement
+        effect: Add 2 to the Move characteristic of friendly <strong>Seraphon</strong> units.
+        keywords:
+          - ASTERISM
+      - id: tepok-the-seer
+        type: passive
+        name: Tepok the Seer
+        timing: Passive
+        availablePhases:
+          - anyHero
+        effect: Add 1 to casting rolls for friendly <strong>Seraphon</strong> units.
+        keywords:
+          - ASTERISM
+battleFormations:
+  - id: eternal-starhost
+    name: Eternal Starhost
+    abilities:
+      - id: celestial-translocation
+        type: normal
+        name: Celestial Translocation
+        timing: Once Per Turn (Army), Your Movement Phase
+        availablePhases:
+          - yourMovement
+        declare: Pick a friendly <strong>Seraphon</strong> unit wholly within 12" of a friendly <strong>Seraphon Wizard</strong> to use this ability.
+        effect: >-
+          Roll a dice. On a 3+, remove that unit from the battlefield and set
+          it up again on the battlefield more than 9" from all enemy units.
+  - id: sunclaw-starhost
+    name: Sunclaw Starhost
+    abilities:
+      - id: vengeance-of-azyr
+        type: normal
+        name: Vengeance of Azyr
+        timing: Once Per Turn (Army), End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick up to 3 friendly <strong>Saurus</strong> or <strong>Kroxigor</strong> units that are in combat to be the targets.
+        effect: >-
+          For each target:<br><br>• Make a pile-in move.<br><br>• Then, pick an
+          enemy unit in combat with the target and roll a D3. On a 2+, inflict
+          an amount of mortal damage on that enemy unit equal to the roll.
+  - id: shadowstrike-starhost
+    name: Shadowstrike Starhost
+    abilities:
+      - id: nimble-and-quick
+        type: normal
+        name: Nimble and Quick
+        timing: Once Per Turn (Army), Your Shooting Phase
+        availablePhases:
+          - yourShooting
+        declare: Pick up to 3 friendly <strong>Skink Infantry</strong> or <strong>Skink Cavalry</strong> units that are not in combat to be the targets.
+        effect: >-
+          Each target can move D6". Each target cannot move into combat during
+          any part of that move.
+  - id: thunderquake-starhost
+    name: Thunderquake Starhost
+    abilities:
+      - id: scaly-monstrosities
+        type: passive
+        name: Scaly Monstrosities
+        availablePhases:
+          - anyCombat
+          - anyShooting
+        effect: Add 2 to the Health characteristic of friendly <strong>Seraphon Monster</strong> units.
+        timing: Passive
+spellLores:
+  - id: lore-of-celestial-manipulation
+    name: Lore of Celestial Manipulation
+    spells:
+      - id: mystical-unforging
+        type: spell
+        name: Mystical Unforging
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        lastsUntil: yourStartOfTurn
+        declare: >-
+          Pick a friendly <strong>Seraphon Wizard</strong> to cast this spell,
+          pick a visible enemy unit within 12" of the them to be the target,
+          then make a casting roll of 2D6.
+        effect: Subtract 1 from the Rend characteristic of the targets weapons until the start of your next turn.
+        keywords:
+          - SPELL
+          - UNLIMITED
+      - id: comets-call
+        type: spell
+        name: Comet's Call
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          Pick a friendly <strong>Seraphon Wizard</strong> to cast this spell,
+          pick a visible enemy unit within 18" of them to be the target, then
+          make a casting roll of 2D6.
+        effect: >-
+          Roll a dice for each model in the target unit. For each 5+, inflict 1
+          mortal damage on the target.
+        keywords:
+          - SPELL
+      - id: speed-of-huanchi
+        type: spell
+        name: Speed of Huanchi
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        lastsUntil: yourStartOfTurn
+        declare: >-
+          Pick a friendly <strong>Seraphon Wizard</strong> to cast this spell,
+          pick a visible friendly <strong>Seraphon</strong> unit wholly within
+          12" of the them to be the target, then make a casting roll of 2D6.
+        effect: >-
+          Until the start of your next turn, the target can use a
+          <strong>Run</strong> ability and still use <strong>Shoot</strong>
+          and/or <strong>Charge</strong> abilities in the same turn.
+        keywords:
+          - SPELL
+  - id: lore-of-primal-jungles
+    name: Lore of Primal Jungles
+    spells:
+      - id: light-of-chotec
+        type: spell
+        name: Light of Chotec
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          Pick a friendly <strong>Seraphon Wizard</strong> to cast this spell,
+          pick a visible friendly <strong>Seraphon</strong> unit wholly within
+          12" of the them to be the target, then make a casting roll of 2D6.
+        effect: >-
+          Roll a number of dice equal to the number of damage point the target
+          has. For each 4+, <strong>Heal (1)</strong> the target.
+        keywords:
+          - SPELL
+          - UNLIMITED
+      - id: the-earth-trembles
+        type: spell
+        name: The Earth Trembles
+        cost: 8
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          Pick a friendly <strong>Seraphon Wizard</strong> to cast this spell,
+          pick a point on the battlefield within 18" of them to be the target
+          point, then make a casting roll of 2D6.
+        effect: >-
+          Draw a straight line between the target point and the closest part on
+          the caster's base. Roll a D3 for each unit (friendly and enemy) that
+          has models passed across by this line. On a 2+, inflict an amount of
+          mortal damage on that unit equal to the roll.
+        keywords:
+          - SPELL
+      - id: empowered-celestite
+        type: spell
+        name: Empowered Celestite
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        lastsUntil: yourEndOfTurn
+        declare: >-
+          Pick a friendly <strong>Seraphon Wizard</strong> to cast this spell,
+          pick a visible friendly <strong>Saurus</strong> unit wholly within 12"
+          of the them to be the target, then make a casting roll of 2D6.
+        effect: Add 1 to the Rend characteristic of the target's melee weapons for the rest of the turn.
+        keywords:
+          - SPELL
+enhancements:
+  heroic-traits:
+    name: Heroic Traits
+    abilities:
+      - id: being-of-the-stars
+        type: passive
+        name: Being of the Stars
+        timing: Passive
+        effect: Ignore modifiers to save rolls for this unit (positive and negative).
+        availablePhases:
+          - anyShooting
+          - anyCombat
+      - id: reptilian-cunning
+        type: passive
+        name: Reptilian Cunning
+        timing: Passive
+        effect: >-
+          If this unit charged this turn, if a friendly unit wholly within 12"
+          of this unit uses the 'All-out Attack' command in the combat phase, no
+          command points are spent.
+        availablePhases:
+          - anyCombat
+      - id: beastmaster
+        type: passive
+        name: Beastmaster
+        timing: Passive
+        effect: >-
+          Add 2" to the Move characteristic of friendly <Strong>Seraphon
+          Cavalry</strong> and <Strong>Seraphon Monster</strong> units for the
+          rest of the phase if they are wholly within 12" of this unit at the
+          start of the move.
+        availablePhases:
+          - anyMovement
+      - id: keeper-of-the-old-ways
+        type: normal
+        name: Keeper of the Old Ways
+        timing: "Once Per Turn, Reaction: You declared the 'Further the Great Plan' ability"
+        effect: >-
+          You can pick 2 different <strong>Asterism</strong> abilities instead of 1. They are both used
+        scourgeOfGhyran: true
+      - id: child-of-the-stars
+        type: passive
+        name: Child of the Stars
+        scourgeOfGhyran: true
+        timing: Passive
+        effect: >-
+          If this unit would be destroyed, before removing it from play, roll a dice. On
+          a 3+, this unit is not destroyed and any remaining damage points inflicted on it
+          have no effect. Then, Heal (D3) this unit. This unit cannot use this ability again for the rest of the battle.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+      - id: chosen-of-quetzl
+        type: normal
+        name: Chosen of Quetzl
+        scourgeOfGhyran: true
+        timing: Any Combat Phase
+        effect: >-
+          Roll a dice. On a 3+, the target can move up to 8". It can move through the combat ranges of enemy units but cannot end that move in combat.
+        declare: >-
+          Pick a visible friendly non-MONSTER <strong>Skink</strong> unit that is in combat and is wholly within 12" of this unit to be the target.
+        availablePhases:
+          - anyCombat
+  artefacts-of-power:
+    name: Artefacts of Power
+    abilities:
+      - id: coatl-familiar
+        type: normal
+        name: Coatl Familiar
+        effect: Add D6 to the casting roll for that spell.
+        timing: >-
+          Once Per Battle, Reaction: You declared a <strong>Spell</strong>
+          ability for a friendly <strong>Seraphon Wizard</strong> within this
+          unit's combat range
+        availablePhases:
+          - anyHero
+      - id: incandescent-rectrices
+        type: normal
+        name: Incandescent Rectrices
+        effect: <strong>Heal (D3)</strong> this unit.
+        timing: Any Hero Phase
+        availablePhases:
+          - anyHero
+      - id: bloodrage-pendant
+        type: passive
+        name: Bloodrage Pendant
+        timing: Passive
+        effect: Add 1 to the Attacks characteristic of this unit's melee weapons. Add 2 instead if the number of damage points allocated to this unit is equal to or greater than half of this unit's Health characteristic (rounding up).
+        availablePhases:
+          - anyShooting
+          - anyCombat
+  monstrous-traits:
+    name: Monstrous Traits
+    abilities:
+      - id: titan-of-the-land
+        type: passive
+        name: Titan of the Land
+        scourgeOfGhyran: true
+        timing: Passive
+        effect: >-
+          This unit counts as a terrain piece for the purpose of picking targets for the Realmshaper Engine's 'Power Unleashed' ability. Do not inflict any mortal damage on this unit as part of that ability.
+        availablePhases:
+          - anyHero
+      - id: ancient-defender
+        type: passive
+        name: Ancient Defender
+        scourgeOfGhyran: true
+        timing: Passive
+        effect: Add 1 to hit rolls for attacks made by this unit's Companion weapons.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+      - id: armour-cruncher
+        type: normal
+        name: Armour Cruncher
+        scourgeOfGhyran: true
+        timing: Any Combat Phase
+        effect: >-
+          Roll a dice. If the roll equals or exceeds the target's Save characteristic, subtract 1 from save rolls for the target for the rest of the turn.
+        declare: Pick an enemy unit in combat with this unit to be the target.
+        keywords:
+          - RAMPAGE
+        availablePhases:
+          - anyCombat
+units:
+  # Heroes - Cavalry
+  ripperdactyl-chief:
+    id: ripperdactyl-chief
+    name: Ripperdactyl Chief
+    abilities:
+      - id: blot-toad
+        type: normal
+        name: Blot Toad
+        timing: Once Per Battle (Army), Deployment Phase
+        effect: >-
+          You receive 1 Blot Toad token for each Ripperdactyl Chief or Ripperdactyl Riders unit in your army, to a maximum of 3 tokens. Place a Blot Toad next to each target.
+        declare: Pick a number of enemy units equal to the number of Blot Toads you have to be the targets.
+        keywords:
+          - DEPLOY
+        availablePhases:
+          - deployment
+      - id: ripperdactyl-chief-toad-rage
+        type: passive
+        name: Toad Rage
+        timing: Passive
+        effect: Add 1 to the Attacks characteristic of this unit's Ripperdactyl's Tearing Jaws while it is in combat with any units that have a Blot Toad.
+        availablePhases:
+          - anyCombat
+      - id: ripperdactyl-chief-dispersed-formation
+        type: passive
+        name: Dispersed Formation
+        timing: Passive
+        effect: This unit has a coherency range of 2".
+        availablePhases:
+          - anyMovement
+      - id: ripperdactyl-assault
+        type: normal
+        name: Ripperdactyl Assault
+        timing: Once Per Battle (Army), Any Combat Phase
+        effect: Add 1 to the Attacks characteristic of Moonstone Warspears used by friendly Ripperdactyl Riders units wholly within 12" of this unit for the rest of the turn.
+        availablePhases:
+          - anyCombat
+  saurus-scar-veteran-on-aggradon:
+    id: saurus-scar-veteran-on-aggradon
+    name: Saurus Scar-Veteran on Aggradon
+    abilities:
+      - id: primal-rage
+        type: normal
+        name: Primal Rage
+        timing: End of Any Turn
+        effect: >-
+          This unit must use this ability each turn. If this unit used any Fight abilities this turn, place a rage token next to it, to a maximum of 3. If this unit did not use any Fight abilities this turn, remove all rage tokens it has. Add 1 to the Attacks characteristic of this unit's Companion weapons for each rage token it has until the end of the next turn.
+        availablePhases:
+          - anyEndOfTurn
+      - id: alpha-roar
+        type: normal
+        name: Alpha Roar
+        timing: Once Per Battle (Army), Any Combat Phase
+        effect: >-
+          Add 1 to the Attacks characteristic of the targets' Companion weapons for the rest of the turn. In addition, place a rage token next to each target, to a maximum of 3 per unit.
+        declare: Pick this unit and each friendly Aggradon Lancers unit wholly within 12" of it to be the targets.
+        availablePhases:
+          - anyCombat
+  terradon-chief:
+    id: terradon-chief
+    name: Terradon Chief
+    abilities:
+      - id: terradon-chief-attack-from-on-high
+        type: passive
+        name: Attack From On High
+        timing: Passive
+        effect: Subtract 1 from hit rolls for shooting attacks that target this unit.
+        availablePhases:
+          - anyShooting
+      - id: chiefs-deadly-cargo
+        type: normal
+        name: Chief's Deadly Cargo
+        timing: Your Movement Phase
+        effect: >-
+          Roll a dice and add 2 to the roll if this unit is within the combat ranges of any friendly Terradon Riders units. On a 5+: • Inflict D3 mortal damage on the target. • If any damage points are allocated by this ability and the target does not have Fly, the target cannot use Run abilities until the start of your next turn.
+        declare: Pick an enemy unit that this unit passed across this phase to be the target.
+        availablePhases:
+          - yourMovement
+  
+  # Heroes - Infantry
+  saurus-astrolith-bearer:
+    id: saurus-astrolith-bearer
+    name: Saurus Astrolith Bearer
+    abilities:
+      - id: celestial-conduit
+        type: normal
+        name: Celestial Conduit
+        timing: Reaction You declared a Spell ability for a friendly Seraphon Wizard wholly within 12" of this unit
+        effect: If that spell is successfully cast, for the rest of the turn, add 3 to the control scores of friendly Seraphon units while they are wholly within 12" of this unit.
+        availablePhases:
+          - anyHero
+      - id: revivifying-energies
+        type: passive
+        name: Revivifying Energies
+        timing: Passive
+        effect: Friendly Seraphon Infantry units have Ward (6+) while they are wholly within 12" of this unit. If a unit already has Ward (6+), it has Ward (5+) instead.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+  saurus-oldblood:
+    id: saurus-oldblood
+    name: Saurus Oldblood
+    abilities:
+      - id: wrath-of-the-seraphon
+        type: normal
+        name: Wrath of the Seraphon
+        timing: Once Per Battle, Any Combat Phase
+        effect: For the rest of the turn, add 1 to wound rolls for combat attacks made by friendly Saurus Infantry units while they are wholly within 12" of this unit.
+        availablePhases:
+          - anyCombat
+      - id: predatory-exemplar
+        type: normal
+        name: Predatory Exemplar
+        timing: Reaction You declared a Fight ability for this unit
+        effect: Pick a friendly non-Hero Saurus Infantry unit that has not used a Fight ability this turn and is within this unit's combat range to be the target. The target can be picked to use a Fight ability immediately after the Fight ability used by this unit has been resolved.
+        availablePhases:
+          - anyCombat
+  skink-starpriest:
+    id: skink-starpriest
+    name: Skink Starpriest
+    abilities:
+      - id: serpent-staff
+        type: normal
+        name: Serpent Staff
+        timing: Your Hero Phase
+        effect: Roll a dice. On a 2+, the target's melee weapons have Crit (Auto-wound) until the start of your next turn.
+        declare: Pick a visible friendly Seraphon unit wholly within 18" of this unit to be the target.
+        availablePhases:
+          - yourHero
+  skink-starseer:
+    id: skink-starseer
+    name: Skink Starseer
+    abilities:
+      - id: scry-the-stars
+        type: normal
+        name: Scry the Stars
+        timing: Once Per Battle (Army), Your Hero Phase
+        effect: Roll a number of dice equal to the current battle round number. For each 3+, pick a friendly Seraphon unit wholly within 18" of this unit. That unit has Ward (5+) until the start of your next turn.
+        availablePhases:
+          - yourHero
+      - id: celestial-doom
+        type: spell
+        name: Celestial Doom
+        cost: 7
+        timing: Your Hero Phase
+        effect: Ward rolls cannot be made for the target for the rest of the turn.
+        declare: Pick a visible enemy unit within 18" to be the target, then make a casting roll of 2D6.
+        keywords:
+          - SPELL
+        availablePhases:
+          - yourHero
+  slann-starmaster:
+    id: slann-starmaster
+    name: Slann Starmaster
+    abilities:
+      - id: masters-of-order
+        type: passive
+        name: Masters of Order
+        timing: Passive
+        effect: >-
+          Add 1 to casting rolls for this unit. In addition, this unit can use an Unbind ability if an enemy Wizard anywhere on the battlefield uses a Spell ability instead of an enemy Wizard within 30" of this unit, and when using the 'Banish Manifestation' ability, this unit can pick a manifestation anywhere on the battlefield instead of within 30" of it.
+        availablePhases:
+          - anyHero
+      - id: celestial-equilibrium
+        type: spell
+        name: Celestial Equilibrium
+        cost: 6
+        timing: Your Hero Phase
+        effect: For the rest of the turn, add 1 to casting rolls made for other friendly Seraphon Wizards while they are wholly within 12" of this unit.
+        declare: Make a casting roll of 2D6.
+        keywords:
+          - SPELL
+        availablePhases:
+          - yourHero
+      - id: arcane-vassal
+        type: normal
+        name: Arcane Vassal
+        timing: Once Per Turn, Any Hero Phase
+        effect: >-
+          Measure the range and visibility of the next Spell ability used by this unit this phase from the target instead of from this unit. The target is treated as the caster for the purpose of other abilities or spell effects, such as 'Unbind' or 'The Earth Trembles'.
+        declare: Pick a friendly Skink Wizard wholly within 18" of this unit to be the target.
+        availablePhases:
+          - anyHero
+      - id: celestial-reinforcements
+        type: normal
+        name: Celestial Reinforcements
+        timing: Once Per Turn (Army), Your Hero Phase
+        effect: Roll a dice. On a 4+, set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 12" of this unit and more than 9" from all enemy units.
+        declare: Pick a friendly Seraphon unit that started the battle with 3 or more models and that has been destroyed to be the target.
+        availablePhases:
+          - yourHero
+
+  # Heroes - Monster
+  saurus-oldblood-on-carnosaur:
+    id: saurus-oldblood-on-carnosaur
+    name: Saurus Oldblood on Carnosaur
+    abilities:
+      - id: oldblood-on-carnosaur-battle-damaged
+        type: passive
+        name: Battle Damaged
+        timing: Passive
+        effect: While this unit has 10 or more damage points, the Attacks characteristic of its Carnosaur's Massive Jaws is 2.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+      - id: spearhead-of-the-charge
+        type: passive
+        name: Spearhead of the Charge
+        timing: Passive
+        effect: If this unit charged this turn, add 1 to charge rolls for friendly Saurus units while they are wholly within 18" of this unit for the rest of the turn.
+        availablePhases:
+          - anyMovement
+      - id: oldblood-on-carnosaur-terror
+        type: passive
+        name: Terror
+        timing: Passive
+        effect: Subtract 2 from the control scores of enemy units while they are in combat with this unit.
+        availablePhases:
+          - anyEndOfTurn
+      - id: blood-frenzy
+        type: normal
+        name: Blood Frenzy
+        timing: Once Per Turn (Army), Any Combat Phase
+        effect: If this unit is in combat with any damaged enemy Monsters, roll a dice. On a 3+, this unit has Strike-First for the rest of the turn.
+        keywords:
+          - RAMPAGE
+        availablePhases:
+          - anyCombat
+  saurus-scar-veteran-on-carnosaur:
+    id: saurus-scar-veteran-on-carnosaur
+    name: Saurus Scar-Veteran on Carnosaur
+    abilities:
+      - id: scar-veteran-on-carnosaur-battle-damaged
+        type: passive
+        name: Battle Damaged
+        timing: Passive
+        effect: While this unit has 10 or more damage points, the Attacks characteristic of its Carnosaur's Massive Jaws is 2.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+      - id: maim-and-tear
+        type: normal
+        name: Maim and Tear
+        timing: Once Per Turn (Army), End of Any Turn
+        effect: Roll a number of dice equal to the number of damage points the target has. For each 5+, inflict 1 mortal damage on the target.
+        declare: Pick an enemy Hero in combat with this unit to be the target.
+        keywords:
+          - RAMPAGE
+        availablePhases:
+          - anyEndOfTurn
+      - id: scar-veteran-on-carnosaur-terror
+        type: passive
+        name: Terror
+        timing: Passive
+        effect: Subtract 2 from the control scores of enemy units while they are in combat with this unit.
+        availablePhases:
+          - anyEndOfTurn
+  skink-oracle-on-troglodon:
+    id: skink-oracle-on-troglodon
+    name: Skink Oracle on Troglodon
+    abilities:
+      - id: oracle-on-troglodon-battle-damaged
+        type: passive
+        name: Battle Damaged
+        timing: Passive
+        effect: While this unit has 10 or more damage points, the Attacks characteristic of its Troglodon's Jaws is 2.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+      - id: noxious-roar
+        type: normal
+        name: Noxious Roar
+        timing: Once Per Turn (Army), Any Combat Phase
+        effect: Roll a dice for each target. On a 3+, subtract 1 from hit rolls for the target's attacks for the rest of the turn.
+        declare: Pick up to 3 enemy units in combat with this unit to be the targets.
+        keywords:
+          - RAMPAGE
+        availablePhases:
+          - anyCombat
+      - id: oracle-on-troglodon-terror
+        type: passive
+        name: Terror
+        timing: Passive
+        effect: Subtract 2 from the control scores of enemy units while they are in combat with this unit.
+        availablePhases:
+          - anyEndOfTurn
+      - id: troglodon-regeneration
+        type: normal
+        name: Troglodon Regeneration
+        timing: End of Any Turn
+        effect: Heal (D3) this unit.
+        availablePhases:
+          - anyEndOfTurn
+  stegadon-chief:
+    id: stegadon-chief
+    name: Stegadon Chief
+    abilities:
+      - id: stegadon-chief-battle-damaged
+        type: passive
+        name: Battle Damaged
+        timing: Passive
+        effect: While this unit has 10 or more damage points, the Attacks characteristic of its Stegadon's Horns and Jaws is 4.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+      - id: crushing-stomps
+        type: normal
+        name: Crushing Stomps
+        timing: Once Per Turn (Army), Any Combat Phase
+        effect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll. Add 2 to the amount of mortal damage inflicted, if any, if this unit charged this turn.
+        declare: Pick an enemy unit in combat with this unit to be the target.
+        keywords:
+          - RAMPAGE
+        availablePhases:
+          - anyCombat
+      - id: stegadon-chief-skink-coordination
+        type: passive
+        name: Skink Coordination
+        timing: Passive
+        effect: If a friendly non-Monster Skink unit uses the 'Redeploy' command while it is wholly within 18" of this unit, no command points are spent.
+        availablePhases:
+          - anyMovement
+  scourge-of-ghyran-saurus-oldblood-on-carnosaur:
+    id: scourge-of-ghyran-saurus-oldblood-on-carnosaur
+    name: Saurus Oldblood on Carnosaur (Scourge of Ghyran)
+    abilities:
+      - id: scourge-ghyran-battle-damaged
+        type: passive
+        name: Battle Damaged
+        timing: Passive
+        effect: While this unit has 10 or more damage points, the Attacks characteristic of its Carnosaur's Massive Jaws is 2.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+      - id: frenzied-by-blood
+        type: passive
+        name: Frenzied by Blood
+        timing: Passive
+        effect: >-
+          Add 1 to the Damage characteristic of this unit's Companion weapons while it is within 6" of any damaged enemy units or while it is within 6" of any enemy units that had any models slain in the same turn.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+      - id: alpha-predator
+        type: passive
+        name: Alpha Predator
+        timing: Passive
+        effect: Friendly Aggradon Lancers do not lose rage tokens at the end of the turn while they are wholly within 12" of this unit.
+        availablePhases:
+          - anyEndOfTurn
+      - id: thunderous-roar
+        type: normal
+        name: Thunderous Roar
+        timing: Once Per Turn (Army), Any Combat Phase
+        effect: >-
+          Roll a dice. On a 3+, the target cannot use commands for the rest of the turn.
+        declare: Pick an enemy unit in combat with this unit to be the target.
+        keywords:
+          - RAMPAGE
+        availablePhases:
+          - anyCombat
+
+  # Special Hero
+  lord-kroak:
+    id: lord-kroak
+    name: Lord Kroak
+    abilities:
+      - id: supreme-master-of-order
+        type: passive
+        name: Supreme Master of Order
+        timing: Passive
+        effect: >-
+          Add 2 to casting rolls, and add 1 to unbinding rolls and banishment rolls for this unit. In addition, this unit can use an Unbind ability if an enemy Wizard anywhere on the battlefield uses a Spell ability instead of an enemy Wizard within 30" of this unit, and when using the 'Banish Manifestation' ability, this unit can pick a manifestation anywhere on the battlefield instead of within 30" of it.
+        availablePhases:
+          - anyHero
+      - id: dead-for-innumerable-ages
+        type: normal
+        name: Dead for Innumerable Ages
+        timing: End of Any Turn
+        effect: >-
+          This unit must use this ability each turn while it is damaged. Roll 3D6 and add the number of damage points this unit has to the roll. On a 20+, this unit is destroyed. Otherwise, Heal (18) this unit.
+        availablePhases:
+          - anyEndOfTurn
+      - id: lord-kroak-arcane-vassal
+        type: normal
+        name: Arcane Vassal
+        timing: Once Per Turn, Any Hero Phase
+        effect: >-
+          Measure the range and visibility of the next Spell ability used by this unit this phase from the target instead of from this unit. The target is treated as the caster for the purpose of other abilities or spell effects, such as 'Unbind' or 'The Earth Trembles'.
+        declare: Pick a friendly Skink Wizard wholly within 18" of this unit to be the target.
+        availablePhases:
+          - anyHero
+      - id: celestial-deliverance
+        type: spell
+        name: Celestial Deliverance
+        cost: 7
+        timing: Your Hero Phase
+        effect: Inflict D3 mortal damage on each target.
+        declare: This unit can cast this spell more than once per phase. Pick up to 3 different visible enemy units within 18" of this unit to be the targets, then make a casting roll of 2D6.
+        keywords:
+          - SPELL
+        availablePhases:
+          - yourHero
+
+  # Beasts
+  spawn-of-chotec:
+    id: spawn-of-chotec
+    name: Spawn of Chotec
+    abilities:
+      - id: sun-acolytes
+        type: passive
+        name: Sun Acolytes
+        timing: Passive
+        effect: >-
+          This unit has a crew of 3 Sun Acolytes that are tokens. Add 1 to this unit's control score for each Sun Acolyte it has. If this unit has no Sun Acolytes, it has a maximum control score of 1 for the rest of the battle. Each time you make an unmodified save roll of 1 for this unit, remove 1 of its Sun Acolytes from the battlefield after the Attack ability has been resolved (the damage point is still inflicted).
+        availablePhases:
+          - anyEndOfTurn
+      - id: acid-fuelled-flame
+        type: passive
+        name: Acid-Fuelled Flame
+        timing: Passive
+        effect: >-
+          Each time this unit uses a Shoot ability, you must pick either its Glob of Flame Acid or its Stream of Fire ranged weapon. In addition, after resolving shooting attacks made with this unit's Glob of Flame Acid, if any damage points were allocated to an enemy unit by those attacks, subtract 1 from save rolls for that enemy unit for the rest of the turn.
+        availablePhases:
+          - anyShooting
+  terrawings:
+    id: terrawings
+    name: Terrawings
+    abilities:
+      - id: nerve-shredding-screeches
+        type: normal
+        name: Nerve-Shredding Screeches
+        timing: Your Shooting Phase
+        effect: Roll a D3. If the roll exceeds the target's Control characteristic, the target cannot use commands for the rest of the turn.
+        declare: Pick an enemy unit within 10" of this unit to be the target.
+        availablePhases:
+          - yourShooting
+      - id: terrawings-beast
+        type: passive
+        name: Beast
+        timing: Passive
+        effect: This unit has a maximum control score of 1.
+        availablePhases:
+          - anyEndOfTurn
+
+  # Cavalry
+  aggradon-lancers:
+    id: aggradon-lancers
+    name: Aggradon Lancers
+    abilities:
+      - id: aggradon-lancers-primal-rage
+        type: normal
+        name: Primal Rage
+        timing: End of Any Turn
+        effect: >-
+          This unit must use this ability each turn. If this unit used any Fight abilities this turn, place a rage token next to it, to a maximum of 3. If this unit did not use any Fight abilities this turn, remove all rage tokens it has. Add 1 to the Attacks characteristic of this unit's Companion weapons for each rage token it has until the end of the next turn.
+        availablePhases:
+          - anyEndOfTurn
+  raptadon-chargers:
+    id: raptadon-chargers
+    name: Raptadon Chargers
+    abilities:
+      - id: cold-blooded-unity
+        type: passive
+        name: Cold-Blooded Unity
+        timing: Passive
+        effect: Add 1 to hit rolls for this unit's combat attacks if they target an enemy unit that was targeted by shooting attacks made by a friendly Raptadon Hunters unit in the same turn.
+        availablePhases:
+          - anyCombat
+  raptadon-hunters:
+    id: raptadon-hunters
+    name: Raptadon Hunters
+    abilities:
+      - id: deadly-cohesion
+        type: normal
+        name: Deadly Cohesion
+        timing: Any Charge Phase
+        effect: This unit can use a Shoot ability as if it were your shooting phase. It must target a visible enemy unit in combat with the target.
+        declare: If this unit is not in combat, pick a friendly Raptadon Chargers unit that charged this turn and is within 12" of this unit to be the target.
+        availablePhases:
+          - anyCharge
+  ripperdactyl-riders:
+    id: ripperdactyl-riders
+    name: Ripperdactyl Riders
+    abilities:
+      - id: ripperdactyl-riders-blot-toad
+        type: normal
+        name: Blot Toad
+        timing: Once Per Battle (Army), Deployment Phase
+        effect: >-
+          You receive 1 Blot Toad token for each Ripperdactyl Chief or Ripperdactyl Riders unit in your army, to a maximum of 3 tokens. Place a Blot Toad next to each target.
+        declare: Pick a number of enemy units equal to the number of Blot Toads you have to be the targets.
+        keywords:
+          - DEPLOY
+        availablePhases:
+          - deployment
+      - id: ripperdactyl-riders-toad-rage
+        type: passive
+        name: Toad Rage
+        timing: Passive
+        effect: Add 1 to the Attacks characteristic of this unit's Ripperdactyl's Tearing Jaws while it is in combat with any units that have a Blot Toad.
+        availablePhases:
+          - anyCombat
+      - id: ripperdactyl-riders-dispersed-formation
+        type: passive
+        name: Dispersed Formation
+        timing: Passive
+        effect: This unit has a coherency range of 2".
+        availablePhases:
+          - anyMovement
+  terradon-riders:
+    id: terradon-riders
+    name: Terradon Riders
+    abilities:
+      - id: deadly-cargo
+        type: normal
+        name: Deadly Cargo
+        timing: Your Movement Phase
+        effect: >-
+          Roll a dice for each model in this unit, and add 2 to each roll if this unit is within the combat ranges of any friendly Terradon Chief units. For each 5+: • Inflict 1 mortal damage on the target. • If any damage points are allocated by this ability and the target does not have Fly, the target cannot use Run abilities until the start of your next turn.
+        declare: Pick an enemy unit that this unit passed across this phase to be the target.
+        availablePhases:
+          - yourMovement
+      - id: terradon-riders-attack-from-on-high
+        type: passive
+        name: Attack From On High
+        timing: Passive
+        effect: Subtract 1 from hit rolls for shooting attacks that target this unit.
+        availablePhases:
+          - anyShooting
+      - id: terradon-riders-dispersed-formation
+        type: passive
+        name: Dispersed Formation
+        timing: Passive
+        effect: This unit has a coherency range of 2".
+        availablePhases:
+          - anyMovement
+
+  # Infantry
+  hunters-of-huanchi-with-dartpipes:
+    id: hunters-of-huanchi-with-dartpipes
+    name: Hunters of Huanchi with Dartpipes
+    abilities:
+      - id: hidden-hunters
+        type: normal
+        name: Hidden Hunters
+        timing: Deployment Phase
+        effect: Set up this unit in reserve in ambush. It has now been deployed.
+        declare: Pick this unit if it has not been deployed.
+        keywords:
+          - DEPLOY
+        availablePhases:
+          - deployment
+      - id: star-venom
+        type: normal
+        name: Star-Venom
+        timing: Any Shooting Phase
+        effect: Roll a dice. On a 2+, subtract 1 from wound rolls for the target's combat attacks for the rest of the turn.
+        declare: Pick an enemy unit that had any damage points allocated to it this turn by attacks made with this unit's Dartpipe to be the target.
+        availablePhases:
+          - anyShooting
+      - id: chameleon-ambush
+        type: normal
+        name: Chameleon Ambush
+        timing: Your Movement Phase
+        effect: Set up this unit anywhere on the battlefield more than 9" from all enemy units.
+        declare: Pick this unit if it is in ambush.
+        availablePhases:
+          - yourMovement
+  hunters-of-huanchi-with-starstone-bolas:
+    id: hunters-of-huanchi-with-starstone-bolas
+    name: Hunters of Huanchi with Starstone Bolas
+    abilities:
+      - id: bolas-hidden-hunters
+        type: normal
+        name: Hidden Hunters
+        timing: Deployment Phase
+        effect: Set up this unit in reserve in ambush. It has now been deployed.
+        declare: Pick this unit if it has not been deployed.
+        keywords:
+          - DEPLOY
+        availablePhases:
+          - deployment
+      - id: bolas-chameleon-ambush
+        type: normal
+        name: Chameleon Ambush
+        timing: Your Movement Phase
+        effect: Set up this unit anywhere on the battlefield more than 9" from all enemy units.
+        declare: Pick this unit if it is in ambush.
+        availablePhases:
+          - yourMovement
+      - id: starstone-bolas
+        type: normal
+        name: Starstone Bolas
+        timing: Any Shooting Phase
+        effect: Roll a dice. On a 3+, until the start of your next turn, subtract 1 from the number of dice rolled when making charge rolls for the target, to a minimum of 1.
+        declare: Pick an enemy unit that was targeted by this unit's Starstone Bolas this turn to be the target.
+        availablePhases:
+          - anyShooting
+  kroxigor:
+    id: kroxigor
+    name: Kroxigor
+    abilities:
+      - id: brutal-blows
+        type: passive
+        name: Brutal Blows
+        timing: Passive
+        effect: Add 1 to the Damage characteristic of this unit's melee weapons for attacks that target an enemy unit that has 10 or more models.
+        availablePhases:
+          - anyCombat
+  kroxigor-warspawned:
+    id: kroxigor-warspawned
+    name: Kroxigor Warspawned
+    abilities:
+      - id: spawn-of-sotek
+        type: passive
+        name: Spawn of Sotek
+        timing: Passive
+        effect: Add 1 to the Damage characteristic of this unit's melee weapons while this unit is wholly within 12" of any friendly Skink Infantry or Skink Cavalry units in combat.
+        availablePhases:
+          - anyCombat
+      - id: heavy-scaled-skin
+        type: passive
+        name: Heavy-Scaled Skin
+        timing: Passive
+        effect: Subtract 1 from the Rend characteristic of ranged weapons used for shooting attacks that target this unit.
+        availablePhases:
+          - anyShooting
+  saurus-guard:
+    id: saurus-guard
+    name: Saurus Guard
+    abilities:
+      - id: selfless-protectors
+        type: passive
+        name: Selfless Protectors
+        timing: Passive
+        effect: While any friendly Slann units are within this unit's combat range, both this unit and those Slann units have Ward (5+).
+        availablePhases:
+          - anyShooting
+          - anyCombat
+  saurus-warriors:
+    id: saurus-warriors
+    name: Saurus Warriors
+    abilities:
+      - id: ordered-cohorts
+        type: passive
+        name: Ordered Cohorts
+        timing: Passive
+        effect: Add 1 to save rolls for this unit while each model in this unit is contesting an objective you control.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+  skinks:
+    id: skinks
+    name: Skinks
+    abilities:
+      - id: swift-and-nimble
+        type: passive
+        name: Swift and Nimble
+        timing: Passive
+        effect: When this unit uses the 'Redeploy' command, when determining the distance this unit can move, you can roll 2 dice instead of 1 and pick either result.
+        availablePhases:
+          - anyMovement
+  the-starblood-stalkers:
+    id: the-starblood-stalkers
+    name: The Starblood Stalkers
+    abilities:
+      - id: klaq-trok
+        type: passive
+        name: Klaq-Trok
+        timing: Passive
+        effect: While this unit's Klaq-Trok is on the battlefield, ignore the first damage point that would be allocated to this unit each phase.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+      - id: kixi-taka-the-diviner
+        type: passive
+        name: Kixi-Taka the Diviner
+        timing: Passive
+        effect: While this unit's Kixi-Taka, the Diviner, is on the battlefield, it has Wizard (1).
+        availablePhases:
+          - anyHero
+      - id: otapatls-dartpipe
+        type: normal
+        name: Otapatl's Dartpipe
+        timing: Your Shooting Phase
+        effect: Roll a dice. On a 4+, inflict 1 mortal damage on the target.
+        declare: If this unit's Otapatl is on the battlefield, pick a visible enemy unit within 18" of this unit to be the target.
+        availablePhases:
+          - yourShooting
+
+  # Monsters
+  bastiladon-with-ark-of-sotek:
+    id: bastiladon-with-ark-of-sotek
+    name: Bastiladon with Ark of Sotek
+    abilities:
+      - id: ark-of-sotek
+        type: normal
+        name: Ark of Sotek
+        timing: Once Per Turn (Army), Any Combat Phase
+        effect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.
+        declare: Pick up to 3 different enemy units within 9" of this unit to be the targets.
+        keywords:
+          - RAMPAGE
+        availablePhases:
+          - anyCombat
+  bastiladon-with-solar-engine:
+    id: bastiladon-with-solar-engine
+    name: Bastiladon with Solar Engine
+    abilities:
+      - id: tail-swipe
+        type: normal
+        name: Tail Swipe
+        timing: Once Per Turn (Army), Any Combat Phase
+        effect: Roll a dice for each model in the target unit, to a maximum of 8. For each 5+, inflict 1 mortal damage on the target.
+        declare: Pick an enemy unit in combat with this unit to be the target.
+        keywords:
+          - RAMPAGE
+        availablePhases:
+          - anyCombat
+  engine-of-the-gods:
+    id: engine-of-the-gods
+    name: Engine of the Gods
+    abilities:
+      - id: engine-of-the-gods-battle-damaged
+        type: passive
+        name: Battle Damaged
+        timing: Passive
+        effect: While this unit has 10 or more damage points, the Attacks characteristic of its Stegadon's Horns and Jaws is 4.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+      - id: crest-of-horns
+        type: normal
+        name: Crest of Horns
+        timing: Once Per Turn (Army), Any Combat Phase
+        effect: >-
+          Roll a D3. On a 2+: • Inflict an amount of mortal damage on the target equal to the roll. • Add 1 to save rolls for attacks made by that enemy unit that target this unit for the rest of the turn.
+        declare: Pick an enemy unit that charged this turn and is in combat with this unit to be the target.
+        keywords:
+          - RAMPAGE
+        availablePhases:
+          - anyCombat
+      - id: cosmic-engine
+        type: normal
+        name: Cosmic Engine
+        timing: Your Hero Phase
+        effect: >-
+          If it will reserve the power, place a cosmic power token next to this unit. If it will harness the power, roll a dice and add the number of cosmic power tokens this unit has to the roll. Then, remove all cosmic power tokens this unit has and pick 1 of the following effects (if possible). Healing Light: On a 3+, you can Heal (D3) all friendly Seraphon units wholly within 12" of this unit. Starlight Summons: On a 5+, you can pick up to 3 friendly Seraphon units wholly within 12" of this unit. Return 1 slain model to each unit. Time Slows: On a 6+, you can pick up to 3 friendly Seraphon units wholly within 12" of this unit. Those units have Strike-First for the rest of the turn.
+        declare: Pick if this unit will harness or reserve the power of its cosmic engine.
+        availablePhases:
+          - yourHero
+  stegadon:
+    id: stegadon
+    name: Stegadon
+    abilities:
+      - id: unstoppable-stampede
+        type: normal
+        name: Unstoppable Stampede
+        timing: Once Per Turn (Army), Any Charge Phase
+        effect: Inflict D3 mortal damage on the target. Then, this unit can move 2D6". This unit can pass through models in the target unit but must end that move in combat.
+        declare: If this unit charged this phase, pick an enemy Infantry unit in combat with it to be the target.
+        keywords:
+          - RAMPAGE
+        availablePhases:
+          - anyCharge
+      - id: stegadon-battle-damaged
+        type: passive
+        name: Battle Damaged
+        timing: Passive
+        effect: While this unit has 10 or more damage points, the Attacks characteristic of its Stegadon's Horns and Jaws is 4.
+        availablePhases:
+          - anyShooting
+          - anyCombat
+terrain:
+  realmshaper-engine:
+    id: realmshaper-engine
+    name: Realmshaper Engine
+    terrainType: Faction Terrain
+    abilities:
+      - id: fierce-guardians
+        type: passive
+        name: Fierce Guardians
+        timing: Passive
+        availablePhases:
+          - anyShooting
+          - anyCombat
+        effect: >-
+          Add 1 to hit rolls for combat attacks made by friendly
+          <strong>Saurus</strong> or <strong>Kroxigor</strong> units that target
+          an enemy unit while that enemy unit is within 9" of this terrain
+          feature.
+      - id: power-unleashed
+        type: normal
+        name: Power Unleashed
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          If there are any friendly <strong>Seraphon Wizards</strong> within 3"
+          of this terrain feature, pick another terrain feature within 24" of
+          this terrain feature, then pick up to 3 enemy units within 3" of that
+          terrain feature to be the targets.
+        effect: >-
+          Roll a D3 for each target. On a 2+, inflict an amount of mortal
+          damage equal to the roll. If that terrain feature has a Health
+          characteristic, inflict D3 mortal damage on it.

@@ -1,0 +1,1038 @@
+type: battlepack
+id: generals-handbook-2025-26
+name: General's Handbook 25-26
+
+# Core battlepack abilities (only actual triggered abilities)
+abilities:
+  - id: regimented-forces-reroll
+    type: normal
+    name: Regimented Forces
+    timing: "Once per battle"
+    availablePhases:
+      - startOfBattleRound
+    effect: "Re-roll your priority roll after seeing the result of both players' rolls but before determining priority for that battle round."
+
+battleplans:
+  # Table 1 Battleplans
+  - name: Passing Seasons
+    rounds: 5
+    twist: >-
+      <strong>Seasonal Powers:</strong> In battle rounds 2 and 4, if you are the underdog, you can use the 'Burgeoning Rejuvenation' ability. In battle rounds 3 and 5, while you are the underdog, your army has the 'Powerful Resurgence' ability.
+    scoring: >-
+      Each player scores victory points at the end of each of their turns as follows:
+      <ul>
+        <li><strong>5 victory points</strong> for each Gnarlroot objective that you control (in battle rounds 1, 3 and 5).</li>
+        <li><strong>5 victory points</strong> for each Oakenbrow objective that you control (in battle rounds 2 and 4).</li>
+      </ul>
+    abilities:
+      - id: burgeoning-rejuvenation
+        type: normal
+        name: Burgeoning Rejuvenation
+        timing: "Once Per Battle Round, Start of Battle Round"
+        availablePhases:
+          - startOfBattleRound
+        effect: "Pick 1 of the following: Heal (D3) every friendly unit contesting an Oakenbrow objective, OR for the rest of the battle round, while a friendly unit is contesting a Gnarlroot objective: If it has a ward save, add 1 to ward rolls for that unit. If it does not have a ward save, it has WARD (6+)."
+
+      - id: powerful-resurgence
+        type: passive
+        name: Powerful Resurgence
+        timing: "Passive"
+        availablePhases:
+          - anyCombat
+        effect: "Add 1 to wound rolls for combat attacks made by friendly units while they are contesting a Gnarlroot objective."
+
+
+  - name: Paths of the Fey
+    rounds: 5
+
+      deployment:
+        information: >-
+          <h3>Spirit Paths</h3>
+          <p>This battleplan features mystical spirit paths that can transport units across the battlefield. The paths open and close based on the ebb and flow of battle.</p>
+          <h3>Lost Units</h3>
+          <p>Units can become lost and must be returned to the battlefield using special abilities.</p>
+
+      startOfBattleRound:
+        information: >-
+          <h3>The Spirit Paths Open</h3>
+          <p>If you are the underdog, you must use the 'The Spirit Paths Open' ability to manipulate the battlefield.</p>
+
+      yourMovement:
+        information: >-
+          <h3>Stumbling Forth</h3>
+          <p>Both players can use the 'Stumbling Forth' ability to return lost units to the battlefield.</p>
+
+    twist: >-
+      <strong>Spirit Paths:</strong> If you are the underdog, you must use the 'The Spirit Paths Open' ability. Both players can use the 'Stumbling Forth' ability.
+    scoring: >-
+      Each player scores victory points at the end of each of their turns as follows:
+      <ul>
+        <li><strong>5 victory points</strong> if you control at least 1 objective.</li>
+        <li><strong>3 victory points</strong> if you control 2 or more objectives.</li>
+        <li><strong>2 victory points</strong> if you control more objectives than your opponent.</li>
+      </ul>
+    abilities:
+      - id: spirit-paths-open
+        type: normal
+        name: The Spirit Paths Open
+        timing: "Once Per Battle Round, Start of Battle Round"
+        availablePhases:
+          - startOfBattleRound
+        declare: "Pick 2 objectives to be the targets."
+        effect: "All units within 6\" of any target objectives must be removed from the battlefield by their commander. Those units are vanished. Then, starting with you, players must take it in turns to set up each friendly vanished unit wholly within 6\" of either target objective and more than 3\" from all enemy units. Each model must be set up as close to that objective as possible. Those units cannot use MOVE abilities in the first movement phase of the battle round. If it is impossible for a unit to be set up in this way, it is set up in reserve as a lost unit."
+
+
+      - id: stumbling-forth
+        type: normal
+        name: Stumbling Forth
+        timing: "Your Movement Phase"
+        availablePhases:
+          - yourMovement
+        declare: "Pick a friendly lost unit to be the target."
+        effect: "Set up the target on the battlefield, more than 9\" from all enemy units and wholly within 7\" of a battlefield edge."
+
+
+  - name: Roiling Roots
+    rounds: 5
+
+      deployment:
+        information: >-
+          <h3>Tangling Tendrils</h3>
+          <p>This battleplan features paired objectives that can become entangled with mystical roots, affecting combat abilities.</p>
+
+      startOfBattleRound:
+        information: >-
+          <h3>Tangling Tendrils</h3>
+          <p>If you are the underdog, you must use the 'Tangling Tendrils' ability to make units fighting at paired objectives strike last.</p>
+
+    twist: >-
+      <strong>Tangling Tendrils:</strong> If you are the underdog, you must use the 'Tangling Tendrils' ability.
+    scoring: >-
+      Each player scores victory points at the end of each of their turns as follows:
+      <ul>
+        <li><strong>5 victory points</strong> if you control at least 1 objective.</li>
+        <li><strong>3 victory points</strong> if you control any pairs of objectives.</li>
+        <li><strong>2 victory points</strong> if you control more objectives than your opponent.</li>
+      </ul>
+    abilities:
+      - id: tangling-tendrils
+        type: normal
+        name: Tangling Tendrils
+        timing: "Once Per Battle Round, Start of Battle Round"
+        availablePhases:
+          - startOfBattleRound
+        declare: "Pick a pair of objectives to be the targets."
+        effect: "For the rest of the battle round, units (friendly and enemy) have STRIKE-LAST while they are contesting either target objective."
+
+
+  - name: Cyclic Shifts
+    rounds: 5
+
+      deployment:
+        information: >-
+          <h3>Unpredictable Evolution</h3>
+          <p>This battleplan features paired objectives that can become temporarily inaccessible due to unpredictable magical evolution.</p>
+
+      startOfBattleRound:
+        information: >-
+          <h3>Unpredictable Evolution</h3>
+          <p>If you are the underdog, you can use the 'Unpredictable Evolution' ability to make objectives temporarily uncontrollable.</p>
+
+    twist: >-
+      <strong>Unpredictable Evolution:</strong> If you are the underdog, you can use the 'Unpredictable Evolution' ability.
+    scoring: >-
+      Each player scores victory points at the end of each of their turns as follows:
+      <ul>
+        <li><strong>5 victory points</strong> if you control at least 1 objective.</li>
+        <li><strong>3 victory points</strong> if you control 2 or more objectives.</li>
+        <li><strong>2 victory points</strong> if you control more objectives than your opponent.</li>
+      </ul>
+    abilities:
+      - id: unpredictable-evolution
+        type: normal
+        name: Unpredictable Evolution
+        timing: "Once Per Battle Round, Start of Battle Round"
+        availablePhases:
+          - startOfBattleRound
+        declare: "Pick a pair of objectives to be the targets."
+        effect: "The target objectives are no longer controlled by either player (if they were) and they cannot be controlled this battle round."
+
+
+  - name: Surge of Slaughter
+    rounds: 5
+
+      deployment:
+        information: >-
+          <h3>Defence of the Realm</h3>
+          <p>This battleplan focuses on defending key positions with enhanced combat effectiveness for those fighting at paired objectives.</p>
+
+      startOfBattleRound:
+        information: >-
+          <h3>Defence of the Realm</h3>
+          <p>If you are the underdog, you can use the 'Defence of the Realm' ability to enhance your melee weapons' rend characteristics.</p>
+
+    twist: >-
+      <strong>Defence of the Realm:</strong> If you are the underdog, you can use the 'Defence of the Realm' ability.
+    scoring: >-
+      Each player scores victory points at the end of each of their turns as follows:
+      <ul>
+        <li><strong>5 victory points</strong> if you control at least 1 objective.</li>
+        <li><strong>3 victory points</strong> if you control any pairs of objectives.</li>
+        <li><strong>2 victory points</strong> if you control more objectives than your opponent.</li>
+      </ul>
+    abilities:
+      - id: defence-of-the-realm
+        type: normal
+        name: Defence of the Realm
+        timing: "Once Per Battle Round, Start of Battle Round"
+        availablePhases:
+          - startOfBattleRound
+        declare: "Pick a pair of objectives to be the targets."
+        effect: "For the rest of the battle round, add 1 to the Rend characteristic of friendly units' melee weapons while they are contesting either of the target objectives."
+
+
+  - name: Linked Ley Lines
+    rounds: 5
+
+      deployment:
+        information: >-
+          <h3>Ley Line Power</h3>
+          <p>This battleplan features linked ley lines that form across the battlefield when one player controls all objectives on a line (edge to edge).</p>
+
+      passive:
+        information: >-
+          <h3>Underdog Powers</h3>
+          <p>While you are the underdog, your army gains the 'Rooted in the Realm' and 'Full of Life' abilities, providing anti-manifestation bonuses and strike-first for manifestations.</p>
+
+    twist: >-
+      <strong>Ley Line Power:</strong> While you are the underdog, your army has the 'Rooted in the Realm' and 'Full of Life' abilities. A linked ley line is formed across the battlefield (long edge to long edge or short edge to short edge) while one player controls all the objectives on that line.
+    scoring: >-
+      Each player scores victory points at the end of each of their turns as follows:
+      <ul>
+        <li><strong>3 victory points</strong> if you control at least 1 objective.</li>
+        <li><strong>3 victory points</strong> if you control 2 or more objectives.</li>
+        <li><strong>2 victory points</strong> if you control any pairs of objectives.</li>
+        <li><strong>2 victory points</strong> if you control all of the objectives on a linked ley line.</li>
+      </ul>
+    abilities:
+      - id: rooted-in-the-realm
+        type: passive
+        name: Rooted in the Realm
+        timing: "Passive"
+        availablePhases:
+          - anyCombat
+          - anyShooting
+        effect: "Friendly units' weapons have Anti-MANIFESTATION(+1 Rend) while those units are contesting an objective that is both controlled by you and on a linked ley line."
+
+
+      - id: full-of-life
+        type: passive
+        name: Full of Life
+        timing: "Passive"
+        availablePhases:
+          - anyCombat
+        effect: "Friendly MANIFESTATIONS have STRIKE-FIRST."
+
+
+  # Table 2 Battleplans
+  - name: Noxious Nexus
+    rounds: 5
+
+      deployment:
+        information: >-
+          <h3>Caustic Sap</h3>
+          <p>This battleplan features three different objective types: Oakenbrow, Gnarlroot, and Heartwood. Objectives cannot be controlled in the first battle round due to their volatile nature.</p>
+
+      startOfBattleRound:
+        information: >-
+          <h3>Caustic Sap</h3>
+          <p>If you are the underdog, you can use the 'Caustic Sap' ability to inflict mortal damage on units contesting objectives, with the Heartwood objective being especially dangerous.</p>
+
+    twist: >-
+      <strong>Caustic Sap:</strong> If you are the underdog, you can use the 'Caustic Sap' ability. Objectives cannot be controlled in the first battle round.
+    scoring: >-
+      Each player scores victory points at the end of each of their turns as follows:
+      <ul>
+        <li><strong>5 victory points</strong> if you control the Oakenbrow objective.</li>
+        <li><strong>3 victory points</strong> if you control the Gnarlroot objective.</li>
+        <li><strong>2 victory points</strong> if you control the Heartwood objective.</li>
+      </ul>
+      In addition, at the end of the battle, a player scores <strong>10 victory points</strong> if they control the Heartwood objective.
+    abilities:
+      - id: caustic-sap
+        type: normal
+        name: Caustic Sap
+        timing: "Once Per Battle Round, Start of Battle Round"
+        availablePhases:
+          - startOfBattleRound
+        declare: "Pick an objective. Each unit contesting that objective is a target."
+        effect: "Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll. If you picked the Heartwood objective, roll a D6 for each target instead."
+
+
+  - name: The Liferoots
+    rounds: 5
+
+      deployment:
+        information: >-
+          <h3>Life Begets Life</h3>
+          <p>This battleplan focuses on terrain features and their connection to life energy. Players earn liferoot points for controlling terrain features.</p>
+
+      startOfBattleRound:
+        information: >-
+          <h3>Life Begets Life</h3>
+          <p>If you are the underdog, you can use the 'Life Begets Life' ability to return slain models to units near terrain features.</p>
+
+      anyEndOfTurn:
+        information: >-
+          <h3>Liferoot Points</h3>
+          <p>Players score 1 liferoot point for each terrain feature they control at the end of their turn.</p>
+
+    twist: >-
+      <strong>Life Begets Life:</strong> If you are the underdog, you can use the 'Life Begets Life' ability.
+    scoring: >-
+      Each player scores 1 liferoot point at the end of each of their turns for each terrain feature they control. Each player scores victory points at the end of each of their turns as follows:
+      <ul>
+        <li><strong>5 victory points</strong> if you control at least 1 objective.</li>
+        <li><strong>3 victory points</strong> if you control both objectives.</li>
+        <li><strong>2 victory points</strong> if you have more liferoot points than your opponent.</li>
+      </ul>
+    abilities:
+      - id: life-begets-life
+        type: normal
+        name: Life Begets Life
+        timing: "Once Per Battle Round, Start of Battle Round"
+        availablePhases:
+          - startOfBattleRound
+        declare: "Pick a friendly unit that has all of its models within 1\" of a terrain feature to be the target."
+        effect: "Return 1 slain model to the target unit."
+
+
+  - name: Bountiful Equinox
+    rounds: 5
+
+      deployment:
+        information: >-
+          <h3>Rejuvenating Bloom</h3>
+          <p>This battleplan features all four objective types (Oakenbrow, Gnarlroot, Heartwood, Winterleaf) representing the balance of seasons.</p>
+
+      startOfBattleRound:
+        information: >-
+          <h3>Rejuvenating Bloom</h3>
+          <p>If you are the underdog, you can use the 'Rejuvenating Bloom' ability to heal all units contesting a chosen objective.</p>
+
+    twist: >-
+      <strong>Rejuvenating Bloom:</strong> If you are the underdog, you can use the 'Rejuvenating Bloom' ability.
+    scoring: >-
+      Each player scores victory points at the end of each of their turns as follows:
+      <ul>
+        <li><strong>5 victory points</strong> if you control at least 1 objective.</li>
+        <li><strong>3 victory points</strong> if you control 2 or more objectives.</li>
+        <li><strong>2 victory points</strong> if you control at least 1 Oakenbrow, 1 Gnarlroot and 1 Heartwood objective.</li>
+      </ul>
+    abilities:
+      - id: rejuvenating-bloom
+        type: normal
+        name: Rejuvenating Bloom
+        timing: "Once Per Battle Round, Start of Battle Round"
+        availablePhases:
+          - startOfBattleRound
+        declare: "Pick an objective to be the target."
+        effect: "Heal (3) each unit (friendly and enemy) contesting the target objective."
+
+
+  - name: Lifecycle
+    rounds: 5
+
+      deployment:
+        information: >-
+          <h3>Lifecycle</h3>
+          <p>This battleplan features a cycling primary objective system using all four objective types in a specific order: Oakenbrow → Gnarlroot → Heartwood → Winterleaf.</p>
+
+      startOfBattleRound:
+        information: >-
+          <h3>Lifecycle Cycle</h3>
+          <p>At the start of the second battle round, and each subsequent round, the primary objective changes according to the cycle. Secondary objectives are those before and after the primary in the cycle order.</p>
+
+    twist: >-
+      <strong>Lifecycle:</strong> At the start of the second battle round, the underdog must use the 'Lifecycle' ability. If there is no underdog, the players roll off and the winner must use the 'Lifecycle' ability.
+      <br><br><strong>Cycle Order:</strong> Oakenbrow → Gnarlroot → Heartwood → Winterleaf → Oakenbrow...
+    scoring: >-
+      Each player scores victory points at the end of each of their turns as follows:
+      <ul>
+        <li><strong>4 victory points</strong> if you control at least 1 objective.</li>
+        <li><strong>2 victory points</strong> if you control more objectives than your opponent.</li>
+        <li><strong>4 victory points</strong> if you control both the Oakenbrow and Gnarlroot objectives (first battle round only).</li>
+        <li><strong>2 victory points</strong> if you control the primary objective.</li>
+        <li><strong>1 victory point</strong> for each secondary objective that you control.</li>
+      </ul>
+    abilities:
+      - id: lifecycle
+        type: normal
+        name: Lifecycle
+        timing: "Once Per Battle, Start of Second Battle Round"
+        availablePhases:
+          - startOfBattleRound
+        effect: "Pick either the Oakenbrow or the Gnarlroot objective to be the primary objective. At the start of each subsequent battle round, the next objective in the cycle becomes the primary objective. The objectives before and after the primary objective in the cycle order are the secondary objectives."
+
+
+  - name: Creeping Corruption
+    rounds: 5
+
+      deployment:
+        information: >-
+          <h3>Pulsing Life Energies</h3>
+          <p>This battleplan allows for drawing lines between objectives to channel magical energies, either for propagation or corruption effects.</p>
+
+      startOfBattleRound:
+        information: >-
+          <h3>Pulsing Life Energies</h3>
+          <p>If you are the underdog, you can use the 'Pulsing Life Energies' ability to draw a line between objectives and choose to propagate magic or spread corruption.</p>
+
+    twist: >-
+      <strong>Pulsing Life Energies:</strong> If you are the underdog, you can use the 'Pulsing Life Energies' ability.
+    scoring: >-
+      Each player scores victory points at the end of each of their turns as follows:
+      <ul>
+        <li><strong>5 victory points</strong> if you control at least 1 objective.</li>
+        <li><strong>3 victory points</strong> if you control 2 or more objectives.</li>
+        <li><strong>2 victory points</strong> if you control more objectives than your opponent.</li>
+      </ul>
+    abilities:
+      - id: pulsing-life-energies
+        type: normal
+        name: Pulsing Life Energies
+        timing: "Once Per Battle Round, Start of Battle Round"
+        availablePhases:
+          - startOfBattleRound
+        declare: "Pick an objective you control and 1 other objective (whether you control it or not). Draw a line between the centres of those objectives. Then, choose propagation or corruption."
+        effect: "Apply the appropriate effect: Propagation: Add 1 to casting rolls, chanting rolls and banishment rolls for each unit crossed by the line for the rest of the turn. Corruption: Inflict D3 mortal damage on each unit crossed by the line."
+
+
+  - name: Grasp of Thorns
+    rounds: 5
+
+      deployment:
+        information: >-
+          <h3>Carnivorous Flora</h3>
+          <p>This battleplan features grasping objectives that can entangle units, preventing them from leaving the objective's control zone.</p>
+
+      startOfBattleRound:
+        information: >-
+          <h3>Carnivorous Flora</h3>
+          <p>If you are the underdog, you can use the 'Carnivorous Flora' ability to make an objective grasping, entangling models within its control zone.</p>
+
+    twist: >-
+      <strong>Carnivorous Flora:</strong> If you are the underdog, you can use the 'Carnivorous Flora' ability.
+    scoring: >-
+      Each player scores victory points at the end of each of their turns as follows:
+      <ul>
+        <li><strong>5 victory points</strong> if you control at least 1 objective.</li>
+        <li><strong>3 victory points</strong> if you control 2 or more objectives.</li>
+        <li><strong>2 victory points</strong> if you control more objectives than your opponent.</li>
+      </ul>
+    abilities:
+      - id: carnivorous-flora
+        type: normal
+        name: Carnivorous Flora
+        timing: "Once Per Battle Round, Start of Battle Round"
+        availablePhases:
+          - startOfBattleRound
+        declare: "Pick an objective to be grasping."
+        effect: "Roll a dice for each unit contesting that objective. On a 3+, every model in that unit that is within the control zone of that objective is entangled for the rest of the battle round. Entangled models must stay within the control zone of the grasping objective for the rest of the battle round. While a unit has any entangled models, it cannot be removed from the battlefield by an ability that would allow it to be set up elsewhere on the battlefield."
+
+
+# Manifestation lores available in this battlepack
+manifestationLores:
+  - id: aetherwrought-machineries
+    name: Aetherwrought Machineries
+    summonSpells:
+      - id: summon-aethervoid-pendulum
+        type: spell
+        name: Summon Aethervoid Pendulum
+        cost: 6
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Aethervoid Pendulum on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up an Aethervoid Pendulum wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units."
+        keywords:
+          - SPELL
+          - SUMMON
+
+      - id: summon-quicksilver-swords
+        type: spell
+        name: Summon Quicksilver Swords
+        cost: 6
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Quicksilver Swords endless spell on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Quicksilver Swords endless spell wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units."
+        keywords:
+          - SPELL
+          - SUMMON
+
+      - id: summon-chronomantic-cogs
+        type: spell
+        name: Summon Chronomantic Cogs
+        cost: 6
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Chronomantic Cogs endless spell on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Chronomantic Cogs endless spell wholly within 12\" of the caster and visible to them."
+        keywords:
+          - SPELL
+          - SUMMON
+
+    manifestations:
+      - id: aethervoid-pendulum
+        name: Aethervoid Pendulum
+        abilities:
+          - id: scything-blade
+            type: normal
+            name: Scything Blade
+            timing: "Any Movement Phase"
+            availablePhases:
+              - anyMovement
+            effect: "This MANIFESTATION can move a distance up to its Move characteristic in one direction. It can pass through models during that move and can end that move in combat. Then, pick up to 3 enemy units that this MANIFESTATION passed across during that move or that are within ½\" of it to be the targets. Roll a D6 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll."
+            keywords:
+              - CORE
+              - MOVE
+
+          - id: the-pendulum-swings
+            type: passive
+            name: The Pendulum Swings
+            timing: "Passive"
+            availablePhases:
+              - anyMovement
+              - anyCharge
+              - anyCombat
+            effect: "This MANIFESTATION cannot use CHARGE or FIGHT abilities. In addition, when this MANIFESTATION moves, it must move in a straight line either in the direction in which the tip of the pendulum blade is pointing or in the opposite direction to the direction in which the tip of the pendulum blade is pointing."
+
+      - id: quicksilver-swords
+        name: Quicksilver Swords
+        abilities:
+          - id: dancing-blades
+            type: passive
+            name: Dancing Blades
+            timing: "Passive"
+            availablePhases:
+              - anyMovement
+            effect: "Ward rolls cannot be made for damage points inflicted by this MANIFESTATION's attacks."
+
+      - id: chronomantic-cogs
+        name: Chronomantic Cogs
+        abilities:
+          - id: mechanisms-of-time
+            type: normal
+            name: Mechanisms of Time
+            timing: "Once Per Turn, Your Hero Phase"
+            availablePhases:
+              - yourHero
+            effect: "If there are any friendly WIZARDS within 3\" of this MANIFESTATION, pick 1 of the following effects: Increase Time Flow: Until the start of your next turn, you can re-roll charge rolls for friendly units while they are wholly within 12\" of this MANIFESTATION. Decrease Time Flow: Until the start of your next turn, subtract 1 from hit rolls for attacks that target friendly WIZARDS while they are wholly within 12\" of this MANIFESTATION."
+
+  - id: forbidden-power
+    name: Forbidden Power
+    summonSpells:
+      - id: summon-soulscream-bridge
+        type: spell
+        name: Summon Soulscream Bridge
+        cost: 6
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Soulscream Bridge on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Soulscream Bridge wholly within 18\" of the caster and visible to them. A Soulscream Bridge has 2 parts that must be set up within 9\" of each other."
+        keywords:
+          - SPELL
+          - SUMMON
+
+      - id: summon-lauchon-the-soulseeker
+        type: spell
+        name: Summon Lauchon the Soulseeker
+        cost: 7
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Lauchon the Soulseeker on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Lauchon the Soulseeker wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units."
+        keywords:
+          - SPELL
+          - SUMMON
+
+      - id: summon-horrorghast
+        type: spell
+        name: Summon Horrorghast
+        cost: 6
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Horrorghast on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Horrorghast wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units."
+        keywords:
+          - SPELL
+          - SUMMON
+
+      - id: summon-shards-of-valagharr
+        type: spell
+        name: Summon Shards of Valagharr
+        cost: 6
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Shards of Valagharr endless spell on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Shards of Valagharr endless spell wholly within 18\" of the caster and visible to them. A Shards of Valagharr endless spell has 2 parts that must be set up within 9\" of each other."
+        keywords:
+          - SPELL
+          - SUMMON
+
+    manifestations:
+      - id: soulscream-bridge
+        name: Soulscream Bridge
+        abilities:
+          - id: multiple-parts
+            type: passive
+            name: Multiple Parts
+            timing: "Passive"
+            availablePhases:
+              - anyEndOfTurn
+            effect: "When a number of damage points equal to this MANIFESTATION's Health characteristic are allocated to it, this MANIFESTATION is destroyed and both its parts are removed from play."
+
+          - id: deathly-passage
+            type: normal
+            name: Deathly Passage
+            timing: "Your Movement Phase"
+            availablePhases:
+              - yourMovement
+            declare: "Pick a friendly unit wholly within 6\" of one part of this MANIFESTATION to be the target."
+            effect: "Remove the target from the battlefield and set it up again on the battlefield wholly within 6\" of the other part of this MANIFESTATION and more than 9\" from all enemy units."
+            keywords:
+              - CORE
+              - MOVE
+
+      - id: lauchon-the-soulseeker
+        name: Lauchon the Soulseeker
+        abilities:
+          - id: traverse-the-tides-of-death
+            type: normal
+            name: Traverse the Tides of Death
+            timing: "Your Movement Phase"
+            availablePhases:
+              - yourMovement
+            declare: "Pick a friendly INFANTRY WIZARD HERO within 3\" of this MANIFESTATION to be the target."
+            effect: "This MANIFESTATION can move a distance up to its Move characteristic. It can pass through models during that move but cannot end that move in combat. Then, remove the target from the battlefield and set them up again on the battlefield within 3\" of this MANIFESTATION and not in combat. Then, inflict 1 mortal damage on the target."
+            keywords:
+              - CORE
+              - MOVE
+
+      - id: horrorghast
+        name: Horrorghast
+        abilities:
+          - id: harbinger-of-horror
+            type: normal
+            name: Harbinger of Horror
+            timing: "Any Shooting Phase"
+            availablePhases:
+              - anyShooting
+            declare: "Pick an enemy unit that was targeted by this MANIFESTATION's shooting attacks this phase to be the target."
+            effect: "Roll a dice. If the roll is less than the number of models in the target unit that were slain this phase, the target cannot use commands for the rest of the turn."
+
+      - id: shards-of-valagharr
+        name: Shards of Valagharr
+        abilities:
+          - id: multiple-parts
+            type: passive
+            name: Multiple Parts
+            timing: "Passive"
+            availablePhases:
+              - anyCombat
+              - anyShooting
+            effect: "When a number of damage points equal to this MANIFESTATION's Health characteristic are allocated to it, this MANIFESTATION is destroyed and both its parts are removed from play."
+
+          - id: phantasmal-translocation
+            type: normal
+            name: Phantasmal Translocation
+            timing: "Your Movement Phase"
+            availablePhases:
+              - yourMovement
+            effect: "Pick a part of this MANIFESTATION, remove it from the battlefield and set it up again on the battlefield wholly within 9\" of the other part."
+            keywords:
+              - CORE
+              - MOVE
+
+          - id: ensnaring-soul-drain
+            type: passive
+            name: Ensnaring Soul-Drain
+            timing: "Passive"
+            availablePhases:
+              - anyMovement
+            effect: "Each time an enemy unit uses a MOVE ability while it is within 6\" of any parts of this MANIFESTATION, the effects of the 'Fly' ability do not apply to that unit. Enemy units cannot be set up within 6\" of either part of this MANIFESTATION."
+
+  - id: morbid-conjuration
+    name: Morbid Conjuration
+    summonSpells:
+      - id: summon-soulsnare-shackles
+        type: spell
+        name: Summon Soulsnare Shackles
+        cost: 6
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Soulsnare Shackles endless spell on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Soulsnare Shackles endless spell wholly within 18\" of the caster and visible to them. A Soulsnare Shackles endless spell has 3 parts that must each be set up within 3\" of at least 1 other part."
+        keywords:
+          - SPELL
+          - SUMMON
+
+      - id: summon-malevolent-maelstrom
+        type: spell
+        name: Summon Malevolent Maelstrom
+        cost: 6
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Malevolent Maelstrom on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Malevolent Maelstrom wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units."
+        keywords:
+          - SPELL
+          - SUMMON
+
+      - id: summon-purple-sun-of-shyish
+        type: spell
+        name: Summon Purple Sun of Shyish
+        cost: 8
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Purple Sun of Shyish on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Purple Sun of Shyish wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units."
+        keywords:
+          - SPELL
+          - SUMMON
+
+      - id: summon-suffocating-gravetide
+        type: spell
+        name: Summon Suffocating Gravetide
+        cost: 8
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Suffocating Gravetide on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Suffocating Gravetide wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units."
+        keywords:
+          - SPELL
+          - SUMMON
+
+    manifestations:
+      - id: soulsnare-shackles
+        name: Soulsnare Shackles
+        abilities:
+          - id: multiple-parts
+            type: passive
+            name: Multiple Parts
+            timing: "Passive"
+            availablePhases:
+              - anyCombat
+              - anyShooting
+            effect: "When a number of damage points equal to this MANIFESTATION's Health characteristic are allocated to it, this MANIFESTATION is destroyed and all its parts are removed from play."
+
+          - id: bound-for-the-great-oubliette
+            type: normal
+            name: Bound for the Great Oubliette
+            timing: "Any Hero Phase"
+            availablePhases:
+              - anyHero
+            declare: "For each part of this MANIFESTATION, you can pick an enemy unit within 3\" of that part to be the targets. You cannot pick the same unit to be the target of this ability more than once per turn."
+            effect: "Roll a D3 for each target. On a 2+: Inflict an amount of mortal damage on the target equal to the roll. Subtract a number of inches equal to the roll from the target's Move characteristic for the rest of the turn."
+
+      - id: malevolent-maelstrom
+        name: Malevolent Maelstrom
+        abilities:
+          - id: necrotic-vortex
+            type: passive
+            name: Necrotic Vortex
+            timing: "Passive"
+            availablePhases:
+              - anyHero
+              - anyCombat
+              - anyShooting
+            effect: "Give this MANIFESTATION 1 maelstrom point: Each time this MANIFESTATION is set up. Each time a unit successfully casts a spell while it is within 12\" of this MANIFESTATION. Each time a model is slain within 12\" of this MANIFESTATION. This MANIFESTATION can have a maximum of 6 maelstrom points at once."
+
+          - id: morbid-detonation
+            type: normal
+            name: Morbid Detonation
+            timing: "End of Any Turn"
+            availablePhases:
+              - anyHero
+              - anyCombat
+              - anyShooting
+            declare: "You must, and can only, use this ability if this unit has 6 maelstrom points. Pick each unit (friendly and enemy) within 9\" of it to be the targets."
+            effect: "Roll a dice for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll. Then, this MANIFESTATION is destroyed."
+
+      - id: purple-sun-of-shyish
+        name: Purple Sun of Shyish
+        abilities:
+          - id: pull-of-the-nadir
+            type: passive
+            name: Pull of the Nadir
+            timing: "Passive"
+            availablePhases:
+              - anyCombat
+              - anyShooting
+            effect: "Subtract 1 from save rolls for enemy units while they are within 3\" of this MANIFESTATION."
+
+          - id: end-given-form
+            type: normal
+            name: End Given Form
+            timing: "Your Movement Phase"
+            availablePhases:
+              - yourMovement
+            effect: "This MANIFESTATION can move a distance up to its Move characteristic. It can pass through models during that move but cannot end that move in combat. Then, pick up to 3 enemy units that this MANIFESTATION passed across during that move to be the targets. Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll."
+            keywords:
+              - CORE
+              - MOVE
+
+      - id: suffocating-gravetide
+        name: Suffocating Gravetide
+        abilities:
+          - id: pulled-to-the-grave
+            type: normal
+            name: Pulled to the Grave
+            timing: "Your Movement Phase"
+            availablePhases:
+              - yourMovement
+            effect: "This MANIFESTATION can move a distance up to its Move characteristic. It can pass through models during that move but cannot end that move in combat. Then, you can pick an enemy unit that this MANIFESTATION passed across during that move to be the target. Roll a dice for each model in the target unit. For each 5+, inflict 1 mortal damage on the target."
+            keywords:
+              - CORE
+              - MOVE
+
+  - id: primal-energy
+    name: Primal Energy
+    summonSpells:
+      - id: summon-burning-head
+        type: spell
+        name: Summon Burning Head
+        cost: 5
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly The Burning Head on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up The Burning Head wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units."
+        keywords:
+          - SPELL
+          - SUMMON
+
+      - id: summon-emerald-lifeswarm
+        type: spell
+        name: Summon Emerald Lifeswarm
+        cost: 6
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Emerald Lifeswarm on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up an Emerald Lifeswarm wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units."
+        keywords:
+          - SPELL
+          - SUMMON
+
+      - id: summon-ravenaks-gnashing-jaws
+        type: spell
+        name: Summon Ravenak's Gnashing Jaws
+        cost: 7
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Ravenak's Gnashing Jaws endless spell on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Ravenak's Gnashing Jaws endless spell wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units."
+        keywords:
+          - SPELL
+          - SUMMON
+
+    manifestations:
+      - id: burning-head
+        name: The Burning Head
+        abilities:
+          - id: burning-up
+            type: passive
+            name: Burning Up
+            timing: "Passive"
+            availablePhases:
+              - anyShooting
+            effect: "Each time this MANIFESTATION uses a SHOOT ability, after that ability has been resolved, allocate 1 damage point to this MANIFESTATION (ward rolls cannot be made for that damage point)."
+
+      - id: emerald-lifeswarm
+        name: Emerald Lifeswarm
+        abilities:
+          - id: bounteous-healing
+            type: normal
+            name: Bounteous Healing
+            timing: "Your Movement Phase"
+            availablePhases:
+              - yourMovement
+            declare: "Pick a friendly unit within 3\" of this MANIFESTATION to be the target."
+            effect: "Heal (3) the target."
+
+          - id: restored-vigour
+            type: normal
+            name: Restored Vigour
+            timing: "End of Any Turn"
+            availablePhases:
+              - anyEndOfTurn
+            effect: "Heal (3) this MANIFESTATION."
+
+      - id: ravenaks-gnashing-jaws
+        name: Ravenak's Gnashing Jaws
+        abilities:
+          - id: ravening-hunger
+            type: normal
+            name: Ravening Hunger
+            timing: "Any Charge Phase"
+            availablePhases:
+              - anyCharge
+            declare: "If this MANIFESTATION charged this turn, pick an enemy unit within 1\" of it to be the target."
+            effect: "Roll 10 dice. For each 5+, inflict 1 mortal damage on the target."
+
+  - id: twilit-sorceries
+    name: Twilit Sorceries
+    summonSpells:
+      - id: summon-geminids-of-uhl-gysh
+        type: spell
+        name: Summon Geminids of Uhl-Gysh
+        cost: 7
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Geminids of Uhl-Gysh endless spell on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Geminids of Uhl-Gysh endless spell wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units."
+        keywords:
+          - SPELL
+          - SUMMON
+
+      - id: summon-prismatic-palisade
+        type: spell
+        name: Summon Prismatic Palisade
+        cost: 7
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Prismatic Palisade on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Prismatic Palisade wholly within 18\" of the caster and visible to them."
+        keywords:
+          - SPELL
+          - SUMMON
+
+      - id: summon-umbral-spellportal
+        type: spell
+        name: Summon Umbral Spellportal
+        cost: 7
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Umbral Spellportal on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up an Umbral Spellportal wholly within 18\" of the caster and visible to them. An Umbral Spellportal has 2 parts that must be set up within 9\" of each other."
+        keywords:
+          - SPELL
+          - SUMMON
+
+    manifestations:
+      - id: geminids-of-uhl-gysh
+        name: Geminids of Uhl-Gysh
+        abilities:
+          - id: multiple-parts
+            type: passive
+            name: Multiple Parts
+            timing: "Passive"
+            availablePhases:
+              - anyEndOfTurn
+            effect: "When a number of damage points equal to this MANIFESTATION's Health characteristic are allocated to it, this MANIFESTATION is destroyed and both its parts are removed from play. Each time this MANIFESTATION moves, both its parts must end within 9\" of each other. Each part of this MANIFESTATION is armed with Tendrils of Light and Shadow."
+
+          - id: tendrils-of-shadow-and-light
+            type: passive
+            name: Tendrils of Shadow and Light
+            timing: "Passive"
+            availablePhases:
+              - anyHero
+              - anyMovement
+              - anyShooting
+              - anyCharge
+              - anyCombat
+            effect: "Enemy units cannot use commands while they are within 3\" of either part of this MANIFESTATION."
+
+      - id: prismatic-palisade
+        name: Prismatic Palisade
+        abilities:
+          - id: blinding-light
+            type: passive
+            name: Blinding Light
+            timing: "Passive"
+            availablePhases:
+              - anyShooting
+            effect: "This MANIFESTATION cannot be targeted by shooting attacks. In addition, a unit cannot be targeted by shooting attacks if it is impossible to draw a straight line from a model in the attacking unit to a model in the target unit without that line passing across this MANIFESTATION."
+
+      - id: umbral-spellportal
+        name: Umbral Spellportal
+        abilities:
+          - id: multiple-parts
+            type: passive
+            name: Multiple Parts
+            timing: "Passive"
+            availablePhases:
+              - anyEndOfTurn
+            effect: "When a number of damage points equal to this MANIFESTATION's Health characteristic are allocated to it, this MANIFESTATION is destroyed and both its parts are removed from play."
+
+          - id: arcane-passage
+            type: normal
+            name: Arcane Passage
+            timing: "Your Hero Phase"
+            availablePhases:
+              - yourHero
+            declare: "Pick a friendly WIZARD within 3\" of this MANIFESTATION to be the target."
+            effect: "The next time the target uses a non-SUMMON SPELL ability this phase, add 1 to the casting value of that spell. When picking targets for that spell, you can measure range and visibility from either part of this MANIFESTATION instead of from the caster, and your opponent can measure range and visibility to either part of this MANIFESTATION instead of to the caster for the purposes of the 'Unbind' ability."
+
+  - id: krondspine-incarnate
+    name: Krondspine Incarnate
+    summonSpells:
+      - id: summon-krondspine-incarnate-of-ghur
+        type: spell
+        name: Summon Krondspine Incarnate of Ghur
+        cost: 8
+        timing: "Your Hero Phase"
+        availablePhases:
+          - yourHero
+        declare: "If there is not a friendly Krondspine Incarnate of Ghur on the battlefield, pick a friendly WIZARD to cast this spell, then make a casting roll of 2D6."
+        effect: "Set up a Krondspine Incarnate of Ghur wholly within 12\" of the caster, visible to them and more than 9\" from all enemy units."
+        keywords:
+          - SPELL
+          - SUMMON
+
+    manifestations:
+      - id: krondspine-incarnate-of-ghur
+        name: Krondspine Incarnate of Ghur
+        abilities:
+          - id: devourer-of-magics
+            type: normal
+            name: Devourer of Magics
+            timing: "End of Any Turn"
+            availablePhases:
+              - anyEndOfTurn
+            effect: "If this MANIFESTATION destroyed any enemy MANIFESTATIONS this turn, Heal (6) this MANIFESTATION."
+
+          - id: arcane-predator
+            type: passive
+            name: Arcane Predator
+            timing: "Passive"
+            availablePhases:
+              - anyCharge
+            effect: "You can add 1 to the number of dice rolled when making charge rolls for this MANIFESTATION, to a maximum of 3, while it is within 18\" of any enemy MANIFESTATIONS, but if you do so, it must end the charge move within ½\" of an enemy MANIFESTATION."
+
+          - id: wild-form
+            type: passive
+            name: Wild Form
+            timing: "Passive"
+            availablePhases:
+              - anyHero
+            effect: "Each time this MANIFESTATION is targeted by the 'Banish Manifestation' ability, if it would be banished, it is not banished. Instead, allocate 6 damage points to it (ward rolls cannot be made for those damage points)."
+
+# Battlepack terrain
+terrain: []

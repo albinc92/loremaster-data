@@ -1,0 +1,1349 @@
+type: army
+id: skaven
+name: Skaven
+battleTraits:
+  - abilities:
+      - id: the-lurking-vermintide
+        type: normal
+        name: The Lurking Vermintide
+        timing: Deployment Phase
+        availablePhases:
+          - deployment
+        declare: Pick a friendly <strong>Skaven</strong> unit that has not been deployed.
+        effect: Set up that unit in reserve in the tunnels below. It has now been deployed.
+        keywords:
+          - DEPLOY
+      - id: always-three-clawsteps-ahead
+        type: normal
+        name: Always Three Clawsteps Ahead
+        timing: Once Per Turn (Army), Enemy Hero Phase
+        availablePhases:
+          - enemyHero
+        declare: Pick a friendly non-<strong>Monster Skaven</strong> unit that is not in combat and was not set up this turn to use this ability.
+        effect: That unit can use the 'Normal Move' ability as if it were your movement phase.
+      - id: too-quick-to-hit-hit
+        type: passive
+        name: Too Quick to Hit-Hit
+        timing: Passive
+        availablePhases:
+          - anyMovement
+        effect: No mortal damage is inflicted on friendly <strong>Skaven Infantry</strong> and <strong>Cavalry</strong> units by <strong>Retreat</strong> abilities.
+      - id: splinters-of-the-vermindoom
+        type: normal
+        name: Splinters of the Vermindoom
+        timing: Once Per Battle Round (Army), Start of Battle Round
+        availablePhases:
+          - startOfBattleRound
+        declare: You can use this ability if there are fewer than 3 friendly <strong>Gnawholes</strong> on the battlefield.
+        effect: Set up a Gnawhole on the battlefield more than 9" from all enemy units, more than 3" from all objectives and more than 1" from all other terrain features.
+      - id: gnawhole-ambush
+        type: normal
+        name: Gnawhole Ambush
+        timing: Your Movement Phase
+        availablePhases:
+          - yourMovement
+        declare: Pick a friendly <strong>Skaven</strong> unit that is in the tunnels below to use this ability.
+        effect: Set up that unit wholly within 6" of a friendly <strong>Gnawhole</strong> and more than 9" from all enemy units.
+units:
+  # Infantry Heroes
+  arch-warlock:
+    id: arch-warlock
+    name: Arch-Warlock
+    abilities:
+      - id: overseers-of-the-enginecovens
+        type: passive
+        name: Overseers of the Enginecovens
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If a friendly <strong>Skryre</strong> unit wholly within 13" of this unit uses the 'Covering Fire' command, no command points are spent.
+  clawlord:
+    id: clawlord
+    name: Clawlord
+    abilities:
+      - id: cornered-rat
+        type: passive
+        name: Cornered Rat
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: While this unit is damaged, add 3 to the Attacks characteristic of its Warpforged Blade.
+      - id: gnash-gnaw-on-their-bones
+        type: normal
+        name: Gnash-gnaw on Their Bones!
+        timing: Reaction You declared a Fight ability for this unit
+        availablePhases:
+          - anyCombat
+        effect: Pick a friendly non-<strong>Hero Verminus Infantry</strong> unit that has not used a <strong>Fight</strong> ability this turn and is within this unit's combat range to be the target. The target can be picked to use a <strong>Fight</strong> ability immediately after the <strong>Fight</strong> ability used by this unit has been resolved.
+  clawlord-on-gnaw-beast:
+    id: clawlord-on-gnaw-beast
+    name: Clawlord on Gnaw-beast
+    abilities:
+      - id: cornered-rat-mounted
+        type: passive
+        name: Cornered Rat
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: While this unit is damaged, add 3 to the Attacks characteristic of its Warpforged Halberd.
+      - id: cruel-commander
+        type: normal
+        name: Cruel Commander
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly non-<strong>Hero Verminus Infantry</strong> unit wholly within 13" of this unit to be the target.
+        effect: Inflict 1 mortal damage on the target. Then, add 5 to the target's control score until the start of your next turn.
+        lastsUntil: yourStartOfTurn
+  deathmaster:
+    id: deathmaster
+    name: Deathmaster
+    abilities:
+      - id: shadowy-killers
+        type: passive
+        name: Shadowy Killers
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If the unmodified hit roll for an attack that targets this unit is 1-4, the attack fails and the attack sequence ends.
+      - id: running-death
+        type: passive
+        name: Running Death
+        timing: Passive
+        availablePhases:
+          - yourMovement
+        effect: While friendly <strong>Eshin</strong> units are wholly within 13" of this unit, they can use <strong>Shoot</strong> and/or <strong>Charge</strong> abilities even if they used a <strong>Run</strong> ability in the same turn.
+  grey-seer:
+    id: grey-seer
+    name: Grey Seer
+    abilities:
+      - id: warpstone-shards
+        type: normal
+        name: Warpstone Shards
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        effect: The next time you make a casting roll for this unit this phase, roll 3D6 instead of 2D6. This roll cannot be re-rolled or modified. If the casting roll is 13, the spell is successfully cast and cannot be unbound. After the effect of that spell has been resolved, inflict D3 mortal damage on this unit. If the casting roll is not 13, remove 1 dice of your choice from the casting roll and use the remaining 2D6 as the casting roll.
+  krittok-foulblade:
+    id: krittok-foulblade
+    name: Krittok Foulblade
+    abilities:
+      - id: doomfang
+        type: normal
+        name: Doomfang
+        timing: Any Combat Phase
+        availablePhases:
+          - anyCombat
+        effect: This unit has <strong>Strike-First</strong> for the rest of the turn but it cannot use commands this phase.
+        lastsUntil: anyEndOfTurn
+      - id: a-reputation-for-cunning
+        type: normal
+        name: A Reputation for Cunning
+        timing: Enemy Hero Phase
+        availablePhases:
+          - enemyHero
+        effect: You can pick 2 different eligible units to use the 'Always Three Clawsteps Ahead' ability this phase instead of 1, but at least 1 of those units must have the <strong>Verminus</strong> keyword.
+      - id: foster-competition
+        type: passive
+        name: Foster Competition
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Add 1 to wound rolls for friendly <strong>Stormvermin</strong> units while they are wholly within 13" of this unit.
+  master-moulder:
+    id: master-moulder
+    name: Master Moulder
+    abilities:
+      - id: lord-of-flesh-grafting
+        type: normal
+        name: Lord of Flesh-grafting
+        timing: End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick another friendly <strong>Moulder</strong> unit wholly within 13" of this unit to be the target.
+        effect: <strong>Heal (3)</strong> the target.
+      - id: tyrannical-packmaster
+        type: normal
+        name: Tyrannical Packmaster
+        timing: Your Charge Phase
+        availablePhases:
+          - yourCharge
+        declare: Pick another friendly <strong>Moulder</strong> unit within this unit's combat range to be the target.
+        effect: Add 1 to charge rolls for the target for the rest of the turn.
+        lastsUntil: yourEndOfTurn
+  warlock-bombardier:
+    id: warlock-bombardier
+    name: Warlock Bombardier
+    abilities:
+      - id: explosive-payload
+        type: passive
+        name: Explosive Payload
+        timing: Passive
+        availablePhases:
+          - yourShooting
+        effect: Add 1 to hit rolls for this unit's shooting attacks that target an enemy unit that has 10 or more models.
+      - id: more-more-doom
+        type: normal
+        name: More-More Doom!
+        timing: Reaction You declared a Shoot ability for this unit, it was not set up this turn and it has not used a Move ability this turn
+        availablePhases:
+          - anyShooting
+        effect: Roll a dice. On a 2+, set the Damage characteristic of its Doomrocket to D3+3 for the rest of the turn. On a 1, inflict D3 mortal damage on this unit.
+        lastsUntil: anyEndOfTurn
+  warlock-engineer:
+    id: warlock-engineer
+    name: Warlock Engineer
+    abilities:
+      - id: sniper-master
+        type: normal
+        name: Sniper-master
+        timing: Once Per Turn (Army), Your Shooting Phase
+        availablePhases:
+          - yourShooting
+        declare: Pick a visible enemy <strong>Hero</strong> to be the target.
+        effect: For the rest of the turn, this unit and friendly <strong>Warplock Jezzails</strong> units wholly within 13" of this unit can ignore the effects of the 'Guarded Hero' ability when picking the target for their shooting attacks.
+        lastsUntil: yourEndOfTurn
+      - id: more-more-warp-energy
+        type: normal
+        name: More-More Warp Energy!
+        timing: Reaction You declared a Shoot ability for this unit, it was not set up this turn and it has not used a Move ability this turn
+        availablePhases:
+          - anyShooting
+        effect: Roll a dice. On a 2+, set the Damage characteristic of this unit's Warplock Musket to 3 for the rest of the turn. On a 1, inflict D3 mortal damage on this unit.
+        lastsUntil: anyEndOfTurn
+  warlock-galvaneer:
+    id: warlock-galvaneer
+    name: Warlock Galvaneer
+    abilities:
+      - id: lightning-master
+        type: normal
+        name: Lightning Master
+        timing: Once Per Battle (Army), Your Shooting Phase
+        availablePhases:
+          - yourShooting
+        declare: Pick a friendly <strong>Warpvolt Scourgers</strong> unit within this unit's combat range to be the target.
+        effect: Roll a dice. On a 2+, set the Attacks characteristic of the target's Warpvolt Scourgers to 10 for the rest of the turn.
+        lastsUntil: yourEndOfTurn
+      - id: more-more-warpvolt-doom
+        type: normal
+        name: More-More Warpvolt Doom!
+        timing: Any Shooting Phase
+        availablePhases:
+          - anyShooting
+        declare: Pick an enemy unit that had any damage points allocated to it this turn by attacks made with this unit's Warpvolt Obliterator to be the target.
+        effect: Roll a D3 for each other enemy unit within the target's combat range. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.
+  plague-priest:
+    id: plague-priest
+    name: Plague Priest
+    abilities:
+      - id: feed-on-pestilence
+        type: normal
+        name: Feed on Pestilence
+        timing: Reaction You declared a Fight ability for a friendly Pestilens unit wholly within 13" of this unit
+        availablePhases:
+          - anyCombat
+        effect: Give this unit 1 ritual point.
+
+  # Monster Heroes
+  lord-skreech-verminking:
+    id: lord-skreech-verminking
+    name: Lord Skreech Verminking
+    abilities:
+      - id: the-thirteen-headed-one
+        type: normal
+        name: The Thirteen-Headed One
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        effect: Pick 1 of the following effects to apply until the start of your next turn. You cannot pick the same effect more than once per battle.
+        lastsUntil: yourStartOfTurn
+      - id: the-dreaded-thirteenth-spell
+        type: spell
+        name: The Dreaded Thirteenth Spell
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a visible enemy unit within 13" to be the target, then make a casting roll of 2D6.
+        effect: Roll 13 dice. For each 5+ inflict 1 mortal damage on the target and you can return 1 slain model to a friendly <strong>Clanrats</strong> unit wholly within 13" of this unit.
+      - id: terrifying-monstrosity
+        type: normal
+        name: Terrifying Monstrosity
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick an enemy <strong>Infantry</strong> unit in combat with this unit to be the target.
+        effect: Roll a dice. On a 3+, the target cannot use commands for the rest of the turn and subtract an amount equal to the roll from the target's control score until the start of your next turn.
+        lastsUntil: yourStartOfTurn
+        keywords:
+          - RAMPAGE
+  thanquol-on-boneripper:
+    id: thanquol-on-boneripper
+    name: Thanquol on Boneripper
+    abilities:
+      - id: staff-of-the-horned-rat
+        type: passive
+        name: Staff of the Horned Rat
+        timing: Passive
+        availablePhases:
+          - yourHero
+        effect: Add 1 to casting rolls for this unit.
+      - id: terrible-madness
+        type: spell
+        name: Terrible Madness
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a visible enemy unit within 13" of this unit to be the target, then make a casting roll of 2D6.
+        effect: The target cannot use commands until the start of your next turn. In addition, roll a number of dice equal to the number of models in the target unit. For each 6, inflict 1 mortal damage on the target.
+        lastsUntil: yourStartOfTurn
+      - id: boneripper-rampage
+        type: normal
+        name: Boneripper Rampage
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick an enemy unit in combat with this unit to be the target.
+        effect: Roll a dice. On a 3-5, inflict D3 mortal damage on the target. On a 6, inflict 2D3 mortal damage on the target.
+        keywords:
+          - RAMPAGE
+      - id: warp-amulet
+        type: normal
+        name: Warp-amulet
+        timing: End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        effect: <strong>Heal (D3)</strong> this unit.
+
+  # Infantry Units
+  clanrats:
+    id: clanrats
+    name: Clanrats
+    abilities:
+      - id: seething-swarm
+        type: normal
+        name: Seething Swarm
+        timing: End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        effect: You can return D3 slain models to this unit.
+  night-runners:
+    id: night-runners
+    name: Night Runners
+    abilities:
+      - id: slinking-advance
+        type: normal
+        name: Slinking Advance
+        timing: Deployment Phase
+        availablePhases:
+          - deployment
+        effect: This unit can use the 'Normal Move' ability as if it were your movement phase.
+      - id: sneaky-infiltrators
+        type: passive
+        name: Sneaky Infiltrators
+        timing: Passive
+        availablePhases:
+          - yourShooting
+          - enemyShooting
+        effect: While each model in this unit is within 1" of any terrain features, this unit cannot be targeted by shooting attacks unless the attacking model is within 9" of it.
+  plague-monks:
+    id: plague-monks
+    name: Plague Monks
+    abilities:
+      - id: spreaders-of-filth-and-disease
+        type: passive
+        name: Spreaders of Filth and Disease
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Each time a model in this unit is slain by a combat attack and that model was in combat with the attacking unit, roll a dice. On a 6+, inflict 1 mortal damage on the attacking unit after the <strong>Fight</strong> ability has been resolved.
+  stormvermin:
+    id: stormvermin
+    name: Stormvermin
+    abilities:
+      - id: elite-bodyguard
+        type: passive
+        name: Elite Bodyguard
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Friendly <strong>Skaven Infantry Heroes</strong> have <strong>Ward (5+)</strong> while they are within this unit's combat range.
+  rat-ogors:
+    id: rat-ogors
+    name: Rat Ogors
+    abilities:
+      - id: unleashed-warp-fury
+        type: normal
+        name: Unleashed Warp-fury
+        timing: Any Combat Phase
+        availablePhases:
+          - anyCombat
+        effect: Inflict D3 mortal damage on this unit. Then, add 1 to the Attacks characteristic of this unit's melee weapons for the rest of the turn.
+        lastsUntil: anyEndOfTurn
+  stormfiends:
+    id: stormfiends
+    name: Stormfiends
+    abilities:
+      - id: grinderfist-tunnellers
+        type: normal
+        name: Grinderfist Tunnellers
+        timing: Once Per Turn (Army), Any Movement Phase
+        availablePhases:
+          - anyMovement
+        declare: Pick this unit if it is in the tunnels below and includes any models armed with Grinderfists.
+        effect: Set up this unit anywhere on the battlefield more than 9" from all enemy units.
+      - id: shock-gauntlets
+        type: passive
+        name: Shock Gauntlets
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Each time an attack made with this unit's Shock Gauntlets scores a critical hit, that attack scores D6 hits on the target unit instead of 1. Make a wound roll for each hit.
+
+  # Weapon Teams
+  acolyte-globadiers:
+    id: acolyte-globadiers
+    name: Acolyte Globadiers
+    abilities:
+      - id: gas-clouds
+        type: passive
+        name: Gas Clouds
+        timing: Passive
+        availablePhases:
+          - yourShooting
+        effect: Add 1 to the Damage characteristic of this unit's Poisoned Wind Globes for attacks that target an enemy unit that has 10 or more models.
+      - id: hidden-weapon-team
+        type: passive
+        name: Hidden Weapon Team
+        timing: Passive
+        availablePhases:
+          - yourShooting
+        effect: While this unit is within the combat range of a friendly <strong>Clanrats</strong> unit that has 5 or more models, and there are no other friendly <strong>Weapon Team</strong> units within that unit's combat range, this unit is not visible to enemy units more than 13" away.
+  ratling-gun:
+    id: ratling-gun
+    name: Ratling Gun
+    abilities:
+      - id: hidden-weapon-team-ratling
+        type: passive
+        name: Hidden Weapon Team
+        timing: Passive
+        availablePhases:
+          - yourShooting
+        effect: While this unit is within the combat range of a friendly <strong>Clanrats</strong> unit that has 5 or more models, and there are no other friendly <strong>Weapon Team</strong> units within that unit's combat range, this unit is not visible to enemy units more than 13" away.
+  warpfire-thrower:
+    id: warpfire-thrower
+    name: Warpfire Thrower
+    abilities:
+      - id: hidden-weapon-team-warpfire
+        type: passive
+        name: Hidden Weapon Team
+        timing: Passive
+        availablePhases:
+          - yourShooting
+        effect: While this unit is within the combat range of a friendly <strong>Clanrats</strong> unit that has 5 or more models, and there are no other friendly <strong>Weapon Team</strong> units within that unit's combat range, this unit is not visible to enemy units more than 13" away.
+  warplock-jezzails:
+    id: warplock-jezzails
+    name: Warplock Jezzails
+    abilities:
+      - id: warpstone-snipers
+        type: normal
+        name: Warpstone Snipers
+        timing: Your Shooting Phase
+        availablePhases:
+          - yourShooting
+        effect: If this unit has not used a <strong>Move</strong> ability this turn and was not set up this turn, add 6" to the Range characteristic of this unit's Warplock Jezzails for the rest of the turn.
+        lastsUntil: anyEndOfTurn
+  warpvolt-scourgers:
+    id: warpvolt-scourgers
+    name: Warpvolt Scourgers
+    abilities:
+      - id: hidden-weapon-team-warpvolt
+        type: passive
+        name: Hidden Weapon Team
+        timing: Passive
+        availablePhases:
+          - yourShooting
+        effect: While this unit is within the combat range of a friendly <strong>Clanrats</strong> unit that has 5 or more models, and there are no other friendly <strong>Weapon Team</strong> units within that unit's combat range, this unit is not visible to enemy units more than 13" away.
+
+  # Monsters
+  hell-pit-abomination:
+    id: hell-pit-abomination
+    name: Hell Pit Abomination
+    abilities:
+      - id: regenerating-monstrosity
+        type: normal
+        name: Regenerating Monstrosity
+        timing: End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        effect: <strong>Heal (D6)</strong> this unit.
+      - id: avalanche-of-flesh
+        type: normal
+        name: Avalanche of Flesh
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick an enemy <strong>Infantry</strong> unit in combat with this unit to be the target.
+        effect: Roll a dice. On a 3+, roll a dice for each model in the target unit. For each 5+, inflict 1 mortal damage on the target.
+        keywords:
+          - RAMPAGE
+      - id: too-horrible-to-die
+        type: passive
+        name: Too Horrible to Die
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: The first time this unit would be destroyed, before removing it from the battlefield, roll a dice and apply the corresponding effect. On a 1, this unit is destroyed. On a 2-4, roll a D3 for each enemy unit in combat with this unit. On a 2+, inflict an amount of mortal damage on that unit equal to the roll. Then, this unit is destroyed. On a 5-6, this unit is not destroyed and any remaining damage points inflicted on it have no effect. Then, <strong>Heal (D6)</strong> this unit.
+  brood-terror:
+    id: brood-terror
+    name: Brood Terror (Scourge of Ghyran)
+    abilities:
+      - id: regenerating-terror
+        type: normal
+        name: Regenerating Terror
+        timing: End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        effect: <strong>Heal (D6)</strong> this unit.
+      - id: warpstone-fumes
+        type: normal
+        name: Warpstone Fumes
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        effect: Roll a dice. On a 2+, for the rest of the turn, subtract 1 from hit rolls for attacks made by enemy units while they are within 6" of this unit.
+        lastsUntil: anyEndOfTurn
+        keywords:
+          - RAMPAGE
+  scourge-of-ghyran-brood-terror:
+    id: scourge-of-ghyran-brood-terror
+    name: Brood Terror
+    scourgeOfGhyran: true
+    abilities:
+      - id: lend-a-claw
+        type: normal
+        name: Lend a Claw
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick up to 4 other friendly non-<strong>Skryre Moulder</strong> units wholly within 12" of this unit to be the targets.
+        effect: Subtract 1 from the Attacks characteristic of this unit's Loosely Attached Bladed Limbs for the rest of the phase for each target picked. Add 1 to hit rolls for the targets' attacks for the rest of the phase.
+        lastsUntil: anyEndOfTurn
+        keywords:
+          - RAMPAGE
+      - id: regenerating-terror-ghyran
+        type: normal
+        name: Regenerating Terror
+        timing: End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        effect: <strong>Heal (D6)</strong> this unit.
+
+  # War Machines
+  doomwheel:
+    id: doomwheel
+    name: Doomwheel
+    abilities:
+      - id: rolling-doom
+        type: normal
+        name: Rolling Doom
+        timing: Your Movement Phase
+        availablePhases:
+          - yourMovement
+        effect: This unit can move a distance up to its Move characteristic. This unit can pass through other models and the combat ranges of enemy units, but it cannot end that move in combat. Then, pick up to 3 enemy units that this unit passed across during that move to be the targets. Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.
+        keywords:
+          - CORE
+          - MOVE
+  warp-lightning-cannon:
+    id: warp-lightning-cannon
+    name: Warp Lightning Cannon
+    abilities:
+      - id: more-more-warp-lightning
+        type: normal
+        name: More-More Warp Lightning!
+        timing: Once Per Turn (Army), Your Shooting Phase
+        availablePhases:
+          - yourShooting
+        effect: If this unit is within the combat range of a friendly <strong>Skryre Hero</strong>, add 6 to the Attacks characteristic of this unit's Warp Lightning Blast for the rest of the turn. However, for each unmodified hit roll of 1 for an attack made with this unit's Warp Lightning Blast, inflict D3 mortal damage on this unit after the <strong>Shoot</strong> ability has been resolved.
+        lastsUntil: anyEndOfTurn
+      - id: warp-lightning-blast
+        type: passive
+        name: Warp Lightning Blast
+        timing: Passive
+        availablePhases:
+          - yourShooting
+        effect: Each attack made with this weapon in a single phase must target the same enemy unit. Each hit inflicts 1 mortal damage on the target and the attack sequence ends.
+
+  # War Machine Heroes
+  grey-seer-on-screaming-bell:
+    id: grey-seer-on-screaming-bell
+    name: Grey Seer on Screaming Bell
+    abilities:
+      - id: altar-of-the-horned-rat
+        type: passive
+        name: Altar of the Horned Rat
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Friendly <strong>Skaven Infantry</strong> units have <strong>Ward (6+)</strong> while they are wholly within 13" of this unit.
+      - id: peal-of-doom
+        type: normal
+        name: Peal of Doom
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        effect: Roll a dice and apply the corresponding effect. On a 1, inflict D3 mortal damage on this unit. On a 2-4, until the start of your next turn, subtract 1 from hit rolls for combat attacks made by enemy units while they are within 13" of this unit. On a 5-6, roll a D3 for each enemy unit within 13" of this unit. On a 2+, inflict an amount of mortal damage on that unit equal to the roll.
+        lastsUntil: yourStartOfTurn
+      - id: cracks-call
+        type: spell
+        name: Cracks Call
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a visible enemy unit that does not have <strong>Fly</strong> and is within 13" of this unit to be the target, then make a casting roll of 2D6.
+        effect: If the casting roll exceeds the target's Move characteristic, inflict an amount of mortal damage on the target equal to the difference between the casting roll and its Move characteristic.
+        keywords:
+          - SPELL
+  scourge-of-ghyran-grey-seer-on-screaming-bell:
+    id: scourge-of-ghyran-grey-seer-on-screaming-bell
+    name: Grey Seer on Screaming Bell (Scourge of Ghyran)
+    scourgeOfGhyran: true
+    abilities:
+      - id: the-bell-tolls
+        type: passive
+        name: The Bell Tolls
+        timing: Passive
+        availablePhases:
+          - anyMovement
+          - anyCombat
+        effect: If the current battle round number is odd, add 2" to the Move characteristic of friendly <strong>Skaven</strong> units while they are wholly within 13" of this unit. If the current battle round number is even, subtract 1 from hit rolls for attacks made by enemy units that target a friendly <strong>Skaven</strong> unit while it is wholly within 13" of this unit.
+      - id: gnaw-through-reality
+        type: spell
+        name: Gnaw Through Reality
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Make a casting roll of 2D6.
+        effect: Until the start of your next turn, this unit counts as a friendly Gnawhole for the purposes of the 'Gnawhole Ambush', 'Tunnels Through Reality' and 'The Endless Vermintide' abilities.
+        lastsUntil: yourStartOfTurn
+        keywords:
+          - SPELL
+      - id: echoes-of-the-vermindoom
+        type: normal
+        name: Echoes of the Vermindoom
+        timing: Once Per Turn (Army), End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick each friendly <strong>Skaven</strong> unit wholly within 13" of this unit to be the targets.
+        effect: <strong>Heal (D3)</strong> each target.
+
+  # Missing Units - Adding to complete the roster
+  
+  # Named Characters
+  vizzik-skour-prophet-of-the-horned-rat:
+    id: vizzik-skour-prophet-of-the-horned-rat
+    name: Vizzik Skour, Prophet of the Horned Rat
+    abilities:
+      - id: the-death-frenzy
+        type: normal
+        name: The Death Frenzy
+        timing: Any Hero Phase
+        availablePhases:
+          - anyHero
+        declare: Pick a visible enemy unit within 13" of this unit or a visible friendly <strong>Skaven Infantry</strong> unit within 13" of this unit to be the target, then make a chanting roll of D6.
+        effect: If the target is an enemy unit, subtract 1 from the Attacks characteristic of the target's melee weapons until the start of your next turn. If the target is a friendly unit, it can use 2 <strong>Fight</strong> abilities this turn. After the first is used, however, the target has <strong>Strike-Last</strong> for the rest of the turn. If the chanting roll was 12+, you can pick 2 targets instead of 1.
+        cost: 8
+        lastsUntil: yourStartOfTurn
+      - id: prophet-of-the-horned-rat
+        type: normal
+        name: Prophet of the Horned Rat
+        timing: Once Per Battle, Your Hero Phase
+        availablePhases:
+          - yourHero
+        effect: You can re-roll chanting rolls for this unit until the start of your next turn.
+        lastsUntil: yourStartOfTurn
+      - id: gaze-of-the-gnaw
+        type: normal
+        name: Gaze of the Gnaw
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick an enemy unit in combat with this unit to be the target.
+        effect: Roll a dice. On a 2+, for the rest of the turn, if this unit is in combat with the target when the target is picked to use a <strong>Fight</strong> ability, all of the target's attacks must target this unit. In addition, subtract 1 from hit rolls and wound rolls for the target's combat attacks that target this unit.
+        lastsUntil: anyEndOfTurn
+        keywords:
+          - RAMPAGE
+      - id: fissures-in-reality
+        type: normal
+        name: Fissures in Reality
+        timing: Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick each enemy unit in combat with this unit to be the targets.
+        effect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.
+
+  # Verminlords
+  verminlord-corruptor:
+    id: verminlord-corruptor
+    name: Verminlord Corruptor
+    abilities:
+      - id: lord-of-great-plagues
+        type: normal
+        name: Lord of Great Plagues
+        timing: Once Per Turn (Army), Your Hero Phase
+        availablePhases:
+          - yourHero
+        effect: If the unmodified chanting roll for a friendly <strong>Pestilens Priest</strong> this phase was 6, pick 1 of the following effects to apply. Crimsonweal Curse - Pick an enemy unit within 13" of this unit to be the target. For the rest of the battle, each time the target uses a <strong>Move</strong> ability, inflict D3 mortal damage on it after the <strong>Move</strong> ability has been resolved. The Neverplague - For the rest of the battle, you can re-roll chanting rolls for friendly <strong>Pestilens Priests</strong>. Undulant Scourge - Pick a visible enemy unit within 13" of this unit to be the target. Inflict 2D3 mortal damage on the target.
+      - id: plaguemaster
+        type: normal
+        name: Plaguemaster
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick up to 3 enemy units in combat with this unit to be the targets.
+        effect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll. Give this unit 1 ritual point.
+        keywords:
+          - RAMPAGE
+
+  verminlord-deceiver:
+    id: verminlord-deceiver
+    name: Verminlord Deceiver
+    abilities:
+      - id: lord-of-assassins
+        type: normal
+        name: Lord of Assassins
+        timing: Reaction You declared the 'Redeploy' command for a friendly <strong>Eshin Infantry</strong> unit wholly within 13" of this unit
+        availablePhases:
+          - anyMovement
+        effect: If you roll a 1-3 when determining the distance that unit can move, you can use a value of 4 instead.
+      - id: burst-from-the-shadows
+        type: normal
+        name: Burst from the Shadows
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        effect: If this unit is in combat, roll a dice. On a 4+, you can pick a point on the battlefield within 13" of this unit and within 1" of any enemy units. Remove this unit from the battlefield and set it up again within 1" of that point.
+        keywords:
+          - RAMPAGE
+
+  verminlord-warbringer:
+    id: verminlord-warbringer
+    name: Verminlord Warbringer
+    abilities:
+      - id: killing-blow
+        type: normal
+        name: Killing Blow
+        timing: Once Per Turn (Army), End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick a damaged enemy unit in combat with this unit to be the target.
+        effect: Roll a dice. If the roll is less than the number of damage points the target has, inflict an amount of mortal damage on the target equal to the roll.
+        keywords:
+          - RAMPAGE
+      - id: tyrant-of-battle
+        type: normal
+        name: Tyrant of Battle
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick up to 2 friendly <strong>Verminus Infantry</strong> units wholly within 13" of this unit to be the targets.
+        effect: The targets can each use the 'All-out Attack' or 'All-out Defence' command this phase even if that command has been used by a friendly unit this phase.
+
+  verminlord-warpseer:
+    id: verminlord-warpseer
+    name: Verminlord Warpseer
+    abilities:
+      - id: tectonic-splintering
+        type: spell
+        name: Tectonic Splintering
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a visible enemy unit within 18" to be the target, then make a casting roll of 2D6.
+        effect: Until the start of your next turn, subtract 1 from the number of dice rolled when making charge rolls for the target, to a minimum of 1.
+        lastsUntil: yourStartOfTurn
+        keywords:
+          - SPELL
+      - id: divine-the-future
+        type: passive
+        name: Divine the Future
+        timing: Passive
+        availablePhases:
+          - anyMovement
+        effect: While this unit is on the battlefield, add 2" to the distance friendly units can move when using the 'Always Three Clawsteps Ahead' ability.
+      - id: hurl-scry-orb
+        type: normal
+        name: Hurl Scry-orb
+        timing: Once Per Battle, Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick an enemy unit in combat with this unit to be the target.
+        effect: This unit cannot use the 'Divine the Future' ability for the rest of the battle. Roll a dice. On a 2+, inflict an amount of mortal damage on the target equal to the roll.
+      - id: arch-manipulator
+        type: normal
+        name: Arch-manipulator
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick an enemy unit in combat with this unit to be the target.
+        effect: Roll a dice. On a 4+, the target has <strong>Strike-Last</strong> for the rest of the turn.
+        lastsUntil: anyEndOfTurn
+        keywords:
+          - RAMPAGE
+
+  # Special Units and Heroes
+  plague-priest-on-plague-furnace:
+    id: plague-priest-on-plague-furnace
+    name: Plague Priest on Plague Furnace
+    abilities:
+      - id: altar-of-the-great-corruptor
+        type: passive
+        name: Altar of the Great Corruptor
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Friendly <strong>Pestilens</strong> units have <strong>Ward (6+)</strong> while they are wholly within 13" of this unit.
+      - id: corrupting-influence
+        type: passive
+        name: Corrupting Influence
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Subtract 1 from ward rolls for enemy units while they are within 6" of this unit.
+
+  # Special Infantry Units
+  gutter-runners:
+    id: gutter-runners
+    name: Gutter Runners
+    abilities:
+      - id: deliver-the-killing-strike
+        type: normal
+        name: Deliver the Killing Strike
+        timing: Once Per Battle (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        effect: Add 3 to the Attacks characteristic of this unit's Punch Dagger and Blade for the rest of the turn.
+        lastsUntil: anyEndOfTurn
+      - id: sneaky-infiltrators-gutter
+        type: passive
+        name: Sneaky Infiltrators
+        timing: Passive
+        availablePhases:
+          - yourShooting
+          - enemyShooting
+        effect: While each model in this unit is within 1" of any terrain features, this unit cannot be targeted by shooting attacks unless the attacking model is within 9" of it.
+
+  plague-censer-bearer:
+    id: plague-censer-bearer
+    name: Plague Censer Bearer
+    abilities:
+      - id: frenzied-assault
+        type: passive
+        name: Frenzied Assault
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If this unit charged in the same turn, add 1 to the Attacks characteristic of its melee weapons for the rest of the turn.
+        lastsUntil: anyEndOfTurn
+      - id: enshrouding-fumes-censer
+        type: passive
+        name: Enshrouding Fumes
+        timing: Passive
+        availablePhases:
+          - yourShooting
+          - enemyShooting
+        effect: Subtract 1 from hit rolls for shooting attacks that target this unit.
+
+  # Underworld Warbands
+  skabbiks-plaguepack:
+    id: skabbiks-plaguepack
+    name: Skabbik's Plaguepack
+    abilities:
+      - id: enshrouding-fumes-skabbik
+        type: passive
+        name: Enshrouding Fumes
+        timing: Passive
+        availablePhases:
+          - yourShooting
+          - enemyShooting
+        effect: Subtract 1 from hit rolls for shooting attacks that target this unit.
+      - id: skritter
+        type: passive
+        name: Skritter
+        timing: Passive
+        availablePhases:
+          - yourHero
+        effect: This unit's Skritter is a token. If you make a chanting roll of 1 for this unit while its Skritter is on the battlefield, you can remove its Skritter from the battlefield and then re-roll that chanting roll.
+
+  skittershank-clawpack:
+    id: skittershank-clawpack
+    name: Skittershank's Clawpack
+    abilities:
+      - id: sneaky-infiltrators-clawpack
+        type: passive
+        name: Sneaky Infiltrators
+        timing: Passive
+        availablePhases:
+          - yourShooting
+          - enemyShooting
+        effect: While each model in this unit is within 1" of a terrain feature, this unit cannot be targeted by shooting attacks unless the attacking model is within 9" of it.
+      - id: shadowy-killers-clawpack
+        type: passive
+        name: Shadowy Killers
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If the unmodified hit roll for an attack that targets this unit is 1-4, the attack fails and the attack sequence ends.
+
+  spiteclaw-swarm:
+    id: spiteclaw-swarm
+    name: Spiteclaw's Swarm
+    abilities:
+      - id: seething-swarm-spiteclaw
+        type: normal
+        name: Seething Swarm
+        timing: End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        effect: You can return D3 slain models to this unit.
+
+  # War Machines
+  doom-flayers:
+    id: doom-flayers
+    name: Doom-Flayers
+    abilities:
+      - id: whirling-doom
+        type: normal
+        name: Whirling Doom
+        timing: Any Charge Phase
+        availablePhases:
+          - anyCharge
+        declare: If this unit charged this phase, pick an enemy unit within 1" of it to be the target.
+        effect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.
+
+  plagueclaw:
+    id: plagueclaw
+    name: Plagueclaw
+    abilities:
+      - id: bubonic-barrage
+        type: passive
+        name: Bubonic Barrage
+        timing: Passive
+        availablePhases:
+          - yourShooting
+        effect: Each time this unit uses a <strong>Shoot</strong> ability, if all of its attacks targeted the same enemy unit, after that ability has been resolved, roll a dice. If the result is equal to or less than the number of models in that enemy unit that were slain by attacks made by this unit's Plagueclaw Catapult this phase, that enemy unit has <strong>Strike-Last</strong> for the rest of the turn.
+        lastsUntil: anyEndOfTurn
+
+  ratling-warpblaster:
+    id: ratling-warpblaster
+    name: Ratling Warpblaster
+    abilities:
+      - id: overwhelming-fire
+        type: passive
+        name: Overwhelming Fire
+        timing: Passive
+        availablePhases:
+          - yourShooting
+        effect: Add 1 to hit rolls for this unit's shooting attacks that target an enemy unit that has 10 or more models.
+      - id: more-more-warpstone-bullets
+        type: normal
+        name: More-More Warpstone Bullets!
+        timing: Once Per Turn (Army), Your Shooting Phase
+        availablePhases:
+          - yourShooting
+        effect: If this unit is within the combat range of a friendly <strong>Skryre Hero</strong>, this unit's Hail of Warpstone Bullets has an Attacks characteristic of 6D6+3 instead of 3D6+3 for the rest of the turn. However, for each unmodified hit roll of 1 for an attack made with this unit's Hail of Warpstone Bullets, inflict 1 mortal damage on this unit after the <strong>Shoot</strong> ability has been resolved.
+        lastsUntil: anyEndOfTurn
+
+  warp-grinder:
+    id: warp-grinder
+    name: Warp-Grinder
+    abilities:
+      - id: tunnel-skulkers
+        type: normal
+        name: Tunnel Skulkers
+        timing: Once Per Battle (Army), Deployment Phase
+        availablePhases:
+          - deployment
+        declare: Pick this unit and up to 1 friendly non-<strong>Monster Skaven</strong> unit if those units have not been deployed.
+        effect: Set up those units in reserve in the tunnels below. They have now been deployed.
+        keywords:
+          - DEPLOY
+      - id: warp-ambush
+        type: normal
+        name: Warp-ambush
+        timing: Your Movement Phase
+        availablePhases:
+          - yourMovement
+        declare: Pick this unit if it is in the tunnels below, then pick an enemy unit more than 6" from all other enemy units to be the target.
+        effect: Roll a dice. On a 4+, set up this unit within 3" of the target and more than 6" from all other enemy units. Then, set up the unit that was in the tunnels below with this unit within 3" of the target and more than 6" from all other enemy units.
+
+  # Infantry Units
+  plaguepack:
+    id: plaguepack
+    name: Plaguepack
+    abilities:
+      - id: enshrouding-fumes
+        type: passive
+        name: Enshrouding Fumes
+        timing: Passive
+        availablePhases:
+          - yourShooting
+          - enemyShooting
+        effect: Subtract 1 from hit rolls for shooting attacks that target this unit.
+      - id: plague-rat
+        type: passive
+        name: Plague Rat
+        timing: Passive
+        availablePhases:
+          - yourHero
+        effect: This unit's Plague rat is a token. If you make an unmodified chanting roll of 1 for this unit while its Plague rat is on the battlefield, you can remove its Plague rat from the battlefield and then re-roll that chanting roll.
+battleFormations:
+  - id: virulent-procession
+    name: Virulent Procession
+    abilities:
+      - id: corrupted-earth
+        type: normal
+        name: Corrupted Earth
+        timing: Once Per Turn (Army), End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick up to 3 friendly <strong>Pestilens</strong> units that are in combat to be the targets.
+        effect: >-
+          For each target:<br><br>• Make a pile-in move.<br><br>• Then, pick an enemy unit in combat with the target and roll a D3. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.
+  - id: fleshmeld-menagerie
+    name: Fleshmeld Menagerie
+    abilities:
+      - id: prized-creations
+        type: normal
+        name: Prized Creations
+        timing: Once Per Turn (Army), Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick up to 3 friendly non-<strong>Hero Moulder</strong> units to be the targets.
+        effect: >-
+          Roll a dice for each target and apply the corresponding effect:<br><br>
+          <strong>1-2 Self-destructive Fury:</strong> Inflict D3 mortal damage on the target.<br><br>
+          <strong>3-4 Rabid Infusion:</strong> Add 1 to the Attacks characteristic of the target's melee weapons until the start of your next turn.<br><br>
+          <strong>5-6 Blinded by Frenzy:</strong> In addition to the effect of 'Rabid Infusion', the target has <strong>Ward (5+)</strong> until the start of your next turn.
+        lastsUntil: yourStartOfTurn
+  - id: claw-horde
+    name: Claw-horde
+    abilities:
+      - id: claw-picked
+        type: normal
+        name: Claw-picked
+        timing: Once Per Turn (Army), Your Combat Phase
+        availablePhases:
+          - yourCombat
+        declare: Pick up to 3 friendly <strong>Verminus</strong> units that charged this turn to be the targets.
+        effect: Add 1 to the Rend characteristic of the targets' melee weapons for the rest of the turn.
+        lastsUntil: anyEndOfTurn
+  - id: warpcog-convocation
+    name: Warpcog Convocation
+    abilities:
+      - id: skryre-experiments
+        type: normal
+        name: Skryre Experiments
+        timing: Once Per Turn (Army), Your Shooting Phase
+        availablePhases:
+          - yourShooting
+        declare: Pick up to 3 friendly <strong>Skryre</strong> units to be the targets.
+        effect: >-
+          Roll a dice for each target and apply the corresponding effect:<br><br>
+          <strong>1 Kaboom!:</strong> Inflict D3 mortal damage on the target.<br><br>
+          <strong>2-5 More Power!:</strong> Add 1 to wound rolls for the target's shooting attacks for the rest of the turn.<br><br>
+          <strong>6 More-more Power!:</strong> In addition to the effect of 'More Power!', add 1 to the Rend characteristic of the target's ranged weapons for the rest of the turn.
+        lastsUntil: anyEndOfTurn
+  - id: envoys-of-the-deepengnaw
+    name: Envoys of the Deepengnaw
+    scourgeOfGhyran: true
+    abilities:
+      - id: will-of-the-horned-rat
+        type: passive
+        name: Will of the Horned Rat
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: >-
+          While a friendly <strong>Skaven Daemon</strong> is within the combat range of a friendly non-<strong>Hero Skaven Infantry</strong> unit:<br><br>
+          • That <strong>Skaven Daemon</strong> has <strong>Ward (4+)</strong>.<br><br>
+          • Each time you make a successful ward roll for that <strong>Skaven Daemon</strong>, inflict 1 mortal damage on a friendly non-<strong>Hero Skaven Infantry</strong> unit within that unit's combat range after the damage sequence for that unit has been resolved.
+  - id: gathering-of-the-clans
+    name: Gathering of the Clans
+    scourgeOfGhyran: true
+    abilities:
+      - id: backstabbing-allies
+        type: normal
+        name: Backstabbing Allies
+        timing: Once Per Turn (Army), Reaction You declared the 'Redeploy' command for a friendly Skaven unit
+        availablePhases:
+          - anyMovement
+        effect: >-
+          Pick up to 2 other friendly <strong>Skaven</strong> units that are not in combat and are wholly within 13" of the unit using the 'Redeploy' command to be the targets. Each target must have at least one of the following keywords: <strong>Verminus, Skryre, Moulder, Pestilens, Eshin</strong>. After that 'Redeploy' command has been resolved, each of the targets can immediately use the 'Redeploy' command in an order of your choice without any command points being spent.
+spellLores:
+  - id: lore-of-ruin
+    name: Lore of Ruin
+    spells:
+      - id: skitterleap
+        type: spell
+        name: Skitterleap
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          Pick a friendly <strong>Skaven Wizard</strong> to cast this spell, pick a visible friendly <strong>Skaven Hero</strong> wholly within 13" of them to be the target, then make a casting roll of 2D6.
+        effect: Remove the target from the battlefield and set it up again on the battlefield more than 9" from all enemy units.
+        keywords:
+          - SPELL
+          - UNLIMITED
+      - id: wither
+        type: spell
+        name: Wither
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          Pick a friendly <strong>Skaven Wizard</strong> to cast this spell, pick a visible enemy unit within 13" of them to be the target, then make a casting roll of 2D6.
+        effect: Inflict D3 mortal damage on the target.
+        keywords:
+          - SPELL
+      - id: warpgale
+        type: spell
+        name: Warpgale
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          Pick a friendly <strong>Skaven Wizard</strong> to cast this spell, pick a visible enemy unit within 18" of them to be the target, then make a casting roll of 2D6.
+        effect: The target has <strong>Strike-Last</strong> for the rest of the turn.
+        lastsUntil: anyEndOfTurn
+        keywords:
+          - SPELL
+prayerLores:
+  - id: noxious-prayers
+    name: Noxious Prayers
+    prayers:
+      - id: filth-crust
+        type: prayer
+        name: Filth-crust
+        cost: 4
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          Pick a friendly <strong>Skaven Priest</strong> to chant this prayer, pick a visible friendly <strong>Skaven Infantry</strong> unit wholly within 13" of them to be the target, then make a chanting roll of D6.
+        effect: Add 1 to wound rolls for the target's combat attacks until the start of your next turn. In addition, if the chanting roll was 8+, the target's melee weapons have Crit (Mortal) until the start of your next turn.
+        lastsUntil: yourStartOfTurn
+        keywords:
+          - PRAYER
+          - UNLIMITED
+      - id: bile-torrent
+        type: prayer
+        name: Bile-torrent
+        cost: 4
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          Pick a friendly <strong>Skaven Priest</strong> to chant this prayer, pick a visible enemy unit within 13" of them to be the target, then make a chanting roll of D6.
+        effect: Roll a number of dice equal to the number of models in the target unit. For each 5+, inflict 1 mortal damage on the target. If the chanting roll was 8+, inflict 1 mortal damage on the target for each 4+ instead.
+        keywords:
+          - PRAYER
+      - id: rabid-tough
+        type: prayer
+        name: Rabid-tough
+        cost: 5
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          Pick a friendly <strong>Skaven Priest</strong> to chant this prayer, pick a visible friendly <strong>Skaven Infantry</strong> unit wholly within 13" of them to be the target, then make a chanting roll of D6.
+        effect: Subtract 1 from wound rolls for attacks that target that unit until the start of your next turn. In addition, if the chanting roll was 8+, add 1 to save rolls for the target until the start of your next turn.
+        lastsUntil: yourStartOfTurn
+        keywords:
+          - PRAYER
+manifestationLores:
+  - id: manifestations-of-doom
+    name: Manifestations of Doom
+    summonSpells:
+      - id: summon-warp-lightning-vortex
+        type: spell
+        name: Summon Warp Lightning Vortex
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          If there is not a friendly <strong>Warp Lightning Vortex</strong> on the battlefield, pick a friendly <strong>Skaven Wizard</strong> to cast this spell, then make a casting roll of 2D6.
+        effect: Set up the first part of the Warp Lightning Vortex within 18" of the caster and visible to them, then set up the second and third parts exactly 7" from the first part and exactly 7" from each other so that they form a triangle.
+        keywords:
+          - SUMMON
+          - SPELL
+      - id: summon-vermintide
+        type: spell
+        name: Summon Vermintide
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          If there is not a friendly <strong>Vermintide</strong> on the battlefield, pick a friendly <strong>Skaven Wizard</strong> to cast this spell, then make a casting roll of 2D6.
+        effect: Set up a Vermintide wholly within 13" of the caster, visible to them and more than 9" from all enemy units.
+        keywords:
+          - SUMMON
+          - SPELL
+      - id: summon-bell-of-doom
+        type: spell
+        name: Summon Bell of Doom
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: >-
+          If there is not a friendly <strong>Bell of Doom</strong> on the battlefield, pick a friendly <strong>Skaven Wizard</strong> to cast this spell, then make a casting roll of 2D6.
+        effect: Set up a Bell of Doom wholly within 13" of the caster, visible to them and more than 9" from all enemy units.
+        keywords:
+          - SUMMON
+          - SPELL
+    manifestations:
+      - id: warp-lightning-vortex
+        name: Warp Lightning Vortex
+        abilities:
+          - id: warp-lightning-vortex-ability
+            type: passive
+            name: Warp Lightning Blast
+            timing: Passive
+            availablePhases:
+              - anyHero
+            effect: At the start of each hero phase, roll a dice for each unit within 6" of this manifestation. On a 4+, inflict D3 mortal damage on that unit.
+      - id: vermintide
+        name: Vermintide
+        abilities:
+          - id: vermintide-ability
+            type: passive
+            name: Tide of Rats
+            timing: Passive
+            availablePhases:
+              - anyMovement
+            effect: Enemy units cannot end a normal move within 3" of this manifestation unless they have the <strong>Fly</strong> ability.
+      - id: bell-of-doom
+        name: Bell of Doom
+        abilities:
+          - id: bell-of-doom-ability
+            type: passive
+            name: Ominous Tolling
+            timing: Passive
+            availablePhases:
+              - anyHero
+            effect: At the start of each hero phase, all enemy units within 13" of this manifestation must take a battleshock test.
+enhancements:
+  heroic-traits:
+    name: Heroic Traits
+    abilities:
+      - id: scurry-away
+        type: normal
+        name: Scurry Away
+        timing: Any Combat Phase
+        availablePhases:
+          - anyCombat
+        effect: If this unit is in combat, roll a dice. On a 3+, this unit can immediately use the 'Retreat' ability as if it were your movement phase.
+      - id: short-tempered
+        type: passive
+        name: Short-tempered
+        timing: Passive
+        availablePhases:
+          - anyMovement
+          - anyCharge
+        effect: Add 1 to run rolls and charge rolls for friendly <strong>Skaven</strong> units while they are wholly within 13" of this unit.
+      - id: skilled-manipulator
+        type: passive
+        name: Skilled Manipulator
+        timing: Passive
+        availablePhases:
+          - anyShooting
+          - anyCombat
+        effect: >-
+          While this unit is within the combat range of a friendly non-<strong>Hero Skaven Infantry</strong> unit:<br><br>
+          • This unit has <strong>Ward (4+)</strong>.<br><br>
+          • Each time you make a successful ward roll for this unit, allocate 1 damage point to a friendly non-<strong>Hero Skaven Infantry</strong> unit within this unit's combat range after the damage sequence for this unit has been resolved (ward rolls cannot be made for those damage points).
+      - id: devious-underling
+        type: normal
+        name: Devious Underling
+        scourgeOfGhyran: true
+        timing: Deployment Phase
+        availablePhases:
+          - deployment
+        declare: Pick a friendly <strong>Skaven Hero</strong> on the battlefield with a Health characteristic that equals or exceeds this unit's Health characteristic to be the target.
+        effect: >-
+          For the rest of the battle:<br><br>
+          • While the target has not been slain, friendly <strong>Skaven Infantry</strong> units have <strong>Ward (6+)</strong> while they are wholly within 13" of this unit.<br><br>
+          • Once the target has been slain, add 2 to charge rolls for friendly <strong>Skaven Infantry</strong> units while they are wholly within 13" of this unit.
+        lastsUntil: endOfBattle
+      - id: fleshmeddler
+        type: normal
+        name: Fleshmeddler
+        scourgeOfGhyran: true
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly <strong>Moulder</strong> unit wholly within 13" of this unit to be the target.
+        effect: Pick 1 of the target's melee weapons. Add 1 to the Rend characteristic of that weapon for the rest of the turn.
+        lastsUntil: anyEndOfTurn
+      - id: pit-tinkerer
+        type: passive
+        name: Pit Tinkerer
+        scourgeOfGhyran: true
+        timing: Passive
+        availablePhases:
+          - anyMovement
+          - anyCombat
+        effect: >-
+          You can re-roll the random characteristic rolls for the Move characteristic of friendly <strong>Skryre War Machines</strong> while they are wholly within 13" of this unit. In addition, each time a friendly <strong>Skryre War Machine</strong> wholly within 18" of this unit uses the 'Rolling Doom' or 'Whirling Doom' ability, add 1 to the amount of mortal damage inflicted, if any.
+  artefacts-of-power:
+    name: Artefacts of Power
+    abilities:
+      - id: foulhide
+        type: normal
+        name: Foulhide
+        timing: End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        effect: <strong>Heal (D3)</strong> this unit.
+      - id: warpstone-charm
+        type: normal
+        name: Warpstone Charm
+        timing: Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick an enemy unit in combat with this unit to be the target.
+        effect: Roll a dice. On a 3+, subtract 1 from save rolls for the target for the rest of the turn.
+        lastsUntil: anyEndOfTurn
+      - id: skavenbrew
+        type: normal
+        name: Skavenbrew
+        timing: Once Per Battle, Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick a friendly non-<strong>Hero Skaven Infantry</strong> unit wholly within 13" of this unit to be the target.
+        effect: Inflict D3 mortal damage on the target. Then, add 1 to the Attacks characteristic of the target's melee weapons for the rest of the turn.
+        lastsUntil: anyEndOfTurn
+terrain:
+  gnawhole:
+    id: gnawhole
+    name: Gnawhole
+    terrainType: Faction Terrain
+    abilities:
+      - id: tunnels-below
+        type: passive
+        name: Tunnels Below
+        timing: Passive
+        availablePhases:
+          - anyMovement
+        effect: Friendly <strong>Skaven</strong> units can use the 'Gnawhole Ambush' battle trait while wholly within 6" of this terrain feature.
