@@ -287,29 +287,9 @@ abilities:
     keywords:
       - MOVE
 
-phases:
-  - id: deployment
-    information: |
-      <h3>Deployment Phase</h3>
-      <p>Once the battlefield is ready, the players must deploy their armies. This is done in a special phase called the deployment phase. The deployment phase happens once per battle, before the start of the first battle round.</p>
-      
-      <h4>Deployment Steps:</h4>
-      <ol>
-        <li><strong>Deploy Faction Terrain Features:</strong> Some factions have faction terrain features, which have their own warscrolls and are set up using DEPLOY TERRAIN abilities. The player who begins deployment must use DEPLOY TERRAIN abilities first, followed by their opponent.</li>
-        <li><strong>Deploy Armies:</strong> Unless otherwise specified in the battleplan, the players alternate using DEPLOY abilities to deploy their units, starting with the player who begins deployment. Once one player has no more DEPLOY abilities to use, their opponent must continue to use DEPLOY abilities until they also have no more to use.</li>
-        <li><strong>Use Deployment Phase Abilities:</strong> After both players have finished deploying their units, the player who begins deployment can use any Deployment Phase abilities that are not DEPLOY or DEPLOY TERRAIN abilities, in the order of their choosing, then their opponent can do the same.</li>
-      </ol>
-      
-      <h4>Universal Deployment Abilities:</h4>
-      <ul>
-        <li><strong>Deploy Unit:</strong> Set up units wholly within friendly territory and more than 9" from enemy territory</li>
-        <li><strong>Deploy Faction Terrain:</strong> Set up faction terrain wholly within friendly territory, more than 3" from objectives and other terrain</li>
-        <li><strong>Deploy Regiment:</strong> Deploy all units in a regiment without alternating</li>
-      </ul>
-
+rules:
   - id: startOfBattleRound
     information: |
-      <h3>Start of Battle Round</h3>
       <p>At the start of each battle round, follow these steps in order:</p>
       
       <h4>Battle Round Setup:</h4>
@@ -325,6 +305,15 @@ phases:
         <li>The underdog gains additional benefits in some rules and battlepacks</li>
         <li>Each battle lasts a number of battle rounds, specified in the battleplan</li>
       </ul>
+
+  - id: deployment
+    information: |
+      <h4>Deployment Steps:</h4>
+      <ol>
+        <li><strong>Step 1 - Deploy Faction Terrain Features:</strong> Some factions have faction terrain features, which have their own warscrolls and are set up using DEPLOY TERRAIN abilities. The player who begins deployment must use DEPLOY TERRAIN abilities first, followed by their opponent.</li>
+        <li><strong>Step 2 - Deploy Armies:</strong> Unless otherwise specified in the battleplan, the players alternate using DEPLOY abilities to deploy their units, starting with the player who begins deployment. Once one player has no more DEPLOY abilities to use, their opponent must continue to use DEPLOY abilities until they also have no more to use.</li>
+        <li><strong>Step 3 - Use Deployment Phase Abilities:</strong> After both players have finished deploying their units, the player who begins deployment can use any Deployment Phase abilities that are not DEPLOY or DEPLOY TERRAIN abilities, in the order of their choosing, then their opponent can do the same.</li>
+      </ol>
 
   - id: startOfTurn
     information: |
