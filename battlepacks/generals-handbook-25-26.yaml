@@ -2,6 +2,12 @@ type: battlepack
 id: generals-handbook-2025-26
 name: General's Handbook 25-26
 
+# Rules
+rules:
+  - id: startOfBattleRound
+    information: |
+      <h3>Matched Play Deployment</h3>
+
 # Core battlepack abilities (only actual triggered abilities)
 abilities:
   - id: regimented-forces-reroll
@@ -11,6 +17,138 @@ abilities:
     availablePhases:
       - startOfBattleRound
     effect: "Re-roll your priority roll after seeing the result of both players' rolls but before determining priority for that battle round."
+
+  # Hero Phase Commands
+  - id: rally
+    type: command
+    name: Rally
+    timing: Any Hero Phase
+    cost: 1
+    availablePhases:
+      - anyHero
+    declare: Pick a friendly unit that is not in combat to use this ability.
+    effect: Make 6 rally rolls of D6. For each 4+, you receive 1 rally point. Rally points can be spent in the following ways - For each rally point spent, Heal (1) that unit. You can spend a number of rally points equal to the Health characteristic of that unit to return a slain model to that unit. You can spend the rally points in any combination of the above. Unspent rally points are then lost.
+    keywords:
+      - RALLY
+
+  - id: magical-intervention
+    type: command
+    name: Magical Intervention
+    timing: Enemy Hero Phase
+    cost: 1
+    availablePhases:
+      - enemyHero
+    declare: Pick a friendly WIZARD or PRIEST to use this ability.
+    effect: That friendly unit can use a SPELL or PRAYER ability (as appropriate) as if it were your hero phase. If you do so, subtract 1 from casting rolls or chanting rolls made as part of that ability.
+    keywords:
+      - MAGIC
+
+  # Movement Phase Commands
+  - id: redeploy
+    type: command
+    name: Redeploy
+    timing: Enemy Movement Phase
+    cost: 1
+    availablePhases:
+      - enemyMovement
+    declare: Pick a friendly unit that is not in combat to use this ability.
+    effect: Each model in that unit can move up to D6". That move cannot pass through or end within the combat range of an enemy unit.
+    keywords:
+      - MOVE
+      - RUN
+
+  - id: at-the-double
+    type: command
+    name: At the Double
+    timing: "Reaction: You declared a RUN ability"
+    cost: 1
+    availablePhases:
+      - yourMovement
+    declare: Pick the unit using that RUN ability.
+    effect: Do not make a run roll as part of that RUN ability. Instead, add 6" to that unit's Move characteristic to determine the distance each model in that unit can move as part of that RUN ability.
+    keywords:
+      - MOVE
+      - RUN
+
+  # Shooting Phase Commands
+  - id: covering-fire
+    type: command
+    name: Covering Fire
+    timing: Enemy Shooting Phase
+    cost: 1
+    availablePhases:
+      - enemyShooting
+    declare: Pick a friendly unit that did not use a RUN ability this turn and that is not in combat to use this ability, then pick the closest enemy unit (to that unit) that can be picked as the target of shooting attacks to be the target. You cannot pick MANIFESTATIONS or faction terrain features as the target of this ability.
+    effect: Resolve shooting attacks for the unit using this ability against the target. You must subtract 1 from the hit rolls for those attacks.
+    keywords:
+      - SHOOT
+      - ATTACK
+
+  # Charge Phase Commands
+  - id: counter-charge
+    type: command
+    name: Counter-Charge
+    timing: Enemy Charge Phase
+    cost: 2
+    availablePhases:
+      - enemyCharge
+    declare: Pick a friendly unit that is not in combat to use this ability.
+    effect: That unit can use a CHARGE ability as if it were your charge phase.
+    keywords:
+      - MOVE
+      - CHARGE
+
+  - id: forward-to-victory
+    type: command
+    name: Forward to Victory
+    timing: "Reaction: You declared a CHARGE ability"
+    cost: 1
+    availablePhases:
+      - yourCharge
+    declare: Pick the unit using that CHARGE ability.
+    effect: You can re-roll the charge roll.
+    keywords:
+      - MOVE
+      - CHARGE
+
+  # Combat Reactions
+  - id: all-out-attack
+    type: command
+    name: All-out Attack
+    timing: "Reaction: You declared an ATTACK ability"
+    cost: 1
+    availablePhases:
+      - anyCombat
+      - anyShooting
+    declare: The unit using that ATTACK ability.
+    effect: Add 1 to <strong>hit rolls</strong> for attacks made as part of that <strong>ATTACK</strong> ability. This also affects weapons that have the <strong>Companion</strong> weapon ability. For the rest of the turn, subtract 1 from save rolls for the unit using this ability.
+    lastsUntil: anyEndOfTurn
+
+  - id: all-out-defence
+    type: command
+    name: All-out Defence
+    timing: "Reaction: Opponent declared an ATTACK ability"
+    cost: 1
+    availablePhases:
+      - anyCombat
+      - anyShooting
+    declare: Pick a unit targeted by that ATTACK ability.
+    effect: Add 1 to save rolls for that unit in this phase.
+    keywords:
+      - DEFENCE
+
+  # End of Turn Commands
+  - id: power-through
+    type: command
+    name: Power Through
+    timing: End of Any Turn
+    cost: 1
+    availablePhases:
+      - anyEndOfTurn
+    declare: Pick a friendly unit that charged this turn to use this ability, then you must pick an enemy unit in combat with it to be the target. The target must have a lower Health characteristic than the unit using this ability.
+    effect: Inflict D3 mortal damage on the target. Then, the unit using this ability can move a distance up to its Move characteristic. It can pass through and end that move within the combat ranges of enemy units that were in combat with it at the start of the move, but not those of other enemy units. It does not have to end the move in combat.
+    keywords:
+      - MOVE
 
 battleplans:
   # Table 1 Battleplans
@@ -41,27 +179,8 @@ battleplans:
           - anyCombat
         effect: "Add 1 to wound rolls for combat attacks made by friendly units while they are contesting a Gnarlroot objective."
 
-
   - name: Paths of the Fey
     rounds: 5
-
-      deployment:
-        information: >-
-          <h3>Spirit Paths</h3>
-          <p>This battleplan features mystical spirit paths that can transport units across the battlefield. The paths open and close based on the ebb and flow of battle.</p>
-          <h3>Lost Units</h3>
-          <p>Units can become lost and must be returned to the battlefield using special abilities.</p>
-
-      startOfBattleRound:
-        information: >-
-          <h3>The Spirit Paths Open</h3>
-          <p>If you are the underdog, you must use the 'The Spirit Paths Open' ability to manipulate the battlefield.</p>
-
-      yourMovement:
-        information: >-
-          <h3>Stumbling Forth</h3>
-          <p>Both players can use the 'Stumbling Forth' ability to return lost units to the battlefield.</p>
-
     twist: >-
       <strong>Spirit Paths:</strong> If you are the underdog, you must use the 'The Spirit Paths Open' ability. Both players can use the 'Stumbling Forth' ability.
     scoring: >-
@@ -81,7 +200,6 @@ battleplans:
         declare: "Pick 2 objectives to be the targets."
         effect: "All units within 6\" of any target objectives must be removed from the battlefield by their commander. Those units are vanished. Then, starting with you, players must take it in turns to set up each friendly vanished unit wholly within 6\" of either target objective and more than 3\" from all enemy units. Each model must be set up as close to that objective as possible. Those units cannot use MOVE abilities in the first movement phase of the battle round. If it is impossible for a unit to be set up in this way, it is set up in reserve as a lost unit."
 
-
       - id: stumbling-forth
         type: normal
         name: Stumbling Forth
@@ -91,20 +209,8 @@ battleplans:
         declare: "Pick a friendly lost unit to be the target."
         effect: "Set up the target on the battlefield, more than 9\" from all enemy units and wholly within 7\" of a battlefield edge."
 
-
   - name: Roiling Roots
     rounds: 5
-
-      deployment:
-        information: >-
-          <h3>Tangling Tendrils</h3>
-          <p>This battleplan features paired objectives that can become entangled with mystical roots, affecting combat abilities.</p>
-
-      startOfBattleRound:
-        information: >-
-          <h3>Tangling Tendrils</h3>
-          <p>If you are the underdog, you must use the 'Tangling Tendrils' ability to make units fighting at paired objectives strike last.</p>
-
     twist: >-
       <strong>Tangling Tendrils:</strong> If you are the underdog, you must use the 'Tangling Tendrils' ability.
     scoring: >-
@@ -127,17 +233,6 @@ battleplans:
 
   - name: Cyclic Shifts
     rounds: 5
-
-      deployment:
-        information: >-
-          <h3>Unpredictable Evolution</h3>
-          <p>This battleplan features paired objectives that can become temporarily inaccessible due to unpredictable magical evolution.</p>
-
-      startOfBattleRound:
-        information: >-
-          <h3>Unpredictable Evolution</h3>
-          <p>If you are the underdog, you can use the 'Unpredictable Evolution' ability to make objectives temporarily uncontrollable.</p>
-
     twist: >-
       <strong>Unpredictable Evolution:</strong> If you are the underdog, you can use the 'Unpredictable Evolution' ability.
     scoring: >-
@@ -160,17 +255,6 @@ battleplans:
 
   - name: Surge of Slaughter
     rounds: 5
-
-      deployment:
-        information: >-
-          <h3>Defence of the Realm</h3>
-          <p>This battleplan focuses on defending key positions with enhanced combat effectiveness for those fighting at paired objectives.</p>
-
-      startOfBattleRound:
-        information: >-
-          <h3>Defence of the Realm</h3>
-          <p>If you are the underdog, you can use the 'Defence of the Realm' ability to enhance your melee weapons' rend characteristics.</p>
-
     twist: >-
       <strong>Defence of the Realm:</strong> If you are the underdog, you can use the 'Defence of the Realm' ability.
     scoring: >-
@@ -193,17 +277,6 @@ battleplans:
 
   - name: Linked Ley Lines
     rounds: 5
-
-      deployment:
-        information: >-
-          <h3>Ley Line Power</h3>
-          <p>This battleplan features linked ley lines that form across the battlefield when one player controls all objectives on a line (edge to edge).</p>
-
-      passive:
-        information: >-
-          <h3>Underdog Powers</h3>
-          <p>While you are the underdog, your army gains the 'Rooted in the Realm' and 'Full of Life' abilities, providing anti-manifestation bonuses and strike-first for manifestations.</p>
-
     twist: >-
       <strong>Ley Line Power:</strong> While you are the underdog, your army has the 'Rooted in the Realm' and 'Full of Life' abilities. A linked ley line is formed across the battlefield (long edge to long edge or short edge to short edge) while one player controls all the objectives on that line.
     scoring: >-
@@ -224,7 +297,6 @@ battleplans:
           - anyShooting
         effect: "Friendly units' weapons have Anti-MANIFESTATION(+1 Rend) while those units are contesting an objective that is both controlled by you and on a linked ley line."
 
-
       - id: full-of-life
         type: passive
         name: Full of Life
@@ -233,21 +305,9 @@ battleplans:
           - anyCombat
         effect: "Friendly MANIFESTATIONS have STRIKE-FIRST."
 
-
   # Table 2 Battleplans
   - name: Noxious Nexus
     rounds: 5
-
-      deployment:
-        information: >-
-          <h3>Caustic Sap</h3>
-          <p>This battleplan features three different objective types: Oakenbrow, Gnarlroot, and Heartwood. Objectives cannot be controlled in the first battle round due to their volatile nature.</p>
-
-      startOfBattleRound:
-        information: >-
-          <h3>Caustic Sap</h3>
-          <p>If you are the underdog, you can use the 'Caustic Sap' ability to inflict mortal damage on units contesting objectives, with the Heartwood objective being especially dangerous.</p>
-
     twist: >-
       <strong>Caustic Sap:</strong> If you are the underdog, you can use the 'Caustic Sap' ability. Objectives cannot be controlled in the first battle round.
     scoring: >-
@@ -268,25 +328,8 @@ battleplans:
         declare: "Pick an objective. Each unit contesting that objective is a target."
         effect: "Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll. If you picked the Heartwood objective, roll a D6 for each target instead."
 
-
   - name: The Liferoots
     rounds: 5
-
-      deployment:
-        information: >-
-          <h3>Life Begets Life</h3>
-          <p>This battleplan focuses on terrain features and their connection to life energy. Players earn liferoot points for controlling terrain features.</p>
-
-      startOfBattleRound:
-        information: >-
-          <h3>Life Begets Life</h3>
-          <p>If you are the underdog, you can use the 'Life Begets Life' ability to return slain models to units near terrain features.</p>
-
-      anyEndOfTurn:
-        information: >-
-          <h3>Liferoot Points</h3>
-          <p>Players score 1 liferoot point for each terrain feature they control at the end of their turn.</p>
-
     twist: >-
       <strong>Life Begets Life:</strong> If you are the underdog, you can use the 'Life Begets Life' ability.
     scoring: >-
@@ -306,20 +349,8 @@ battleplans:
         declare: "Pick a friendly unit that has all of its models within 1\" of a terrain feature to be the target."
         effect: "Return 1 slain model to the target unit."
 
-
   - name: Bountiful Equinox
     rounds: 5
-
-      deployment:
-        information: >-
-          <h3>Rejuvenating Bloom</h3>
-          <p>This battleplan features all four objective types (Oakenbrow, Gnarlroot, Heartwood, Winterleaf) representing the balance of seasons.</p>
-
-      startOfBattleRound:
-        information: >-
-          <h3>Rejuvenating Bloom</h3>
-          <p>If you are the underdog, you can use the 'Rejuvenating Bloom' ability to heal all units contesting a chosen objective.</p>
-
     twist: >-
       <strong>Rejuvenating Bloom:</strong> If you are the underdog, you can use the 'Rejuvenating Bloom' ability.
     scoring: >-
@@ -339,20 +370,8 @@ battleplans:
         declare: "Pick an objective to be the target."
         effect: "Heal (3) each unit (friendly and enemy) contesting the target objective."
 
-
   - name: Lifecycle
     rounds: 5
-
-      deployment:
-        information: >-
-          <h3>Lifecycle</h3>
-          <p>This battleplan features a cycling primary objective system using all four objective types in a specific order: Oakenbrow → Gnarlroot → Heartwood → Winterleaf.</p>
-
-      startOfBattleRound:
-        information: >-
-          <h3>Lifecycle Cycle</h3>
-          <p>At the start of the second battle round, and each subsequent round, the primary objective changes according to the cycle. Secondary objectives are those before and after the primary in the cycle order.</p>
-
     twist: >-
       <strong>Lifecycle:</strong> At the start of the second battle round, the underdog must use the 'Lifecycle' ability. If there is no underdog, the players roll off and the winner must use the 'Lifecycle' ability.
       <br><br><strong>Cycle Order:</strong> Oakenbrow → Gnarlroot → Heartwood → Winterleaf → Oakenbrow...
@@ -374,20 +393,8 @@ battleplans:
           - startOfBattleRound
         effect: "Pick either the Oakenbrow or the Gnarlroot objective to be the primary objective. At the start of each subsequent battle round, the next objective in the cycle becomes the primary objective. The objectives before and after the primary objective in the cycle order are the secondary objectives."
 
-
   - name: Creeping Corruption
     rounds: 5
-
-      deployment:
-        information: >-
-          <h3>Pulsing Life Energies</h3>
-          <p>This battleplan allows for drawing lines between objectives to channel magical energies, either for propagation or corruption effects.</p>
-
-      startOfBattleRound:
-        information: >-
-          <h3>Pulsing Life Energies</h3>
-          <p>If you are the underdog, you can use the 'Pulsing Life Energies' ability to draw a line between objectives and choose to propagate magic or spread corruption.</p>
-
     twist: >-
       <strong>Pulsing Life Energies:</strong> If you are the underdog, you can use the 'Pulsing Life Energies' ability.
     scoring: >-
@@ -407,20 +414,8 @@ battleplans:
         declare: "Pick an objective you control and 1 other objective (whether you control it or not). Draw a line between the centres of those objectives. Then, choose propagation or corruption."
         effect: "Apply the appropriate effect: Propagation: Add 1 to casting rolls, chanting rolls and banishment rolls for each unit crossed by the line for the rest of the turn. Corruption: Inflict D3 mortal damage on each unit crossed by the line."
 
-
   - name: Grasp of Thorns
     rounds: 5
-
-      deployment:
-        information: >-
-          <h3>Carnivorous Flora</h3>
-          <p>This battleplan features grasping objectives that can entangle units, preventing them from leaving the objective's control zone.</p>
-
-      startOfBattleRound:
-        information: >-
-          <h3>Carnivorous Flora</h3>
-          <p>If you are the underdog, you can use the 'Carnivorous Flora' ability to make an objective grasping, entangling models within its control zone.</p>
-
     twist: >-
       <strong>Carnivorous Flora:</strong> If you are the underdog, you can use the 'Carnivorous Flora' ability.
     scoring: >-
@@ -439,7 +434,6 @@ battleplans:
           - startOfBattleRound
         declare: "Pick an objective to be grasping."
         effect: "Roll a dice for each unit contesting that objective. On a 3+, every model in that unit that is within the control zone of that objective is entangled for the rest of the battle round. Entangled models must stay within the control zone of the grasping objective for the rest of the battle round. While a unit has any entangled models, it cannot be removed from the battlefield by an ability that would allow it to be set up elsewhere on the battlefield."
-
 
 # Manifestation lores available in this battlepack
 manifestationLores:

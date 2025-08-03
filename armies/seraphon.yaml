@@ -352,8 +352,7 @@ enhancements:
           - anyCombat
 units:
   # Heroes - Cavalry
-  ripperdactyl-chief:
-    id: ripperdactyl-chief
+  - id: ripperdactyl-chief
     name: Ripperdactyl Chief
     abilities:
       - id: blot-toad
@@ -388,8 +387,7 @@ units:
         effect: Add 1 to the Attacks characteristic of Moonstone Warspears used by friendly Ripperdactyl Riders units wholly within 12" of this unit for the rest of the turn.
         availablePhases:
           - anyCombat
-  saurus-scar-veteran-on-aggradon:
-    id: saurus-scar-veteran-on-aggradon
+  - id: saurus-scar-veteran-on-aggradon
     name: Saurus Scar-Veteran on Aggradon
     abilities:
       - id: primal-rage
@@ -409,8 +407,7 @@ units:
         declare: Pick this unit and each friendly Aggradon Lancers unit wholly within 12" of it to be the targets.
         availablePhases:
           - anyCombat
-  terradon-chief:
-    id: terradon-chief
+  - id: terradon-chief
     name: Terradon Chief
     abilities:
       - id: terradon-chief-attack-from-on-high
@@ -431,8 +428,7 @@ units:
           - yourMovement
   
   # Heroes - Infantry
-  saurus-astrolith-bearer:
-    id: saurus-astrolith-bearer
+  - id: saurus-astrolith-bearer
     name: Saurus Astrolith Bearer
     abilities:
       - id: celestial-conduit
@@ -450,8 +446,7 @@ units:
         availablePhases:
           - anyShooting
           - anyCombat
-  saurus-oldblood:
-    id: saurus-oldblood
+  - id: saurus-oldblood
     name: Saurus Oldblood
     abilities:
       - id: wrath-of-the-seraphon
@@ -468,8 +463,7 @@ units:
         effect: Pick a friendly non-Hero Saurus Infantry unit that has not used a Fight ability this turn and is within this unit's combat range to be the target. The target can be picked to use a Fight ability immediately after the Fight ability used by this unit has been resolved.
         availablePhases:
           - anyCombat
-  skink-starpriest:
-    id: skink-starpriest
+  - id: skink-starpriest
     name: Skink Starpriest
     abilities:
       - id: serpent-staff
@@ -480,8 +474,7 @@ units:
         declare: Pick a visible friendly Seraphon unit wholly within 18" of this unit to be the target.
         availablePhases:
           - yourHero
-  skink-starseer:
-    id: skink-starseer
+  - id: skink-starseer
     name: Skink Starseer
     abilities:
       - id: scry-the-stars
@@ -502,8 +495,7 @@ units:
           - SPELL
         availablePhases:
           - yourHero
-  slann-starmaster:
-    id: slann-starmaster
+  - id: slann-starmaster
     name: Slann Starmaster
     abilities:
       - id: masters-of-order
@@ -544,8 +536,7 @@ units:
           - yourHero
 
   # Heroes - Monster
-  saurus-oldblood-on-carnosaur:
-    id: saurus-oldblood-on-carnosaur
+  - id: saurus-oldblood-on-carnosaur
     name: Saurus Oldblood on Carnosaur
     abilities:
       - id: oldblood-on-carnosaur-battle-damaged
@@ -579,8 +570,7 @@ units:
           - RAMPAGE
         availablePhases:
           - anyCombat
-  saurus-scar-veteran-on-carnosaur:
-    id: saurus-scar-veteran-on-carnosaur
+  - id: saurus-scar-veteran-on-carnosaur
     name: Saurus Scar-Veteran on Carnosaur
     abilities:
       - id: scar-veteran-on-carnosaur-battle-damaged
@@ -608,8 +598,7 @@ units:
         effect: Subtract 2 from the control scores of enemy units while they are in combat with this unit.
         availablePhases:
           - anyEndOfTurn
-  skink-oracle-on-troglodon:
-    id: skink-oracle-on-troglodon
+  - id: skink-oracle-on-troglodon
     name: Skink Oracle on Troglodon
     abilities:
       - id: oracle-on-troglodon-battle-damaged
@@ -644,8 +633,7 @@ units:
         effect: Heal (D3) this unit.
         availablePhases:
           - anyEndOfTurn
-  stegadon-chief:
-    id: stegadon-chief
+  - id: stegadon-chief
     name: Stegadon Chief
     abilities:
       - id: stegadon-chief-battle-damaged
@@ -673,8 +661,7 @@ units:
         effect: If a friendly non-Monster Skink unit uses the 'Redeploy' command while it is wholly within 18" of this unit, no command points are spent.
         availablePhases:
           - anyMovement
-  scourge-of-ghyran-saurus-oldblood-on-carnosaur:
-    id: scourge-of-ghyran-saurus-oldblood-on-carnosaur
+  - id: scourge-of-ghyran-saurus-oldblood-on-carnosaur
     name: Saurus Oldblood on Carnosaur (Scourge of Ghyran)
     abilities:
       - id: scourge-ghyran-battle-damaged
@@ -714,8 +701,7 @@ units:
           - anyCombat
 
   # Special Hero
-  lord-kroak:
-    id: lord-kroak
+  - id: lord-kroak
     name: Lord Kroak
     abilities:
       - id: supreme-master-of-order
@@ -756,8 +742,7 @@ units:
           - yourHero
 
   # Beasts
-  spawn-of-chotec:
-    id: spawn-of-chotec
+  - id: spawn-of-chotec
     name: Spawn of Chotec
     abilities:
       - id: sun-acolytes
@@ -776,8 +761,7 @@ units:
           Each time this unit uses a Shoot ability, you must pick either its Glob of Flame Acid or its Stream of Fire ranged weapon. In addition, after resolving shooting attacks made with this unit's Glob of Flame Acid, if any damage points were allocated to an enemy unit by those attacks, subtract 1 from save rolls for that enemy unit for the rest of the turn.
         availablePhases:
           - anyShooting
-  terrawings:
-    id: terrawings
+  - id: terrawings
     name: Terrawings
     abilities:
       - id: nerve-shredding-screeches
@@ -797,8 +781,7 @@ units:
           - anyEndOfTurn
 
   # Cavalry
-  aggradon-lancers:
-    id: aggradon-lancers
+  - id: aggradon-lancers
     name: Aggradon Lancers
     abilities:
       - id: aggradon-lancers-primal-rage
@@ -809,8 +792,7 @@ units:
           This unit must use this ability each turn. If this unit used any Fight abilities this turn, place a rage token next to it, to a maximum of 3. If this unit did not use any Fight abilities this turn, remove all rage tokens it has. Add 1 to the Attacks characteristic of this unit's Companion weapons for each rage token it has until the end of the next turn.
         availablePhases:
           - anyEndOfTurn
-  raptadon-chargers:
-    id: raptadon-chargers
+  - id: raptadon-chargers
     name: Raptadon Chargers
     abilities:
       - id: cold-blooded-unity
@@ -820,8 +802,7 @@ units:
         effect: Add 1 to hit rolls for this unit's combat attacks if they target an enemy unit that was targeted by shooting attacks made by a friendly Raptadon Hunters unit in the same turn.
         availablePhases:
           - anyCombat
-  raptadon-hunters:
-    id: raptadon-hunters
+  - id: raptadon-hunters
     name: Raptadon Hunters
     abilities:
       - id: deadly-cohesion
@@ -832,8 +813,7 @@ units:
         declare: If this unit is not in combat, pick a friendly Raptadon Chargers unit that charged this turn and is within 12" of this unit to be the target.
         availablePhases:
           - anyCharge
-  ripperdactyl-riders:
-    id: ripperdactyl-riders
+  - id: ripperdactyl-riders
     name: Ripperdactyl Riders
     abilities:
       - id: ripperdactyl-riders-blot-toad
@@ -861,8 +841,7 @@ units:
         effect: This unit has a coherency range of 2".
         availablePhases:
           - anyMovement
-  terradon-riders:
-    id: terradon-riders
+  - id: terradon-riders
     name: Terradon Riders
     abilities:
       - id: deadly-cargo
@@ -890,8 +869,7 @@ units:
           - anyMovement
 
   # Infantry
-  hunters-of-huanchi-with-dartpipes:
-    id: hunters-of-huanchi-with-dartpipes
+  - id: hunters-of-huanchi-with-dartpipes
     name: Hunters of Huanchi with Dartpipes
     abilities:
       - id: hidden-hunters
@@ -920,8 +898,7 @@ units:
         declare: Pick this unit if it is in ambush.
         availablePhases:
           - yourMovement
-  hunters-of-huanchi-with-starstone-bolas:
-    id: hunters-of-huanchi-with-starstone-bolas
+  - id: hunters-of-huanchi-with-starstone-bolas
     name: Hunters of Huanchi with Starstone Bolas
     abilities:
       - id: bolas-hidden-hunters
@@ -950,8 +927,7 @@ units:
         declare: Pick an enemy unit that was targeted by this unit's Starstone Bolas this turn to be the target.
         availablePhases:
           - anyShooting
-  kroxigor:
-    id: kroxigor
+  - id: kroxigor
     name: Kroxigor
     abilities:
       - id: brutal-blows
@@ -961,8 +937,7 @@ units:
         effect: Add 1 to the Damage characteristic of this unit's melee weapons for attacks that target an enemy unit that has 10 or more models.
         availablePhases:
           - anyCombat
-  kroxigor-warspawned:
-    id: kroxigor-warspawned
+  - id: kroxigor-warspawned
     name: Kroxigor Warspawned
     abilities:
       - id: spawn-of-sotek
@@ -979,8 +954,7 @@ units:
         effect: Subtract 1 from the Rend characteristic of ranged weapons used for shooting attacks that target this unit.
         availablePhases:
           - anyShooting
-  saurus-guard:
-    id: saurus-guard
+  - id: saurus-guard
     name: Saurus Guard
     abilities:
       - id: selfless-protectors
@@ -991,8 +965,7 @@ units:
         availablePhases:
           - anyShooting
           - anyCombat
-  saurus-warriors:
-    id: saurus-warriors
+  - id: saurus-warriors
     name: Saurus Warriors
     abilities:
       - id: ordered-cohorts
@@ -1003,8 +976,7 @@ units:
         availablePhases:
           - anyShooting
           - anyCombat
-  skinks:
-    id: skinks
+  - id: skinks
     name: Skinks
     abilities:
       - id: swift-and-nimble
@@ -1014,8 +986,7 @@ units:
         effect: When this unit uses the 'Redeploy' command, when determining the distance this unit can move, you can roll 2 dice instead of 1 and pick either result.
         availablePhases:
           - anyMovement
-  the-starblood-stalkers:
-    id: the-starblood-stalkers
+  - id: the-starblood-stalkers
     name: The Starblood Stalkers
     abilities:
       - id: klaq-trok
@@ -1043,8 +1014,7 @@ units:
           - yourShooting
 
   # Monsters
-  bastiladon-with-ark-of-sotek:
-    id: bastiladon-with-ark-of-sotek
+  - id: bastiladon-with-ark-of-sotek
     name: Bastiladon with Ark of Sotek
     abilities:
       - id: ark-of-sotek
@@ -1057,8 +1027,7 @@ units:
           - RAMPAGE
         availablePhases:
           - anyCombat
-  bastiladon-with-solar-engine:
-    id: bastiladon-with-solar-engine
+  - id: bastiladon-with-solar-engine
     name: Bastiladon with Solar Engine
     abilities:
       - id: tail-swipe
@@ -1071,8 +1040,7 @@ units:
           - RAMPAGE
         availablePhases:
           - anyCombat
-  engine-of-the-gods:
-    id: engine-of-the-gods
+  - id: engine-of-the-gods
     name: Engine of the Gods
     abilities:
       - id: engine-of-the-gods-battle-damaged
@@ -1103,8 +1071,7 @@ units:
         declare: Pick if this unit will harness or reserve the power of its cosmic engine.
         availablePhases:
           - yourHero
-  stegadon:
-    id: stegadon
+  - id: stegadon
     name: Stegadon
     abilities:
       - id: unstoppable-stampede

@@ -19,7 +19,9 @@ battleTraits:
         name: Pledge to Chaos
         timing: Once Per Turn (Army), Your Hero Phase
         availablePhases:
-          - yourHero
+          - deployment
+          - anyCombat
+          - yourEndOfTurn
         declare: Pick a friendly non-<strong>Unique Slaves to Darkness</strong> unit that does not already have one of the keywords below to be the target.
         effect: >-
           Pick 1 of the following Pledge to Chaos keywords:<br>
@@ -70,8 +72,7 @@ battleTraits:
         effect: For the rest of the turn, when making charge rolls for friendly <strong>Pledged to Slaanesh</strong> units, you can roll 1 additional dice (to a maximum of 3), but if you do, you must discard 1 dice of your choice.
 units:
   # Cavalry Heroes
-  centaurion-marshal:
-    id: centaurion-marshal
+  - id: centaurion-marshal
     name: Centaurion Marshal
     abilities:
       - id: marshal-of-the-legions
@@ -82,8 +83,7 @@ units:
           - anyCombat
         effect: Pick a friendly non-<strong>Hero Daemon</strong> or Chaos Legionnaires unit that has not used a <strong>Fight</strong> ability this turn and is within this unit's combat range to be the target. The target can be picked to use a <strong>Fight</strong> ability immediately after the <strong>Fight</strong> ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target's attacks for the rest of the turn.
 
-  chaos-lord-on-daemonic-mount:
-    id: chaos-lord-on-daemonic-mount
+  - id: chaos-lord-on-daemonic-mount
     name: Chaos Lord on Daemonic Mount
     abilities:
       - id: the-knights-of-chaos
@@ -94,8 +94,7 @@ units:
           - anyCombat
         effect: Pick a friendly non-<strong>Hero Warriors of Chaos Cavalry</strong> unit that has not used a <strong>Fight</strong> ability this turn and is within this unit's combat range to be the target. The target can be picked to use a <strong>Fight</strong> ability immediately after the <strong>Fight</strong> ability used by this unit has been resolved. If it is picked to do so, add 1 to wound rolls for the target's attacks for the rest of the turn.
 
-  chaos-lord-on-karkadrak:
-    id: chaos-lord-on-karkadrak
+  - id: chaos-lord-on-karkadrak
     name: Chaos Lord on Karkadrak
     abilities:
       - id: drive-the-legions-forward
@@ -115,8 +114,7 @@ units:
         declare: If this unit charged this phase, pick up to 3 enemy units within 1" of it to be the targets.
         effect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.
 
-  darkoath-chieftain-on-warsteed:
-    id: darkoath-chieftain-on-warsteed
+  - id: darkoath-chieftain-on-warsteed
     name: Darkoath Chieftain on Warsteed
     abilities:
       - id: cavalry-warleader
@@ -134,8 +132,7 @@ units:
           - anyEndOfTurn
         effect: If this unit destroyed an enemy <strong>Hero</strong> or <strong>Monster</strong> this turn, this unit has <strong>Strike-First</strong> for the rest of the battle.
 
-  eternus-blade-of-the-first-prince:
-    id: eternus-blade-of-the-first-prince
+  - id: eternus-blade-of-the-first-prince
     name: Eternus, Blade of the First Prince
     abilities:
       - id: veins-of-black-lightning
@@ -160,8 +157,7 @@ units:
           - anyCombat
         effect: Roll a dice. Add 1 to the roll if the enemy unit is in combat with a friendly Chaos Legionnaires or Chaos Furies unit. On a 5+, that command has no effect. The command still counts as having been used and the command points spent to use the command are still lost.
 
-  gaunt-summoner-on-disc-of-tzeentch:
-    id: gaunt-summoner-on-disc-of-tzeentch
+  - id: gaunt-summoner-on-disc-of-tzeentch
     name: Gaunt Summoner on Disc of Tzeentch
     abilities:
       - id: minions-of-the-silver-tower-disc
@@ -194,8 +190,7 @@ units:
         keywords:
           - SPELL
 
-  singri-brand:
-    id: singri-brand
+  - id: singri-brand
     name: Singri Brand
     abilities:
       - id: swift-as-the-wind
@@ -214,8 +209,7 @@ units:
         effect: Add 1 to the Rend characteristic of this unit's Singri's Warbow for attacks that target enemy units that are within 6" of a friendly Gunnar Brand.
 
   # Infantry Heroes
-  chaos-lord:
-    id: chaos-lord
+  - id: chaos-lord
     name: Chaos Lord
     abilities:
       - id: glory-in-battle
@@ -226,8 +220,7 @@ units:
           - anyCombat
         effect: Pick a friendly non-<strong>Hero Warriors of Chaos Infantry</strong> unit that has not used a <strong>Fight</strong> ability this turn and is within this unit's combat range to be the target. The target can be picked to use a <strong>Fight</strong> ability immediately after the <strong>Fight</strong> ability used by this unit has been resolved. If it is picked to do so, add 1 to wound rolls for the target's attacks for the rest of the turn.
 
-  chaos-sorcerer-lord:
-    id: chaos-sorcerer-lord
+  - id: chaos-sorcerer-lord
     name: Chaos Sorcerer Lord
     abilities:
       - id: oracular-visions
@@ -239,8 +232,7 @@ units:
         declare: Pick a friendly <strong>Warriors of Chaos</strong> unit wholly within 12" of this unit to be the target and roll a dice.
         effect: On a 3+, the target has <strong>Ward (5+)</strong> until the start of your next turn.
 
-  daemon-prince:
-    id: daemon-prince
+  - id: daemon-prince
     name: Daemon Prince
     abilities:
       - id: the-mounted-skulls-of-the-fallen
@@ -265,8 +257,7 @@ units:
           - anyCombat
         effect: Roll a dice. On a 4+, this unit has <strong>Strike-First</strong> for the rest of the turn.
 
-  darkoath-chieftain:
-    id: darkoath-chieftain
+  - id: darkoath-chieftain
     name: Darkoath Chieftain
     abilities:
       - id: tribal-warleader
@@ -284,8 +275,7 @@ units:
           - anyEndOfTurn
         effect: If this unit destroyed an enemy <strong>Hero</strong> or <strong>Monster</strong> this turn, this unit has <strong>Strike-First</strong> for the rest of the battle.
 
-  darkoath-warqueen:
-    id: darkoath-warqueen
+  - id: darkoath-warqueen
     name: Darkoath Warqueen
     abilities:
       - id: ruin-blessed-conqueror
@@ -304,8 +294,7 @@ units:
           - anyCharge
         effect: If this unit is wholly within enemy territory and charged this phase, for the rest of the battle, add 1 to hit rolls for combat attacks made by friendly <strong>Darkoath</strong> units while they are wholly within 12" of this unit.
 
-  exalted-hero-of-chaos:
-    id: exalted-hero-of-chaos
+  - id: exalted-hero-of-chaos
     name: Exalted Hero of Chaos
     abilities:
       - id: glory-seeker
@@ -316,8 +305,7 @@ units:
           - anyCombat
         effect: Add 1 to the Damage characteristic of this unit's melee weapons for attacks that target <strong>Heroes</strong> or <strong>Monsters</strong>.
 
-  gaunt-summoner:
-    id: gaunt-summoner
+  - id: gaunt-summoner
     name: Gaunt Summoner
     abilities:
       - id: minions-of-the-silver-tower
@@ -350,8 +338,7 @@ units:
         keywords:
           - SPELL
 
-  gunnar-brand:
-    id: gunnar-brand
+  - id: gunnar-brand
     name: Gunnar Brand
     abilities:
       - id: carve-a-path-to-glory
@@ -371,8 +358,7 @@ units:
         declare: This unit can only use this ability if any enemy <strong>Heroes</strong> were slain by this unit's combat attacks this turn.
         effect: Friendly <strong>Gunnar's Oathsworn</strong> units have <strong>Ward (4+)</strong> for the rest of the battle.
 
-  ogroid-myrmidon:
-    id: ogroid-myrmidon
+  - id: ogroid-myrmidon
     name: Ogroid Myrmidon
     abilities:
       - id: pit-master
@@ -391,8 +377,7 @@ units:
         effect: While this unit is damaged, add 2 to the Attacks characteristic of its melee weapons.
 
   # Monster Heroes
-  abraxia-spear-of-the-everchosen:
-    id: abraxia-spear-of-the-everchosen
+  - id: abraxia-spear-of-the-everchosen
     name: Abraxia, Spear of the Everchosen
     abilities:
       - id: warlord-of-the-first-circle
@@ -427,8 +412,7 @@ units:
           - anyCombat
         effect: Roll a dice each time a damage point inflicted by a combat attack is allocated to this unit. On a 4+, inflict 1 mortal damage on the attacking unit after the <strong>Fight</strong> ability has been resolved.
 
-  archaon-the-everchosen:
-    id: archaon-the-everchosen
+  - id: archaon-the-everchosen
     name: Archaon the Everchosen
     abilities:
       - id: three-headed-titan
@@ -455,8 +439,7 @@ units:
           - yourHero
         effect: Roll a dice. This roll replaces the priority roll of the next battle round. On a 1-3, your opponent must take the first turn of that battle round. On a 4-6, you must take the first turn of that battle round. This ability cannot be used if there is an enemy Archaon on the battlefield.
 
-  belakor-the-dark-master:
-    id: belakor-the-dark-master
+  - id: belakor-the-dark-master
     name: Be'lakor the Dark Master
     abilities:
       - id: enfeeble-foe
@@ -498,8 +481,7 @@ units:
         effect: Until the start of your next turn, each time the target is picked to use an ability, roll a dice as a reaction. On a 3+, that ability has no effect.
 
   # War Machine Heroes
-  chaos-warshrine:
-    id: chaos-warshrine
+  - id: chaos-warshrine
     name: Chaos Warshrine
     abilities:
       - id: protection-of-the-dark-gods
@@ -523,8 +505,7 @@ units:
           - PRAYER
 
   # Beasts
-  chaos-spawn:
-    id: chaos-spawn
+  - id: chaos-spawn
     name: Chaos Spawn
     abilities:
       - id: drawn-to-power
@@ -536,8 +517,7 @@ units:
           - anyCombat
         effect: While this unit is wholly within 12" of a friendly Daemon Prince, you can re-roll the random characteristic rolls for this unit's Move and Attacks characteristics.
 
-  darkoath-wilderfiend:
-    id: darkoath-wilderfiend
+  - id: darkoath-wilderfiend
     name: Darkoath Wilderfiend
     abilities:
       - id: feed-on-flesh
@@ -555,8 +535,7 @@ units:
           - yourHero
         effect: Pick 1 of the following effects. Mind Shroud - Pick an enemy unit within 12" of this unit to be the target and roll a number of dice equal to the number of sacrifice points this unit has. If any of the rolls are a 5+, the target cannot use commands for the rest of the turn. Warping Balefire - Pick an enemy unit within 12" of this unit to be the target and roll a number of dice equal to the number of sacrifice points this unit has. For each 3+, inflict 1 mortal damage on the target. Dark Might - Heal (X) this unit, where X is the number of sacrifice points this unit has. After applying the effect you picked, reset this unit's sacrifice points to 0.
 
-  raptoryx:
-    id: raptoryx
+  - id: raptoryx
     name: Raptoryx
     abilities:
       - id: crazed-flock
@@ -568,8 +547,7 @@ units:
         effect: If this unit charged this turn, for the rest of the turn, add 1 to the Attacks characteristic of its melee weapons. This ability also affects Companion weapons.
 
   # Cavalry
-  chaos-knights:
-    id: chaos-knights
+  - id: chaos-knights
     name: Chaos Knights
     abilities:
       - id: impaling-charge
@@ -580,8 +558,7 @@ units:
           - anyCombat
         effect: If this unit charged this turn, for the rest of the turn, add 1 to the Rend characteristic of its Cursed Lances.
 
-  darkoath-fellriders:
-    id: darkoath-fellriders
+  - id: darkoath-fellriders
     name: Darkoath Fellriders
     abilities:
       - id: oath-of-the-raider
@@ -599,8 +576,7 @@ units:
           - anyShooting
         effect: Subtract 1 from hit rolls for shooting attacks that target this unit.
 
-  varanguard:
-    id: varanguard
+  - id: varanguard
     name: Varanguard
     abilities:
       - id: relentless-killers
@@ -612,8 +588,7 @@ units:
         effect: This unit can use 2 <strong>Fight</strong> abilities this phase. After the first is used, however, this unit has <strong>Strike-Last</strong> for the rest of the turn.
 
   # Infantry
-  chaos-chosen:
-    id: chaos-chosen
+  - id: chaos-chosen
     name: Chaos Chosen
     abilities:
       - id: heralds-of-ruination
@@ -624,8 +599,7 @@ units:
           - anyCombat
         effect: This unit can use 2 <strong>Fight</strong> abilities this phase. After the first is used, however, this unit has <strong>Strike-Last</strong> for the rest of the turn.
 
-  chaos-furies:
-    id: chaos-furies
+  - id: chaos-furies
     name: Chaos Furies
     abilities:
       - id: sneaky-little-devils
@@ -636,8 +610,7 @@ units:
           - anyCombat
         effect: If this unit is in combat, roll a dice. On a 3+, this unit can immediately use the 'Retreat' ability as if it were your movement phase without any mortal damage being inflicted on it.
 
-  chaos-legionnaires:
-    id: chaos-legionnaires
+  - id: chaos-legionnaires
     name: Chaos Legionnaires
     abilities:
       - id: sow-confusion
@@ -649,8 +622,7 @@ units:
         declare: Pick an enemy unit within 6" of this unit to be the target.
         effect: Roll a dice. On a 4+, the target cannot use commands for the rest of the turn.
 
-  chaos-warriors:
-    id: chaos-warriors
+  - id: chaos-warriors
     name: Chaos Warriors
     abilities:
       - id: bringers-of-desolation
@@ -661,8 +633,7 @@ units:
           - anyCombat
         effect: Add 1 to the Attacks characteristic of this unit's Rune-etched Weapons while it is contesting an objective you control.
 
-  darkoath-marauders:
-    id: darkoath-marauders
+  - id: darkoath-marauders
     name: Darkoath Marauders
     abilities:
       - id: oath-of-the-marauder
@@ -680,8 +651,7 @@ units:
           - anyCombat
         effect: While this unit is wholly within 12" of any friendly <strong>Darkoath Heroes</strong>, each time a model in this unit is slain by a combat attack and that model was in combat with the attacking unit, roll a dice. On a 5+, inflict 1 mortal damage on the attacking unit after the <strong>Fight</strong> ability has been resolved.
 
-  darkoath-savagers:
-    id: darkoath-savagers
+  - id: darkoath-savagers
     name: Darkoath Savagers
     abilities:
       - id: oath-of-conquest
@@ -692,8 +662,7 @@ units:
           - anyHero
         effect: If this unit is contesting an objective you control that is wholly within enemy territory, this unit has <strong>Ward (5+)</strong> for the rest of the battle.
 
-  ogroid-theridons:
-    id: ogroid-theridons
+  - id: ogroid-theridons
     name: Ogroid Theridons
     abilities:
       - id: unleashed-savagery
@@ -704,8 +673,7 @@ units:
           - anyCombat
         effect: Add 1 to the Damage characteristic of this unit's melee weapons for the rest of the turn.
 
-  the-oathsworn-kin:
-    id: the-oathsworn-kin
+  - id: the-oathsworn-kin
     name: The Oathsworn Kin
     abilities:
       - id: broken-nadja
@@ -728,8 +696,7 @@ units:
           - SPELL
 
   # Monsters
-  fomoroid-crusher:
-    id: fomoroid-crusher
+  - id: fomoroid-crusher
     name: Fomoroid Crusher
     abilities:
       - id: cursed-destroyers
@@ -743,8 +710,7 @@ units:
         keywords:
           - RAMPAGE
 
-  mindstealer-sphiranx:
-    id: mindstealer-sphiranx
+  - id: mindstealer-sphiranx
     name: Mindstealer Sphiranx
     abilities:
       - id: dominate-mind
@@ -758,8 +724,7 @@ units:
         keywords:
           - RAMPAGE
 
-  mutalith-vortex-beast:
-    id: mutalith-vortex-beast
+  - id: mutalith-vortex-beast
     name: Mutalith Vortex Beast
     abilities:
       - id: mutant-regeneration
@@ -780,8 +745,7 @@ units:
         keywords:
           - RAMPAGE
 
-  slaughterbrute:
-    id: slaughterbrute
+  - id: slaughterbrute
     name: Slaughterbrute
     abilities:
       - id: sigils-of-domination
@@ -804,8 +768,7 @@ units:
           - RAMPAGE
 
   # War Machines
-  chaos-chariot:
-    id: chaos-chariot
+  - id: chaos-chariot
     name: Chaos Chariot
     abilities:
       - id: swift-death
@@ -817,8 +780,7 @@ units:
         declare: If this unit charged this phase, pick an enemy unit within 1" of it to be the target.
         effect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.
 
-  gorebeast-chariot:
-    id: gorebeast-chariot
+  - id: gorebeast-chariot
     name: Gorebeast Chariot
     abilities:
       - id: brutal-momentum
@@ -828,7 +790,6 @@ units:
         availablePhases:
           - anyMovement
         effect: When this unit uses the 'Power Through' command, inflict an additional D3 mortal damage on the target and add 3" to the distance this unit can move as part of that ability.
-
 battleFormations:
   - id: legion-of-chaos
     name: Legion of Chaos
@@ -838,7 +799,7 @@ battleFormations:
         name: United in Darkness
         timing: Passive
         availablePhases:
-          - anyMovement
+          - anyEndOfTurn
         effect: While there is at least 1 friendly <strong>Warriors of Chaos Hero</strong> and 1 other friendly <strong>Daemon Hero</strong> or <strong>Darkoath Hero</strong> on the battlefield, add 2 to the control scores of friendly <strong>Slaves to Darkness</strong> units while they are contesting an objective that is wholly outside friendly territory.
   - id: despoilers
     name: Despoilers
@@ -849,7 +810,8 @@ battleFormations:
         timing: Once Per Turn (Army), Reaction You declared a Fight ability for a friendly Daemon Prince unit
         availablePhases:
           - anyCombat
-        effect: Pick a friendly non-<strong>Hero Slaves to Darkness Monster</strong> or <strong>Beast</strong> unit that has not used a <strong>Fight</strong> ability this turn and is wholly within 12" of this unit to be the target. The target can be picked to use a <strong>Fight</strong> ability immediately after the <strong>Fight</strong> ability used by this unit has been resolved.
+        declare: Pick a friendly non-<strong>Hero Slaves to Darkness Monster</strong> or <strong>Beast</strong> unit that has not used a <strong>Fight</strong> ability this turn and is wholly within 12" of this unit to be the target.
+        effect: The target can be picked to use a <strong>Fight</strong> ability immediately after the <strong>Fight</strong> ability used by this unit has been resolved.
   - id: godswrath-warband
     name: Godswrath Warband
     abilities:
@@ -874,7 +836,6 @@ battleFormations:
         effect: Roll a dice. On a 3+, set up a replacement unit with half the number of models from the target unit (rounding up) on the battlefield, wholly within 6" of a battlefield edge and more than 3" from all enemy units.
   - id: chaos-horde
     name: Chaos Horde
-    scourgeOfGhyran: true
     abilities:
       - id: devotees-of-ruin
         type: normal
@@ -887,7 +848,6 @@ battleFormations:
         lastsUntil: yourStartOfTurn
   - id: champions-of-chaos
     name: Champions of Chaos
-    scourgeOfGhyran: true
     abilities:
       - id: paragons-of-darkness
         type: passive
@@ -896,7 +856,6 @@ battleFormations:
         availablePhases:
           - anyCombat
         effect: Add 2 to the Attacks characteristic of melee weapons used by friendly non-<strong>Monster Slaves to Darkness Heroes</strong>.
-
 enhancements:
   heroic-traits:
     name: Ruinous Overlords
@@ -923,8 +882,9 @@ enhancements:
         declare: Pick each damaged friendly unit wholly within 12" of this unit to be the targets.
         effect: Roll a dice for each target. On a 3+, <strong>Heal (1)</strong> the target. <strong>Heal (3)</strong> the target instead if it is a <strong>Monster</strong>.
   artefacts-of-power:
-    name: Infernal Treasures
+    name: Artefacts of Power
     abilities:
+      # Infernal Treasures
       - id: infernal-puppet
         type: normal
         name: Infernal Puppet
@@ -950,9 +910,7 @@ enhancements:
         declare: Pick a terrain feature within 12" of this unit to be the target.
         effect: If the target does not have the 'Obscuring' terrain ability, it gains that ability until the start of your next turn. Then, roll a dice for each model (friendly and enemy) within 1" of the target. For each 5+, inflict 1 mortal damage on that model's unit.
         lastsUntil: yourStartOfTurn
-  fell-artefacts:
-    name: Fell Artefacts
-    abilities:
+      # Fell Artefacts
       - id: amulet-of-chaos
         type: normal
         name: Amulet of Chaos
@@ -1011,7 +969,6 @@ enhancements:
       effect: This unit has the <strong>Pledged to Slaanesh</strong> keyword. In addition, while this unit includes any standard bearers, if this unit charged this turn, add 1 to the Attacks characteristic of this unit's melee weapons for the rest of the turn.
       keywords:
         - ENSORCELLED BANNER
-
 spellLores:
   - id: lore-of-the-damned
     name: Lore of the Damned
@@ -1052,7 +1009,6 @@ spellLores:
         lastsUntil: anyEndOfTurn
         keywords:
           - SPELL
-
 manifestationLores:
   - id: manifestations-of-malevolence
     name: Manifestations of Malevolence
@@ -1125,7 +1081,6 @@ manifestationLores:
               - anyCharge
             declare: If this <strong>Manifestation</strong> charged this phase, pick an enemy unit within 1" of it to be the target.
             effect: Roll a dice for each model in the target unit. For each 6, inflict 1 mortal damage on the target. If any models in the target unit are slain by this ability, subtract 1 from hit rolls for the target's attacks for the rest of the turn.
-
 # Legion of the First Prince Army of Renown
 # legion-of-the-first-prince:
 #   battle-traits:
