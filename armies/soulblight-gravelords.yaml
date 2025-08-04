@@ -1425,6 +1425,7 @@ manifestationLores:
               Roll a dice. On a 4+, the following effects apply until the start of your next turn:
               • While the target is within 3" of this MANIFESTATION, the target has a maximum control score of 1 that cannot be modified.
               • While the target is within 3" of this MANIFESTATION, the target cannot use MOVE abilities.
+            lastsUntil: yourStartOfTurn
 
           - id: inescapable-reach
             type: normal
@@ -1458,7 +1459,8 @@ manifestationLores:
             name: Multiple Parts
             timing: Passive
             availablePhases:
-              - deployment
+              - anyCombat
+              - anyShooting
               - anyMovement
             effect: >-
               When a number of damage points equal to this MANIFESTATION's Health characteristic are allocated to it, this MANIFESTATION is destroyed and both its parts are removed from play.
