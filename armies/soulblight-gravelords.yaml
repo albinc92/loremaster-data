@@ -303,6 +303,37 @@ units:
         keywords:
           - SPELL
 
+  - id: scourge-of-ghyran-sekhar
+    name: Scourge of Ghyran (Sekhar)
+    abilities:
+      - id: plague-bearer
+        type: passive
+        name: Plague Bearer
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: At the end of each phase, roll a dice for each enemy unit within 3" of this unit. On a 4+, inflict 1 mortal damage on that unit.
+
+      - id: diseased-strikes
+        type: passive
+        name: Diseased Strikes
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If any damage points are allocated to an enemy unit by this unit's attacks, subtract 1" from that unit's Move characteristic until the end of the battle round.
+
+      - id: corruption-spreads
+        type: spell
+        name: Corruption Spreads
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a visible enemy unit within 18" of this unit to be the target, then make a casting roll of 2D6.
+        effect: Roll a dice for each model in the target unit. For each 5+, inflict 1 mortal damage on the target.
+        keywords:
+          - SPELL
+
   - id: vampire-lord
     name: Vampire Lord
     abilities:
@@ -360,6 +391,94 @@ units:
         effect: If the target is an enemy unit, inflict D3 mortal damage on it. If the target is a friendly DEATHRATTLE or DEADWALKERS unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.
         keywords:
           - SPELL
+
+  - id: gorslav-the-gravekeeper
+    name: Gorslav the Gravekeeper
+    abilities:
+      - id: ancient-servitude
+        type: passive
+        name: Ancient Servitude
+        timing: Passive
+        availablePhases:
+          - anyHero
+        effect: While this unit is on the battlefield, you can use the 'Deathly Invocation' battle trait without spending a command point, but if you do so, this unit must be picked to use that ability.
+
+      - id: endless-servitude
+        type: passive
+        name: Endless Servitude
+        timing: Passive
+        availablePhases:
+          - deployment
+        effect: You can set up this unit in reserve as a gravekeep. It has now been deployed.
+
+      - id: rise-from-the-grave
+        type: normal
+        name: Rise from the Grave
+        timing: Any Movement Phase
+        availablePhases:
+          - anyMovement
+        declare: If this unit is in reserve as a gravekeep, pick a friendly DEATHRATTLE or DEADWALKERS unit on the battlefield to be the target.
+        effect: Set up this unit wholly within 6" of the target and more than 9" from all enemy units. This unit is no longer in reserve.
+
+  - id: torgillius-the-chamberlain
+    name: Torgillius the Chamberlain
+    abilities:
+      - id: attend-the-court
+        type: passive
+        name: Attend the Court
+        timing: Passive
+        availablePhases:
+          - anyPhase
+        effect: While this unit is wholly within 12" of a friendly VAMPIRE LORD, add 1 to ward rolls for this unit.
+
+      - id: ancient-wisdom
+        type: normal
+        name: Ancient Wisdom
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly DEATHRATTLE or DEADWALKERS unit wholly within 12" of this unit to be the target.
+        effect: Add 1 to hit rolls for the target's attacks until the start of your next turn.
+
+      - id: raise-the-guard
+        type: spell
+        name: Raise the Guard
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a visible friendly DEATHRATTLE unit that started the battle with 2 or more models and has been destroyed to be the target, then make a casting roll of 2D6.
+        effect: Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 6" of this unit and more than 9" from all enemy units.
+        keywords:
+          - SPELL
+
+  - id: watch-captain-halgrim
+    name: Watch Captain Halgrim
+    abilities:
+      - id: stern-taskmaster
+        type: passive
+        name: Stern Taskmaster
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Add 1 to hit rolls for attacks made by friendly DEATHRATTLE units while they are wholly within 12" of this unit.
+
+      - id: relentless-advance
+        type: normal
+        name: Relentless Advance
+        timing: Your Movement Phase
+        availablePhases:
+          - yourMovement
+        declare: Pick up to 3 friendly DEATHRATTLE units wholly within 12" of this unit to be the targets.
+        effect: The targets can move an extra 3" this phase.
+
+      - id: barrow-blade
+        type: passive
+        name: Barrow Blade
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If this unit charged this turn, add 1 to the Damage characteristic of this unit's melee weapons.
 
   # Monster Heroes
   - id: lauka-vai-mother-of-nightmares
@@ -616,7 +735,63 @@ units:
         declare: If this unit charged this turn, pick an enemy unit in combat with it to be the target.
         effect: Roll a dice. On a 3+, roll a dice for each model in the target unit. For each 5+, inflict 1 mortal damage on the target.
 
+  - id: vampire-lord-on-zombie-dragon
+    name: Vampire Lord on Zombie Dragon
+    abilities:
+      - id: pestilential-breath
+        type: normal
+        name: Pestilential Breath
+        timing: Your Shooting Phase
+        availablePhases:
+          - yourShooting
+        declare: Pick a visible enemy unit within 10" of this unit to be the target.
+        effect: Roll a dice. Add 1 to the roll if the target has 10 or more models. On a 3+, inflict D3 mortal damage on the target.
+
+      - id: draconic-terror
+        type: passive
+        name: Draconic Terror
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Subtract 1 from hit rolls for attacks made by enemy units while they are in combat with this unit.
+
+      - id: vampiric-might
+        type: passive
+        name: Vampiric Might
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If this unit charged this turn, add 1 to the Damage characteristic of this unit's melee weapons.
+
   # War Machine Heroes
+  - id: bloodseeker-palanquin
+    name: Bloodseeker Palanquin
+    abilities:
+      - id: the-sanguinarch
+        type: passive
+        name: The Sanguinarch
+        timing: Passive
+        availablePhases:
+          - anyPhase
+        effect: Add 1 to casting rolls for friendly VAMPIRE WIZARDS while they are wholly within 12" of this unit.
+
+      - id: blood-scrying
+        type: passive
+        name: Blood Scrying
+        timing: Passive
+        availablePhases:
+          - anyHero
+        effect: Once per turn, when a friendly SOULBLIGHT GRAVELORDS WIZARD within 12" of this unit successfully casts a spell, you can pick 1 dice and change the result to a 6.
+
+      - id: crimson-rejuvenation
+        type: normal
+        name: Crimson Rejuvenation
+        timing: Once Per Turn (Army), End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick up to 3 friendly VAMPIRE units wholly within 12" of this unit to be the targets.
+        effect: Heal (1) each target.
+
   - id: coven-throne
     name: Coven Throne
     abilities:
@@ -697,6 +872,33 @@ units:
           - anyMovement
           - anyCharge
         effect: This unit can use CHARGE abilities even if it used a RETREAT ability in the same turn. In addition, no mortal damage is inflicted on this unit by RETREAT abilities.
+
+  - id: vargskyr
+    name: Vargskyr
+    abilities:
+      - id: bounding-leaps
+        type: passive
+        name: Bounding Leaps
+        timing: Passive
+        availablePhases:
+          - anyMovement
+        effect: This unit can pass through models in enemy units and can pass through the combat ranges of enemy units, but it cannot end a move in combat unless specified in the ability being used.
+
+      - id: savage-claws
+        type: passive
+        name: Savage Claws
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If this unit charged this turn, add 1 to the Attacks characteristic of its melee weapons.
+
+      - id: blood-frenzy
+        type: passive
+        name: Blood Frenzy
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Each time this unit destroys an enemy model, Heal (1) this unit.
 
   # Cavalry
   - id: barrow-knights
@@ -803,6 +1005,141 @@ units:
           - yourMovement
         effect: If this unit is not in combat, remove it from the battlefield and set it up again on the battlefield more than 9" from all enemy units.
 
+  - id: kosargi-nightguard
+    name: Kosargi Nightguard
+    abilities:
+      - id: bone-shields
+        type: passive
+        name: Bone Shields
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: This unit has WARD (6+).
+
+      - id: guardians-of-the-grave
+        type: passive
+        name: Guardians of the Grave
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Add 1 to hit rolls for this unit's attacks while it is wholly within 12" of a friendly DEATHRATTLE HERO.
+
+  - id: vyrkos-blood-born
+    name: Vyrkos Blood-born
+    abilities:
+      - id: blood-scent
+        type: passive
+        name: Blood Scent
+        timing: Passive
+        availablePhases:
+          - anyMovement
+          - anyCharge
+        effect: This unit can use a RUN ability and still use CHARGE abilities later in the turn.
+
+      - id: pack-hunters
+        type: passive
+        name: Pack Hunters
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Add 1 to hit rolls for this unit's attacks while this unit is wholly within 12" of a friendly VYRKOS unit.
+
+  - id: the-crimson-court
+    name: The Crimson Court
+    abilities:
+      - id: contempt-for-weakness
+        type: passive
+        name: Contempt for Weakness
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Add 1 to hit rolls for this unit's attacks while it is in combat with a damaged enemy unit.
+
+      - id: aristocratic-disdain
+        type: passive
+        name: Aristocratic Disdain
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: This unit has WARD (5+) while it is in combat with a unit that has a lower Wounds characteristic than this unit.
+
+  - id: the-exiled-dead
+    name: The Exiled Dead
+    abilities:
+      - id: banished-spirits
+        type: passive
+        name: Banished Spirits
+        timing: Passive
+        availablePhases:
+          - anyPhase
+        effect: This unit can pass through models and terrain features as if they were not there, but it cannot end any type of move on them.
+
+      - id: ethereal-champions
+        type: passive
+        name: Ethereal Champions
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Ignore modifiers to save rolls for this unit (positive and negative).
+
+  - id: the-sepulchral-guard
+    name: The Sepulchral Guard
+    abilities:
+      - id: ancient-formation
+        type: passive
+        name: Ancient Formation
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Add 1 to hit rolls for this unit's attacks while it has 3 or more models.
+
+      - id: sepulchral-warden
+        type: passive
+        name: Sepulchral Warden
+        timing: Passive
+        availablePhases:
+          - anyHero
+        effect: If this unit has 3 or more models, it counts as a HERO for the purposes of using the 'Deathly Invocation' battle trait.
+
+  - id: the-sons-of-velmorn
+    name: The Sons of Velmorn
+    abilities:
+      - id: skeletal-cavalry
+        type: passive
+        name: Skeletal Cavalry
+        timing: Passive
+        availablePhases:
+          - anyMovement
+        effect: This unit can pass through models in other units and can pass through the combat ranges of enemy units, but it cannot end a move in combat unless specified in the ability being used.
+
+      - id: undying-loyalty
+        type: passive
+        name: Undying Loyalty
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Add 1 to save rolls for this unit while it is wholly within 12" of a friendly DEATHRATTLE HERO.
+
+  - id: zondaras-gravebreakers
+    name: Zondara's Gravebreakers
+    abilities:
+      - id: necromantic-mastery
+        type: passive
+        name: Necromantic Mastery
+        timing: Passive
+        availablePhases:
+          - anyHero
+        effect: Add 1 to casting rolls for friendly SOULBLIGHT GRAVELORDS WIZARDS while they are wholly within 12" of this unit.
+
+      - id: dark-ritual
+        type: normal
+        name: Dark Ritual
+        timing: Once Per Battle (Army), Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly SOULBLIGHT GRAVELORDS WIZARD wholly within 12" of this unit to be the target.
+        effect: Add 1 to casting rolls for the target for the rest of the turn. In addition, the first spell successfully cast by the target this turn does not cost any casting points.
+
   # Monsters
   - id: revenant-draconith
     name: Revenant Draconith
@@ -872,6 +1209,34 @@ units:
         availablePhases:
           - anyCombat
         effect: Melee weapons used by other friendly DEADWALKERS units have Crit (Auto-wound) while they are wholly within 12" of this unit.
+
+  - id: scourge-of-ghyran-corpse-cart
+    name: Scourge of Ghyran Corpse Cart
+    abilities:
+      - id: toxic-miasma
+        type: passive
+        name: Toxic Miasma
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: At the end of each phase, inflict 1 mortal damage on each enemy unit within 3" of this unit.
+
+      - id: necromantic-focus
+        type: passive
+        name: Necromantic Focus
+        timing: Passive
+        availablePhases:
+          - anyHero
+        effect: Add 1 to casting rolls for friendly SOULBLIGHT GRAVELORDS WIZARDS while they are wholly within 12" of this unit.
+
+      - id: corpse-fuel
+        type: normal
+        name: Corpse Fuel
+        timing: Once Per Turn (Army), Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly DEADWALKERS unit wholly within 12" of this unit to be the target.
+        effect: Add 1 to hit rolls for the target's attacks until the start of your next turn.
 
 battleFormations:
   - id: legion-of-shyish
