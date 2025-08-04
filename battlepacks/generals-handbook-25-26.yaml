@@ -6,7 +6,254 @@ name: General's Handbook 25-26
 rules:
   - id: startOfBattleRound
     information: |
-      <h3>Matched Play Deployment</h3>
+      <h3>Start of Battle Round Sequence</h3>
+      <ol>
+        <li><strong>Determine the Active Player:</strong> If it is the first battle round, the player who finished setting up their army first decides who will take the first turn. If it is not the first battle round, players make a priority roll and the winner decides who takes the first turn.</li>
+        <li><strong>Determine the Underdog:</strong> Whichever player has the fewest victory points is the underdog for the battle round. If tied, there is no underdog.</li>
+        <li><strong>Start of Battle Round Abilities:</strong> The active player can use any Start of Battle Round abilities first, then their opponent can do the same.</li>
+      </ol>
+      
+      <h4>Commands 2025-26:</h4>
+      <ul>
+        <li>Each player gains 4 command points at the start of each battle round</li>
+        <li>The underdog gains 1 extra command point</li>
+        <li>At the end of the battle round, command points are reset to 0 (unused points are lost)</li>
+        <li>Each unit can only use 1 command in each phase</li>
+        <li>Each command can only be used 1 time by each army in each phase</li>
+      </ul>
+
+  - id: deployment
+    information: |
+      <h3>Deployment Phase Sequence</h3>
+      <ol>
+        <li><strong>Deploy Faction Terrain Features:</strong> Player who begins deployment uses <strong>DEPLOY TERRAIN</strong> abilities first, followed by their opponent.</li>
+        <li><strong>Deploy Armies:</strong> Players alternate using <strong>DEPLOY</strong> abilities to deploy units, starting with the player who begins deployment.</li>
+        <li><strong>Use Deployment Phase Abilities:</strong> After both players finish deploying, the starting player can use any other Deployment Phase abilities, then their opponent.</li>
+      </ol>
+      
+      <h4>Army Composition 2025-26:</h4>
+      <ul>
+        <li><strong>Regiments:</strong> Each regiment has 1 <strong>HERO</strong> and 0-3 non-<strong>HERO</strong> units (0-4 if your general's regiment)</li>
+        <li><strong>Auxiliary Units:</strong> Units taken outside of regiments. Player with fewest auxiliary units gains 1 extra command point each battle round</li>
+        <li><strong>Reinforced Units:</strong> Twice as many models as minimum unit size for twice the points cost</li>
+        <li><strong>Unique Units:</strong> Cannot include the same <strong>UNIQUE</strong> unit more than once</li>
+      </ul>
+
+  - id: startOfTurn
+    information: |
+      <h3>Turn Structure</h3>
+      <ul>
+        <li>Each battle round contains 2 turns</li>
+        <li>The active player is the player whose turn is taking place</li>
+        <li>Each turn contains 7 phases: Start of Turn, Hero, Movement, Shooting, Charge, Combat, End of Turn</li>
+        <li>In each phase, the active player uses abilities first, then their opponent</li>
+      </ul>
+      
+      <h4>Ability Timing:</h4>
+      <ul>
+        <li><strong>Your (...) Phase:</strong> Active player can use during appropriate phase</li>
+        <li><strong>Any (...) Phase:</strong> Either player can use during appropriate phase</li>
+        <li><strong>Enemy (...) Phase:</strong> Non-active player can use during opponent's phase</li>
+        <li><strong>Reaction:</strong> Used in response to specific triggers</li>
+      </ul>
+
+  - id: hero
+    information: |
+      <h3>Magic 2025-26</h3>
+      <h4>Wizards and Priests:</h4>
+      <ul>
+        <li><strong>WIZARDS</strong> can cast spells equal to their power level per phase</li>
+        <li><strong>PRIESTS</strong> can chant prayers equal to their power level per phase</li>
+        <li>Each <strong>WIZARD</strong> can use <strong>UNBIND</strong> abilities equal to their power level per phase</li>
+        <li>Each spell or prayer can only be used once per turn unless it has <strong>UNLIMITED</strong></li>
+      </ul>
+      
+      <h4>Spell Casting:</h4>
+      <ul>
+        <li>Make a casting roll of 2D6. If it equals or exceeds the spell's casting value, the spell is cast</li>
+        <li>If unmodified casting roll includes 2+ rolls of 1, the spell is miscast: fails, D3 mortal damage to <strong>WIZARD</strong>, no more spells this phase</li>
+        <li>No more than 1 friendly <strong>WIZARD</strong> can cast the same spell per turn unless <strong>UNLIMITED</strong></li>
+      </ul>
+      
+      <h4>Prayer Chanting:</h4>
+      <ul>
+        <li>Make chanting roll of D6. On unmodified 1, prayer fails and remove D3 ritual points</li>
+        <li>On 2+, either give ritual points equal to roll, or add ritual points to roll and if it equals/exceeds chanting value, prayer is answered</li>
+        <li>No more than 1 friendly <strong>PRIEST</strong> can chant the same prayer per turn unless <strong>UNLIMITED</strong></li>
+      </ul>
+      
+      <h4>Hero Phase Commands:</h4>
+      <ul>
+        <li><strong>Rally (1 CP):</strong> Make 6 rally rolls, spend points to heal or return models</li>
+        <li><strong>Magical Intervention (1 CP):</strong> <strong>WIZARD</strong>/<strong>PRIEST</strong> can use spell/prayer in enemy hero phase with -1 to rolls</li>
+      </ul>
+
+  - id: movement
+    information: |
+      <h3>Movement Rules</h3>
+      <h4>Basic Movement:</h4>
+      <ul>
+        <li>When a unit moves, each model moves one at a time in order chosen by commander</li>
+        <li>No part of model's base can move greater distance than maximum allowed</li>
+        <li>Models cannot move through other models or end moves on top of another model</li>
+        <li>Each unit can use maximum of 1 <strong>CORE</strong> ability per phase</li>
+      </ul>
+      
+      <h4>Coherency:</h4>
+      <ul>
+        <li>Units must be in single coherent group after any move</li>
+        <li>Each model within 1/2" horizontally of at least 1 other model in unit</li>
+        <li>Units with 7+ models: each model within coherency range of at least 2 other models</li>
+      </ul>
+      
+      <h4>Terrain Movement:</h4>
+      <ul>
+        <li>Move over terrain 1" or less in height as if not there</li>
+        <li>Can climb terrain taller than 1", counting vertical distance</li>
+        <li>Can jump down from terrain, but ends move immediately</li>
+        <li>Cannot end move mid-climb or mid-jump</li>
+      </ul>
+      
+      <h4>Movement Phase Commands:</h4>
+      <ul>
+        <li><strong>Redeploy (1 CP):</strong> Move up to D6" in enemy movement phase</li>
+        <li><strong>At the Double (1 CP):</strong> Add 6" to Move instead of making run roll</li>
+      </ul>
+
+  - id: shooting
+    information: |
+      <h3>Shooting Phase</h3>
+      <h4>Shoot Ability Requirements:</h4>
+      <ul>
+        <li>Unit must not have used <strong>RUN</strong> or <strong>RETREAT</strong> this turn</li>
+        <li>Pick one or more enemy units as targets</li>
+        <li>Cannot make shooting attacks if unit is in combat unless specified</li>
+      </ul>
+      
+      <h4>Target Selection:</h4>
+      <ul>
+        <li>Targets must be within Range characteristic and visible</li>
+        <li>Can split attacks between eligible targets</li>
+        <li>Models attack with all ranged weapons they're armed with</li>
+      </ul>
+      
+      <h4>Attack Sequence:</h4>
+      <ol>
+        <li><strong>Hit Roll:</strong> D6 equals/exceeds Hit characteristic. Unmodified 1s always fail, 6s are critical hits</li>
+        <li><strong>Wound Roll:</strong> D6 equals/exceeds Wound characteristic. Unmodified 1s always fail</li>
+        <li><strong>Save Roll:</strong> D6 minus Rend equals/exceeds Save. Unmodified 1s always fail</li>
+        <li><strong>Determine Damage:</strong> Inflict damage equal to Damage characteristic</li>
+      </ol>
+      
+      <h4>Shooting Phase Commands:</h4>
+      <ul>
+        <li><strong>Covering Fire (1 CP):</strong> Shoot at closest enemy in enemy shooting phase with -1 to hit</li>
+      </ul>
+
+  - id: charge
+    information: |
+      <h3>Charge Phase</h3>
+      <h4>Charge Requirements:</h4>
+      <ul>
+        <li>Unit must not be in combat</li>
+        <li>Unit must not have used <strong>RUN</strong> or <strong>RETREAT</strong> this turn</li>
+        <li>Make charge roll of 2D6</li>
+      </ul>
+      
+      <h4>Charge Movement:</h4>
+      <ul>
+        <li>Move distance up to charge roll value</li>
+        <li>Can move through combat ranges of enemy units</li>
+        <li>Must end within 1/2" of visible enemy unit to complete charge</li>
+        <li>If successful, unit has charged</li>
+      </ul>
+      
+      <h4>Combat Range:</h4>
+      <ul>
+        <li>Extends 3" horizontally from base and any distance vertically</li>
+        <li>Units within each other's combat range and visible are in combat</li>
+        <li>Entering combat range of visible enemy moves unit into combat</li>
+      </ul>
+      
+      <h4>Charge Phase Commands:</h4>
+      <ul>
+        <li><strong>Counter-Charge (2 CP):</strong> Charge in enemy charge phase</li>
+        <li><strong>Forward to Victory (1 CP):</strong> Re-roll charge roll</li>
+      </ul>
+
+  - id: combat
+    information: |
+      <h3>Combat Phase</h3>
+      <h4>Combat Sequence:</h4>
+      <ol>
+        <li><strong>Non-Fight Abilities:</strong> Active player uses non-<strong>FIGHT</strong> combat abilities, then opponent</li>
+        <li><strong>Alternate Fight Activations:</strong> Players alternate picking units to use <strong>FIGHT</strong> ability, starting with active player</li>
+        <li><strong>Each Unit Must Fight:</strong> All units in combat must use <strong>FIGHT</strong> ability if able</li>
+        <li><strong>Continue Until Complete:</strong> Once player has no eligible units, opponent continues</li>
+      </ol>
+      
+      <h4>Fight Ability Process:</h4>
+      <ol>
+        <li><strong>Declare:</strong> Pick unit in combat or that charged this turn</li>
+        <li><strong>Pile-in Move:</strong> Up to 3" move</li>
+        <li><strong>Pick Targets:</strong> If in combat, pick enemy units as targets</li>
+        <li><strong>Resolve Attacks:</strong> Combat attacks against targets</li>
+      </ol>
+      
+      <h4>Strike Order:</h4>
+      <ul>
+        <li><strong>STRIKE-FIRST</strong> units must fight before others</li>
+        <li><strong>STRIKE-LAST</strong> units cannot fight if non-<strong>STRIKE-LAST</strong> units haven't fought</li>
+        <li>If unit has both, treat as having neither</li>
+      </ul>
+      
+      <h4>Combat Commands:</h4>
+      <ul>
+        <li><strong>All-out Attack (1 CP):</strong> +1 to hit rolls for <strong>ATTACK</strong> ability</li>
+        <li><strong>All-out Defence (1 CP):</strong> +1 to save rolls when targeted by <strong>ATTACK</strong></li>
+      </ul>
+
+  - id: endOfTurn
+    information: |
+      <h3>End of Turn Sequence</h3>
+      <ol>
+        <li><strong>End of Turn Abilities:</strong> Active player uses End of Turn abilities, then opponent uses End of Enemy Turn abilities</li>
+        <li><strong>Determine Objective Control:</strong> Check which player controls each objective</li>
+        <li><strong>Score Victory Points:</strong> Active player scores victory points as described in battleplan</li>
+      </ol>
+      
+      <h4>Objective Control:</h4>
+      <ul>
+        <li>Checked at start of first battle round and end of each turn</li>
+        <li>Model contests objective if objective marker within its combat range</li>
+        <li>Player gains control if sum of Control characteristics of contesting models is higher</li>
+        <li>Objective remains under control until opponent gains control</li>
+        <li>Terrain features controlled same way but don't remain controlled if no models contesting</li>
+      </ul>
+      
+      <h4>End of Turn Commands:</h4>
+      <ul>
+        <li><strong>Power Through (1 CP):</strong> Unit that charged inflicts D3 mortal damage and can move through former combat</li>
+      </ul>
+
+  - id: endOfBattleRound
+    information: |
+      <h3>End of Battle Round</h3>
+      <ul>
+        <li>Active player can use End of Battle Round abilities, then opponent</li>
+        <li>Each battleplan specifies number of battle rounds to fight</li>
+        <li>After completing specified rounds, battle ends and winner determined per battleplan</li>
+        <li>Victory conditions typically checked at end of final battle round</li>
+        <li>Command points reset to 0 (unused points lost)</li>
+      </ul>
+      
+      <h4>Battle Tactics 2025-26:</h4>
+      <ul>
+        <li>Secondary objectives worth 4 victory points each</li>
+        <li>Picked using 'Tactical Gambit' ability at start of turn</li>
+        <li>Completed at end of turn if conditions met</li>
+        <li>Cannot use Tactical Gambit if went second previous round and chose to go first current round</li>
+      </ul>
 
 # Core battlepack abilities (only actual triggered abilities)
 abilities:
