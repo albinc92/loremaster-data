@@ -2,6 +2,877 @@ type: army
 id: soulblight-gravelords
 name: Soulblight Gravelords
 
+units:
+  # Cavalry Heroes
+  - id: belladamma-volga-first-of-the-vyrkos
+    name: Belladamma Volga, First of the Vyrkos
+    abilities:
+      - id: first-of-the-vyrkos
+        type: passive
+        name: First of the Vyrkos
+        timing: Passive
+        availablePhases:
+          - anyHero
+          - anyCombat
+        effect: Add 3 to the control scores of friendly Radukar the Wolf, Radukar the Beast, Ivya Volga, Lady Annika and Kritza units while they are wholly within 18" of this unit.
+
+      - id: under-a-killing-moon
+        type: spell
+        name: Under a Killing Moon
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick up to 3 visible friendly Dire Wolves units wholly within 18" of this unit to be the targets, then make a casting roll of 2D6.
+        effect: >-
+          For the rest of the turn:
+          • Add 1 to the Rend characteristic of the targets' melee weapons (including Companion weapons).
+          • The targets can ignore the effect of the 'Beast' ability.
+        keywords:
+          - SPELL
+
+      - id: wolfguard
+        type: passive
+        name: Wolfguard
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: >-
+          While this unit is within the combat range of a friendly Dire Wolves unit:
+          • This unit has WARD (4+).
+          • Each time you make a successful ward roll for this unit, allocate 1 damage point to a friendly Dire Wolves unit within this unit's combat range after the damage sequence for this unit has been resolved (ward rolls cannot be made for those damage points).
+
+  - id: vampire-lord-on-nightmare-steed
+    name: Vampire Lord on Nightmare Steed
+    abilities:
+      - id: for-glory-for-blood
+        type: normal
+        name: 'For Glory! For Blood!'
+        timing: Reaction - You declared a CHARGE ability for this unit
+        availablePhases:
+          - anyCharge
+        effect: You can re-roll the charge roll for that CHARGE ability. Then, before the charge move is made, you can pick a friendly Blood Knights unit that is not in combat, is wholly within 12" of this unit and has not used a CHARGE ability this turn to be the target. If this unit charges, then, immediately after the CHARGE ability used by this unit has been resolved, the target can immediately use the 'Charge' ability even if it is not your charge phase. In addition, you can re-roll charge rolls for the target this phase.
+
+      - id: strike-at-the-heart
+        type: normal
+        name: Strike at the Heart
+        timing: Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick a friendly Blood Knights unit that charged this turn and is wholly within 12" of this unit to be the target.
+        effect: Add 1 to the Rend characteristic of that unit's Templar Weapons for the rest of the turn.
+
+  - id: wight-king-on-skeleton-steed
+    name: Wight King on Skeleton Steed
+    abilities:
+      - id: ancient-barrow-curse
+        type: passive
+        name: Ancient Barrow Curse
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If an attack made with this unit's King's Relic Weapon scores a critical hit, the target unit becomes cursed for the rest of the battle. Subtract 1 from save rolls for cursed units.
+
+      - id: immortal-conqueror
+        type: normal
+        name: Immortal Conqueror
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick an objective or terrain feature within enemy territory.
+        effect: For the rest of the turn, add 1 to hit rolls for attacks made by friendly DEATHRATTLE units while they are wholly within 6" of that objective or terrain feature.
+
+  - id: wight-lord-on-skeletal-steed
+    name: Wight Lord on Skeletal Steed
+    abilities:
+      - id: lord-of-trampling-bones
+        type: passive
+        name: Lord of Trampling Bones
+        timing: Passive
+        availablePhases:
+          - anyCharge
+        effect: Add 1 to charge rolls for friendly DEATHRATTLE CAVALRY units while they are wholly within 12" of this unit.
+
+      - id: royal-companions
+        type: normal
+        name: Royal Companions
+        timing: Reaction - You declared a FIGHT ability for this unit
+        availablePhases:
+          - anyCombat
+        effect: Pick a friendly non-HERO DEATHRATTLE CAVALRY unit that has not used a FIGHT ability this turn and is within this unit's combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved.
+
+  # Infantry Heroes
+  - id: blades-of-the-hollow-king
+    name: Blades of the Hollow King
+    abilities:
+      - id: retribution-or-salvation
+        type: spell
+        name: Retribution or Salvation
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: This unit can cast this spell while its Cado Ezechiar is on the battlefield. Pick a visible unit within 12" of this unit to be the target, then make a casting roll of 2D6.
+        effect: If the target is an enemy unit, inflict D3 mortal damage on it. If the target is a friendly DEATHRATTLE or DEADWALKERS unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.
+        keywords:
+          - SPELL
+
+      - id: aurelias
+        type: normal
+        name: Aurelias
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: This unit can use this ability while its Aurelias is on the battlefield.
+        effect: >-
+          Pick 1 of the following to apply for the rest of the turn:
+          • Add 1 to this unit's power level.
+          • Each time a casting roll is made for this unit, you can re-roll 1 of the dice.
+
+      - id: solia-the-tutor
+        type: normal
+        name: Solia, The Tutor
+        timing: Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: This unit can use this ability while its Cado Ezechiar is on the battlefield.
+        effect: >-
+          Pick 1 of the following to apply for the rest of the turn:
+          • This unit has WARD (5+).
+          • This unit's Ezechiarian Greatsword has Crit (Mortal).
+
+  - id: ivya-volga-the-outcast
+    name: Ivya Volga, The Outcast
+    abilities:
+      - id: shrieking-swarm
+        type: passive
+        name: Shrieking Swarm
+        timing: Passive
+        availablePhases:
+          - anyShooting
+          - anyCombat
+        effect: Subtract 1 from hit rolls for attacks that target this unit.
+
+      - id: total-dominance
+        type: spell
+        name: Total Dominance
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Make a casting roll of 2D6.
+        effect: For the rest of the turn, subtract 5 from the control scores of enemy MONSTERS while they are within 12" of this unit.
+        keywords:
+          - SPELL
+
+      - id: behemoths-bane
+        type: passive
+        name: Behemoth's Bane
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Subtract 2 from the Attacks characteristic of enemy MONSTERS melee weapons while they are in combat with this unit.
+
+  - id: kritza-the-rat-prince
+    name: Kritza, The Rat Prince
+    abilities:
+      - id: scurrying-retreat
+        type: normal
+        name: Scurrying Retreat
+        timing: Any Combat Phase
+        availablePhases:
+          - anyCombat
+        effect: If this unit is in combat, roll a dice. On a 3+, this unit can immediately use the 'Retreat' ability as if it were your movement phase without any mortal damage being inflicted on it.
+
+      - id: the-verminous-court
+        type: normal
+        name: The Verminous Court
+        timing: Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick an enemy unit in combat with this unit to be the target, then pick an artefact of power that the target has.
+        effect: Roll a dice. On a 3+, the target no longer has that artefact of power.
+
+  - id: lady-annika-the-thirsting-blade
+    name: Lady Annika, The Thirsting Blade
+    abilities:
+      - id: supernatural-speed
+        type: normal
+        name: Supernatural Speed
+        timing: Deployment Phase
+        availablePhases:
+          - deployment
+        declare: Pick this unit if it has not been deployed.
+        effect: Set up this unit in reserve lying in wait. It has now been deployed.
+
+      - id: starving-nightmare
+        type: normal
+        name: Starving Nightmare
+        timing: Your Movement Phase
+        availablePhases:
+          - yourMovement
+        declare: Pick this unit if it is lying in wait.
+        effect: Set up this unit wholly within enemy territory and more than 9" from all enemy units.
+
+      - id: kiss-of-the-blade-proboscian
+        type: normal
+        name: Kiss of the Blade Proboscian
+        timing: End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick an enemy unit that was allocated any damage points inflicted by this unit's combat attacks this turn to be the target.
+        effect: Roll a dice. On a 2+, subtract 1 from save rolls for the target for the rest of the battle.
+
+  - id: necromancer
+    name: Necromancer
+    abilities:
+      - id: undead-minions
+        type: passive
+        name: Undead Minions
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: >-
+          While this unit is within the combat range of a friendly DEATHRATTLE or DEADWALKERS unit:
+          • This unit has WARD (4+).
+          • Each time you make a successful ward roll for this unit, allocate 1 damage point to a friendly DEATHRATTLE or DEADWALKERS unit within this unit's combat range after the damage sequence for this unit has been resolved (ward rolls cannot be made for those damage points).
+
+      - id: vanhels-danse-macabre
+        type: command
+        name: Vanhel's Danse Macabre
+        cost: 1
+        timing: Once Per Turn (Army), Your Combat Phase
+        availablePhases:
+          - yourCombat
+        declare: Pick a friendly DEATHRATTLE or DEADWALKERS unit wholly within 12" of this unit to be the target.
+        effect: Roll a dice. On a 3+, the target can use 2 FIGHT abilities this phase. After the first is used, however, the target has STRIKE-LAST for the rest of the turn.
+
+  - id: radukar-the-wolf
+    name: Radukar the Wolf
+    abilities:
+      - id: master-of-the-pack
+        type: spell
+        name: Master of the Pack
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Make a casting roll of 2D6.
+        effect: Until the start of your next turn, you can re-roll charge rolls for friendly SOULBLIGHT GRAVELORDS INFANTRY units while they are wholly within 12" of this unit.
+        keywords:
+          - SPELL
+
+      - id: call-to-the-hunt
+        type: passive
+        name: Call to the Hunt
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If this unit charged this turn, for the rest of the turn, add 1 to wound rolls for combat attacks made by friendly DEATHRATTLE and DEADWALKERS units while they are wholly within 12" of this unit.
+
+  - id: sekhar-fang-of-nulahmia
+    name: Sekhar, Fang of Nulahmia
+    abilities:
+      - id: the-time-swallowers-maw
+        type: normal
+        name: The Time-Swallower's Maw
+        timing: Once Per Battle, Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick each enemy unit in combat with this unit to be the targets.
+        effect: This unit cannot use the 'Serpentine Agility' ability for the rest of the battle. Roll 2D6 for each target. If the roll exceeds the target's Move characteristic, inflict an amount of mortal damage on the target equal to the difference between the roll and its Move characteristic.
+
+      - id: serpentine-agility
+        type: passive
+        name: Serpentine Agility
+        timing: Passive
+        availablePhases:
+          - anyShooting
+          - anyCombat
+        effect: If the unmodified hit roll for an attack that targets this unit is 1-4, the attack fails and the attack sequence ends.
+
+      - id: deaths-construction
+        type: spell
+        name: Death's Construction
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a visible enemy unit within 12" of this unit to be the target, then make a casting roll of 2D6.
+        effect: Until the start of your next turn, while they are wholly within 6" of this unit, friendly SOULBLIGHT GRAVELORDS units cannot be picked to be the target of abilities used by the target other than FIGHT abilities.
+        keywords:
+          - SPELL
+
+  - id: vampire-lord
+    name: Vampire Lord
+    abilities:
+      - id: sanguine-blur
+        type: normal
+        name: Sanguine Blur
+        timing: Once Per Turn (Army), Your Hero Phase
+        availablePhases:
+          - yourHero
+        effect: Roll a dice. On a 3+, remove this unit from the battlefield and set it up again on the battlefield more than 9" from all enemy non-HERO units and more than 3" from all enemy HEROES.
+
+  - id: wight-king
+    name: Wight King
+    abilities:
+      - id: king-of-shambling-bones
+        type: normal
+        name: King of Shambling Bones
+        timing: Once Per Turn (Army), Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly DEATHRATTLE unit within this unit's combat range to be the target.
+        effect: Roll a dice. On a 3+, the target's melee weapons have Crit (2 Hits) for the rest of the turn.
+
+      - id: ancient-strategies
+        type: normal
+        name: Ancient Strategies
+        timing: Reaction - You declared a FIGHT ability for this unit
+        availablePhases:
+          - anyCombat
+        effect: Pick a friendly non-HERO DEATHRATTLE INFANTRY unit that has not used a FIGHT ability this turn and is within this unit's combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target's attacks for the rest of the turn.
+
+  - id: cado-ezechiar-the-hollow-king
+    name: Cado Ezechiar, The Hollow King
+    abilities:
+      - id: the-court-of-the-lost
+        type: normal
+        name: The Court of the Lost
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        effect: >-
+          Roll a dice. On a 2+, pick 1 of the following effects to apply until the start of your next turn.
+          • This unit has a Move characteristic of 12".
+          • Add 1 to casting rolls, unbinding rolls and banishment rolls for this unit.
+          • This unit's melee weapons have Crit (Mortal).
+
+      - id: retribution-or-salvation-hollow-king
+        type: spell
+        name: Retribution or Salvation
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a visible unit within 12" of this unit to be the target, then make a casting roll of 2D6.
+        effect: If the target is an enemy unit, inflict D3 mortal damage on it. If the target is a friendly DEATHRATTLE or DEADWALKERS unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.
+        keywords:
+          - SPELL
+
+  # Monster Heroes
+  - id: lauka-vai-mother-of-nightmares
+    name: Lauka Vai, Mother of Nightmares
+    abilities:
+      - id: nightmares-miasma
+        type: passive
+        name: Nightmare's Miasma
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Subtract 1 from the Rend characteristic of melee weapons used by enemy units while they are in combat with this unit.
+
+      - id: the-queens-dictat
+        type: spell
+        name: The Queen's Dictat
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a visible friendly non-UNIQUE SOULBLIGHT GRAVELORDS MONSTER wholly within 12" of this unit to be the target, then make a casting roll of 2D6.
+        effect: Pick 1 of the target's melee weapons. If the target has any Companion melee weapons, you must pick 1 of those. Add D3 to the Attacks characteristic of that weapon for the rest of the turn.
+        keywords:
+          - SPELL
+
+      - id: impaling-talons
+        type: normal
+        name: Impaling Talons
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: If this unit charged this turn, pick an enemy unit in combat with it to be the target.
+        effect: Roll a dice. If the roll is equal to or less than the target's Health characteristic, inflict an amount of mortal damage on the target equal to the roll.
+
+  - id: mannfred-von-carstein-mortarch-of-night
+    name: Mannfred von Carstein, Mortarch of Night
+    abilities:
+      - id: wind-of-death
+        type: spell
+        name: Wind of Death
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a point on the battlefield within 18" of the caster, pick up to 3 enemy units within 6" of that point and visible to the caster to be the targets, then make a casting roll of 2D6.
+        effect: Roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.
+        keywords:
+          - SPELL
+
+      - id: the-mortarch-of-night
+        type: normal
+        name: The Mortarch of Night
+        timing: Reaction - You declared the 'Redeploy' command for a SOULBLIGHT GRAVELORDS unit wholly within 12" of this unit
+        availablePhases:
+          - yourHero
+          - yourMovement
+        effect: The unit using the 'Redeploy' command can move into combat when using that ability.
+
+      - id: the-sword-of-unholy-power
+        type: passive
+        name: The Sword of Unholy Power
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If this unit has slain any enemy models this turn, for the rest of the turn, add 1 to the Attacks characteristic of melee weapons used by friendly DEATHRATTLE and DEADWALKERS units while they are wholly within 12" of this unit.
+
+      - id: ashigaroths-hunger
+        type: normal
+        name: Ashigaroth's Hunger
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        effect: If this unit charged this turn, roll a dice. On a 3+, this unit has STRIKE-FIRST for the rest of the turn.
+
+  - id: nagash-supreme-lord-of-the-undead
+    name: Nagash, Supreme Lord of the Undead
+    abilities:
+      - id: the-staff-of-power
+        type: passive
+        name: The Staff of Power
+        timing: Passive
+        availablePhases:
+          - anyHero
+        effect: Add 2 to casting rolls for this unit while it has not miscast any spells this turn. If this unit miscasts a spell, ignore the restriction that would stop this unit from casting any more spells this turn.
+
+      - id: hand-of-dust
+        type: normal
+        name: Hand of Dust
+        timing: Once Per Turn (Army), End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick a visible enemy HERO or MONSTER in combat with this unit to be the target.
+        effect: Hide a dice in one of your hands or under one of two appropriate containers. Your opponent must pick one of your hands or containers. If they pick the one hiding the dice, this ability has no effect. If they pick the empty one, the target is automatically destroyed.
+
+      - id: invocation-of-nagash
+        type: spell
+        name: Invocation of Nagash
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: This unit can cast this spell more than once per phase. Pick a visible unit wholly within 18" of this unit that has not been picked to be the target of this spell this turn to be the target, then make a casting roll of 2D6.
+        effect: >-
+          If the target is an enemy unit, inflict D3 mortal damage on it.
+          If the target is a friendly DEATH unit, pick 1 of the following effects:
+          • Return a number of slain models to the target unit with a combined Health characteristic of up to 3.
+          • The target has WARD (5+) until the start of your next turn.
+        keywords:
+          - SPELL
+
+      - id: supreme-lord-of-the-undead
+        type: normal
+        name: Supreme Lord of the Undead
+        timing: Once Per Battle, Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly non-HERO NON-UNIQUE DEATH unit that has been destroyed to be the target.
+        effect: Set up a replacement unit identical to the target wholly within 12" of this unit and more than 9" from all enemy units.
+
+  - id: neferata-mortarch-of-blood
+    name: Neferata, Mortarch of Blood
+    abilities:
+      - id: the-adevore
+        type: normal
+        name: The Adevore
+        timing: Once Per Turn (Army), End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick an enemy HERO that was allocated any damage points inflicted by this unit's Akmet-har this turn to be the target.
+        effect: Roll a dice. On a 5+, the target is automatically destroyed.
+
+      - id: dark-mist
+        type: spell
+        name: Dark Mist
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a visible friendly non-MONSTER SOULBLIGHT GRAVELORDS unit wholly within 12" of this unit to be the target, then make a casting roll of 2D6.
+        effect: Ignore modifiers to save rolls for the target (positive and negative) until the start of your next turn.
+        keywords:
+          - SPELL
+
+      - id: the-mortarch-of-blood
+        type: normal
+        name: The Mortarch of Blood
+        timing: Deployment Phase
+        availablePhases:
+          - deployment
+        declare: Pick up to 3 friendly DEATHRATTLE INFANTRY or DEADWALKERS INFANTRY units to be the targets.
+        effect: Each target can use the 'Normal Move' ability as if it were your movement phase.
+
+      - id: twilights-allure
+        type: passive
+        name: Twilight's Allure
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Subtract 1 from hit rolls for combat attacks that target friendly SOULBLIGHT GRAVELORDS units while they are wholly within 6" of this unit.
+
+  - id: prince-vhordrai
+    name: Prince Vhordrai
+    abilities:
+      - id: saint-of-slaughter
+        type: normal
+        name: Saint of Slaughter
+        timing: End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick a friendly non-MONSTER VAMPIRE unit that destroyed a unit this turn using a FIGHT ability and is wholly within 12" of this unit to be the target.
+        effect: >-
+          Pick 1 of the following effects to apply for the rest of the battle:
+          • Add 2" to the target's Move characteristic.
+          • Add 1 to the Attacks characteristic of the target's melee weapons.
+          • Add 1 to the Damage characteristic of the target's melee weapons.
+
+      - id: trail-of-crimson
+        type: normal
+        name: Trail of Crimson
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: This unit can make a pile-in move. Then, pick an enemy unit in combat with it to be the target.
+        effect: Roll a dice. On a 4+, inflict an amount of mortal damage on the target equal to the roll.
+
+      - id: quickblood
+        type: spell
+        name: Quickblood
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Make a casting roll of 2D6.
+        effect: This unit has STRIKE-FIRST until the start of your next turn.
+        keywords:
+          - SPELL
+
+  - id: radukar-the-beast
+    name: Radukar the Beast
+    abilities:
+      - id: the-beast-will-out
+        type: normal
+        name: The Beast Will Out
+        timing: Once Per Turn (Army), End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        effect: If this unit is not in combat, it can move D6". It can move into combat.
+
+      - id: call-to-the-hunt-beast
+        type: passive
+        name: Call to the Hunt
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If this unit charged this turn, for the rest of the turn, add 1 to wound rolls for combat attacks made by friendly DEATHRATTLE and DEADWALKERS units while they are wholly within 12" of this unit.
+
+      - id: armour-of-the-night
+        type: spell
+        name: Armour of the Night
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Make a casting roll of 2D6.
+        effect: Subtract 1 from hit rolls and wound rolls for attacks that target this unit for the rest of the turn.
+        keywords:
+          - SPELL
+
+  - id: vengorian-lord
+    name: Vengorian Lord
+    abilities:
+      - id: nightmares-miasma-vengorian
+        type: passive
+        name: Nightmare's Miasma
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Subtract 1 from the Rend characteristic of melee weapons used by enemy units while they are in combat with this unit.
+
+      - id: festering-feast
+        type: normal
+        name: Festering Feast
+        timing: Once Per Turn (Army), End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        effect: If any damage points were allocated to enemy units by this unit's attacks this turn, Heal (D3) this unit and each other friendly SOULBLIGHT GRAVELORDS MONSTER unit wholly within 12" of this unit.
+
+      - id: scything-talons
+        type: normal
+        name: Scything Talons
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: If this unit charged this turn, pick an enemy unit in combat with it to be the target.
+        effect: Roll a dice. On a 3+, roll a dice for each model in the target unit. For each 5+, inflict 1 mortal damage on the target.
+
+  # War Machine Heroes
+  - id: coven-throne
+    name: Coven Throne
+    abilities:
+      - id: tactical-insight
+        type: passive
+        name: Tactical Insight
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Friendly DEATHRATTLE and DEADWALKERS units have WARD (5+) while they are wholly within 6" of this unit.
+
+      - id: scrying-pool
+        type: passive
+        name: Scrying Pool
+        timing: Passive
+        availablePhases:
+          - anyMovement
+        effect: If a friendly SOULBLIGHT GRAVELORDS unit wholly within 12" of this unit uses the 'Redeploy' command, you can pick another friendly SOULBLIGHT GRAVELORDS unit wholly within 12" of this unit that has not used a command this phase to use the 'Redeploy' command immediately after the first has been resolved (this is an exception to Commands, 1.2). No command point is spent the second time that command is used.
+
+      - id: a-promising-concoction
+        type: normal
+        name: A Promising Concoction
+        timing: Once Per Battle (Army), Your Combat Phase
+        availablePhases:
+          - yourCombat
+        declare: Pick up to 3 friendly VAMPIRE units wholly within 12" of this unit to be the targets.
+        effect: Add 1 to the Attacks characteristic of the targets' melee weapons for the rest of the turn.
+
+  - id: mortis-engine
+    name: Mortis Engine
+    abilities:
+      - id: the-reliquary
+        type: passive
+        name: The Reliquary
+        timing: Passive
+        availablePhases:
+          - anyHero
+        effect: When this unit is set up for the first time, place a stored energy dice beside it with the '1' facing up. Each time a friendly SOULBLIGHT GRAVELORDS WIZARD successfully casts a spell while it is within 12" of this unit, increase the value of the stored energy dice beside this unit by 1 (to a maximum of 6).
+
+      - id: nexus-of-death-energy
+        type: passive
+        name: Nexus of Death Energy
+        timing: Passive
+        availablePhases:
+          - anyHero
+        effect: When a friendly DEATHRATTLE or DEADWALKERS unit wholly within 12" of this unit is picked to be the target of the 'Deathly Invocation' ability, add D3 to the number of damage points that can be healed or the combined Health characteristic of models that can be returned.
+
+      - id: wave-of-power
+        type: normal
+        name: Wave of Power
+        timing: Once Per Turn (Army), Your Shooting Phase
+        availablePhases:
+          - yourShooting
+        declare: Pick up to 3 enemy units within 10" of this unit to be the targets.
+        effect: Roll a dice for each target. On a 3+, inflict an amount of mortal damage on the target equal to the value of this unit's stored energy dice. Then, change the value of the stored energy dice back to 1.
+
+  # Beasts
+  - id: dire-wolves
+    name: Dire Wolves
+    abilities:
+      - id: on-the-hunt
+        type: passive
+        name: On the Hunt
+        timing: Passive
+        availablePhases:
+          - anyMovement
+          - anyCharge
+        effect: This unit can use a RUN ability and still use CHARGE abilities later in the turn.
+
+  - id: fell-bats
+    name: Fell Bats
+    abilities:
+      - id: fleet-and-fell
+        type: passive
+        name: Fleet and Fell
+        timing: Passive
+        availablePhases:
+          - anyMovement
+          - anyCharge
+        effect: This unit can use CHARGE abilities even if it used a RETREAT ability in the same turn. In addition, no mortal damage is inflicted on this unit by RETREAT abilities.
+
+  # Cavalry
+  - id: barrow-knights
+    name: Barrow Knights
+    abilities:
+      - id: knights-of-the-king
+        type: passive
+        name: Knights of the King
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: While any friendly DEATHRATTLE CAVALRY HEROES are within this unit's combat range, both this unit and those friendly units have WARD (5+).
+
+      - id: cursed-to-rise-once-more
+        type: normal
+        name: Cursed to Rise Once More
+        timing: End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        effect: You can return 1 slain model to this unit.
+
+  - id: blood-knights
+    name: Blood Knights
+    abilities:
+      - id: riders-of-ruin
+        type: passive
+        name: Riders of Ruin
+        timing: Passive
+        availablePhases:
+          - anyMovement
+        effect: When this unit moves, it can pass through models in enemy INFANTRY units and can pass through the combat ranges of enemy INFANTRY units, but it cannot end a move in combat unless specified in the ability used.
+
+      - id: trampled-to-dust
+        type: normal
+        name: Trampled to Dust
+        timing: Any Charge Phase
+        availablePhases:
+          - anyCharge
+        declare: Pick an enemy unit that this unit passed across this turn to be the target.
+        effect: Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.
+
+  # Infantry
+  - id: askurgan-trueblades
+    name: Askurgan Trueblades
+    abilities:
+      - id: gut-wrenching-howl
+        type: normal
+        name: Gut-Wrenching Howl
+        timing: Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick an enemy unit in combat with this unit's Curseblood to be the target.
+        effect: Roll a dice. On a 4+, the target has STRIKE-LAST for the rest of the turn.
+
+      - id: creed-of-the-askurga-renkai
+        type: passive
+        name: Creed of the Askurga Renkai
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Subtract 1 from hit rolls for combat attacks made by enemy MONSTERS that target this unit. Add 1 to hit rolls for combat attacks made by this unit that target enemy MONSTERS.
+
+  - id: barrow-guard
+    name: Barrow Guard
+    abilities:
+      - id: guardians-of-the-king
+        type: passive
+        name: Guardians of the King
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: While any friendly SOULBLIGHT GRAVELORDS INFANTRY HEROES are within this unit's combat range, both this unit and those friendly units have WARD (5+).
+
+  - id: deadwalker-zombies
+    name: Deadwalker Zombies
+    abilities:
+      - id: mindless-ferocity
+        type: passive
+        name: Mindless Ferocity
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Each time a model in this unit is slain by a combat attack and that model was in combat with the attacking unit, roll a dice. On a 6+, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.
+
+  - id: deathrattle-skeletons
+    name: Deathrattle Skeletons
+    abilities:
+      - id: skeleton-legion
+        type: normal
+        name: Skeleton Legion
+        timing: End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        effect: You can return D3 slain models to this unit.
+
+  - id: vargheists
+    name: Vargheists
+    abilities:
+      - id: deaths-descent
+        type: normal
+        name: Death's Descent
+        timing: Once Per Turn (Army), Your Movement Phase
+        availablePhases:
+          - yourMovement
+        effect: If this unit is not in combat, remove it from the battlefield and set it up again on the battlefield more than 9" from all enemy units.
+
+  # Monsters
+  - id: revenant-draconith
+    name: Revenant Draconith
+    abilities:
+      - id: death-on-tattered-wings
+        type: normal
+        name: Death on Tattered Wings
+        timing: Deployment Phase
+        availablePhases:
+          - deployment
+        declare: Pick this unit if it has not been deployed.
+        effect: Set up this unit in reserve high above the battlefield. It has now been deployed.
+
+      - id: loathsome-descent
+        type: normal
+        name: Loathsome Descent
+        timing: Your Movement Phase
+        availablePhases:
+          - yourMovement
+        declare: Pick this unit if it is high above the battlefield.
+        effect: Set up this unit anywhere on the battlefield more than 9" from all enemy units.
+
+      - id: red-ruin
+        type: normal
+        name: Red Ruin
+        timing: Once Per Turn (Army), End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick an enemy unit in combat with this unit to be the target.
+        effect: >-
+          Roll a D3. On a 2+, resolve the following effects:
+          • Inflict an amount of mortal damage on the target equal to the roll.
+          • Heal (X) this unit where X is an amount equal to the roll.
+          • This unit can be removed from the battlefield and set up in reserve high above the battlefield.
+
+  - id: terrorgheist
+    name: Terrorgheist
+    abilities:
+      - id: gaping-maw
+        type: passive
+        name: Gaping Maw
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Each time an attack made with this unit's Fanged Maw scores a critical hit, that attack inflicts 6 mortal damage on the target unit and the attack sequence ends.
+
+      - id: sonic-assault
+        type: normal
+        name: Sonic Assault
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: If this unit charged this turn, pick an enemy unit in combat with it to be the target.
+        effect: >-
+          Roll a dice for each model in the target unit.
+          If 3 or more of the dice have the same value, for the rest of the turn, this unit has STRIKE-FIRST.
+          If 6 or more of the dice have the same value, for the rest of the turn, this unit has STRIKE-FIRST and the target cannot use commands.
+
+  # War Machines
+  - id: corpse-cart
+    name: Corpse Cart
+    abilities:
+      - id: locus-of-undeath
+        type: passive
+        name: Locus of Undeath
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Melee weapons used by other friendly DEADWALKERS units have Crit (Auto-wound) while they are wholly within 12" of this unit.
+
 battleFormations:
   - id: legion-of-shyish
     name: Legion of Shyish
