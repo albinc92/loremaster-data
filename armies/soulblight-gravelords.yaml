@@ -1,0 +1,385 @@
+type: army
+id: soulblight-gravelords
+name: Soulblight Gravelords
+
+battleFormations:
+  - id: legion-of-shyish
+    name: Legion of Shyish
+    abilities:
+      - id: horror-unending
+        type: passive
+        name: Horror Unending
+        timing: Passive
+        availablePhases:
+          - anyHero
+        effect: You can pick 1 additional target when using the 'Deathly Invocation' ability.
+
+  - id: deathstench-drove
+    name: Deathstench Drove
+    abilities:
+      - id: dragged-down-and-torn-apart
+        type: normal
+        name: Dragged Down and Torn Apart
+        timing: Once Per Turn (Army), End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick up to 3 friendly DEADWALKERS units in combat to be the targets.
+        effect: >-
+          For each target:
+          • Make a pile-in move.
+          • Then, pick an enemy unit in combat with the target and roll a D3. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.
+
+  - id: bacchanal-of-blood
+    name: Bacchanal of Blood
+    abilities:
+      - id: aristocracy-of-the-night
+        type: passive
+        name: Aristocracy of the Night
+        timing: Passive
+        availablePhases:
+          - anyHero
+          - anyCombat
+        effect: Add 1 to casting rolls for friendly VAMPIRE units that are not in combat and add 1 to wound rolls for combat attacks made by friendly VAMPIRE units that charged in the same turn.
+
+  - id: deathmarch
+    name: Deathmarch
+    abilities:
+      - id: tide-of-bones-and-blades
+        type: passive
+        name: Tide of Bones and Blades
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Add 1 to the Rend characteristic of melee weapons used by friendly DEATHRATTLE units that charged in the same turn for attacks that target a unit that has fewer models than the attacking unit.
+
+  - id: legions-of-ulfenkarn
+    name: Legions of Ulfenkarn
+    abilities:
+      - id: wardens-of-the-wolf
+        type: passive
+        name: Wardens of the Wolf
+        timing: Passive
+        availablePhases:
+          - anyHero
+        effect: Each time 1 or more slain models are returned to a friendly SOULBLIGHT GRAVELORDS INFANTRY or BEASTS unit wholly within 12" of a friendly Belladamma Volga, Radukar the Wolf, Radukar the Beast, or Ivya Volga, return 1 additional slain model to that unit.
+
+  - id: cryptmasters
+    name: Cryptmasters
+    abilities:
+      - id: unholy-site
+        type: normal
+        name: Unholy Site
+        timing: Once Per Turn (Army), Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly Cursed Sepulchre to be the target.
+        effect: The target has WARD (4+) until the start of your next turn.
+        lastsUntil: yourStartOfTurn
+
+  - id: skinshifters
+    name: Skinshifters
+    abilities:
+      - id: the-speed-of-death
+        type: normal
+        name: The Speed of Death
+        timing: Once Per Turn (Army), Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly INFANTRY VAMPIRE HERO to be the target.
+        effect: The target can move up to 12" and has FLY when it does so. It cannot end that move in combat.
+
+spellLores:
+  - id: lore-of-undeath
+    name: Lore of Undeath
+    spells:
+      - id: vile-transference
+        type: spell
+        name: Vile Transference
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, pick a visible enemy unit within 18" of them to be the target, then make a casting roll of 2D6.
+        effect: Roll a number of dice equal to the number of models in the target unit. For each 6, inflict 1 mortal damage on that unit. If any enemy models were slain by this spell, Heal (D3) the caster.
+        keywords:
+          - SPELL
+          - UNLIMITED
+
+      - id: prison-of-grief
+        type: spell
+        name: Prison of Grief
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, pick a visible enemy unit within 12" of them to be the target, then make a casting roll of 2D6.
+        effect: The target has STRIKE-LAST until the start of your next turn.
+        lastsUntil: yourStartOfTurn
+        keywords:
+          - SPELL
+
+      - id: waste-away
+        type: spell
+        name: Waste Away
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, pick a visible enemy unit within 12" of them to be the target, then make a casting roll of 2D6.
+        effect: For the rest of the turn, subtract 1 from the Damage characteristic of the target's melee weapons.
+        lastsUntil: yourEndOfTurn
+        keywords:
+          - SPELL
+
+manifestationLores:
+  - id: manifestations-of-the-grave
+    name: Manifestations of the Grave
+    summonSpells:
+      - id: summon-hand-of-nagash
+        type: spell
+        name: Summon Hand of Nagash
+        cost: 7
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: If there is not a friendly Hand of Nagash on the battlefield, pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, then make a casting roll of 2D6.
+        effect: Set up a Hand of Nagash wholly within 18" of the caster and more than 9" from all enemy units.
+        keywords:
+          - SUMMON
+          - SPELL
+
+      - id: summon-unholy-reliquary
+        type: spell
+        name: Summon Unholy Reliquary
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: If there is not a friendly Unholy Reliquary on the battlefield, pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, then make a casting roll of 2D6.
+        effect: Set up an Unholy Reliquary wholly within 18" of the caster.
+        keywords:
+          - SUMMON
+          - SPELL
+
+      - id: summon-sanguine-swarm
+        type: spell
+        name: Summon Sanguine Swarm
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: If there is not a friendly Sanguine Swarm on the battlefield, pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, then make a casting roll of 2D6.
+        effect: Set up a Sanguine Swarm wholly within 18" of the caster and more than 9" from all enemy units.
+        keywords:
+          - SUMMON
+          - SPELL
+
+    manifestations:
+      - id: hand-of-nagash
+        name: Hand of Nagash
+        abilities:
+          - id: grasp-of-death
+            type: passive
+            name: Grasp of Death
+            timing: Passive
+            availablePhases:
+              - anyCombat
+            effect: This manifestation has special combat abilities that can devastate enemy units.
+
+      - id: unholy-reliquary
+        name: Unholy Reliquary
+        abilities:
+          - id: necromantic-focus
+            type: passive
+            name: Necromantic Focus
+            timing: Passive
+            availablePhases:
+              - anyHero
+            effect: This manifestation enhances nearby necromantic magic and abilities.
+
+      - id: sanguine-swarm
+        name: Sanguine Swarm
+        abilities:
+          - id: blood-drain
+            type: passive
+            name: Blood Drain
+            timing: Passive
+            availablePhases:
+              - anyMovement
+              - anyCombat
+            effect: This manifestation can move and attack enemy units, draining their life force.
+
+enhancements:
+  heroic-traits:
+    name: Heroic Traits
+    abilities:
+      - id: lash-of-the-sire
+        type: normal
+        name: Lash of the Sire
+        cost: 20
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick another friendly SOULBLIGHT GRAVELORDS unit within this unit's combat range to be the target.
+        effect: >-
+          Roll a dice. On a 2+:
+          • If the target is not in combat, it can move D6" but cannot move into combat during any part of that move.
+          • If the target is in combat, it can make a pile-in move.
+
+      - id: unbending-will
+        type: normal
+        name: Unbending Will
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a friendly DEATHRATTLE or DEADWALKERS unit that has 2 or more models and is wholly within 12" of this unit to be the target.
+        effect: Add D6 to the target's control score for the rest of the turn.
+        lastsUntil: yourEndOfTurn
+
+      - id: unhinged-rampager
+        type: passive
+        name: Unhinged Rampager
+        timing: Passive
+        availablePhases:
+          - anyCharge
+        effect: You can re-roll charge rolls for this unit in your charge phase.
+
+      - id: immortal-ego
+        type: passive
+        name: Immortal Ego
+        timing: Passive
+        availablePhases:
+          - anyCombat
+          - anyShooting
+        effect: Each phase, you can re-roll 1 hit roll, 1 wound roll and 1 save roll for this unit.
+
+      - id: frightening-vitality
+        type: passive
+        name: Frightening Vitality
+        timing: Passive
+        availablePhases:
+          - anyHero
+          - anyEndOfTurn
+        effect: Each time an ability that heals at least 1 of this unit's damage points is resolved, if the total number of damage points healed by that ability was less than 3, Heal (X) this unit where X is 3 minus that number.
+
+      - id: a-wastrel-and-a-vagabond
+        type: passive
+        name: A Wastrel and a Vagabond
+        timing: Passive
+        availablePhases:
+          - anyMovement
+          - anyCombat
+        effect: >-
+          While a friendly Deadwalker Zombies or Deathrattle Skeletons unit is wholly within 12" of this unit:
+          • Add 2 to run rolls for that unit.
+          • Add 3" to the distance that unit can move when it piles in.
+
+  deathly-heirlooms:
+    name: Deathly Heirlooms
+    abilities:
+      - id: terminus-clock
+        type: normal
+        name: Terminus Clock
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        effect: Roll a dice. On a 3+, until the start of your next turn, subtract 1 from casting rolls for enemy WIZARDS while they are within 18" of this unit.
+        lastsUntil: yourStartOfTurn
+
+      - id: shard-of-night
+        type: passive
+        name: Shard of Night
+        timing: Passive
+        availablePhases:
+          - anyShooting
+        effect: Ignore modifiers to save rolls for shooting attacks that target this unit (positive and negative).
+
+      - id: amulet-of-graves
+        type: normal
+        name: Amulet of Graves
+        timing: Once Per Battle, Your Hero Phase
+        availablePhases:
+          - yourHero
+        effect: If there are fewer than 3 friendly Cursed Sepulchres on the battlefield, set up a Cursed Sepulchre on the battlefield more than 9" from all enemy units, more than 1" from all friendly units and more than 3" from all objectives and other terrain features.
+
+battleTraits:
+  - abilities:
+      - id: ancient-burial-sites
+        type: normal
+        name: Ancient Burial Sites
+        timing: Once Per Battle (Army), Deployment Phase
+        availablePhases:
+          - deployment
+        declare: This ability can only be used if there is a friendly Cursed Sepulchre on the battlefield.
+        effect: You can set up up to 2 additional Cursed Sepulchres on the battlefield. The first must be set up more than 3" from all units, objectives and other terrain features. The second must be set up wholly outside enemy territory and more than 3" from all units, objectives and other terrain features.
+
+      - id: the-unquiet-dead
+        type: passive
+        name: The Unquiet Dead
+        timing: Deployment Phase
+        availablePhases:
+          - deployment
+        declare: Pick a friendly DEATHRATTLE or DEADWALKERS unit that has not been deployed.
+        effect: Set up that unit in reserve in the grave. It has now been deployed. You cannot set up more friendly units in the grave than there are on the battlefield.
+
+      - id: the-rising-dead
+        type: normal
+        name: The Rising Dead
+        timing: Your Movement Phase
+        availablePhases:
+          - yourMovement
+        declare: Pick a friendly unit that is in the grave.
+        effect: Set up that unit wholly within 6" of a friendly Cursed Sepulchre and more than 9" from all enemy units, or wholly within 6" of the edge of the battlefield, wholly within friendly territory and more than 9" from all enemy units.
+
+      - id: deathly-invocation
+        type: normal
+        name: Deathly Invocation
+        timing: Once Per Turn (Army), Any Hero Phase
+        availablePhases:
+          - anyHero
+        declare: Pick a friendly SOULBLIGHT GRAVELORDS HERO to use this ability, then pick up to 3 friendly DEATHRATTLE or DEADWALKERS units wholly within 12" of that HERO to be the targets.
+        effect: >-
+          For each target:
+          • If the target is damaged, Heal (3) the target.
+          • If the target is not damaged, return a number of slain models to it with a combined Health characteristic of up to 3.
+
+      - id: endless-legions
+        type: normal
+        name: Endless Legions
+        timing: Once Per Battle Round (Army), Any Movement Phase
+        availablePhases:
+          - anyMovement
+        declare: Pick a friendly non-UNIQUE DEATHRATTLE or DEADWALKERS unit that started the battle with 2 or more models and that has been destroyed to be the target.
+        effect: Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 12" of a friendly SOULBLIGHT GRAVELORDS HERO or wholly within 6" of a friendly Cursed Sepulchre. It must be set up more than 9" from all enemy units. If it is your movement phase, you can set up the replacement unit more than 3" from all enemy units instead of more than 9", but if you set it up within 9" of any enemy units, it cannot use CHARGE abilities this turn.
+
+      - id: the-hunger
+        type: normal
+        name: The Hunger
+        timing: Once Per Turn (Army), End of Any Turn
+        availablePhases:
+          - anyEndOfTurn
+        declare: Pick each friendly VAMPIRE unit that used a FIGHT ability this turn to be the targets.
+        effect: Heal (D3) each target. Heal (2D3) the target instead if it destroyed an enemy unit this turn using a FIGHT ability.
+
+terrain:
+  cursed-sepulchre:
+    id: cursed-sepulchre
+    name: Cursed Sepulchre
+    terrainType: Faction Terrain
+    abilities:
+      - id: deploy-faction-terrain
+        type: normal
+        name: Deploy Faction Terrain Feature
+        timing: Deployment Phase
+        availablePhases:
+          - deployment
+        effect: You can set up this terrain feature wholly within friendly territory, more than 3" from all objectives and other terrain features.
+
+      - id: nexus-of-death-magic
+        type: passive
+        name: Nexus of Death Magic
+        timing: Passive
+        availablePhases:
+          - anyHero
+          - anyMovement
+        effect: This terrain feature serves as a focal point for necromantic energies, enhancing nearby undead abilities and providing strategic deployment options.
