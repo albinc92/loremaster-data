@@ -25,9 +25,9 @@ units:
           - yourHero
         declare: Pick up to 3 visible friendly Dire Wolves units wholly within 18" of this unit to be the targets, then make a casting roll of 2D6.
         effect: >-
-          For the rest of the turn:
-          • Add 1 to the Rend characteristic of the targets' melee weapons (including Companion weapons).
-          • The targets can ignore the effect of the 'Beast' ability.
+          For the rest of the turn:<br><br>
+          • Add 1 to the Rend characteristic of the targets' melee weapons (including Companion weapons).<br>
+          • The targets can ignore the effect of the '<strong>Beast</strong>' ability.
         keywords:
           - SPELL
 
@@ -38,8 +38,8 @@ units:
         availablePhases:
           - anyCombat
         effect: >-
-          While this unit is within the combat range of a friendly Dire Wolves unit:
-          • This unit has WARD (4+).
+          While this unit is within the combat range of a friendly Dire Wolves unit:<br><br>
+          • This unit has <strong>WARD</strong> (4+).<br>
           • Each time you make a successful ward roll for this unit, allocate 1 damage point to a friendly Dire Wolves unit within this unit's combat range after the damage sequence for this unit has been resolved (ward rolls cannot be made for those damage points).
 
   - id: vampire-lord-on-nightmare-steed
@@ -51,7 +51,7 @@ units:
         timing: Reaction - You declared a CHARGE ability for this unit
         availablePhases:
           - anyCharge
-        effect: You can re-roll the charge roll for that CHARGE ability. Then, before the charge move is made, you can pick a friendly Blood Knights unit that is not in combat, is wholly within 12" of this unit and has not used a CHARGE ability this turn to be the target. If this unit charges, then, immediately after the CHARGE ability used by this unit has been resolved, the target can immediately use the 'Charge' ability even if it is not your charge phase. In addition, you can re-roll charge rolls for the target this phase.
+        effect: You can re-roll the charge roll for that <strong>CHARGE</strong> ability. Then, before the charge move is made, you can pick a friendly Blood Knights unit that is not in combat, is wholly within 12" of this unit and has not used a <strong>CHARGE</strong> ability this turn to be the target. If this unit charges, then, immediately after the <strong>CHARGE</strong> ability used by this unit has been resolved, the target can immediately use the 'Charge' ability even if it is not your charge phase. In addition, you can re-roll charge rolls for the target this phase.
 
       - id: strike-at-the-heart
         type: normal
@@ -80,7 +80,7 @@ units:
         availablePhases:
           - yourHero
         declare: Pick an objective or terrain feature within enemy territory.
-        effect: For the rest of the turn, add 1 to hit rolls for attacks made by friendly DEATHRATTLE units while they are wholly within 6" of that objective or terrain feature.
+        effect: For the rest of the turn, add 1 to hit rolls for attacks made by friendly <strong>DEATHRATTLE</strong> units while they are wholly within 6" of that objective or terrain feature.
 
   - id: wight-lord-on-skeletal-steed
     name: Wight Lord on Skeletal Steed
@@ -91,15 +91,15 @@ units:
         timing: Passive
         availablePhases:
           - anyCharge
-        effect: Add 1 to charge rolls for friendly DEATHRATTLE CAVALRY units while they are wholly within 12" of this unit.
+        effect: Add 1 to charge rolls for friendly <strong>DEATHRATTLE CAVALRY</strong> units while they are wholly within 12" of this unit.
 
       - id: royal-companions
         type: normal
         name: Royal Companions
-        timing: Reaction - You declared a FIGHT ability for this unit
+        timing: Reaction - You declared a <strong>FIGHT</strong> ability for this unit
         availablePhases:
           - anyCombat
-        effect: Pick a friendly non-HERO DEATHRATTLE CAVALRY unit that has not used a FIGHT ability this turn and is within this unit's combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved.
+        effect: Pick a friendly non-<strong>HERO</strong> <strong>DEATHRATTLE CAVALRY</strong> unit that has not used a <strong>FIGHT</strong> ability this turn and is within this unit's combat range to be the target. The target can be picked to use a <strong>FIGHT</strong> ability immediately after the <strong>FIGHT</strong> ability used by this unit has been resolved.
 
   # Infantry Heroes
   - id: blades-of-the-hollow-king
@@ -112,8 +112,8 @@ units:
         timing: Your Hero Phase
         availablePhases:
           - yourHero
-        declare: This unit can cast this spell while its Cado Ezechiar is on the battlefield. Pick a visible unit within 12" of this unit to be the target, then make a casting roll of 2D6.
-        effect: If the target is an enemy unit, inflict D3 mortal damage on it. If the target is a friendly DEATHRATTLE or DEADWALKERS unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.
+        declare: This unit can cast this spell while its Cado Ezechiar is on the battlefield. Pick a visible unit within 12" of this unit to be the target, then make a casting roll of <strong>2D6</strong>.
+        effect: If the target is an enemy unit, inflict <strong>D3</strong> mortal damage on it. If the target is a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.
         keywords:
           - SPELL
 
@@ -125,8 +125,8 @@ units:
           - yourHero
         declare: This unit can use this ability while its Aurelias is on the battlefield.
         effect: >-
-          Pick 1 of the following to apply for the rest of the turn:
-          • Add 1 to this unit's power level.
+          Pick 1 of the following to apply for the rest of the turn:<br><br>
+          • Add 1 to this unit's power level.<br>
           • Each time a casting roll is made for this unit, you can re-roll 1 of the dice.
 
       - id: solia-the-tutor
@@ -137,8 +137,8 @@ units:
           - anyCombat
         declare: This unit can use this ability while its Cado Ezechiar is on the battlefield.
         effect: >-
-          Pick 1 of the following to apply for the rest of the turn:
-          • This unit has WARD (5+).
+          Pick 1 of the following to apply for the rest of the turn:<br><br>
+          • This unit has <strong>WARD</strong> (5+).<br>
           • This unit's Ezechiarian Greatsword has Crit (Mortal).
 
   - id: ivya-volga-the-outcast
@@ -161,7 +161,7 @@ units:
         availablePhases:
           - yourHero
         declare: Make a casting roll of 2D6.
-        effect: For the rest of the turn, subtract 5 from the control scores of enemy MONSTERS while they are within 12" of this unit.
+        effect: For the rest of the turn, subtract 5 from the control scores of enemy <strong>MONSTERS</strong> while they are within 12" of this unit.
         keywords:
           - SPELL
 
@@ -171,7 +171,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: Subtract 2 from the Attacks characteristic of enemy MONSTERS melee weapons while they are in combat with this unit.
+        effect: Subtract 2 from the Attacks characteristic of enemy <strong>MONSTERS</strong> melee weapons while they are in combat with this unit.
 
   - id: kritza-the-rat-prince
     name: Kritza, The Rat Prince
@@ -233,8 +233,8 @@ units:
         availablePhases:
           - anyCombat
         effect: >-
-          While this unit is within the combat range of a friendly DEATHRATTLE or DEADWALKERS unit:
-          • This unit has WARD (4+).
+          While this unit is within the combat range of a friendly DEATHRATTLE or DEADWALKERS unit:<br><br>
+          • This unit has WARD (4+).<br>
           • Each time you make a successful ward roll for this unit, allocate 1 damage point to a friendly DEATHRATTLE or DEADWALKERS unit within this unit's combat range after the damage sequence for this unit has been resolved (ward rolls cannot be made for those damage points).
 
       - id: vanhels-danse-macabre
@@ -244,8 +244,8 @@ units:
         timing: Once Per Turn (Army), Your Combat Phase
         availablePhases:
           - yourCombat
-        declare: Pick a friendly DEATHRATTLE or DEADWALKERS unit wholly within 12" of this unit to be the target.
-        effect: Roll a dice. On a 3+, the target can use 2 FIGHT abilities this phase. After the first is used, however, the target has STRIKE-LAST for the rest of the turn.
+        declare: Pick a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit wholly within 12" of this unit to be the target.
+        effect: Roll a dice. On a 3+, the target can use 2 <strong>FIGHT</strong> abilities this phase. After the first is used, however, the target has <strong>STRIKE-LAST</strong> for the rest of the turn.
 
   - id: radukar-the-wolf
     name: Radukar the Wolf
@@ -258,7 +258,7 @@ units:
         availablePhases:
           - yourHero
         declare: Make a casting roll of 2D6.
-        effect: Until the start of your next turn, you can re-roll charge rolls for friendly SOULBLIGHT GRAVELORDS INFANTRY units while they are wholly within 12" of this unit.
+        effect: Until the start of your next turn, you can re-roll charge rolls for friendly <strong>SOULBLIGHT GRAVELORDS INFANTRY</strong> units while they are wholly within 12" of this unit.
         keywords:
           - SPELL
 
@@ -268,7 +268,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: If this unit charged this turn, for the rest of the turn, add 1 to wound rolls for combat attacks made by friendly DEATHRATTLE and DEADWALKERS units while they are wholly within 12" of this unit.
+        effect: If this unit charged this turn, for the rest of the turn, add 1 to wound rolls for combat attacks made by friendly <strong>DEATHRATTLE</strong> and <strong>DEADWALKERS</strong> units while they are wholly within 12" of this unit.
 
   - id: sekhar-fang-of-nulahmia
     name: Sekhar, Fang of Nulahmia
@@ -299,7 +299,7 @@ units:
         availablePhases:
           - yourHero
         declare: Pick a visible enemy unit within 12" of this unit to be the target, then make a casting roll of 2D6.
-        effect: Until the start of your next turn, while they are wholly within 6" of this unit, friendly SOULBLIGHT GRAVELORDS units cannot be picked to be the target of abilities used by the target other than FIGHT abilities.
+        effect: Until the start of your next turn, while they are wholly within 6" of this unit, friendly <strong>SOULBLIGHT GRAVELORDS</strong> units cannot be picked to be the target of abilities used by the target other than <strong>FIGHT</strong> abilities.
         keywords:
           - SPELL
 
@@ -343,7 +343,7 @@ units:
         timing: Once Per Turn (Army), Your Hero Phase
         availablePhases:
           - yourHero
-        effect: Roll a dice. On a 3+, remove this unit from the battlefield and set it up again on the battlefield more than 9" from all enemy non-HERO units and more than 3" from all enemy HEROES.
+        effect: Roll a dice. On a 3+, remove this unit from the battlefield and set it up again on the battlefield more than 9" from all enemy non-<strong>HERO</strong> units and more than 3" from all enemy <strong>HEROES</strong>.
 
   - id: wight-king
     name: Wight King
@@ -354,7 +354,7 @@ units:
         timing: Once Per Turn (Army), Your Hero Phase
         availablePhases:
           - yourHero
-        declare: Pick a friendly DEATHRATTLE unit within this unit's combat range to be the target.
+        declare: Pick a friendly <strong>DEATHRATTLE</strong> unit within this unit's combat range to be the target.
         effect: Roll a dice. On a 3+, the target's melee weapons have Crit (2 Hits) for the rest of the turn.
 
       - id: ancient-strategies
@@ -363,7 +363,7 @@ units:
         timing: Reaction - You declared a FIGHT ability for this unit
         availablePhases:
           - anyCombat
-        effect: Pick a friendly non-HERO DEATHRATTLE INFANTRY unit that has not used a FIGHT ability this turn and is within this unit's combat range to be the target. The target can be picked to use a FIGHT ability immediately after the FIGHT ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target's attacks for the rest of the turn.
+        effect: Pick a friendly non-<strong>HERO</strong> <strong>DEATHRATTLE INFANTRY</strong> unit that has not used a <strong>FIGHT</strong> ability this turn and is within this unit's combat range to be the target. The target can be picked to use a <strong>FIGHT</strong> ability immediately after the <strong>FIGHT</strong> ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target's attacks for the rest of the turn.
 
   - id: cado-ezechiar-the-hollow-king
     name: Cado Ezechiar, The Hollow King
@@ -375,9 +375,9 @@ units:
         availablePhases:
           - yourHero
         effect: >-
-          Roll a dice. On a 2+, pick 1 of the following effects to apply until the start of your next turn.
-          • This unit has a Move characteristic of 12".
-          • Add 1 to casting rolls, unbinding rolls and banishment rolls for this unit.
+          Roll a dice. On a 2+, pick 1 of the following effects to apply until the start of your next turn.<br><br>
+          • This unit has a Move characteristic of 12".<br>
+          • Add 1 to casting rolls, unbinding rolls and banishment rolls for this unit.<br>
           • This unit's melee weapons have Crit (Mortal).
 
       - id: retribution-or-salvation-hollow-king
@@ -388,7 +388,7 @@ units:
         availablePhases:
           - yourHero
         declare: Pick a visible unit within 12" of this unit to be the target, then make a casting roll of 2D6.
-        effect: If the target is an enemy unit, inflict D3 mortal damage on it. If the target is a friendly DEATHRATTLE or DEADWALKERS unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.
+        effect: If the target is an enemy unit, inflict D3 mortal damage on it. If the target is a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.
         keywords:
           - SPELL
 
@@ -417,7 +417,7 @@ units:
         timing: Any Movement Phase
         availablePhases:
           - anyMovement
-        declare: If this unit is in reserve as a gravekeep, pick a friendly DEATHRATTLE or DEADWALKERS unit on the battlefield to be the target.
+        declare: If this unit is in reserve as a gravekeep, pick a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit on the battlefield to be the target.
         effect: Set up this unit wholly within 6" of the target and more than 9" from all enemy units. This unit is no longer in reserve.
 
   - id: torgillius-the-chamberlain
@@ -429,7 +429,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: While this unit is wholly within 12" of a friendly VAMPIRE LORD, add 1 to ward rolls for this unit.
+        effect: While this unit is wholly within 12" of a friendly <strong>VAMPIRE LORD</strong>, add 1 to ward rolls for this unit.
 
       - id: ancient-wisdom
         type: normal
@@ -437,7 +437,7 @@ units:
         timing: Your Hero Phase
         availablePhases:
           - yourHero
-        declare: Pick a friendly DEATHRATTLE or DEADWALKERS unit wholly within 12" of this unit to be the target.
+        declare: Pick a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit wholly within 12" of this unit to be the target.
         effect: Add 1 to hit rolls for the target's attacks until the start of your next turn.
 
       - id: raise-the-guard
@@ -447,7 +447,7 @@ units:
         timing: Your Hero Phase
         availablePhases:
           - yourHero
-        declare: Pick a visible friendly DEATHRATTLE unit that started the battle with 2 or more models and has been destroyed to be the target, then make a casting roll of 2D6.
+        declare: Pick a visible friendly <strong>DEATHRATTLE</strong> unit that started the battle with 2 or more models and has been destroyed to be the target, then make a casting roll of 2D6.
         effect: Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 6" of this unit and more than 9" from all enemy units.
         keywords:
           - SPELL
@@ -461,7 +461,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: Add 1 to hit rolls for attacks made by friendly DEATHRATTLE units while they are wholly within 12" of this unit.
+        effect: Add 1 to hit rolls for attacks made by friendly <strong>DEATHRATTLE</strong> units while they are wholly within 12" of this unit.
 
       - id: relentless-advance
         type: normal
@@ -469,7 +469,7 @@ units:
         timing: Your Movement Phase
         availablePhases:
           - yourMovement
-        declare: Pick up to 3 friendly DEATHRATTLE units wholly within 12" of this unit to be the targets.
+        declare: Pick up to 3 friendly <strong>DEATHRATTLE</strong> units wholly within 12" of this unit to be the targets.
         effect: The targets can move an extra 3" this phase.
 
       - id: barrow-blade
@@ -499,7 +499,7 @@ units:
         timing: Your Hero Phase
         availablePhases:
           - yourHero
-        declare: Pick a visible friendly non-UNIQUE SOULBLIGHT GRAVELORDS MONSTER wholly within 12" of this unit to be the target, then make a casting roll of 2D6.
+        declare: Pick a visible friendly non-<strong>UNIQUE</strong> <strong>SOULBLIGHT GRAVELORDS MONSTER</strong> wholly within 12" of this unit to be the target, then make a casting roll of 2D6.
         effect: Pick 1 of the target's melee weapons. If the target has any Companion melee weapons, you must pick 1 of those. Add D3 to the Attacks characteristic of that weapon for the rest of the turn.
         keywords:
           - SPELL
@@ -543,7 +543,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: If this unit has slain any enemy models this turn, for the rest of the turn, add 1 to the Attacks characteristic of melee weapons used by friendly DEATHRATTLE and DEADWALKERS units while they are wholly within 12" of this unit.
+        effect: If this unit has slain any enemy models this turn, for the rest of the turn, add 1 to the Attacks characteristic of melee weapons used by friendly <strong>DEATHRATTLE</strong> and <strong>DEADWALKERS</strong> units while they are wholly within 12" of this unit.
 
       - id: ashigaroths-hunger
         type: normal
@@ -551,7 +551,7 @@ units:
         timing: Once Per Turn (Army), Any Combat Phase
         availablePhases:
           - anyCombat
-        effect: If this unit charged this turn, roll a dice. On a 3+, this unit has STRIKE-FIRST for the rest of the turn.
+        effect: If this unit charged this turn, roll a dice. On a 3+, this unit has <strong>STRIKE-FIRST</strong> for the rest of the turn.
 
   - id: nagash-supreme-lord-of-the-undead
     name: Nagash, Supreme Lord of the Undead
@@ -570,7 +570,7 @@ units:
         timing: Once Per Turn (Army), End of Any Turn
         availablePhases:
           - anyEndOfTurn
-        declare: Pick a visible enemy HERO or MONSTER in combat with this unit to be the target.
+        declare: Pick a visible enemy <strong>HERO</strong> or <strong>MONSTER</strong> in combat with this unit to be the target.
         effect: Hide a dice in one of your hands or under one of two appropriate containers. Your opponent must pick one of your hands or containers. If they pick the one hiding the dice, this ability has no effect. If they pick the empty one, the target is automatically destroyed.
 
       - id: invocation-of-nagash
@@ -583,9 +583,9 @@ units:
         declare: This unit can cast this spell more than once per phase. Pick a visible unit wholly within 18" of this unit that has not been picked to be the target of this spell this turn to be the target, then make a casting roll of 2D6.
         effect: >-
           If the target is an enemy unit, inflict D3 mortal damage on it.
-          If the target is a friendly DEATH unit, pick 1 of the following effects:
-          • Return a number of slain models to the target unit with a combined Health characteristic of up to 3.
-          • The target has WARD (5+) until the start of your next turn.
+          If the target is a friendly <strong>DEATH</strong> unit, pick 1 of the following effects:<br><br>
+          • Return a number of slain models to the target unit with a combined Health characteristic of up to 3.<br>
+          • The target has <strong>WARD</strong> (5+) until the start of your next turn.
         keywords:
           - SPELL
 
@@ -595,7 +595,7 @@ units:
         timing: Once Per Battle, Your Hero Phase
         availablePhases:
           - yourHero
-        declare: Pick a friendly non-HERO NON-UNIQUE DEATH unit that has been destroyed to be the target.
+        declare: Pick a friendly non-<strong>HERO</strong> <strong>NON-UNIQUE</strong> <strong>DEATH</strong> unit that has been destroyed to be the target.
         effect: Set up a replacement unit identical to the target wholly within 12" of this unit and more than 9" from all enemy units.
 
   - id: neferata-mortarch-of-blood
@@ -607,7 +607,7 @@ units:
         timing: Once Per Turn (Army), End of Any Turn
         availablePhases:
           - anyEndOfTurn
-        declare: Pick an enemy HERO that was allocated any damage points inflicted by this unit's Akmet-har this turn to be the target.
+        declare: Pick an enemy <strong>HERO</strong> that was allocated any damage points inflicted by this unit's Akmet-har this turn to be the target.
         effect: Roll a dice. On a 5+, the target is automatically destroyed.
 
       - id: dark-mist
@@ -617,7 +617,7 @@ units:
         timing: Your Hero Phase
         availablePhases:
           - yourHero
-        declare: Pick a visible friendly non-MONSTER SOULBLIGHT GRAVELORDS unit wholly within 12" of this unit to be the target, then make a casting roll of 2D6.
+        declare: Pick a visible friendly non-<strong>MONSTER</strong> <strong>SOULBLIGHT GRAVELORDS</strong> unit wholly within 12" of this unit to be the target, then make a casting roll of 2D6.
         effect: Ignore modifiers to save rolls for the target (positive and negative) until the start of your next turn.
         keywords:
           - SPELL
@@ -628,7 +628,7 @@ units:
         timing: Deployment Phase
         availablePhases:
           - deployment
-        declare: Pick up to 3 friendly DEATHRATTLE INFANTRY or DEADWALKERS INFANTRY units to be the targets.
+        declare: Pick up to 3 friendly <strong>DEATHRATTLE INFANTRY</strong> or <strong>DEADWALKERS INFANTRY</strong> units to be the targets.
         effect: Each target can use the 'Normal Move' ability as if it were your movement phase.
 
       - id: twilights-allure
@@ -637,7 +637,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: Subtract 1 from hit rolls for combat attacks that target friendly SOULBLIGHT GRAVELORDS units while they are wholly within 6" of this unit.
+        effect: Subtract 1 from hit rolls for combat attacks that target friendly <strong>SOULBLIGHT GRAVELORDS</strong> units while they are wholly within 6" of this unit.
 
   - id: prince-vhordrai
     name: Prince Vhordrai
@@ -648,11 +648,11 @@ units:
         timing: End of Any Turn
         availablePhases:
           - anyEndOfTurn
-        declare: Pick a friendly non-MONSTER VAMPIRE unit that destroyed a unit this turn using a FIGHT ability and is wholly within 12" of this unit to be the target.
+        declare: Pick a friendly non-<strong>MONSTER</strong> <strong>VAMPIRE</strong> unit that destroyed a unit this turn using a <strong>FIGHT</strong> ability and is wholly within 12" of this unit to be the target.
         effect: >-
-          Pick 1 of the following effects to apply for the rest of the battle:
-          • Add 2" to the target's Move characteristic.
-          • Add 1 to the Attacks characteristic of the target's melee weapons.
+          Pick 1 of the following effects to apply for the rest of the battle:<br><br>
+          • Add 2" to the target's Move characteristic.<br>
+          • Add 1 to the Attacks characteristic of the target's melee weapons.<br>
           • Add 1 to the Damage characteristic of the target's melee weapons.
 
       - id: trail-of-crimson
@@ -672,7 +672,7 @@ units:
         availablePhases:
           - yourHero
         declare: Make a casting roll of 2D6.
-        effect: This unit has STRIKE-FIRST until the start of your next turn.
+        effect: This unit has <strong>STRIKE-FIRST</strong> until the start of your next turn.
         keywords:
           - SPELL
 
@@ -724,7 +724,7 @@ units:
         timing: Once Per Turn (Army), End of Any Turn
         availablePhases:
           - anyEndOfTurn
-        effect: If any damage points were allocated to enemy units by this unit's attacks this turn, Heal (D3) this unit and each other friendly SOULBLIGHT GRAVELORDS MONSTER unit wholly within 12" of this unit.
+        effect: If any damage points were allocated to enemy units by this unit's attacks this turn, Heal (D3) this unit and each other friendly <strong>SOULBLIGHT GRAVELORDS MONSTER</strong> unit wholly within 12" of this unit.
 
       - id: scything-talons
         type: normal
@@ -773,7 +773,7 @@ units:
         timing: Passive
         availablePhases:
           - anyHero
-        effect: Add 1 to casting rolls for friendly VAMPIRE WIZARDS while they are wholly within 12" of this unit.
+        effect: Add 1 to casting rolls for friendly <strong>VAMPIRE WIZARDS</strong> while they are wholly within 12" of this unit.
 
       - id: blood-scrying
         type: passive
@@ -781,7 +781,7 @@ units:
         timing: Passive
         availablePhases:
           - anyHero
-        effect: Once per turn, when a friendly SOULBLIGHT GRAVELORDS WIZARD within 12" of this unit successfully casts a spell, you can pick 1 dice and change the result to a 6.
+        effect: Once per turn, when a friendly <strong>SOULBLIGHT GRAVELORDS WIZARD</strong> within 12" of this unit successfully casts a spell, you can pick 1 dice and change the result to a 6.
 
       - id: crimson-rejuvenation
         type: normal
@@ -789,7 +789,7 @@ units:
         timing: Once Per Turn (Army), End of Any Turn
         availablePhases:
           - anyEndOfTurn
-        declare: Pick up to 3 friendly VAMPIRE units wholly within 12" of this unit to be the targets.
+        declare: Pick up to 3 friendly <strong>VAMPIRE</strong> units wholly within 12" of this unit to be the targets.
         effect: Heal (1) each target.
 
   - id: coven-throne
@@ -801,7 +801,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: Friendly DEATHRATTLE and DEADWALKERS units have WARD (5+) while they are wholly within 6" of this unit.
+        effect: Friendly <strong>DEATHRATTLE</strong> and <strong>DEADWALKERS</strong> units have <strong>WARD</strong> (5+) while they are wholly within 6" of this unit.
 
       - id: scrying-pool
         type: passive
@@ -809,7 +809,7 @@ units:
         timing: Passive
         availablePhases:
           - anyMovement
-        effect: If a friendly SOULBLIGHT GRAVELORDS unit wholly within 12" of this unit uses the 'Redeploy' command, you can pick another friendly SOULBLIGHT GRAVELORDS unit wholly within 12" of this unit that has not used a command this phase to use the 'Redeploy' command immediately after the first has been resolved (this is an exception to Commands, 1.2). No command point is spent the second time that command is used.
+        effect: If a friendly <strong>SOULBLIGHT GRAVELORDS</strong> unit wholly within 12" of this unit uses the 'Redeploy' command, you can pick another friendly <strong>SOULBLIGHT GRAVELORDS</strong> unit wholly within 12" of this unit that has not used a command this phase to use the 'Redeploy' command immediately after the first has been resolved (this is an exception to Commands, 1.2). No command point is spent the second time that command is used.
 
       - id: a-promising-concoction
         type: normal
@@ -817,7 +817,7 @@ units:
         timing: Once Per Battle (Army), Your Combat Phase
         availablePhases:
           - yourCombat
-        declare: Pick up to 3 friendly VAMPIRE units wholly within 12" of this unit to be the targets.
+        declare: Pick up to 3 friendly <strong>VAMPIRE</strong> units wholly within 12" of this unit to be the targets.
         effect: Add 1 to the Attacks characteristic of the targets' melee weapons for the rest of the turn.
 
   - id: mortis-engine
@@ -829,7 +829,7 @@ units:
         timing: Passive
         availablePhases:
           - anyHero
-        effect: When this unit is set up for the first time, place a stored energy dice beside it with the '1' facing up. Each time a friendly SOULBLIGHT GRAVELORDS WIZARD successfully casts a spell while it is within 12" of this unit, increase the value of the stored energy dice beside this unit by 1 (to a maximum of 6).
+        effect: When this unit is set up for the first time, place a stored energy dice beside it with the '1' facing up. Each time a friendly <strong>SOULBLIGHT GRAVELORDS WIZARD</strong> successfully casts a spell while it is within 12" of this unit, increase the value of the stored energy dice beside this unit by 1 (to a maximum of 6).
 
       - id: nexus-of-death-energy
         type: passive
@@ -837,7 +837,7 @@ units:
         timing: Passive
         availablePhases:
           - anyHero
-        effect: When a friendly DEATHRATTLE or DEADWALKERS unit wholly within 12" of this unit is picked to be the target of the 'Deathly Invocation' ability, add D3 to the number of damage points that can be healed or the combined Health characteristic of models that can be returned.
+        effect: When a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit wholly within 12" of this unit is picked to be the target of the 'Deathly Invocation' ability, add D3 to the number of damage points that can be healed or the combined Health characteristic of models that can be returned.
 
       - id: wave-of-power
         type: normal
@@ -859,7 +859,7 @@ units:
         availablePhases:
           - anyMovement
           - anyCharge
-        effect: This unit can use a RUN ability and still use CHARGE abilities later in the turn.
+        effect: This unit can use a <strong>RUN</strong> ability and still use <strong>CHARGE</strong> abilities later in the turn.
 
   - id: fell-bats
     name: Fell Bats
@@ -871,7 +871,7 @@ units:
         availablePhases:
           - anyMovement
           - anyCharge
-        effect: This unit can use CHARGE abilities even if it used a RETREAT ability in the same turn. In addition, no mortal damage is inflicted on this unit by RETREAT abilities.
+        effect: This unit can use <strong>CHARGE</strong> abilities even if it used a <strong>RETREAT</strong> ability in the same turn. In addition, no mortal damage is inflicted on this unit by <strong>RETREAT</strong> abilities.
 
   - id: vargskyr
     name: Vargskyr
@@ -910,7 +910,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: While any friendly DEATHRATTLE CAVALRY HEROES are within this unit's combat range, both this unit and those friendly units have WARD (5+).
+        effect: While any friendly <strong>DEATHRATTLE CAVALRY HEROES</strong> are within this unit's combat range, both this unit and those friendly units have <strong>WARD</strong> (5+).
 
       - id: cursed-to-rise-once-more
         type: normal
@@ -951,7 +951,7 @@ units:
         availablePhases:
           - anyCombat
         declare: Pick an enemy unit in combat with this unit's Curseblood to be the target.
-        effect: Roll a dice. On a 4+, the target has STRIKE-LAST for the rest of the turn.
+        effect: Roll a dice. On a 4+, the target has <strong>STRIKE-LAST</strong> for the rest of the turn.
 
       - id: creed-of-the-askurga-renkai
         type: passive
@@ -959,7 +959,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: Subtract 1 from hit rolls for combat attacks made by enemy MONSTERS that target this unit. Add 1 to hit rolls for combat attacks made by this unit that target enemy MONSTERS.
+        effect: Subtract 1 from hit rolls for combat attacks made by enemy <strong>MONSTERS</strong> that target this unit. Add 1 to hit rolls for combat attacks made by this unit that target enemy <strong>MONSTERS</strong>.
 
   - id: barrow-guard
     name: Barrow Guard
@@ -970,7 +970,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: While any friendly SOULBLIGHT GRAVELORDS INFANTRY HEROES are within this unit's combat range, both this unit and those friendly units have WARD (5+).
+        effect: While any friendly <strong>SOULBLIGHT GRAVELORDS INFANTRY HEROES</strong> are within this unit's combat range, both this unit and those friendly units have <strong>WARD</strong> (5+).
 
   - id: deadwalker-zombies
     name: Deadwalker Zombies
@@ -981,7 +981,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: Each time a model in this unit is slain by a combat attack and that model was in combat with the attacking unit, roll a dice. On a 6+, inflict 1 mortal damage on the attacking unit after the FIGHT ability has been resolved.
+        effect: Each time a model in this unit is slain by a combat attack and that model was in combat with the attacking unit, roll a dice. On a 6+, inflict 1 mortal damage on the attacking unit after the <strong>FIGHT</strong> ability has been resolved.
 
   - id: deathrattle-skeletons
     name: Deathrattle Skeletons
@@ -1014,7 +1014,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: This unit has WARD (6+).
+        effect: This unit has <strong>WARD</strong> (6+).
 
       - id: guardians-of-the-grave
         type: passive
@@ -1022,7 +1022,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: Add 1 to hit rolls for this unit's attacks while it is wholly within 12" of a friendly DEATHRATTLE HERO.
+        effect: Add 1 to hit rolls for this unit's attacks while it is wholly within 12" of a friendly <strong>DEATHRATTLE HERO</strong>.
 
   - id: vyrkos-blood-born
     name: Vyrkos Blood-born
@@ -1034,7 +1034,7 @@ units:
         availablePhases:
           - anyMovement
           - anyCharge
-        effect: This unit can use a RUN ability and still use CHARGE abilities later in the turn.
+        effect: This unit can use a <strong>RUN</strong> ability and still use <strong>CHARGE</strong> abilities later in the turn.
 
       - id: pack-hunters
         type: passive
@@ -1042,7 +1042,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: Add 1 to hit rolls for this unit's attacks while this unit is wholly within 12" of a friendly VYRKOS unit.
+        effect: Add 1 to hit rolls for this unit's attacks while this unit is wholly within 12" of a friendly <strong>VYRKOS</strong> unit.
 
   - id: the-crimson-court
     name: The Crimson Court
@@ -1061,7 +1061,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: This unit has WARD (5+) while it is in combat with a unit that has a lower Wounds characteristic than this unit.
+        effect: This unit has <strong>WARD</strong> (5+) while it is in combat with a unit that has a lower Wounds characteristic than this unit.
 
   - id: the-exiled-dead
     name: The Exiled Dead
@@ -1099,7 +1099,7 @@ units:
         timing: Passive
         availablePhases:
           - anyHero
-        effect: If this unit has 3 or more models, it counts as a HERO for the purposes of using the 'Deathly Invocation' battle trait.
+        effect: If this unit has 3 or more models, it counts as a <strong>HERO</strong> for the purposes of using the 'Deathly Invocation' battle trait.
 
   - id: the-sons-of-velmorn
     name: The Sons of Velmorn
@@ -1118,7 +1118,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: Add 1 to save rolls for this unit while it is wholly within 12" of a friendly DEATHRATTLE HERO.
+        effect: Add 1 to save rolls for this unit while it is wholly within 12" of a friendly <strong>DEATHRATTLE HERO</strong>.
 
   - id: zondaras-gravebreakers
     name: Zondara's Gravebreakers
@@ -1129,7 +1129,7 @@ units:
         timing: Passive
         availablePhases:
           - anyHero
-        effect: Add 1 to casting rolls for friendly SOULBLIGHT GRAVELORDS WIZARDS while they are wholly within 12" of this unit.
+        effect: Add 1 to casting rolls for friendly <strong>SOULBLIGHT GRAVELORDS WIZARDS</strong> while they are wholly within 12" of this unit.
 
       - id: dark-ritual
         type: normal
@@ -1137,7 +1137,7 @@ units:
         timing: Once Per Battle (Army), Your Hero Phase
         availablePhases:
           - yourHero
-        declare: Pick a friendly SOULBLIGHT GRAVELORDS WIZARD wholly within 12" of this unit to be the target.
+        declare: Pick a friendly <strong>SOULBLIGHT GRAVELORDS WIZARD</strong> wholly within 12" of this unit to be the target.
         effect: Add 1 to casting rolls for the target for the rest of the turn. In addition, the first spell successfully cast by the target this turn does not cost any casting points.
 
   # Monsters
@@ -1170,9 +1170,9 @@ units:
           - anyEndOfTurn
         declare: Pick an enemy unit in combat with this unit to be the target.
         effect: >-
-          Roll a D3. On a 2+, resolve the following effects:
-          • Inflict an amount of mortal damage on the target equal to the roll.
-          • Heal (X) this unit where X is an amount equal to the roll.
+          Roll a D3. On a 2+, resolve the following effects:<br><br>
+          • Inflict an amount of mortal damage on the target equal to the roll.<br>
+          • Heal (X) this unit where X is an amount equal to the roll.<br>
           • This unit can be removed from the battlefield and set up in reserve high above the battlefield.
 
   - id: terrorgheist
@@ -1195,8 +1195,8 @@ units:
         declare: If this unit charged this turn, pick an enemy unit in combat with it to be the target.
         effect: >-
           Roll a dice for each model in the target unit.
-          If 3 or more of the dice have the same value, for the rest of the turn, this unit has STRIKE-FIRST.
-          If 6 or more of the dice have the same value, for the rest of the turn, this unit has STRIKE-FIRST and the target cannot use commands.
+          If 3 or more of the dice have the same value, for the rest of the turn, this unit has <strong>STRIKE-FIRST</strong>.
+          If 6 or more of the dice have the same value, for the rest of the turn, this unit has <strong>STRIKE-FIRST</strong> and the target cannot use commands.
 
   # War Machines
   - id: corpse-cart
@@ -1208,7 +1208,7 @@ units:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: Melee weapons used by other friendly DEADWALKERS units have Crit (Auto-wound) while they are wholly within 12" of this unit.
+        effect: Melee weapons used by other friendly <strong>DEADWALKERS</strong> units have Crit (Auto-wound) while they are wholly within 12" of this unit.
 
   - id: scourge-of-ghyran-corpse-cart
     name: Scourge of Ghyran Corpse Cart
@@ -1227,7 +1227,7 @@ units:
         timing: Passive
         availablePhases:
           - anyHero
-        effect: Add 1 to casting rolls for friendly SOULBLIGHT GRAVELORDS WIZARDS while they are wholly within 12" of this unit.
+        effect: Add 1 to casting rolls for friendly <strong>SOULBLIGHT GRAVELORDS WIZARDS</strong> while they are wholly within 12" of this unit.
 
       - id: corpse-fuel
         type: normal
@@ -1235,7 +1235,7 @@ units:
         timing: Once Per Turn (Army), Your Hero Phase
         availablePhases:
           - yourHero
-        declare: Pick a friendly DEADWALKERS unit wholly within 12" of this unit to be the target.
+        declare: Pick a friendly <strong>DEADWALKERS</strong> unit wholly within 12" of this unit to be the target.
         effect: Add 1 to hit rolls for the target's attacks until the start of your next turn.
 
 battleFormations:
@@ -1259,10 +1259,10 @@ battleFormations:
         timing: Once Per Turn (Army), End of Any Turn
         availablePhases:
           - anyEndOfTurn
-        declare: Pick up to 3 friendly DEADWALKERS units in combat to be the targets.
+        declare: Pick up to 3 friendly <strong>DEADWALKERS</strong> units in combat to be the targets.
         effect: >-
-          For each target:
-          • Make a pile-in move.
+          For each target:<br><br>
+          • Make a pile-in move.<br>
           • Then, pick an enemy unit in combat with the target and roll a D3. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.
 
   - id: bacchanal-of-blood
@@ -1275,7 +1275,7 @@ battleFormations:
         availablePhases:
           - anyHero
           - anyCombat
-        effect: Add 1 to casting rolls for friendly VAMPIRE units that are not in combat and add 1 to wound rolls for combat attacks made by friendly VAMPIRE units that charged in the same turn.
+        effect: Add 1 to casting rolls for friendly <strong>VAMPIRE</strong> units that are not in combat and add 1 to wound rolls for combat attacks made by friendly <strong>VAMPIRE</strong> units that charged in the same turn.
 
   - id: deathmarch
     name: Deathmarch
@@ -1286,7 +1286,7 @@ battleFormations:
         timing: Passive
         availablePhases:
           - anyCombat
-        effect: Add 1 to the Rend characteristic of melee weapons used by friendly DEATHRATTLE units that charged in the same turn for attacks that target a unit that has fewer models than the attacking unit.
+        effect: Add 1 to the Rend characteristic of melee weapons used by friendly <strong>DEATHRATTLE</strong> units that charged in the same turn for attacks that target a unit that has fewer models than the attacking unit.
 
   - id: legions-of-ulfenkarn
     name: Legions of Ulfenkarn
@@ -1297,7 +1297,7 @@ battleFormations:
         timing: Passive
         availablePhases:
           - anyHero
-        effect: Each time 1 or more slain models are returned to a friendly SOULBLIGHT GRAVELORDS INFANTRY or BEASTS unit wholly within 12" of a friendly Belladamma Volga, Radukar the Wolf, Radukar the Beast, or Ivya Volga, return 1 additional slain model to that unit.
+        effect: Each time 1 or more slain models are returned to a friendly <strong>SOULBLIGHT GRAVELORDS INFANTRY</strong> or <strong>BEASTS</strong> unit wholly within 12" of a friendly Belladamma Volga, Radukar the Wolf, Radukar the Beast, or Ivya Volga, return 1 additional slain model to that unit.
 
   - id: cryptmasters
     name: Cryptmasters
@@ -1309,7 +1309,7 @@ battleFormations:
         availablePhases:
           - yourHero
         declare: Pick a friendly Cursed Sepulchre to be the target.
-        effect: The target has WARD (4+) until the start of your next turn.
+        effect: The target has <strong>WARD</strong> (4+) until the start of your next turn.
         lastsUntil: yourStartOfTurn
 
   - id: skinshifters
@@ -1321,8 +1321,8 @@ battleFormations:
         timing: Once Per Turn (Army), Your Hero Phase
         availablePhases:
           - yourHero
-        declare: Pick a friendly INFANTRY VAMPIRE HERO to be the target.
-        effect: The target can move up to 12" and has FLY when it does so. It cannot end that move in combat.
+        declare: Pick a friendly <strong>INFANTRY VAMPIRE HERO</strong> to be the target.
+        effect: The target can move up to 12" and has <strong>FLY</strong> when it does so. It cannot end that move in combat.
 
 spellLores:
   - id: lore-of-undeath
@@ -1335,7 +1335,7 @@ spellLores:
         timing: Your Hero Phase
         availablePhases:
           - yourHero
-        declare: Pick a friendly SOULBLIGHT GRAVELORDS WIZARD to cast this spell, pick a visible enemy unit within 18" of them to be the target, then make a casting roll of 2D6.
+        declare: Pick a friendly <strong>SOULBLIGHT GRAVELORDS WIZARD</strong> to cast this spell, pick a visible enemy unit within 18" of them to be the target, then make a casting roll of 2D6.
         effect: Roll a number of dice equal to the number of models in the target unit. For each 6, inflict 1 mortal damage on that unit. If any enemy models were slain by this spell, Heal (D3) the caster.
         keywords:
           - SPELL
@@ -1422,8 +1422,8 @@ manifestationLores:
               - anyCombat
             declare: Pick an enemy unit in combat with this MANIFESTATION to be the target.
             effect: >-
-              Roll a dice. On a 4+, the following effects apply until the start of your next turn:
-              • While the target is within 3" of this MANIFESTATION, the target has a maximum control score of 1 that cannot be modified.
+              Roll a dice. On a 4+, the following effects apply until the start of your next turn:<br><br>
+              • While the target is within 3" of this MANIFESTATION, the target has a maximum control score of 1 that cannot be modified.<br>
               • While the target is within 3" of this MANIFESTATION, the target cannot use MOVE abilities.
             lastsUntil: yourStartOfTurn
 
@@ -1447,8 +1447,8 @@ manifestationLores:
               - anyCombat
             declare: Pick a friendly SOULBLIGHT GRAVELORDS HERO wholly within 12" of this MANIFESTATION to be the target.
             effect: >-
-              Pick 1 of the following:
-              • Heal (D3) the target.
+              Pick 1 of the following:<br><br>
+              • Heal (D3) the target.<br>
               • Add 1 to the Attacks characteristic of the target's melee weapons for the rest of the turn and banish this MANIFESTATION.
 
       - id: sanguine-swarm
@@ -1488,8 +1488,8 @@ enhancements:
           - yourHero
         declare: Pick another friendly SOULBLIGHT GRAVELORDS unit within this unit's combat range to be the target.
         effect: >-
-          Roll a dice. On a 2+:
-          • If the target is not in combat, it can move D6" but cannot move into combat during any part of that move.
+          Roll a dice. On a 2+:<br><br>
+          • If the target is not in combat, it can move D6" but cannot move into combat during any part of that move.<br>
           • If the target is in combat, it can make a pile-in move.
 
       - id: unbending-will
@@ -1536,8 +1536,8 @@ enhancements:
           - anyMovement
           - anyCombat
         effect: >-
-          While a friendly Deadwalker Zombies or Deathrattle Skeletons unit is wholly within 12" of this unit:
-          • Add 2 to run rolls for that unit.
+          While a friendly Deadwalker Zombies or Deathrattle Skeletons unit is wholly within 12" of this unit:<br><br>
+          • Add 2 to run rolls for that unit.<br>
           • Add 3" to the distance that unit can move when it piles in.
 
   deathly-heirlooms:
@@ -1605,8 +1605,8 @@ battleTraits:
           - anyHero
         declare: Pick a friendly SOULBLIGHT GRAVELORDS HERO to use this ability, then pick up to 3 friendly DEATHRATTLE or DEADWALKERS units wholly within 12" of that HERO to be the targets.
         effect: >-
-          For each target:
-          • If the target is damaged, Heal (3) the target.
+          For each target:<br><br>
+          • If the target is damaged, Heal (3) the target.<br>
           • If the target is not damaged, return a number of slain models to it with a combined Health characteristic of up to 3.
 
       - id: endless-legions
