@@ -48,6 +48,7 @@ units:
   # Infantry Heroes
   - id: arch-warlock
     name: Arch-Warlock
+    category: Hero
     abilities:
       - id: overseers-of-the-enginecovens
         type: passive
@@ -58,6 +59,7 @@ units:
         effect: If a friendly <strong>Skryre</strong> unit wholly within 13" of this unit uses the 'Covering Fire' command, no command points are spent.
   - id: clawlord
     name: Clawlord
+    category: Hero
     abilities:
       - id: cornered-rat
         type: passive
@@ -75,6 +77,7 @@ units:
         effect: Pick a friendly non-<strong>Hero Verminus Infantry</strong> unit that has not used a <strong>Fight</strong> ability this turn and is within this unit's combat range to be the target. The target can be picked to use a <strong>Fight</strong> ability immediately after the <strong>Fight</strong> ability used by this unit has been resolved.
   - id: clawlord-on-gnaw-beast
     name: Clawlord on Gnaw-beast
+    category: Hero
     abilities:
       - id: cornered-rat-mounted
         type: passive
@@ -94,6 +97,7 @@ units:
         lastsUntil: yourStartOfTurn
   - id: deathmaster
     name: Deathmaster
+    category: Hero
     abilities:
       - id: shadowy-killers
         type: passive
@@ -111,6 +115,7 @@ units:
         effect: While friendly <strong>Eshin</strong> units are wholly within 13" of this unit, they can use <strong>Shoot</strong> and/or <strong>Charge</strong> abilities even if they used a <strong>Run</strong> ability in the same turn.
   - id: grey-seer
     name: Grey Seer
+    category: Hero
     abilities:
       - id: warpstone-shards
         type: normal
@@ -121,6 +126,7 @@ units:
         effect: The next time you make a casting roll for this unit this phase, roll 3D6 instead of 2D6. This roll cannot be re-rolled or modified. If the casting roll is 13, the spell is successfully cast and cannot be unbound. After the effect of that spell has been resolved, inflict D3 mortal damage on this unit. If the casting roll is not 13, remove 1 dice of your choice from the casting roll and use the remaining 2D6 as the casting roll.
   - id: krittok-foulblade
     name: Krittok Foulblade
+    category: Hero
     abilities:
       - id: doomfang
         type: normal
@@ -146,6 +152,7 @@ units:
         effect: Add 1 to wound rolls for friendly <strong>Stormvermin</strong> units while they are wholly within 13" of this unit.
   - id: master-moulder
     name: Master Moulder
+    category: Hero
     abilities:
       - id: lord-of-flesh-grafting
         type: normal
@@ -166,6 +173,7 @@ units:
         lastsUntil: yourEndOfTurn
   - id: warlock-bombardier
     name: Warlock Bombardier
+    category: Hero
     abilities:
       - id: explosive-payload
         type: passive
@@ -184,6 +192,7 @@ units:
         lastsUntil: anyEndOfTurn
   - id: warlock-engineer
     name: Warlock Engineer
+    category: Hero
     abilities:
       - id: sniper-master
         type: normal
@@ -204,6 +213,7 @@ units:
         lastsUntil: anyEndOfTurn
   - id: warlock-galvaneer
     name: Warlock Galvaneer
+    category: Hero
     abilities:
       - id: lightning-master
         type: normal
@@ -224,6 +234,7 @@ units:
         effect: Roll a D3 for each other enemy unit within the target's combat range. On a 2+, inflict an amount of mortal damage on that enemy unit equal to the roll.
   - id: plague-priest
     name: Plague Priest
+    category: Hero
     abilities:
       - id: feed-on-pestilence
         type: normal
@@ -236,6 +247,7 @@ units:
   # Monster Heroes
   - id: lord-skreech-verminking
     name: Lord Skreech Verminking
+    category: Hero
     abilities:
       - id: the-thirteen-headed-one
         type: normal
@@ -267,6 +279,7 @@ units:
           - RAMPAGE
   - id: thanquol-on-boneripper
     name: Thanquol on Boneripper
+    category: Hero
     abilities:
       - id: staff-of-the-horned-rat
         type: passive
@@ -306,6 +319,7 @@ units:
   # Infantry Units
   - id: clanrats
     name: Clanrats
+    category: Infantry
     abilities:
       - id: seething-swarm
         type: normal
@@ -316,6 +330,7 @@ units:
         effect: You can return D3 slain models to this unit.
   - id: night-runners
     name: Night Runners
+    category: Infantry
     abilities:
       - id: slinking-advance
         type: normal
@@ -334,6 +349,7 @@ units:
         effect: While each model in this unit is within 1" of any terrain features, this unit cannot be targeted by shooting attacks unless the attacking model is within 9" of it.
   - id: plague-monks
     name: Plague Monks
+    category: Infantry
     abilities:
       - id: spreaders-of-filth-and-disease
         type: passive
@@ -344,6 +360,7 @@ units:
         effect: Each time a model in this unit is slain by a combat attack and that model was in combat with the attacking unit, roll a dice. On a 6+, inflict 1 mortal damage on the attacking unit after the <strong>Fight</strong> ability has been resolved.
   - id: stormvermin
     name: Stormvermin
+    category: Infantry
     abilities:
       - id: elite-bodyguard
         type: passive
@@ -354,6 +371,7 @@ units:
         effect: Friendly <strong>Skaven Infantry Heroes</strong> have <strong>Ward (5+)</strong> while they are within this unit's combat range.
   - id: rat-ogors
     name: Rat Ogors
+    category: Infantry
     abilities:
       - id: unleashed-warp-fury
         type: normal
@@ -365,6 +383,7 @@ units:
         lastsUntil: anyEndOfTurn
   - id: stormfiends
     name: Stormfiends
+    category: Infantry
     abilities:
       - id: grinderfist-tunnellers
         type: normal
@@ -385,6 +404,7 @@ units:
   # Weapon Teams
   - id: acolyte-globadiers
     name: Acolyte Globadiers
+    category: Weapon Team
     abilities:
       - id: gas-clouds
         type: passive
@@ -402,6 +422,7 @@ units:
         effect: While this unit is within the combat range of a friendly <strong>Clanrats</strong> unit that has 5 or more models, and there are no other friendly <strong>Weapon Team</strong> units within that unit's combat range, this unit is not visible to enemy units more than 13" away.
   - id: ratling-gun
     name: Ratling Gun
+    category: Weapon Team
     abilities:
       - id: hidden-weapon-team-ratling
         type: passive
@@ -412,6 +433,7 @@ units:
         effect: While this unit is within the combat range of a friendly <strong>Clanrats</strong> unit that has 5 or more models, and there are no other friendly <strong>Weapon Team</strong> units within that unit's combat range, this unit is not visible to enemy units more than 13" away.
   - id: warpfire-thrower
     name: Warpfire Thrower
+    category: Weapon Team
     abilities:
       - id: hidden-weapon-team-warpfire
         type: passive
@@ -422,6 +444,7 @@ units:
         effect: While this unit is within the combat range of a friendly <strong>Clanrats</strong> unit that has 5 or more models, and there are no other friendly <strong>Weapon Team</strong> units within that unit's combat range, this unit is not visible to enemy units more than 13" away.
   - id: warplock-jezzails
     name: Warplock Jezzails
+    category: Weapon Team
     abilities:
       - id: warpstone-snipers
         type: normal
@@ -433,6 +456,7 @@ units:
         lastsUntil: anyEndOfTurn
   - id: warpvolt-scourgers
     name: Warpvolt Scourgers
+    category: Weapon Team
     abilities:
       - id: hidden-weapon-team-warpvolt
         type: passive
@@ -445,6 +469,7 @@ units:
   # Monsters
   - id: hell-pit-abomination
     name: Hell Pit Abomination
+    category: Monster
     abilities:
       - id: regenerating-monstrosity
         type: normal
@@ -472,6 +497,7 @@ units:
         effect: The first time this unit would be destroyed, before removing it from the battlefield, roll a dice and apply the corresponding effect. On a 1, this unit is destroyed. On a 2-4, roll a D3 for each enemy unit in combat with this unit. On a 2+, inflict an amount of mortal damage on that unit equal to the roll. Then, this unit is destroyed. On a 5-6, this unit is not destroyed and any remaining damage points inflicted on it have no effect. Then, <strong>Heal (D6)</strong> this unit.
   - id: brood-terror
     name: Brood Terror (Scourge of Ghyran)
+    category: Monster
     abilities:
       - id: regenerating-terror
         type: normal
@@ -493,6 +519,7 @@ units:
   - id: scourge-of-ghyran-brood-terror
     name: Brood Terror
     scourgeOfGhyran: true
+    category: Monster
     abilities:
       - id: lend-a-claw
         type: normal
@@ -516,6 +543,7 @@ units:
   # War Machines
   - id: doomwheel
     name: Doomwheel
+    category: War Machine
     abilities:
       - id: rolling-doom
         type: normal
@@ -529,6 +557,7 @@ units:
           - MOVE
   - id: warp-lightning-cannon
     name: Warp Lightning Cannon
+    category: War Machine
     abilities:
       - id: more-more-warp-lightning
         type: normal
@@ -549,6 +578,7 @@ units:
   # War Machine Heroes
   - id: grey-seer-on-screaming-bell
     name: Grey Seer on Screaming Bell
+    category: Hero
     abilities:
       - id: altar-of-the-horned-rat
         type: passive
@@ -579,6 +609,7 @@ units:
   - id: scourge-of-ghyran-grey-seer-on-screaming-bell
     name: Grey Seer on Screaming Bell (Scourge of Ghyran)
     scourgeOfGhyran: true
+    category: Hero
     abilities:
       - id: the-bell-tolls
         type: passive
@@ -612,6 +643,7 @@ units:
   # Named Characters
   - id: vizzik-skour-prophet-of-the-horned-rat
     name: Vizzik Skour, Prophet of the Horned Rat
+    category: Hero
     abilities:
       - id: the-death-frenzy
         type: normal
@@ -654,6 +686,7 @@ units:
   # Verminlords
   - id: verminlord-corruptor
     name: Verminlord Corruptor
+    category: Hero
     abilities:
       - id: lord-of-great-plagues
         type: normal
@@ -675,6 +708,7 @@ units:
 
   - id: verminlord-deceiver
     name: Verminlord Deceiver
+    category: Hero
     abilities:
       - id: lord-of-assassins
         type: normal
@@ -695,6 +729,7 @@ units:
 
   - id: verminlord-warbringer
     name: Verminlord Warbringer
+    category: Hero
     abilities:
       - id: killing-blow
         type: normal
@@ -717,6 +752,7 @@ units:
 
   - id: verminlord-warpseer
     name: Verminlord Warpseer
+    category: Hero
     abilities:
       - id: tectonic-splintering
         type: spell
@@ -760,6 +796,7 @@ units:
   # Special Units and Heroes
   - id: plague-priest-on-plague-furnace
     name: Plague Priest on Plague Furnace
+    category: Hero
     abilities:
       - id: altar-of-the-great-corruptor
         type: passive
@@ -779,6 +816,7 @@ units:
   # Special Infantry Units
   - id: gutter-runners
     name: Gutter Runners
+    category: Infantry
     abilities:
       - id: deliver-the-killing-strike
         type: normal
@@ -799,6 +837,7 @@ units:
 
   - id: plague-censer-bearer
     name: Plague Censer Bearer
+    category: Infantry
     abilities:
       - id: frenzied-assault
         type: passive
@@ -820,6 +859,7 @@ units:
   # Underworld Warbands
   - id: skabbiks-plaguepack
     name: Skabbik's Plaguepack
+    category: Infantry
     abilities:
       - id: enshrouding-fumes-skabbik
         type: passive
@@ -839,6 +879,7 @@ units:
 
   - id: skittershank-clawpack
     name: Skittershank's Clawpack
+    category: Infantry
     abilities:
       - id: sneaky-infiltrators-clawpack
         type: passive
@@ -858,6 +899,7 @@ units:
 
   - id: spiteclaw-swarm
     name: Spiteclaw's Swarm
+    category: Infantry
     abilities:
       - id: seething-swarm-spiteclaw
         type: normal
@@ -870,6 +912,7 @@ units:
   # War Machines
   - id: doom-flayers
     name: Doom-Flayers
+    category: War Machine
     abilities:
       - id: whirling-doom
         type: normal
@@ -882,6 +925,7 @@ units:
 
   - id: plagueclaw
     name: Plagueclaw
+    category: War Machine
     abilities:
       - id: bubonic-barrage
         type: passive
@@ -894,6 +938,7 @@ units:
 
   - id: ratling-warpblaster
     name: Ratling Warpblaster
+    category: War Machine
     abilities:
       - id: overwhelming-fire
         type: passive
@@ -913,6 +958,7 @@ units:
 
   - id: warp-grinder
     name: Warp-Grinder
+    category: War Machine
     abilities:
       - id: tunnel-skulkers
         type: normal
@@ -936,6 +982,7 @@ units:
   # Infantry Units
   - id: plaguepack
     name: Plaguepack
+    category: Infantry
     abilities:
       - id: enshrouding-fumes
         type: passive
@@ -952,6 +999,20 @@ units:
         availablePhases:
           - yourHero
         effect: This unit's Plague rat is a token. If you make an unmodified chanting roll of 1 for this unit while its Plague rat is on the battlefield, you can remove its Plague rat from the battlefield and then re-roll that chanting roll.
+
+  # Faction Terrain
+  - id: gnawhole
+    name: Gnawhole
+    category: Faction Terrain
+    abilities:
+      - id: tunnels-below
+        type: passive
+        name: Tunnels Below
+        timing: Passive
+        availablePhases:
+          - anyMovement
+        effect: Friendly <strong>Skaven</strong> units can use the 'Gnawhole Ambush' battle trait while wholly within 6" of this terrain feature.
+
 battleFormations:
   - id: virulent-procession
     name: Virulent Procession
@@ -1285,16 +1346,3 @@ enhancements:
         declare: Pick a friendly non-<strong>Hero Skaven Infantry</strong> unit wholly within 13" of this unit to be the target.
         effect: Inflict D3 mortal damage on the target. Then, add 1 to the Attacks characteristic of the target's melee weapons for the rest of the turn.
         lastsUntil: anyEndOfTurn
-terrain:
-  gnawhole:
-    id: gnawhole
-    name: Gnawhole
-    terrainType: Faction Terrain
-    abilities:
-      - id: tunnels-below
-        type: passive
-        name: Tunnels Below
-        timing: Passive
-        availablePhases:
-          - anyMovement
-        effect: Friendly <strong>Skaven</strong> units can use the 'Gnawhole Ambush' battle trait while wholly within 6" of this terrain feature.

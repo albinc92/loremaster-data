@@ -354,6 +354,7 @@ units:
   # Heroes - Cavalry
   - id: ripperdactyl-chief
     name: Ripperdactyl Chief
+    category: Hero
     abilities:
       - id: blot-toad
         type: normal
@@ -389,6 +390,7 @@ units:
           - anyCombat
   - id: saurus-scar-veteran-on-aggradon
     name: Saurus Scar-Veteran on Aggradon
+    category: Hero
     abilities:
       - id: primal-rage
         type: normal
@@ -409,6 +411,7 @@ units:
           - anyCombat
   - id: terradon-chief
     name: Terradon Chief
+    category: Hero
     abilities:
       - id: terradon-chief-attack-from-on-high
         type: passive
@@ -430,6 +433,7 @@ units:
   # Heroes - Infantry
   - id: saurus-astrolith-bearer
     name: Saurus Astrolith Bearer
+    category: Hero
     abilities:
       - id: celestial-conduit
         type: normal
@@ -448,6 +452,7 @@ units:
           - anyCombat
   - id: saurus-oldblood
     name: Saurus Oldblood
+    category: Hero
     abilities:
       - id: wrath-of-the-seraphon
         type: normal
@@ -465,6 +470,7 @@ units:
           - anyCombat
   - id: skink-starpriest
     name: Skink Starpriest
+    category: Hero
     abilities:
       - id: serpent-staff
         type: normal
@@ -476,6 +482,7 @@ units:
           - yourHero
   - id: skink-starseer
     name: Skink Starseer
+    category: Hero
     abilities:
       - id: scry-the-stars
         type: normal
@@ -497,6 +504,7 @@ units:
           - yourHero
   - id: slann-starmaster
     name: Slann Starmaster
+    category: Hero
     abilities:
       - id: masters-of-order
         type: passive
@@ -538,6 +546,7 @@ units:
   # Heroes - Monster
   - id: saurus-oldblood-on-carnosaur
     name: Saurus Oldblood on Carnosaur
+    category: Hero
     abilities:
       - id: oldblood-on-carnosaur-battle-damaged
         type: passive
@@ -572,6 +581,7 @@ units:
           - anyCombat
   - id: saurus-scar-veteran-on-carnosaur
     name: Saurus Scar-Veteran on Carnosaur
+    category: Hero
     abilities:
       - id: scar-veteran-on-carnosaur-battle-damaged
         type: passive
@@ -600,6 +610,7 @@ units:
           - anyEndOfTurn
   - id: skink-oracle-on-troglodon
     name: Skink Oracle on Troglodon
+    category: Hero
     abilities:
       - id: oracle-on-troglodon-battle-damaged
         type: passive
@@ -635,6 +646,7 @@ units:
           - anyEndOfTurn
   - id: stegadon-chief
     name: Stegadon Chief
+    category: Hero
     abilities:
       - id: stegadon-chief-battle-damaged
         type: passive
@@ -663,6 +675,7 @@ units:
           - anyMovement
   - id: scourge-of-ghyran-saurus-oldblood-on-carnosaur
     name: Saurus Oldblood on Carnosaur (Scourge of Ghyran)
+    category: Hero
     abilities:
       - id: scourge-ghyran-battle-damaged
         type: passive
@@ -703,6 +716,7 @@ units:
   # Special Hero
   - id: lord-kroak
     name: Lord Kroak
+    category: Hero
     abilities:
       - id: supreme-master-of-order
         type: passive
@@ -744,6 +758,7 @@ units:
   # Beasts
   - id: spawn-of-chotec
     name: Spawn of Chotec
+    category: Beast
     abilities:
       - id: sun-acolytes
         type: passive
@@ -763,6 +778,7 @@ units:
           - anyShooting
   - id: terrawings
     name: Terrawings
+    category: Beast
     abilities:
       - id: nerve-shredding-screeches
         type: normal
@@ -783,6 +799,7 @@ units:
   # Cavalry
   - id: aggradon-lancers
     name: Aggradon Lancers
+    category: Cavalry
     abilities:
       - id: aggradon-lancers-primal-rage
         type: normal
@@ -794,6 +811,7 @@ units:
           - anyEndOfTurn
   - id: raptadon-chargers
     name: Raptadon Chargers
+    category: Cavalry
     abilities:
       - id: cold-blooded-unity
         type: passive
@@ -804,6 +822,7 @@ units:
           - anyCombat
   - id: raptadon-hunters
     name: Raptadon Hunters
+    category: Cavalry
     abilities:
       - id: deadly-cohesion
         type: normal
@@ -815,6 +834,7 @@ units:
           - anyCharge
   - id: ripperdactyl-riders
     name: Ripperdactyl Riders
+    category: Cavalry
     abilities:
       - id: ripperdactyl-riders-blot-toad
         type: normal
@@ -843,6 +863,7 @@ units:
           - anyMovement
   - id: terradon-riders
     name: Terradon Riders
+    category: Cavalry
     abilities:
       - id: deadly-cargo
         type: normal
@@ -871,6 +892,7 @@ units:
   # Infantry
   - id: hunters-of-huanchi-with-dartpipes
     name: Hunters of Huanchi with Dartpipes
+    category: Infantry
     abilities:
       - id: hidden-hunters
         type: normal
@@ -900,6 +922,7 @@ units:
           - yourMovement
   - id: hunters-of-huanchi-with-starstone-bolas
     name: Hunters of Huanchi with Starstone Bolas
+    category: Infantry
     abilities:
       - id: bolas-hidden-hunters
         type: normal
@@ -929,6 +952,7 @@ units:
           - anyShooting
   - id: kroxigor
     name: Kroxigor
+    category: Infantry
     abilities:
       - id: brutal-blows
         type: passive
@@ -939,6 +963,7 @@ units:
           - anyCombat
   - id: kroxigor-warspawned
     name: Kroxigor Warspawned
+    category: Infantry
     abilities:
       - id: spawn-of-sotek
         type: passive
@@ -956,6 +981,7 @@ units:
           - anyShooting
   - id: saurus-guard
     name: Saurus Guard
+    category: Infantry
     abilities:
       - id: selfless-protectors
         type: passive
@@ -967,6 +993,7 @@ units:
           - anyCombat
   - id: saurus-warriors
     name: Saurus Warriors
+    category: Infantry
     abilities:
       - id: ordered-cohorts
         type: passive
@@ -978,6 +1005,7 @@ units:
           - anyCombat
   - id: skinks
     name: Skinks
+    category: Infantry
     abilities:
       - id: swift-and-nimble
         type: passive
@@ -986,36 +1014,11 @@ units:
         effect: When this unit uses the 'Redeploy' command, when determining the distance this unit can move, you can roll 2 dice instead of 1 and pick either result.
         availablePhases:
           - anyMovement
-  - id: the-starblood-stalkers
-    name: The Starblood Stalkers
-    abilities:
-      - id: klaq-trok
-        type: passive
-        name: Klaq-Trok
-        timing: Passive
-        effect: While this unit's Klaq-Trok is on the battlefield, ignore the first damage point that would be allocated to this unit each phase.
-        availablePhases:
-          - anyShooting
-          - anyCombat
-      - id: kixi-taka-the-diviner
-        type: passive
-        name: Kixi-Taka the Diviner
-        timing: Passive
-        effect: While this unit's Kixi-Taka, the Diviner, is on the battlefield, it has Wizard (1).
-        availablePhases:
-          - anyHero
-      - id: otapatls-dartpipe
-        type: normal
-        name: Otapatl's Dartpipe
-        timing: Your Shooting Phase
-        effect: Roll a dice. On a 4+, inflict 1 mortal damage on the target.
-        declare: If this unit's Otapatl is on the battlefield, pick a visible enemy unit within 18" of this unit to be the target.
-        availablePhases:
-          - yourShooting
-
+  
   # Monsters
   - id: bastiladon-with-ark-of-sotek
     name: Bastiladon with Ark of Sotek
+    category: Monster
     abilities:
       - id: ark-of-sotek
         type: normal
@@ -1029,6 +1032,7 @@ units:
           - anyCombat
   - id: bastiladon-with-solar-engine
     name: Bastiladon with Solar Engine
+    category: Monster
     abilities:
       - id: tail-swipe
         type: normal
@@ -1042,6 +1046,7 @@ units:
           - anyCombat
   - id: engine-of-the-gods
     name: Engine of the Gods
+    category: Monster
     abilities:
       - id: engine-of-the-gods-battle-damaged
         type: passive
@@ -1073,6 +1078,7 @@ units:
           - yourHero
   - id: stegadon
     name: Stegadon
+    category: Monster
     abilities:
       - id: unstoppable-stampede
         type: normal
@@ -1092,11 +1098,11 @@ units:
         availablePhases:
           - anyShooting
           - anyCombat
-terrain:
-  realmshaper-engine:
-    id: realmshaper-engine
+
+  # Faction Terrain
+  - id: realmshaper-engine
     name: Realmshaper Engine
-    terrainType: Faction Terrain
+    category: Faction Terrain
     abilities:
       - id: fierce-guardians
         type: passive

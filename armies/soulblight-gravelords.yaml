@@ -6,6 +6,7 @@ units:
   # Cavalry Heroes
   - id: belladamma-volga-first-of-the-vyrkos
     name: Belladamma Volga, First of the Vyrkos
+    category: Hero
     abilities:
       - id: first-of-the-vyrkos
         type: passive
@@ -44,11 +45,12 @@ units:
 
   - id: vampire-lord-on-nightmare-steed
     name: Vampire Lord on Nightmare Steed
+    category: Hero
     abilities:
       - id: for-glory-for-blood
         type: normal
         name: 'For Glory! For Blood!'
-        timing: Reaction - You declared a CHARGE ability for this unit
+        timing: Reaction - You declared a <strong>CHARGE</strong> ability for this unit
         availablePhases:
           - anyCharge
         effect: You can re-roll the charge roll for that <strong>CHARGE</strong> ability. Then, before the charge move is made, you can pick a friendly Blood Knights unit that is not in combat, is wholly within 12" of this unit and has not used a <strong>CHARGE</strong> ability this turn to be the target. If this unit charges, then, immediately after the <strong>CHARGE</strong> ability used by this unit has been resolved, the target can immediately use the 'Charge' ability even if it is not your charge phase. In addition, you can re-roll charge rolls for the target this phase.
@@ -64,6 +66,7 @@ units:
 
   - id: wight-king-on-skeleton-steed
     name: Wight King on Skeleton Steed
+    category: Hero
     abilities:
       - id: ancient-barrow-curse
         type: passive
@@ -84,6 +87,7 @@ units:
 
   - id: wight-lord-on-skeletal-steed
     name: Wight Lord on Skeletal Steed
+    category: Hero
     abilities:
       - id: lord-of-trampling-bones
         type: passive
@@ -104,6 +108,7 @@ units:
   # Infantry Heroes
   - id: blades-of-the-hollow-king
     name: Blades of the Hollow King
+    category: Hero
     abilities:
       - id: retribution-or-salvation
         type: spell
@@ -112,8 +117,8 @@ units:
         timing: Your Hero Phase
         availablePhases:
           - yourHero
-        declare: This unit can cast this spell while its Cado Ezechiar is on the battlefield. Pick a visible unit within 12" of this unit to be the target, then make a casting roll of <strong>2D6</strong>.
-        effect: If the target is an enemy unit, inflict <strong>D3</strong> mortal damage on it. If the target is a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.
+        declare: This unit can cast this spell while its Cado Ezechiar is on the battlefield. Pick a visible unit within 12" of this unit to be the target, then make a casting roll of 2D6.
+        effect: If the target is an enemy unit, inflict D3 mortal damage on it. If the target is a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.
         keywords:
           - SPELL
 
@@ -143,6 +148,7 @@ units:
 
   - id: ivya-volga-the-outcast
     name: Ivya Volga, The Outcast
+    category: Hero
     abilities:
       - id: shrieking-swarm
         type: passive
@@ -175,6 +181,7 @@ units:
 
   - id: kritza-the-rat-prince
     name: Kritza, The Rat Prince
+    category: Hero
     abilities:
       - id: scurrying-retreat
         type: normal
@@ -195,6 +202,7 @@ units:
 
   - id: lady-annika-the-thirsting-blade
     name: Lady Annika, The Thirsting Blade
+    category: Hero
     abilities:
       - id: supernatural-speed
         type: normal
@@ -225,6 +233,7 @@ units:
 
   - id: necromancer
     name: Necromancer
+    category: Hero
     abilities:
       - id: undead-minions
         type: passive
@@ -233,9 +242,9 @@ units:
         availablePhases:
           - anyCombat
         effect: >-
-          While this unit is within the combat range of a friendly DEATHRATTLE or DEADWALKERS unit:<br><br>
-          • This unit has WARD (4+).<br>
-          • Each time you make a successful ward roll for this unit, allocate 1 damage point to a friendly DEATHRATTLE or DEADWALKERS unit within this unit's combat range after the damage sequence for this unit has been resolved (ward rolls cannot be made for those damage points).
+          While this unit is within the combat range of a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit:<br><br>
+          • This unit has <strong>WARD</strong> (4+).<br>
+          • Each time you make a successful ward roll for this unit, allocate 1 damage point to a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit within this unit's combat range after the damage sequence for this unit has been resolved (ward rolls cannot be made for those damage points).
 
       - id: vanhels-danse-macabre
         type: command
@@ -249,6 +258,7 @@ units:
 
   - id: radukar-the-wolf
     name: Radukar the Wolf
+    category: Hero
     abilities:
       - id: master-of-the-pack
         type: spell
@@ -272,6 +282,7 @@ units:
 
   - id: sekhar-fang-of-nulahmia
     name: Sekhar, Fang of Nulahmia
+    category: Hero
     abilities:
       - id: the-time-swallowers-maw
         type: normal
@@ -305,6 +316,7 @@ units:
 
   - id: scourge-of-ghyran-sekhar
     name: Scourge of Ghyran (Sekhar)
+    category: Hero
     abilities:
       - id: plague-bearer
         type: passive
@@ -336,6 +348,7 @@ units:
 
   - id: vampire-lord
     name: Vampire Lord
+    category: Hero
     abilities:
       - id: sanguine-blur
         type: normal
@@ -347,6 +360,7 @@ units:
 
   - id: wight-king
     name: Wight King
+    category: Hero
     abilities:
       - id: king-of-shambling-bones
         type: normal
@@ -360,13 +374,14 @@ units:
       - id: ancient-strategies
         type: normal
         name: Ancient Strategies
-        timing: Reaction - You declared a FIGHT ability for this unit
+        timing: Reaction - You declared a <strong>FIGHT</strong> ability for this unit
         availablePhases:
           - anyCombat
         effect: Pick a friendly non-<strong>HERO</strong> <strong>DEATHRATTLE INFANTRY</strong> unit that has not used a <strong>FIGHT</strong> ability this turn and is within this unit's combat range to be the target. The target can be picked to use a <strong>FIGHT</strong> ability immediately after the <strong>FIGHT</strong> ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target's attacks for the rest of the turn.
 
   - id: cado-ezechiar-the-hollow-king
     name: Cado Ezechiar, The Hollow King
+    category: Hero
     abilities:
       - id: the-court-of-the-lost
         type: normal
@@ -394,6 +409,7 @@ units:
 
   - id: gorslav-the-gravekeeper
     name: Gorslav the Gravekeeper
+    category: Hero
     abilities:
       - id: ancient-servitude
         type: passive
@@ -422,6 +438,7 @@ units:
 
   - id: torgillius-the-chamberlain
     name: Torgillius the Chamberlain
+    category: Hero
     abilities:
       - id: attend-the-court
         type: passive
@@ -454,6 +471,7 @@ units:
 
   - id: watch-captain-halgrim
     name: Watch Captain Halgrim
+    category: Hero
     abilities:
       - id: stern-taskmaster
         type: passive
@@ -483,6 +501,7 @@ units:
   # Monster Heroes
   - id: lauka-vai-mother-of-nightmares
     name: Lauka Vai, Mother of Nightmares
+    category: Hero
     abilities:
       - id: nightmares-miasma
         type: passive
@@ -515,6 +534,7 @@ units:
 
   - id: mannfred-von-carstein-mortarch-of-night
     name: Mannfred von Carstein, Mortarch of Night
+    category: Hero
     abilities:
       - id: wind-of-death
         type: spell
@@ -531,7 +551,7 @@ units:
       - id: the-mortarch-of-night
         type: normal
         name: The Mortarch of Night
-        timing: Reaction - You declared the 'Redeploy' command for a SOULBLIGHT GRAVELORDS unit wholly within 12" of this unit
+        timing: Reaction - You declared the 'Redeploy' command for a <strong>SOULBLIGHT GRAVELORDS</strong> unit wholly within 12" of this unit
         availablePhases:
           - yourHero
           - yourMovement
@@ -555,6 +575,7 @@ units:
 
   - id: nagash-supreme-lord-of-the-undead
     name: Nagash, Supreme Lord of the Undead
+    category: Hero
     abilities:
       - id: the-staff-of-power
         type: passive
@@ -600,6 +621,7 @@ units:
 
   - id: neferata-mortarch-of-blood
     name: Neferata, Mortarch of Blood
+    category: Hero
     abilities:
       - id: the-adevore
         type: normal
@@ -641,6 +663,7 @@ units:
 
   - id: prince-vhordrai
     name: Prince Vhordrai
+    category: Hero
     abilities:
       - id: saint-of-slaughter
         type: normal
@@ -678,6 +701,7 @@ units:
 
   - id: radukar-the-beast
     name: Radukar the Beast
+    category: Hero
     abilities:
       - id: the-beast-will-out
         type: normal
@@ -709,6 +733,7 @@ units:
 
   - id: vengorian-lord
     name: Vengorian Lord
+    category: Hero
     abilities:
       - id: nightmares-miasma-vengorian
         type: passive
@@ -737,6 +762,7 @@ units:
 
   - id: vampire-lord-on-zombie-dragon
     name: Vampire Lord on Zombie Dragon
+    category: Hero
     abilities:
       - id: pestilential-breath
         type: normal
@@ -766,6 +792,7 @@ units:
   # War Machine Heroes
   - id: bloodseeker-palanquin
     name: Bloodseeker Palanquin
+    category: Hero
     abilities:
       - id: the-sanguinarch
         type: passive
@@ -794,6 +821,7 @@ units:
 
   - id: coven-throne
     name: Coven Throne
+    category: Hero
     abilities:
       - id: tactical-insight
         type: passive
@@ -822,6 +850,7 @@ units:
 
   - id: mortis-engine
     name: Mortis Engine
+    category: Hero
     abilities:
       - id: the-reliquary
         type: passive
@@ -851,6 +880,7 @@ units:
   # Beasts
   - id: dire-wolves
     name: Dire Wolves
+    category: Beast
     abilities:
       - id: on-the-hunt
         type: passive
@@ -863,6 +893,7 @@ units:
 
   - id: fell-bats
     name: Fell Bats
+    category: Beast
     abilities:
       - id: fleet-and-fell
         type: passive
@@ -875,6 +906,7 @@ units:
 
   - id: vargskyr
     name: Vargskyr
+    category: Beast
     abilities:
       - id: bounding-leaps
         type: passive
@@ -903,6 +935,7 @@ units:
   # Cavalry
   - id: barrow-knights
     name: Barrow Knights
+    category: Cavalry
     abilities:
       - id: knights-of-the-king
         type: passive
@@ -922,6 +955,7 @@ units:
 
   - id: blood-knights
     name: Blood Knights
+    category: Cavalry
     abilities:
       - id: riders-of-ruin
         type: passive
@@ -943,6 +977,7 @@ units:
   # Infantry
   - id: askurgan-trueblades
     name: Askurgan Trueblades
+    category: Infantry
     abilities:
       - id: gut-wrenching-howl
         type: normal
@@ -963,6 +998,7 @@ units:
 
   - id: barrow-guard
     name: Barrow Guard
+    category: Infantry
     abilities:
       - id: guardians-of-the-king
         type: passive
@@ -974,6 +1010,7 @@ units:
 
   - id: deadwalker-zombies
     name: Deadwalker Zombies
+    category: Infantry
     abilities:
       - id: mindless-ferocity
         type: passive
@@ -985,6 +1022,7 @@ units:
 
   - id: deathrattle-skeletons
     name: Deathrattle Skeletons
+    category: Infantry
     abilities:
       - id: skeleton-legion
         type: normal
@@ -996,6 +1034,7 @@ units:
 
   - id: vargheists
     name: Vargheists
+    category: Infantry
     abilities:
       - id: deaths-descent
         type: normal
@@ -1007,6 +1046,7 @@ units:
 
   - id: kosargi-nightguard
     name: Kosargi Nightguard
+    category: Infantry
     abilities:
       - id: bone-shields
         type: passive
@@ -1026,6 +1066,7 @@ units:
 
   - id: vyrkos-blood-born
     name: Vyrkos Blood-born
+    category: Infantry
     abilities:
       - id: blood-scent
         type: passive
@@ -1046,6 +1087,7 @@ units:
 
   - id: the-crimson-court
     name: The Crimson Court
+    category: Infantry
     abilities:
       - id: contempt-for-weakness
         type: passive
@@ -1065,6 +1107,7 @@ units:
 
   - id: the-exiled-dead
     name: The Exiled Dead
+    category: Infantry
     abilities:
       - id: banished-spirits
         type: passive
@@ -1084,6 +1127,7 @@ units:
 
   - id: the-sepulchral-guard
     name: The Sepulchral Guard
+    category: Infantry
     abilities:
       - id: ancient-formation
         type: passive
@@ -1103,6 +1147,7 @@ units:
 
   - id: the-sons-of-velmorn
     name: The Sons of Velmorn
+    category: Infantry
     abilities:
       - id: skeletal-cavalry
         type: passive
@@ -1122,6 +1167,7 @@ units:
 
   - id: zondaras-gravebreakers
     name: Zondara's Gravebreakers
+    category: Infantry
     abilities:
       - id: necromantic-mastery
         type: passive
@@ -1143,6 +1189,7 @@ units:
   # Monsters
   - id: revenant-draconith
     name: Revenant Draconith
+    category: Monster
     abilities:
       - id: death-on-tattered-wings
         type: normal
@@ -1177,6 +1224,7 @@ units:
 
   - id: terrorgheist
     name: Terrorgheist
+    category: Monster
     abilities:
       - id: gaping-maw
         type: passive
@@ -1201,6 +1249,7 @@ units:
   # War Machines
   - id: corpse-cart
     name: Corpse Cart
+    category: War Machine
     abilities:
       - id: locus-of-undeath
         type: passive
@@ -1212,6 +1261,7 @@ units:
 
   - id: scourge-of-ghyran-corpse-cart
     name: Scourge of Ghyran Corpse Cart
+    category: War Machine
     abilities:
       - id: toxic-miasma
         type: passive
@@ -1237,6 +1287,28 @@ units:
           - yourHero
         declare: Pick a friendly <strong>DEADWALKERS</strong> unit wholly within 12" of this unit to be the target.
         effect: Add 1 to hit rolls for the target's attacks until the start of your next turn.
+
+  - id: cursed-sepulchre
+    name: Cursed Sepulchre
+    category: Faction Terrain
+    abilities:
+      - id: deploy-faction-terrain
+        type: normal
+        name: Deploy Faction Terrain Feature
+        timing: Deployment Phase
+        availablePhases:
+          - deployment
+        effect: You can set up this terrain feature wholly within friendly territory, more than 3" from all objectives and other terrain features.
+
+      - id: nexus-of-death-magic
+        type: passive
+        name: Nexus of Death Magic
+        timing: Passive
+        availablePhases:
+          - anyHero
+          - anyMovement
+        effect: This terrain feature serves as a focal point for necromantic energies, enhancing nearby undead abilities and providing strategic deployment options.
+
 
 battleFormations:
   - id: legion-of-shyish
@@ -1626,26 +1698,3 @@ battleTraits:
           - anyEndOfTurn
         declare: Pick each friendly VAMPIRE unit that used a FIGHT ability this turn to be the targets.
         effect: Heal (D3) each target. Heal (2D3) the target instead if it destroyed an enemy unit this turn using a FIGHT ability.
-
-terrain:
-  cursed-sepulchre:
-    id: cursed-sepulchre
-    name: Cursed Sepulchre
-    terrainType: Faction Terrain
-    abilities:
-      - id: deploy-faction-terrain
-        type: normal
-        name: Deploy Faction Terrain Feature
-        timing: Deployment Phase
-        availablePhases:
-          - deployment
-        effect: You can set up this terrain feature wholly within friendly territory, more than 3" from all objectives and other terrain features.
-
-      - id: nexus-of-death-magic
-        type: passive
-        name: Nexus of Death Magic
-        timing: Passive
-        availablePhases:
-          - anyHero
-          - anyMovement
-        effect: This terrain feature serves as a focal point for necromantic energies, enhancing nearby undead abilities and providing strategic deployment options.
