@@ -453,7 +453,7 @@ units:
         availablePhases:
           - yourShooting
         effect: If this unit has not used a <strong>Move</strong> ability this turn and was not set up this turn, add 6" to the Range characteristic of this unit's Warplock Jezzails for the rest of the turn.
-        lastsUntil: anyEndOfTurn
+        lastsUntil: yourEndOfTurn
   - id: warpvolt-scourgers
     name: Warpvolt Scourgers
     category: Weapon Team
@@ -566,7 +566,7 @@ units:
         availablePhases:
           - yourShooting
         effect: If this unit is within the combat range of a friendly <strong>Skryre Hero</strong>, add 6 to the Attacks characteristic of this unit's Warp Lightning Blast for the rest of the turn. However, for each unmodified hit roll of 1 for an attack made with this unit's Warp Lightning Blast, inflict D3 mortal damage on this unit after the <strong>Shoot</strong> ability has been resolved.
-        lastsUntil: anyEndOfTurn
+        lastsUntil: yourEndOfTurn
       - id: warp-lightning-blast
         type: passive
         name: Warp Lightning Blast
@@ -934,7 +934,7 @@ units:
         availablePhases:
           - yourShooting
         effect: Each time this unit uses a <strong>Shoot</strong> ability, if all of its attacks targeted the same enemy unit, after that ability has been resolved, roll a dice. If the result is equal to or less than the number of models in that enemy unit that were slain by attacks made by this unit's Plagueclaw Catapult this phase, that enemy unit has <strong>Strike-Last</strong> for the rest of the turn.
-        lastsUntil: anyEndOfTurn
+        lastsUntil: yourEndOfTurn
 
   - id: ratling-warpblaster
     name: Ratling Warpblaster
@@ -954,7 +954,7 @@ units:
         availablePhases:
           - yourShooting
         effect: If this unit is within the combat range of a friendly <strong>Skryre Hero</strong>, this unit's Hail of Warpstone Bullets has an Attacks characteristic of 6D6+3 instead of 3D6+3 for the rest of the turn. However, for each unmodified hit roll of 1 for an attack made with this unit's Hail of Warpstone Bullets, inflict 1 mortal damage on this unit after the <strong>Shoot</strong> ability has been resolved.
-        lastsUntil: anyEndOfTurn
+        lastsUntil: yourEndOfTurn
 
   - id: warp-grinder
     name: Warp-Grinder
@@ -1053,7 +1053,7 @@ battleFormations:
           - yourCombat
         declare: Pick up to 3 friendly <strong>Verminus</strong> units that charged this turn to be the targets.
         effect: Add 1 to the Rend characteristic of the targets' melee weapons for the rest of the turn.
-        lastsUntil: anyEndOfTurn
+        lastsUntil: yourEndOfTurn
   - id: warpcog-convocation
     name: Warpcog Convocation
     abilities:
@@ -1069,7 +1069,7 @@ battleFormations:
           <strong>1 Kaboom!:</strong> Inflict D3 mortal damage on the target.<br><br>
           <strong>2-5 More Power!:</strong> Add 1 to wound rolls for the target's shooting attacks for the rest of the turn.<br><br>
           <strong>6 More-more Power!:</strong> In addition to the effect of 'More Power!', add 1 to the Rend characteristic of the target's ranged weapons for the rest of the turn.
-        lastsUntil: anyEndOfTurn
+        lastsUntil: yourEndOfTurn
   - id: envoys-of-the-deepengnaw
     name: Envoys of the Deepengnaw
     scourgeOfGhyran: true
@@ -1135,7 +1135,7 @@ spellLores:
         declare: >-
           Pick a friendly <strong>Skaven Wizard</strong> to cast this spell, pick a visible enemy unit within 18" of them to be the target, then make a casting roll of 2D6.
         effect: The target has <strong>Strike-Last</strong> for the rest of the turn.
-        lastsUntil: anyEndOfTurn
+        lastsUntil: yourEndOfTurn
         keywords:
           - SPELL
 prayerLores:

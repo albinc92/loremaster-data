@@ -28,7 +28,6 @@ battleTraits:
           SEER: </strong>There are any friendly SLANN units on the battlefield
           and no friendly SLANN units are in combat or have been destroyed.
         effect: Pick a different <strong>Asterism</strong> ability. It can be used in addition to the one you picked in the deployment phase.
-        restrictions: Start of Third Battle Round
       - id: itzl-the-tamer
         type: passive
         name: Itzl the Tamer
@@ -350,6 +349,7 @@ enhancements:
           - RAMPAGE
         availablePhases:
           - anyCombat
+        lastsUntil: anyEndOfTurn
 units:
   # Heroes - Cavalry
   - id: ripperdactyl-chief
@@ -388,6 +388,7 @@ units:
         effect: Add 1 to the Attacks characteristic of Moonstone Warspears used by friendly Ripperdactyl Riders units wholly within 12" of this unit for the rest of the turn.
         availablePhases:
           - anyCombat
+        lastsUntil: anyEndOfTurn
   - id: saurus-scar-veteran-on-aggradon
     name: Saurus Scar-Veteran on Aggradon
     category: Hero
@@ -409,6 +410,7 @@ units:
         declare: Pick this unit and each friendly Aggradon Lancers unit wholly within 12" of it to be the targets.
         availablePhases:
           - anyCombat
+        lastsUntil: anyEndOfTurn
   - id: terradon-chief
     name: Terradon Chief
     category: Hero
@@ -429,6 +431,7 @@ units:
         declare: Pick an enemy unit that this unit passed across this phase to be the target.
         availablePhases:
           - yourMovement
+        lastsUntil: yourStartOfTurn
   
   # Heroes - Infantry
   - id: saurus-astrolith-bearer
@@ -442,6 +445,7 @@ units:
         effect: If that spell is successfully cast, for the rest of the turn, add 3 to the control scores of friendly Seraphon units while they are wholly within 12" of this unit.
         availablePhases:
           - anyHero
+        lastsUntil: yourStartOfTurn
       - id: revivifying-energies
         type: passive
         name: Revivifying Energies
@@ -461,6 +465,7 @@ units:
         effect: For the rest of the turn, add 1 to wound rolls for combat attacks made by friendly Saurus Infantry units while they are wholly within 12" of this unit.
         availablePhases:
           - anyCombat
+        lastsUntil: anyEndOfTurn
       - id: predatory-exemplar
         type: normal
         name: Predatory Exemplar
@@ -478,6 +483,7 @@ units:
         timing: Your Hero Phase
         effect: Roll a dice. On a 2+, the target's melee weapons have Crit (Auto-wound) until the start of your next turn.
         declare: Pick a visible friendly Seraphon unit wholly within 18" of this unit to be the target.
+        lastsUntil: yourStartOfTurn
         availablePhases:
           - yourHero
   - id: skink-starseer
@@ -491,6 +497,7 @@ units:
         effect: Roll a number of dice equal to the current battle round number. For each 3+, pick a friendly Seraphon unit wholly within 18" of this unit. That unit has Ward (5+) until the start of your next turn.
         availablePhases:
           - yourHero
+        lastsUntil: yourStartOfTurn
       - id: celestial-doom
         type: spell
         name: Celestial Doom
@@ -502,6 +509,7 @@ units:
           - SPELL
         availablePhases:
           - yourHero
+        lastsUntil: yourStartOfTurn
   - id: slann-starmaster
     name: Slann Starmaster
     category: Hero
@@ -525,6 +533,7 @@ units:
           - SPELL
         availablePhases:
           - yourHero
+        lastsUntil: yourStartOfTurn
       - id: arcane-vassal
         type: normal
         name: Arcane Vassal
@@ -563,6 +572,7 @@ units:
         effect: If this unit charged this turn, add 1 to charge rolls for friendly Saurus units while they are wholly within 18" of this unit for the rest of the turn.
         availablePhases:
           - anyMovement
+        lastsUntil: anyEndOfTurn
       - id: oldblood-on-carnosaur-terror
         type: passive
         name: Terror
@@ -579,6 +589,7 @@ units:
           - RAMPAGE
         availablePhases:
           - anyCombat
+        lastsUntil: anyEndOfTurn
   - id: saurus-scar-veteran-on-carnosaur
     name: Saurus Scar-Veteran on Carnosaur
     category: Hero
@@ -630,6 +641,7 @@ units:
           - RAMPAGE
         availablePhases:
           - anyCombat
+        lastsUntil: anyEndOfTurn
       - id: oracle-on-troglodon-terror
         type: passive
         name: Terror
@@ -712,6 +724,7 @@ units:
           - RAMPAGE
         availablePhases:
           - anyCombat
+        lastsUntil: anyEndOfTurn
 
   # Special Hero
   - id: lord-kroak
@@ -776,6 +789,7 @@ units:
           Each time this unit uses a Shoot ability, you must pick either its Glob of Flame Acid or its Stream of Fire ranged weapon. In addition, after resolving shooting attacks made with this unit's Glob of Flame Acid, if any damage points were allocated to an enemy unit by those attacks, subtract 1 from save rolls for that enemy unit for the rest of the turn.
         availablePhases:
           - anyShooting
+        lastsUntil: anyEndOfTurn
   - id: terrawings
     name: Terrawings
     category: Beast
@@ -788,6 +802,7 @@ units:
         declare: Pick an enemy unit within 10" of this unit to be the target.
         availablePhases:
           - yourShooting
+        lastsUntil: yourEndOfTurn
       - id: terrawings-beast
         type: passive
         name: Beast
@@ -809,6 +824,7 @@ units:
           This unit must use this ability each turn. If this unit used any Fight abilities this turn, place a rage token next to it, to a maximum of 3. If this unit did not use any Fight abilities this turn, remove all rage tokens it has. Add 1 to the Attacks characteristic of this unit's Companion weapons for each rage token it has until the end of the next turn.
         availablePhases:
           - anyEndOfTurn
+        lastsUntil: anyEndOfTurn
   - id: raptadon-chargers
     name: Raptadon Chargers
     category: Cavalry
@@ -874,6 +890,7 @@ units:
         declare: Pick an enemy unit that this unit passed across this phase to be the target.
         availablePhases:
           - yourMovement
+        lastsUntil: yourStartOfTurn
       - id: terradon-riders-attack-from-on-high
         type: passive
         name: Attack From On High
@@ -950,6 +967,7 @@ units:
         declare: Pick an enemy unit that was targeted by this unit's Starstone Bolas this turn to be the target.
         availablePhases:
           - anyShooting
+        lastsUntil: yourStartOfTurn
   - id: kroxigor
     name: Kroxigor
     category: Infantry
@@ -1067,6 +1085,7 @@ units:
           - RAMPAGE
         availablePhases:
           - anyCombat
+        lastsUntil: anyEndOfTurn
       - id: cosmic-engine
         type: normal
         name: Cosmic Engine
@@ -1076,6 +1095,7 @@ units:
         declare: Pick if this unit will harness or reserve the power of its cosmic engine.
         availablePhases:
           - yourHero
+        lastsUntil: yourEndOfTurn
   - id: stegadon
     name: Stegadon
     category: Monster
