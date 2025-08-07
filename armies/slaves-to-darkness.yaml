@@ -74,6 +74,7 @@ units:
   # Cavalry Heroes
   - id: centaurion-marshal
     name: Centaurion Marshal
+    category: Hero
     abilities:
       - id: marshal-of-the-legions
         type: normal
@@ -85,6 +86,7 @@ units:
 
   - id: chaos-lord-on-daemonic-mount
     name: Chaos Lord on Daemonic Mount
+    category: Hero
     abilities:
       - id: the-knights-of-chaos
         type: normal
@@ -96,6 +98,7 @@ units:
 
   - id: chaos-lord-on-karkadrak
     name: Chaos Lord on Karkadrak
+    category: Hero
     abilities:
       - id: drive-the-legions-forward
         type: normal
@@ -116,6 +119,7 @@ units:
 
   - id: darkoath-chieftain-on-warsteed
     name: Darkoath Chieftain on Warsteed
+    category: Hero
     abilities:
       - id: cavalry-warleader
         type: passive
@@ -134,6 +138,7 @@ units:
 
   - id: eternus-blade-of-the-first-prince
     name: Eternus, Blade of the First Prince
+    category: Hero
     abilities:
       - id: veins-of-black-lightning
         type: normal
@@ -159,6 +164,7 @@ units:
 
   - id: gaunt-summoner-on-disc-of-tzeentch
     name: Gaunt Summoner on Disc of Tzeentch
+    category: Hero
     abilities:
       - id: minions-of-the-silver-tower-disc
         type: normal
@@ -192,6 +198,7 @@ units:
 
   - id: singri-brand
     name: Singri Brand
+    category: Hero
     abilities:
       - id: swift-as-the-wind
         type: passive
@@ -211,6 +218,7 @@ units:
   # Infantry Heroes
   - id: chaos-lord
     name: Chaos Lord
+    category: Hero
     abilities:
       - id: glory-in-battle
         type: normal
@@ -222,6 +230,7 @@ units:
 
   - id: chaos-sorcerer-lord
     name: Chaos Sorcerer Lord
+    category: Hero
     abilities:
       - id: oracular-visions
         type: normal
@@ -234,6 +243,7 @@ units:
 
   - id: daemon-prince
     name: Daemon Prince
+    category: Hero
     abilities:
       - id: the-mounted-skulls-of-the-fallen
         type: passive
@@ -259,6 +269,7 @@ units:
 
   - id: darkoath-chieftain
     name: Darkoath Chieftain
+    category: Hero
     abilities:
       - id: tribal-warleader
         type: normal
@@ -277,6 +288,7 @@ units:
 
   - id: darkoath-warqueen
     name: Darkoath Warqueen
+    category: Hero
     abilities:
       - id: ruin-blessed-conqueror
         type: normal
@@ -296,6 +308,7 @@ units:
 
   - id: exalted-hero-of-chaos
     name: Exalted Hero of Chaos
+    category: Hero
     abilities:
       - id: glory-seeker
         type: passive
@@ -307,6 +320,7 @@ units:
 
   - id: gaunt-summoner
     name: Gaunt Summoner
+    category: Hero
     abilities:
       - id: minions-of-the-silver-tower
         type: normal
@@ -340,6 +354,7 @@ units:
 
   - id: gunnar-brand
     name: Gunnar Brand
+    category: Hero
     abilities:
       - id: carve-a-path-to-glory
         type: normal
@@ -360,6 +375,7 @@ units:
 
   - id: ogroid-myrmidon
     name: Ogroid Myrmidon
+    category: Hero
     abilities:
       - id: pit-master
         type: normal
@@ -379,6 +395,7 @@ units:
   # Monster Heroes
   - id: abraxia-spear-of-the-everchosen
     name: Abraxia, Spear of the Everchosen
+    category: Hero
     abilities:
       - id: warlord-of-the-first-circle
         type: passive
@@ -412,8 +429,56 @@ units:
           - anyCombat
         effect: Roll a dice each time a damage point inflicted by a combat attack is allocated to this unit. On a 4+, inflict 1 mortal damage on the attacking unit after the <strong>Fight</strong> ability has been resolved.
 
+  - id: abraxia-scourge-of-ghyran
+    name: Abraxia, Scourge of Ghyran
+    category: Hero
+    abilities:
+      - id: warlord-of-the-first-circle-ghyran
+        type: passive
+        name: Warlord of the First Circle
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: If a friendly Varanguard unit uses the 'Relentless Killers' ability while it is wholly within 12" of this unit, that unit does not have <strong>Strike-Last</strong> as a result of that ability.
+      - id: roar-of-domination-ghyran
+        type: normal
+        name: Roar of Domination
+        timing: Once Per Turn (Army), Any Combat Phase
+        availablePhases:
+          - anyCombat
+        declare: Pick an enemy <strong>Hero</strong> in combat with this unit to be the target.
+        effect: Roll a dice. On a 3+, subtract 1 from the Attacks characteristic of the target's melee weapons for the rest of the turn.
+        keywords:
+          - RAMPAGE
+      - id: corrupted-spear-of-ghyran
+        type: normal
+        name: Corrupted Spear of Ghyran
+        timing: Any Combat Phase
+        availablePhases:
+          - anyCombat
+        effect: If this unit is in combat, roll a dice and apply the corresponding effect. 1 - Toxic Backlash - Allocate 1 damage point to this unit. 2 - The Spear Withers - No effect. 3-5 - Venomous Corruption - Add 1 to the Damage characteristic of this unit's Corrupted Spear for the rest of the turn. 6 - Blighted Mutation - The effect of 'Venomous Corruption' applies and this unit's Corrupted Spear has Crit (Mortal) for the rest of the turn.
+      - id: poisoned-blood
+        type: passive
+        name: Poisoned Blood
+        timing: Passive
+        availablePhases:
+          - anyCombat
+        effect: Roll a dice each time a damage point inflicted by a combat attack is allocated to this unit. On a 4+, inflict 1 mortal damage on the attacking unit after the <strong>Fight</strong> ability has been resolved.
+      - id: plague-wind
+        type: spell
+        name: Plague Wind
+        cost: 6
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: Pick a visible enemy unit within 18" of this unit to be the target, then make a casting roll of 2D6.
+        effect: Roll a number of dice equal to the number of models in the target unit. For each 5+, inflict 1 mortal damage on the target.
+        keywords:
+          - SPELL
+
   - id: archaon-the-everchosen
     name: Archaon the Everchosen
+    category: Hero
     abilities:
       - id: three-headed-titan
         type: normal
@@ -441,6 +506,7 @@ units:
 
   - id: belakor-the-dark-master
     name: Be'lakor the Dark Master
+    category: Hero
     abilities:
       - id: enfeeble-foe
         type: spell
@@ -483,6 +549,7 @@ units:
   # War Machine Heroes
   - id: chaos-warshrine
     name: Chaos Warshrine
+    category: War Machine
     abilities:
       - id: protection-of-the-dark-gods
         type: passive
@@ -507,6 +574,7 @@ units:
   # Beasts
   - id: chaos-spawn
     name: Chaos Spawn
+    category: Beast
     abilities:
       - id: drawn-to-power
         type: passive
@@ -519,6 +587,7 @@ units:
 
   - id: darkoath-wilderfiend
     name: Darkoath Wilderfiend
+    category: Beast 
     abilities:
       - id: feed-on-flesh
         type: passive
@@ -537,6 +606,7 @@ units:
 
   - id: raptoryx
     name: Raptoryx
+    category: Beast
     abilities:
       - id: crazed-flock
         type: passive
@@ -549,6 +619,7 @@ units:
   # Cavalry
   - id: chaos-knights
     name: Chaos Knights
+    category: Cavalry
     abilities:
       - id: impaling-charge
         type: passive
@@ -560,6 +631,7 @@ units:
 
   - id: darkoath-fellriders
     name: Darkoath Fellriders
+    category: Cavalry
     abilities:
       - id: oath-of-the-raider
         type: normal
@@ -578,6 +650,7 @@ units:
 
   - id: varanguard
     name: Varanguard
+    category: Cavalry
     abilities:
       - id: relentless-killers
         type: normal
@@ -590,6 +663,7 @@ units:
   # Infantry
   - id: chaos-chosen
     name: Chaos Chosen
+    category: Infantry
     abilities:
       - id: heralds-of-ruination
         type: normal
@@ -601,6 +675,7 @@ units:
 
   - id: chaos-furies
     name: Chaos Furies
+    category: Infantry
     abilities:
       - id: sneaky-little-devils
         type: normal
@@ -612,6 +687,7 @@ units:
 
   - id: chaos-legionnaires
     name: Chaos Legionnaires
+    category: Infantry
     abilities:
       - id: sow-confusion
         type: normal
@@ -624,6 +700,7 @@ units:
 
   - id: chaos-warriors
     name: Chaos Warriors
+    category: Infantry
     abilities:
       - id: bringers-of-desolation
         type: passive
@@ -635,6 +712,7 @@ units:
 
   - id: darkoath-marauders
     name: Darkoath Marauders
+    category: Infantry
     abilities:
       - id: oath-of-the-marauder
         type: normal
@@ -653,6 +731,7 @@ units:
 
   - id: darkoath-savagers
     name: Darkoath Savagers
+    category: Infantry
     abilities:
       - id: oath-of-conquest
         type: normal
@@ -664,6 +743,7 @@ units:
 
   - id: ogroid-theridons
     name: Ogroid Theridons
+    category: Infantry
     abilities:
       - id: unleashed-savagery
         type: normal
@@ -675,6 +755,7 @@ units:
 
   - id: the-oathsworn-kin
     name: The Oathsworn Kin
+    category: Infantry
     abilities:
       - id: broken-nadja
         type: passive
@@ -698,6 +779,7 @@ units:
   # Monsters
   - id: fomoroid-crusher
     name: Fomoroid Crusher
+    category: Monster
     abilities:
       - id: cursed-destroyers
         type: normal
@@ -712,6 +794,7 @@ units:
 
   - id: mindstealer-sphiranx
     name: Mindstealer Sphiranx
+    category: Monster
     abilities:
       - id: dominate-mind
         type: normal
@@ -726,6 +809,7 @@ units:
 
   - id: mutalith-vortex-beast
     name: Mutalith Vortex Beast
+    category: Monster
     abilities:
       - id: mutant-regeneration
         type: normal
@@ -747,6 +831,7 @@ units:
 
   - id: slaughterbrute
     name: Slaughterbrute
+    category: Monster
     abilities:
       - id: sigils-of-domination
         type: normal
@@ -770,6 +855,7 @@ units:
   # War Machines
   - id: chaos-chariot
     name: Chaos Chariot
+    category: War Machine
     abilities:
       - id: swift-death
         type: normal
@@ -782,6 +868,7 @@ units:
 
   - id: gorebeast-chariot
     name: Gorebeast Chariot
+    category: War Machine
     abilities:
       - id: brutal-momentum
         type: passive
@@ -790,6 +877,35 @@ units:
         availablePhases:
           - anyMovement
         effect: When this unit uses the 'Power Through' command, inflict an additional D3 mortal damage on the target and add 3" to the distance this unit can move as part of that ability.
+
+  - id: nexus-chaotica
+    name: Nexus Chaotica
+    category: Faction Terrain
+    abilities:
+      - id: draw-power
+        type: normal
+        name: Draw Power
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        effect: Roll a dice. Give a number of power points to this terrain feature equal to the roll. This terrain feature can have a maximum of 12 power points at once.
+      - id: infernal-sorcery
+        type: normal
+        name: Infernal Sorcery
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: If this terrain feature has 3 or more power points, pick a friendly <strong>Slaves to Darkness Wizard</strong> within 3" of this terrain feature to be the target.
+        effect: Remove 3 power points from this terrain feature, then add 1 to casting rolls for the target for the rest of the turn.
+        lastsUntil: yourEndOfTurn
+      - id: corrupt-the-realms
+        type: normal
+        name: Corrupt the Realms
+        timing: Your Hero Phase
+        availablePhases:
+          - yourHero
+        declare: If this terrain feature has 9 or more power points, pick an objective or terrain feature within 24" of this terrain feature to be the source. Then, pick any number of enemy units within 3" of the source to be the targets.
+        effect: Remove 9 power points from this terrain feature, then roll a D3 for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll.
 battleFormations:
   - id: legion-of-chaos
     name: Legion of Chaos
@@ -858,7 +974,7 @@ battleFormations:
         effect: Add 2 to the Attacks characteristic of melee weapons used by friendly non-<strong>Monster Slaves to Darkness Heroes</strong>.
 enhancements:
   heroic-traits:
-    name: Ruinous Overlords
+    name: Heroic Traits
     abilities:
       - id: favoured-of-the-pantheon
         type: passive
@@ -1081,6 +1197,8 @@ manifestationLores:
               - anyCharge
             declare: If this <strong>Manifestation</strong> charged this phase, pick an enemy unit within 1" of it to be the target.
             effect: Roll a dice for each model in the target unit. For each 6, inflict 1 mortal damage on the target. If any models in the target unit are slain by this ability, subtract 1 from hit rolls for the target's attacks for the rest of the turn.
+            lastsUntil: anyEndOfTurn
+
 # Legion of the First Prince Army of Renown
 # legion-of-the-first-prince:
 #   battle-traits:
