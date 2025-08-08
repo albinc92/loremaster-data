@@ -1228,33 +1228,42 @@ manifestationLores:
       - id: warp-lightning-vortex
         name: Warp Lightning Vortex
         abilities:
-          - id: warp-lightning-vortex-ability
+          - id: warp-vortex
             type: passive
-            name: Warp Lightning Blast
-            timing: Passive
-            availablePhases:
-              - anyHero
-            effect: At the start of each hero phase, roll a dice for each unit within 6" of this manifestation. On a 4+, inflict D3 mortal damage on that unit.
-      - id: vermintide
-        name: Vermintide
-        abilities:
-          - id: vermintide-ability
-            type: passive
-            name: Tide of Rats
+            name: Warp Vortex
             timing: Passive
             availablePhases:
               - anyMovement
-            effect: Enemy units cannot end a normal move within 3" of this manifestation unless they have the <strong>Fly</strong> ability.
+              - anyCharge
+            effect: Subtract 2 from run rolls and charge rolls for enemy units while they are within 6" of this <strong>Manifestation</strong>. In addition, if an enemy unit passes across this <strong>Manifestation</strong> and/or the round-cornered triangle formed by drawing a line around all the bases of the <strong>Manifestation's</strong> parts, inflict D3 mortal damage on that enemy unit after the <strong>Move</strong> ability has been resolved.
+          - id: warp-lightning-bolts
+            type: normal
+            name: Warp Lightning Bolts
+            timing: Any Hero Phase
+            availablePhases:
+              - anyHero
+            declare: If this <strong>Manifestation</strong> was not set up this turn, pick each enemy unit within 6" of this <strong>Manifestation</strong> to be the targets.
+            effect: Roll a dice for each target. On a 4+, inflict D3 mortal damage on the target.
+      - id: vermintide
+        name: Vermintide
+        abilities:
+          - id: more-more-rats
+            type: normal
+            name: More-More Rats
+            timing: End of Any Turn
+            availablePhases:
+              - anyEndOfTurn
+            effect: <strong>Heal (D6)</strong> this <strong>Manifestation</strong>.
       - id: bell-of-doom
         name: Bell of Doom
         abilities:
-          - id: bell-of-doom-ability
+          - id: toll-of-doom
             type: passive
-            name: Ominous Tolling
+            name: Toll of Doom
             timing: Passive
             availablePhases:
-              - anyHero
-            effect: At the start of each hero phase, all enemy units within 13" of this manifestation must take a battleshock test.
+              - anyCombat
+            effect: Subtract 1 from wound rolls for attacks that target friendly <strong>Skaven Infantry</strong> units while they are wholly within 13" of this <strong>Manifestation</strong>.
 enhancements:
   heroic-traits:
     name: Heroic Traits
