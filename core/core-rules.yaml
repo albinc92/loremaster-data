@@ -142,18 +142,6 @@ abilities:
     keywords:
       - BANISH
 
-  # Universal Terrain Abilities
-  - id: activate-place-of-power
-    type: normal
-    name: Activate Place of Power
-    timing: Start of Any Turn
-    availablePhases:
-      - anyStartOfTurn
-    declare: Pick a friendly <strong>HERO</strong> within 3" of any Places of Power to use this ability.
-    effect: Roll a dice. On a 1, inflict D3 mortal damage on that <strong>HERO</strong>. On a 2+, if that <strong>HERO</strong> is a <strong>WIZARD</strong> or <strong>PRIEST</strong>, add 1 to casting rolls or chanting rolls for that <strong>HERO</strong> this turn. If that <strong>HERO</strong> is not a <strong>WIZARD</strong> or <strong>PRIEST</strong>, they can use the 'Unbind' or 'Banish Manifestation' ability this turn as if they had <strong>WIZARD</strong> (1).
-    keywords:
-      - CORE
-
   # Hero Phase Commands
   - id: rally
     type: command
