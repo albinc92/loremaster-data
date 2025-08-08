@@ -29,6 +29,7 @@ units:
           For the rest of the turn:<br><br>
           • Add 1 to the Rend characteristic of the targets' melee weapons (including Companion weapons).<br>
           • The targets can ignore the effect of the '<strong>Beast</strong>' ability.
+        lastsUntil: yourEndOfTurn
         keywords:
           - SPELL
 
@@ -63,6 +64,7 @@ units:
           - anyCombat
         declare: Pick a friendly Blood Knights unit that charged this turn and is wholly within 12" of this unit to be the target.
         effect: Add 1 to the Rend characteristic of that unit's Templar Weapons for the rest of the turn.
+        lastsUntil: anyEndOfTurn
 
   - id: wight-king-on-skeleton-steed
     name: Wight King on Skeleton Steed
@@ -75,6 +77,7 @@ units:
         availablePhases:
           - anyCombat
         effect: If an attack made with this unit's King's Relic Weapon scores a critical hit, the target unit becomes cursed for the rest of the battle. Subtract 1 from save rolls for cursed units.
+        lastsUntil: endOfBattle
 
       - id: immortal-conqueror
         type: normal
@@ -84,6 +87,7 @@ units:
           - yourHero
         declare: Pick an objective or terrain feature within enemy territory.
         effect: For the rest of the turn, add 1 to hit rolls for attacks made by friendly <strong>DEATHRATTLE</strong> units while they are wholly within 6" of that objective or terrain feature.
+        lastsUntil: anyEndOfTurn
 
   - id: wight-lord-on-skeletal-steed
     name: Wight Lord on Skeletal Steed
@@ -119,6 +123,7 @@ units:
           - yourHero
         declare: This unit can cast this spell while its Cado Ezechiar is on the battlefield. Pick a visible unit within 12" of this unit to be the target, then make a casting roll of 2D6.
         effect: If the target is an enemy unit, inflict D3 mortal damage on it. If the target is a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.
+        lastsUntil: yourEndOfTurn
         keywords:
           - SPELL
 
@@ -133,6 +138,7 @@ units:
           Pick 1 of the following to apply for the rest of the turn:<br><br>
           • Add 1 to this unit's power level.<br>
           • Each time a casting roll is made for this unit, you can re-roll 1 of the dice.
+        lastsUntil: yourEndOfTurn
 
       - id: solia-the-tutor
         type: normal
@@ -145,6 +151,7 @@ units:
           Pick 1 of the following to apply for the rest of the turn:<br><br>
           • This unit has <strong>WARD</strong> (5+).<br>
           • This unit's Ezechiarian Greatsword has Crit (Mortal).
+        lastsUntil: anyEndOfTurn
 
   - id: ivya-volga-the-outcast
     name: Ivya Volga, The Outcast
@@ -168,6 +175,7 @@ units:
           - yourHero
         declare: Make a casting roll of 2D6.
         effect: For the rest of the turn, subtract 5 from the control scores of enemy <strong>MONSTERS</strong> while they are within 12" of this unit.
+        lastsUntil: yourEndOfTurn
         keywords:
           - SPELL
 
@@ -230,6 +238,7 @@ units:
           - anyEndOfTurn
         declare: Pick an enemy unit that was allocated any damage points inflicted by this unit's combat attacks this turn to be the target.
         effect: Roll a dice. On a 2+, subtract 1 from save rolls for the target for the rest of the battle.
+        lastsUntil: endOfBattle
 
   - id: necromancer
     name: Necromancer
@@ -255,6 +264,7 @@ units:
           - yourCombat
         declare: Pick a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit wholly within 12" of this unit to be the target.
         effect: Roll a dice. On a 3+, the target can use 2 <strong>FIGHT</strong> abilities this phase. After the first is used, however, the target has <strong>STRIKE-LAST</strong> for the rest of the turn.
+        lastsUntil: yourEndOfTurn
 
   - id: radukar-the-wolf
     name: Radukar the Wolf
@@ -269,6 +279,7 @@ units:
           - yourHero
         declare: Make a casting roll of 2D6.
         effect: Until the start of your next turn, you can re-roll charge rolls for friendly <strong>SOULBLIGHT GRAVELORDS INFANTRY</strong> units while they are wholly within 12" of this unit.
+        lastsUntil: yourStartOfTurn
         keywords:
           - SPELL
 
@@ -279,6 +290,7 @@ units:
         availablePhases:
           - anyCombat
         effect: If this unit charged this turn, for the rest of the turn, add 1 to wound rolls for combat attacks made by friendly <strong>DEATHRATTLE</strong> and <strong>DEADWALKERS</strong> units while they are wholly within 12" of this unit.
+        lastsUntil: anyEndOfTurn
 
   - id: sekhar-fang-of-nulahmia
     name: Sekhar, Fang of Nulahmia
@@ -292,6 +304,7 @@ units:
           - anyCombat
         declare: Pick each enemy unit in combat with this unit to be the targets.
         effect: This unit cannot use the 'Serpentine Agility' ability for the rest of the battle. Roll 2D6 for each target. If the roll exceeds the target's Move characteristic, inflict an amount of mortal damage on the target equal to the difference between the roll and its Move characteristic.
+        lastsUntil: endOfBattle
 
       - id: serpentine-agility
         type: passive
@@ -311,6 +324,7 @@ units:
           - yourHero
         declare: Pick a visible enemy unit within 12" of this unit to be the target, then make a casting roll of 2D6.
         effect: Until the start of your next turn, while they are wholly within 6" of this unit, friendly <strong>SOULBLIGHT GRAVELORDS</strong> units cannot be picked to be the target of abilities used by the target other than <strong>FIGHT</strong> abilities.
+        lastsUntil: yourStartOfTurn
         keywords:
           - SPELL
 
@@ -333,6 +347,7 @@ units:
         availablePhases:
           - anyCombat
         effect: If any damage points are allocated to an enemy unit by this unit's attacks, subtract 1" from that unit's Move characteristic until the end of the battle round.
+        lastsUntil: endOfBattleRound
 
       - id: corruption-spreads
         type: spell
@@ -370,6 +385,7 @@ units:
           - yourHero
         declare: Pick a friendly <strong>DEATHRATTLE</strong> unit within this unit's combat range to be the target.
         effect: Roll a dice. On a 3+, the target's melee weapons have Crit (2 Hits) for the rest of the turn.
+        lastsUntil: yourEndOfTurn
 
       - id: ancient-strategies
         type: normal
@@ -378,6 +394,7 @@ units:
         availablePhases:
           - anyCombat
         effect: Pick a friendly non-<strong>HERO</strong> <strong>DEATHRATTLE INFANTRY</strong> unit that has not used a <strong>FIGHT</strong> ability this turn and is within this unit's combat range to be the target. The target can be picked to use a <strong>FIGHT</strong> ability immediately after the <strong>FIGHT</strong> ability used by this unit has been resolved. If it is picked to do so, add 1 to hit rolls for the target's attacks for the rest of the turn.
+        lastsUntil: anyEndOfTurn
 
   - id: cado-ezechiar-the-hollow-king
     name: Cado Ezechiar, The Hollow King
@@ -394,6 +411,7 @@ units:
           • This unit has a Move characteristic of 12".<br>
           • Add 1 to casting rolls, unbinding rolls and banishment rolls for this unit.<br>
           • This unit's melee weapons have Crit (Mortal).
+        lastsUntil: yourStartOfTurn
 
       - id: retribution-or-salvation-hollow-king
         type: spell
@@ -404,6 +422,7 @@ units:
           - yourHero
         declare: Pick a visible unit within 12" of this unit to be the target, then make a casting roll of 2D6.
         effect: If the target is an enemy unit, inflict D3 mortal damage on it. If the target is a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit, subtract 1 from wound rolls for combat attacks that target that unit for the rest of the turn.
+        lastsUntil: yourEndOfTurn
         keywords:
           - SPELL
 
@@ -456,6 +475,7 @@ units:
           - yourHero
         declare: Pick a friendly <strong>DEATHRATTLE</strong> or <strong>DEADWALKERS</strong> unit wholly within 12" of this unit to be the target.
         effect: Add 1 to hit rolls for the target's attacks until the start of your next turn.
+        lastsUntil: yourStartOfTurn
 
       - id: raise-the-guard
         type: spell
@@ -520,6 +540,7 @@ units:
           - yourHero
         declare: Pick a visible friendly non-<strong>UNIQUE</strong> <strong>SOULBLIGHT GRAVELORDS MONSTER</strong> wholly within 12" of this unit to be the target, then make a casting roll of 2D6.
         effect: Pick 1 of the target's melee weapons. If the target has any Companion melee weapons, you must pick 1 of those. Add D3 to the Attacks characteristic of that weapon for the rest of the turn.
+        lastsUntil: yourEndOfTurn
         keywords:
           - SPELL
 
@@ -564,6 +585,7 @@ units:
         availablePhases:
           - anyCombat
         effect: If this unit has slain any enemy models this turn, for the rest of the turn, add 1 to the Attacks characteristic of melee weapons used by friendly <strong>DEATHRATTLE</strong> and <strong>DEADWALKERS</strong> units while they are wholly within 12" of this unit.
+        lastsUntil: anyEndOfTurn
 
       - id: ashigaroths-hunger
         type: normal
@@ -572,6 +594,7 @@ units:
         availablePhases:
           - anyCombat
         effect: If this unit charged this turn, roll a dice. On a 3+, this unit has <strong>STRIKE-FIRST</strong> for the rest of the turn.
+        lastsUntil: anyEndOfTurn
 
   - id: nagash-supreme-lord-of-the-undead
     name: Nagash, Supreme Lord of the Undead
@@ -584,6 +607,7 @@ units:
         availablePhases:
           - anyHero
         effect: Add 2 to casting rolls for this unit while it has not miscast any spells this turn. If this unit miscasts a spell, ignore the restriction that would stop this unit from casting any more spells this turn.
+        lastsUntil: anyEndOfTurn
 
       - id: hand-of-dust
         type: normal
@@ -607,6 +631,7 @@ units:
           If the target is a friendly <strong>DEATH</strong> unit, pick 1 of the following effects:<br><br>
           • Return a number of slain models to the target unit with a combined Health characteristic of up to 3.<br>
           • The target has <strong>WARD</strong> (5+) until the start of your next turn.
+        lastsUntil: yourStartOfTurn
         keywords:
           - SPELL
 
@@ -641,6 +666,7 @@ units:
           - yourHero
         declare: Pick a visible friendly non-<strong>MONSTER</strong> <strong>SOULBLIGHT GRAVELORDS</strong> unit wholly within 12" of this unit to be the target, then make a casting roll of 2D6.
         effect: Ignore modifiers to save rolls for the target (positive and negative) until the start of your next turn.
+        lastsUntil: yourStartOfTurn
         keywords:
           - SPELL
 
@@ -677,6 +703,7 @@ units:
           • Add 2" to the target's Move characteristic.<br>
           • Add 1 to the Attacks characteristic of the target's melee weapons.<br>
           • Add 1 to the Damage characteristic of the target's melee weapons.
+        lastsUntil: endOfBattle
 
       - id: trail-of-crimson
         type: normal
@@ -696,6 +723,7 @@ units:
           - yourHero
         declare: Make a casting roll of 2D6.
         effect: This unit has <strong>STRIKE-FIRST</strong> until the start of your next turn.
+        lastsUntil: yourStartOfTurn
         keywords:
           - SPELL
 
@@ -718,6 +746,7 @@ units:
         availablePhases:
           - anyCombat
         effect: If this unit charged this turn, for the rest of the turn, add 1 to wound rolls for combat attacks made by friendly DEATHRATTLE and DEADWALKERS units while they are wholly within 12" of this unit.
+        lastsUntil: anyEndOfTurn
 
       - id: armour-of-the-night
         type: spell
@@ -728,6 +757,7 @@ units:
           - yourHero
         declare: Make a casting roll of 2D6.
         effect: Subtract 1 from hit rolls and wound rolls for attacks that target this unit for the rest of the turn.
+        lastsUntil: yourEndOfTurn
         keywords:
           - SPELL
 
@@ -847,6 +877,7 @@ units:
           - yourCombat
         declare: Pick up to 3 friendly <strong>VAMPIRE</strong> units wholly within 12" of this unit to be the targets.
         effect: Add 1 to the Attacks characteristic of the targets' melee weapons for the rest of the turn.
+        lastsUntil: yourEndOfTurn
 
   - id: mortis-engine
     name: Mortis Engine
@@ -987,6 +1018,7 @@ units:
           - anyCombat
         declare: Pick an enemy unit in combat with this unit's Curseblood to be the target.
         effect: Roll a dice. On a 4+, the target has <strong>STRIKE-LAST</strong> for the rest of the turn.
+        lastsUntil: anyEndOfTurn
 
       - id: creed-of-the-askurga-renkai
         type: passive
@@ -1185,6 +1217,7 @@ units:
           - yourHero
         declare: Pick a friendly <strong>SOULBLIGHT GRAVELORDS WIZARD</strong> wholly within 12" of this unit to be the target.
         effect: Add 1 to casting rolls for the target for the rest of the turn. In addition, the first spell successfully cast by the target this turn does not cost any casting points.
+        lastsUntil: yourEndOfTurn
 
   # Monsters
   - id: revenant-draconith
@@ -1245,6 +1278,7 @@ units:
           Roll a dice for each model in the target unit.
           If 3 or more of the dice have the same value, for the rest of the turn, this unit has <strong>STRIKE-FIRST</strong>.
           If 6 or more of the dice have the same value, for the rest of the turn, this unit has <strong>STRIKE-FIRST</strong> and the target cannot use commands.
+        lastsUntil: anyEndOfTurn
 
   # War Machines
   - id: corpse-cart
@@ -1287,6 +1321,7 @@ units:
           - yourHero
         declare: Pick a friendly <strong>DEADWALKERS</strong> unit wholly within 12" of this unit to be the target.
         effect: Add 1 to hit rolls for the target's attacks until the start of your next turn.
+        lastsUntil: yourStartOfTurn
 
   - id: cursed-sepulchre
     name: Cursed Sepulchre
@@ -1522,6 +1557,7 @@ manifestationLores:
               Pick 1 of the following:<br><br>
               • Heal (D3) the target.<br>
               • Add 1 to the Attacks characteristic of the target's melee weapons for the rest of the turn and banish this MANIFESTATION.
+            lastsUntil: anyEndOfTurn
 
       - id: sanguine-swarm
         name: Sanguine Swarm
