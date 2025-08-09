@@ -6,7 +6,7 @@ name: General's Handbook 25-26
 rules:
   - id: startOfBattleRound
     information: |
-      <strong>Regimented Forces</strong>
+      <h1>Regimented Forces</h1>
       If a player has more regiments than their opponent at the start of the battle, then once per battle, that player can re-roll their priority roll after seeing the result of both players' rolls but before determining priority for that battle round.
   
   - id: startOfTurn
@@ -21,6 +21,7 @@ rules:
 
 # Core battlepack abilities (only actual triggered abilities)
 abilities:
+  # Start of Battle Round Abilities
   - id: regimented-forces-reroll
     type: normal
     name: Regimented Forces
@@ -28,6 +29,25 @@ abilities:
     availablePhases:
       - startOfBattleRound
     effect: "Re-roll your priority roll after seeing the result of both players' rolls but before determining priority for that battle round."
+
+  # Terrain Abilities
+  - id: activate-place-of-power
+    type: normal
+    name: Activate Place of Power
+    timing: Once Per Turn (Army), Start of Any Turn
+    availablePhases:
+      - anyStartOfTurn
+    declare: >-
+      Pick a friendly <strong>HERO</strong> within 3" of a <strong>Place of Power</strong> to be the target.
+    effect: >-
+      <ul>
+      <li><strong>Cauterising Pollen</strong>: Roll a dice. On a 1, inflict 1 mortal damage on each unit (friendly and enemy) within 6" of any <strong>Places of Power</strong>. On a 3+, <strong>Heal (2)</strong> each unit (friendly and enemy) wholly within 6" of the target.</li>
+      <li><strong>Rapid Sprouting</strong>: Pick a Ghyranite objective or visible non-<strong>FACTION TERRAIN</strong> feature within 12" of that <strong>HERO</strong> and roll a dice. On a 3+, that objective or terrain feature has the 'Obscuring' ability (see 1.2) for the rest of the battle.</li>
+      <li><strong>Tap the Ley Lines</strong>: For the rest of the turn, if that <strong>HERO</strong> is not a <strong>WIZARD</strong> or <strong>PRIEST</strong>, they can use the 'Unbind' or 'Banish Manifestation' ability as if they had <strong>WIZARD (1)</strong>.</li>
+      </ul>
+    lastsUntil: anyEndOfTurn
+    keywords:
+      - CORE
 
   # Hero Phase Commands
   - id: rally
@@ -147,7 +167,6 @@ abilities:
       - MOVE
 
     # General Hero Phase Abilities  
-    
 
 battleplans:
   # Table 1 Battleplans
@@ -1029,25 +1048,99 @@ manifestationLores:
 
 # Battlepack terrain
 terrain:
-  place-of-power:
-    id: place-of-power
-    name: Place of Power
-    terrainType: Place of Power
+  - id: obstacle
+    name: Obstacle
     abilities:
-      - id: activate-place-of-power
-        type: normal
-        name: Activate Place of Power
-        timing: Once Per Turn (Army), Start of Any Turn
+      - id: cover-obstacle
+        type: passive
+        name: Cover
+        timing: Passive
+        availablePhases:
+          - anyCombat
+          - anyShooting
+        effect: Subtract 1 from hit rolls for attacks that target a unit that is behind or wholly on this terrain feature, unless that unit charged this turn or has the <strong>FLY</strong> keyword.
+      - id: unstable-obstacle
+        type: passive
+        name: Unstable
+        timing: Passive
+        availablePhases:
+          - anyMovement
+        effect: "Models can move across but cannot be set up on or end any type of move on any part of this terrain feature that is more than 1\" tall."
+  - id: obscuring-terrain
+    name: Obscuring Terrain
+    abilities:
+      - id: cover-obscuring-terrain
+        type: passive
+        name: Cover
+        timing: Passive
+        availablePhases:
+          - anyCombat
+          - anyShooting
+        effect: Subtract 1 from hit rolls for attacks that target a unit that is behind or wholly on this terrain feature, unless that unit charged this turn or has the <strong>FLY</strong> keyword.
+      - id: obscuring-obscuring-terrain
+        type: passive
+        name: Obscuring
+        timing: Passive
+        availablePhases:
+          - anyCombat
+          - anyShooting
+        effect: While every model in a non-<strong>MONSTER</strong> unit that does not have the <strong>FLY</strong> keyword is within 1" of this terrain feature, the following apply:<br><br>• That unit is only visible to enemy units that are within its combat range.<br><br>• The Range characteristic of that unit's ranged weapons is halved (rounding down to the nearest inch).
+      - id: unstable-obscuring-terrain
+        type: passive
+        name: Unstable
+        timing: Passive
+        availablePhases:
+          - anyMovement
+        effect: "Models can move across but cannot be set up on or end any type of move on any part of this terrain feature that is more than 1\" tall."
+  - id: area-terrain
+    name: Area Terrain
+    abilities:
+      - id: cover-area-terrain
+        type: passive
+        name: Cover
+        timing: Passive
+        availablePhases:
+          - anyCombat
+          - anyShooting
+        effect: Subtract 1 from hit rolls for attacks that target a unit that is behind or wholly on this terrain feature, unless that unit charged this turn or has the <strong>FLY</strong> keyword.
+      - id: obscuring-area-terrain
+        type: passive
+        name: Obscuring
+        timing: Passive
+        availablePhases:
+          - anyCombat
+          - anyShooting
+        effect: While every model in a non-<strong>MONSTER</strong> unit that does not have the <strong>FLY</strong> keyword is within 1" of this terrain feature, the following apply:<br><br>• That unit is only visible to enemy units that are within its combat range.<br><br>• The Range characteristic of that unit's ranged weapons is halved (rounding down to the nearest inch).
+  - id: place-of-power
+    name: Place of Power
+    abilities:
+      - id: cover-place-of-power
+        type: passive
+        name: Cover
+        timing: Passive
+        availablePhases:
+          - anyCombat
+          - anyShooting
+        effect: Subtract 1 from hit rolls for attacks that target a unit that is behind or wholly on this terrain feature, unless that unit charged this turn or has the <strong>FLY</strong> keyword.
+      - id: unstable-place-of-power
+        type: passive
+        name: Unstable
+        timing: Passive
+        availablePhases:
+          - anyMovement
+        effect: Models can move across but cannot be set up on or end any type of move on any part of this terrain feature that is more than 1" tall.
+      - id: obscuring-place-of-power
+        type: passive
+        name: Obscuring
+        timing: Passive
+        availablePhases:
+          - anyCombat
+          - anyShooting
+        effect: While every model in a non-<strong>MONSTER</strong> unit that does not have the <strong>FLY</strong> keyword is within 1" of this terrain feature, the following apply:<br><br>• That unit is only visible to enemy units that are within its combat range.<br><br>• The Range characteristic of that unit's ranged weapons is halved (rounding down to the nearest inch).
+      - id: place-of-power
+        type: passive
+        name: Place of Power
+        timing: Passive
         availablePhases:
           - anyStartOfTurn
-        declare: >-
-          Pick a friendly <strong>HERO</strong> within 3" of a <strong>Place of Power</strong> to be the target.
-        effect: >-
-          <ul>
-          <li><strong>Cauterising Pollen</strong>: Roll a dice. On a 1, inflict 1 mortal damage on each unit (friendly and enemy) within 6" of any <strong>Places of Power</strong>. On a 3+, <strong>Heal (2)</strong> each unit (friendly and enemy) wholly within 6" of the target.</li>
-          <li><strong>Rapid Sprouting</strong>: Pick a Ghyranite objective or visible non-<strong>FACTION TERRAIN</strong> feature within 12" of that <strong>HERO</strong> and roll a dice. On a 3+, that objective or terrain feature has the 'Obscuring' ability (see 1.2) for the rest of the battle.</li>
-          <li><strong>Tap the Ley Lines</strong>: For the rest of the turn, if that <strong>HERO</strong> is not a <strong>WIZARD</strong> or <strong>PRIEST</strong>, they can use the 'Unbind' or 'Banish Manifestation' ability as if they had <strong>WIZARD (1)</strong>.</li>
-          </ul>
-        lastsUntil: anyEndOfTurn
-        keywords:
-          - CORE
+        effect: <strong>HEROES</strong> within 3" of this terrain feature can use the 'Activate Place of Power' ability.

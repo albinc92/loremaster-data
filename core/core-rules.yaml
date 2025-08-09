@@ -278,13 +278,22 @@ abilities:
 rules:
   - id: startOfBattleRound
     information: |
+      <h1>Setting Up For Battle</h1>
+      Unless specified otherwise in the battlepack or battleplan:<br>
+      <ul>
+        <li>Set up objectives.</li>
+        <li>Set up terrain.</li>
+        <li>Roll off. The winner decides which territory belongs to which player.</li>
+      </ul>
+
+      <h1>Battle Round Sequence</h1>
       <ol>
-        <li><strong>Determine the Active Player:</strong> If it is the first battle round, the player who finished setting up their army first decides who will take the first turn (unless otherwise specified in the battlepack or battleplan). If it is not the first battle round, the players make a roll-off called the priority roll and the winner decides who will take the first turn. If the roll-off is a tie, the player who took the first turn in the previous battle round decides who will take the first turn in the current battle round.</li>
-        <li><strong>Determine the Underdog:</strong> Whichever player has the fewest victory points is the underdog for the battle round. If the players are tied (e.g. in the first battle round), then there is no underdog, unless otherwise specified.</li>
-        <li><strong>Start of Battle Round Abilities:</strong> The active player can use any Start of Battle Round abilities first, then their opponent can do the same.</li>
+        <li><strong>Determine the Active Player:</strong><br>If it is the first battle round, the player who finished setting up their army first decides who will take the first turn (unless otherwise specified in the battlepack or battleplan). If it is not the first battle round, the players make a roll-off called the priority roll and the winner decides who will take the first turn. If the roll-off is a tie, the player who took the first turn in the previous battle round decides who will take the first turn in the current battle round.</li>
+        <li><strong>Determine the Underdog:</strong><br>Whichever player has the fewest victory points is the underdog for the battle round. If the players are tied (e.g. in the first battle round), then there is no underdog, unless otherwise specified.</li>
+        <li><strong>Start of Battle Round Abilities:</strong><br>The active player can use any Start of Battle Round abilities first, then their opponent can do the same.</li>
       </ol>
-      
-      <h4>Command Points (Advanced Rules):</h4>
+
+      <h1>Command Points (Advanced Rules):</h1>
       <ul>
         <li>Each player gains 4 command points at the start of each battle round</li>
         <li>If there is an underdog, they gain 1 extra command point</li>
@@ -293,8 +302,8 @@ rules:
         <li>Each unit can only use 1 command in each phase</li>
         <li>Each command can only be used 1 time by each army in each phase</li>
       </ul>
-      
-      <h4>Key Rules:</h4>
+
+      <h1>Key Rules:</h1>
       <ul>
         <li>When it is a player's turn, regardless of whether they take the first or second turn, they are referred to as the active player</li>
         <li>The underdog gains additional benefits in some rules and battlepacks</li>
