@@ -11,12 +11,12 @@ rules:
   
   - id: startOfTurn
     information: |
-      <strong>Obscured Ghyranite Objectives</strong>
+      <h1>Obscured Ghyranite Objectives</h1>
       Some abilities can confer the 'Obscuring' terrain ability on a Ghyranite Objective, even though it is not a terrain feature. In these cases, replace the words 'within 1" of this terrain feature' in the ability with 'wholly within this Ghyranite objective's control zone'.
 
   - id: endOfTurn
     information: |
-      <strong>Paired Objectives</strong>
+      <h1>Paired Objectives</h1>
       When a player has to pick a 'pair of objectives', they can only pick a single pair of Ghyranite objectives of the same type. For example that player could pick either both <strong>Oakenbrow</strong> objectives and/or both <strong>Gnarlroot</strong> objectives. They could not pick an <strong>Oakenbrow</strong> objective and a <strong>Gnarlroot</strong> objective, or both <strong>Oakenbrow</strong> objectives and both <strong>Gnarlroot</strong> objectives.
 
 # Core battlepack abilities (only actual triggered abilities)
