@@ -264,11 +264,11 @@ enhancements:
         timing: "Once Per Turn, Reaction: You declared the 'Further the Great Plan' ability"
         effect: >-
           You can pick 2 different <strong>Asterism</strong> abilities instead of 1. They are both used
-        scourgeOfGhyran: true
+        availablePhases:
+          - thirdStartOfBattleRound
       - id: child-of-the-stars
         type: passive
         name: Child of the Stars
-        scourgeOfGhyran: true
         timing: Passive
         effect: >-
           If this unit would be destroyed, before removing it from play, roll a dice. On
@@ -280,7 +280,6 @@ enhancements:
       - id: chosen-of-quetzl
         type: normal
         name: Chosen of Quetzl
-        scourgeOfGhyran: true
         timing: Any Combat Phase
         effect: >-
           Roll a dice. On a 3+, the target can move up to 8". It can move through the combat ranges of enemy units but cannot end that move in combat.
@@ -322,7 +321,6 @@ enhancements:
       - id: titan-of-the-land
         type: passive
         name: Titan of the Land
-        scourgeOfGhyran: true
         timing: Passive
         effect: >-
           This unit counts as a terrain piece for the purpose of picking targets for the Realmshaper Engine's 'Power Unleashed' ability. Do not inflict any mortal damage on this unit as part of that ability.
@@ -331,7 +329,6 @@ enhancements:
       - id: ancient-defender
         type: passive
         name: Ancient Defender
-        scourgeOfGhyran: true
         timing: Passive
         effect: Add 1 to hit rolls for attacks made by this unit's Companion weapons.
         availablePhases:
@@ -340,7 +337,6 @@ enhancements:
       - id: armour-cruncher
         type: normal
         name: Armour Cruncher
-        scourgeOfGhyran: true
         timing: Any Combat Phase
         effect: >-
           Roll a dice. If the roll equals or exceeds the target's Save characteristic, subtract 1 from save rolls for the target for the rest of the turn.

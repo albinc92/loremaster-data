@@ -41,9 +41,9 @@ abilities:
       Pick a friendly <strong>HERO</strong> within 3" of a <strong>Place of Power</strong> to be the target.
     effect: >-
       <ul>
-      <li><strong>Cauterising Pollen</strong>: Roll a dice. On a 1, inflict 1 mortal damage on each unit (friendly and enemy) within 6" of any <strong>Places of Power</strong>. On a 3+, <strong>Heal (2)</strong> each unit (friendly and enemy) wholly within 6" of the target.</li>
-      <li><strong>Rapid Sprouting</strong>: Pick a Ghyranite objective or visible non-<strong>FACTION TERRAIN</strong> feature within 12" of that <strong>HERO</strong> and roll a dice. On a 3+, that objective or terrain feature has the 'Obscuring' ability (see 1.2) for the rest of the battle.</li>
-      <li><strong>Tap the Ley Lines</strong>: For the rest of the turn, if that <strong>HERO</strong> is not a <strong>WIZARD</strong> or <strong>PRIEST</strong>, they can use the 'Unbind' or 'Banish Manifestation' ability as if they had <strong>WIZARD (1)</strong>.</li>
+      <li><strong>Cauterising Pollen</strong><br>Roll a dice. On a 1, inflict 1 mortal damage on each unit (friendly and enemy) within 6" of any <strong>Places of Power</strong>. On a 3+, <strong>Heal (2)</strong> each unit (friendly and enemy) wholly within 6" of the target.</li>
+      <li><strong>Rapid Sprouting</strong><br>Pick a Ghyranite objective or visible non-<strong>FACTION TERRAIN</strong> feature within 12" of that <strong>HERO</strong> and roll a dice. On a 3+, that objective or terrain feature has the 'Obscuring' ability (see 1.2) for the rest of the battle.</li>
+      <li><strong>Tap the Ley Lines</strong><br>For the rest of the turn, if that <strong>HERO</strong> is not a <strong>WIZARD</strong> or <strong>PRIEST</strong>, they can use the 'Unbind' or 'Banish Manifestation' ability as if they had <strong>WIZARD (1)</strong>.</li>
       </ul>
     lastsUntil: anyEndOfTurn
     keywords:
@@ -173,7 +173,7 @@ battleplans:
   - name: Passing Seasons
     rounds: 5
     twist: >-
-      <strong>Seasonal Powers:</strong> In battle rounds 2 and 4, if you are the underdog, you can use the 'Burgeoning Rejuvenation' ability. In battle rounds 3 and 5, while you are the underdog, your army has the 'Powerful Resurgence' ability.
+      <h1>Seasonal Powers</h1> In battle rounds 2 and 4, if you are the underdog, you can use the 'Burgeoning Rejuvenation' ability. In battle rounds 3 and 5, while you are the underdog, your army has the 'Powerful Resurgence' ability.
     scoring: >-
       Each player scores victory points at the end of each of their turns as follows:
       <ul>
@@ -186,8 +186,15 @@ battleplans:
         name: Burgeoning Rejuvenation
         timing: "Once Per Battle Round, Start of Battle Round"
         availablePhases:
-          - startOfBattleRound
-        effect: "Pick 1 of the following: Heal (D3) every friendly unit contesting an Oakenbrow objective, OR for the rest of the battle round, while a friendly unit is contesting a Gnarlroot objective: If it has a ward save, add 1 to ward rolls for that unit. If it does not have a ward save, it has WARD (6+)."
+          - secondStartOfBattleRound
+          - fourthStartOfBattleRound
+        effect: >-
+          Pick 1 of the following:
+          <ul>
+            <li>Heal (D3) every friendly unit contesting an Oakenbrow objective</li>
+            <li>For the rest of the battle round, while a friendly unit is contesting a Gnarlroot objective:<br><br>If it has a ward save, add 1 to ward rolls for that unit. If it does not have a ward save, it has WARD (6+).</li>
+          </ul>
+        lastsUntil: endOfBattleRound
 
       - id: powerful-resurgence
         type: passive
@@ -200,7 +207,7 @@ battleplans:
   - name: Paths of the Fey
     rounds: 5
     twist: >-
-      <strong>Spirit Paths:</strong> If you are the underdog, you must use the 'The Spirit Paths Open' ability. Both players can use the 'Stumbling Forth' ability.
+      <h1>Spirit Paths</h1> If you are the underdog, you must use the 'The Spirit Paths Open' ability. Both players can use the 'Stumbling Forth' ability.
     scoring: >-
       Each player scores victory points at the end of each of their turns as follows:
       <ul>
@@ -230,7 +237,7 @@ battleplans:
   - name: Roiling Roots
     rounds: 5
     twist: >-
-      <strong>Tangling Tendrils:</strong> If you are the underdog, you must use the 'Tangling Tendrils' ability.
+      <h1>Tangling Tendrils</h1> If you are the underdog, you must use the 'Tangling Tendrils' ability.
     scoring: >-
       Each player scores victory points at the end of each of their turns as follows:
       <ul>
@@ -252,7 +259,7 @@ battleplans:
   - name: Cyclic Shifts
     rounds: 5
     twist: >-
-      <strong>Unpredictable Evolution:</strong> If you are the underdog, you can use the 'Unpredictable Evolution' ability.
+      <h1>Unpredictable Evolution</h1> If you are the underdog, you can use the 'Unpredictable Evolution' ability.
     scoring: >-
       Each player scores victory points at the end of each of their turns as follows:
       <ul>
@@ -274,7 +281,7 @@ battleplans:
   - name: Surge of Slaughter
     rounds: 5
     twist: >-
-      <strong>Defence of the Realm:</strong> If you are the underdog, you can use the 'Defence of the Realm' ability.
+      <h1>Defence of the Realm</h1> If you are the underdog, you can use the 'Defence of the Realm' ability.
     scoring: >-
       Each player scores victory points at the end of each of their turns as follows:
       <ul>
@@ -296,7 +303,7 @@ battleplans:
   - name: Linked Ley Lines
     rounds: 5
     twist: >-
-      <strong>Ley Line Power:</strong> While you are the underdog, your army has the 'Rooted in the Realm' and 'Full of Life' abilities. A linked ley line is formed across the battlefield (long edge to long edge or short edge to short edge) while one player controls all the objectives on that line.
+      <h1>Ley Line Power</h1> While you are the underdog, your army has the 'Rooted in the Realm' and 'Full of Life' abilities. A linked ley line is formed across the battlefield (long edge to long edge or short edge to short edge) while one player controls all the objectives on that line.
     scoring: >-
       Each player scores victory points at the end of each of their turns as follows:
       <ul>
@@ -327,7 +334,7 @@ battleplans:
   - name: Noxious Nexus
     rounds: 5
     twist: >-
-      <strong>Caustic Sap:</strong> If you are the underdog, you can use the 'Caustic Sap' ability. Objectives cannot be controlled in the first battle round.
+      <h1>Caustic Sap</h1> If you are the underdog, you can use the 'Caustic Sap' ability. Objectives cannot be controlled in the first battle round.
     scoring: >-
       Each player scores victory points at the end of each of their turns as follows:
       <ul>
@@ -349,7 +356,7 @@ battleplans:
   - name: The Liferoots
     rounds: 5
     twist: >-
-      <strong>Life Begets Life:</strong> If you are the underdog, you can use the 'Life Begets Life' ability.
+      <h1>Life Begets Life</h1> If you are the underdog, you can use the 'Life Begets Life' ability.
     scoring: >-
       Each player scores 1 liferoot point at the end of each of their turns for each terrain feature they control. Each player scores victory points at the end of each of their turns as follows:
       <ul>
@@ -370,7 +377,7 @@ battleplans:
   - name: Bountiful Equinox
     rounds: 5
     twist: >-
-      <strong>Rejuvenating Bloom:</strong> If you are the underdog, you can use the 'Rejuvenating Bloom' ability.
+      <h1>Rejuvenating Bloom</h1> If you are the underdog, you can use the 'Rejuvenating Bloom' ability.
     scoring: >-
       Each player scores victory points at the end of each of their turns as follows:
       <ul>
@@ -391,7 +398,7 @@ battleplans:
   - name: Lifecycle
     rounds: 5
     twist: >-
-      <strong>Lifecycle:</strong> At the start of the second battle round, the underdog must use the 'Lifecycle' ability. If there is no underdog, the players roll off and the winner must use the 'Lifecycle' ability.
+      <h1>Lifecycle</h1> At the start of the second battle round, the underdog must use the 'Lifecycle' ability. If there is no underdog, the players roll off and the winner must use the 'Lifecycle' ability.
       <br><br><strong>Cycle Order:</strong> Oakenbrow → Gnarlroot → Heartwood → Winterleaf → Oakenbrow...
     scoring: >-
       Each player scores victory points at the end of each of their turns as follows:
@@ -414,7 +421,7 @@ battleplans:
   - name: Creeping Corruption
     rounds: 5
     twist: >-
-      <strong>Pulsing Life Energies:</strong> If you are the underdog, you can use the 'Pulsing Life Energies' ability.
+      <h1>Pulsing Life Energies</h1> If you are the underdog, you can use the 'Pulsing Life Energies' ability.
     scoring: >-
       Each player scores victory points at the end of each of their turns as follows:
       <ul>
@@ -435,7 +442,7 @@ battleplans:
   - name: Grasp of Thorns
     rounds: 5
     twist: >-
-      <strong>Carnivorous Flora:</strong> If you are the underdog, you can use the 'Carnivorous Flora' ability.
+      <h1>Carnivorous Flora</h1> If you are the underdog, you can use the 'Carnivorous Flora' ability.
     scoring: >-
       Each player scores victory points at the end of each of their turns as follows:
       <ul>
@@ -776,9 +783,7 @@ manifestationLores:
             name: Morbid Detonation
             timing: "End of Any Turn"
             availablePhases:
-              - anyHero
-              - anyCombat
-              - anyShooting
+              - anyEndOfTurn
             declare: "You must, and can only, use this ability if this unit has 6 maelstrom points. Pick each unit (friendly and enemy) within 9\" of it to be the targets."
             effect: "Roll a dice for each target. On a 2+, inflict an amount of mortal damage on the target equal to the roll. Then, this MANIFESTATION is destroyed."
 
