@@ -518,7 +518,6 @@ units:
           - RAMPAGE
   - id: scourge-of-ghyran-brood-terror
     name: Brood Terror
-    scourgeOfGhyran: true
     category: Monster
     abilities:
       - id: lend-a-claw
@@ -608,7 +607,6 @@ units:
           - SPELL
   - id: scourge-of-ghyran-grey-seer-on-screaming-bell
     name: Grey Seer on Screaming Bell (Scourge of Ghyran)
-    scourgeOfGhyran: true
     category: Hero
     abilities:
       - id: the-bell-tolls
@@ -1072,7 +1070,6 @@ battleFormations:
         lastsUntil: yourEndOfTurn
   - id: envoys-of-the-deepengnaw
     name: Envoys of the Deepengnaw
-    scourgeOfGhyran: true
     abilities:
       - id: will-of-the-horned-rat
         type: passive
@@ -1086,7 +1083,6 @@ battleFormations:
           • Each time you make a successful ward roll for that <strong>Skaven Daemon</strong>, inflict 1 mortal damage on a friendly non-<strong>Hero Skaven Infantry</strong> unit within that unit's combat range after the damage sequence for that unit has been resolved.
   - id: gathering-of-the-clans
     name: Gathering of the Clans
-    scourgeOfGhyran: true
     abilities:
       - id: backstabbing-allies
         type: normal
@@ -1297,7 +1293,6 @@ enhancements:
       - id: devious-underling
         type: normal
         name: Devious Underling
-        scourgeOfGhyran: true
         timing: Deployment Phase
         availablePhases:
           - deployment
@@ -1310,7 +1305,6 @@ enhancements:
       - id: fleshmeddler
         type: normal
         name: Fleshmeddler
-        scourgeOfGhyran: true
         timing: Your Hero Phase
         availablePhases:
           - yourHero
@@ -1320,7 +1314,6 @@ enhancements:
       - id: pit-tinkerer
         type: passive
         name: Pit Tinkerer
-        scourgeOfGhyran: true
         timing: Passive
         availablePhases:
           - anyMovement
