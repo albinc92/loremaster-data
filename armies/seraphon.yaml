@@ -599,7 +599,7 @@ units:
         timing: Passive
         effect: If this unit charged this turn, add 1 to charge rolls for friendly Saurus units while they are wholly within 18" of this unit for the rest of the turn.
         availablePhases:
-          - anyMovement
+          - anyCharge
         lastsUntil: anyEndOfTurn
       - id: oldblood-on-carnosaur-terror
         type: passive
@@ -712,7 +712,7 @@ units:
         timing: Passive
         effect: If a friendly non-Monster Skink unit uses the 'Redeploy' command while it is wholly within 18" of this unit, no command points are spent.
         availablePhases:
-          - anyMovement
+          - enemyMovement
   - id: scourge-of-ghyran-saurus-oldblood-on-carnosaur
     name: Saurus Oldblood on Carnosaur (Scourge of Ghyran)
     category: Hero

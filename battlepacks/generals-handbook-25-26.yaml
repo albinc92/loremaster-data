@@ -16,6 +16,8 @@ rules:
 
   - id: endOfTurn
     information: |
+      <h1>Seizing The Initiative</h1>
+      TODO...
       <h1>Paired Objectives</h1>
       When a player has to pick a 'pair of objectives', they can only pick a single pair of Ghyranite objectives of the same type. For example that player could pick either both <strong>Oakenbrow</strong> objectives and/or both <strong>Gnarlroot</strong> objectives. They could not pick an <strong>Oakenbrow</strong> objective and a <strong>Gnarlroot</strong> objective, or both <strong>Oakenbrow</strong> objectives and both <strong>Gnarlroot</strong> objectives.
 
