@@ -1003,13 +1003,30 @@ units:
     name: Gnawhole
     category: Faction Terrain
     abilities:
-      - id: tunnels-below
+      - id: volatile-ground
         type: passive
-        name: Tunnels Below
+        name: Volatile Ground
         timing: Passive
+        effect: >-
+          Crackling warp lightning skitters around the ruptured rocks that ring this tear in reality.<br><br>
+          <strong>Effect:</strong> Models can pass through this terrain feature but cannot be set up on or end moves on any part of this terrain feature.<br><br>
+          Each time an enemy unit ends a move that passed through or across this terrain feature, roll a D3. On a 2+, inflict an amount of mortal damage on that unit equal to the roll.
+      - id: tunnels-through-reality
+        type: normal
+        name: Tunnels Through Reality
+        timing: Your Movement Phase
         availablePhases:
-          - anyMovement
-        effect: Friendly <strong>Skaven</strong> units can use the 'Gnawhole Ambush' battle trait while wholly within 6" of this terrain feature.
+          - yourMovement
+        declare: Pick a friendly <strong>Skaven</strong> unit that is not in combat and is wholly within 6" of this terrain feature to be the target.
+        effect: Remove the target from the battlefield and set it up again wholly within 6" of another friendly <strong>Gnawhole</strong> and more than 9" from all enemy units.
+      - id: the-endless-vermintide
+        type: normal
+        name: The Endless Vermintide
+        timing: Once Per Turn (Army), End of Your Turn
+        availablePhases:
+          - yourEndOfTurn
+        declare: Pick a friendly non-<strong>Hero Skaven Infantry</strong> unit that has been destroyed to be the target.
+        effect: Set up a replacement unit with half the number of models from the target unit (rounding up) wholly within 6" of a friendly <strong>Gnawhole</strong> and more than 3" from all enemy units.
 
 battleFormations:
   - id: virulent-procession
