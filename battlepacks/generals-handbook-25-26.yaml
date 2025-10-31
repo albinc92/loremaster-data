@@ -4,22 +4,42 @@ name: General's Handbook 25-26
 
 # Rules
 rules:
-  - id: startOfBattleRound
-    information: |
-      <h1>Regimented Forces</h1>
-      If a player has more regiments than their opponent at the start of the battle, then once per battle, that player can re-roll their priority roll after seeing the result of both players' rolls but before determining priority for that battle round.
-  
-  - id: startOfTurn
-    information: |
-      <h1>Obscured Ghyranite Objectives</h1>
-      Some abilities can confer the 'Obscuring' terrain ability on a Ghyranite Objective, even though it is not a terrain feature. In these cases, replace the words 'within 1" of this terrain feature' in the ability with 'wholly within this Ghyranite objective's control zone'.
+  any:
+    - id: glorious-victory
+      name: Glorious Victory
+      information: |
+        Each battleplan will describe how to score victory points. At the end of the battle, if one player has at least 5 victory points more than their opponent, they win a major victory. If one player has fewer than 5 more victory points than their opponent, they win a minor victory. If the players are tied on victory points, the player who completed the most battle tactics wins a minor victory. If the players are tied on victory points and completed the same number of battle tactics, the battle is a draw.
 
-  - id: endOfTurn
-    information: |
-      <h1>Seizing The Initiative</h1>
-      TODO...
-      <h1>Paired Objectives</h1>
-      When a player has to pick a 'pair of objectives', they can only pick a single pair of Ghyranite objectives of the same type. For example that player could pick either both <strong>Oakenbrow</strong> objectives and/or both <strong>Gnarlroot</strong> objectives. They could not pick an <strong>Oakenbrow</strong> objective and a <strong>Gnarlroot</strong> objective, or both <strong>Oakenbrow</strong> objectives and both <strong>Gnarlroot</strong> objectives.
+  deployment:
+    - id: attacker-and-defender
+      name: Attacker and Defender
+      information: |
+        The players roll off. The winner chooses which player is the attacker or defender.
+        <ul>
+          <li>The defender sets up Ghyranite objectives in the locations indicated on the battlefield map. The objectives must be those indicated on the battlefield map; for example, if the map shows an Oakenbrow objective, the Oakenbrow objective must be set up in that location.</li>
+          <li>Then, the defender sets up terrain features. We recommend 4 small and 4 medium terrain features. Each terrain feature must be set up more than 3" from the battlefield edge, more than 3" from all Ghyranite objectives and more than 6" from all other terrain features. Alternatively, the battlefield can be set up as shown on the corresponding battlefield terrain layout map while maintaining the distance restrictions between the battlefield edge, objectives and other terrain features as detailed above.</li>
+          <li>After Ghyranite objectives and terrain have been set up, the attacker picks which territory is their territory. The other territory is the defender’s territory. The players then resolve the deployment phase. The attacker begins deployment.</li>
+          <li>Battles that use this battlepack last for 5 battle rounds.</li>
+          <li>If you are using this battlepack, you must pick battle tactics cards from this battlepack to add to your army roster during army composition. At the start of the battle, you must reveal your choice of battle tactics cards to your opponent. If the battle tactics card instructs you to pick something, you must tell your opponent what you pick and vice versa.</li>
+        </ul>
+
+  startOfBattleRound:
+    - id: regimented-forces
+      name: Regimented Forces
+      information: |
+        If a player has more regiments than their opponent at the start of the battle, then once per battle, that player can re-roll their priority roll after seeing the result of both players' rolls but before determining priority for that battle round.
+  
+  startOfTurn:
+    - id: obscured-ghyranite-objectives
+      name: Obscured Ghyranite Objectives
+      information: |
+        Some abilities can confer the 'Obscuring' terrain ability on a Ghyranite Objective, even though it is not a terrain feature. In these cases, replace the words 'within 1" of this terrain feature' in the ability with 'wholly within this Ghyranite objective's control zone'.
+
+  endOfTurn:
+    - id: paired-objectives
+      name: Paired Objectives
+      information: |
+        When a player has to pick a 'pair of objectives', they can only pick a single pair of Ghyranite objectives of the same type. For example that player could pick either both <strong>Oakenbrow</strong> objectives and/or both <strong>Gnarlroot</strong> objectives. They could not pick an <strong>Oakenbrow</strong> objective and a <strong>Gnarlroot</strong> objective, or both <strong>Oakenbrow</strong> objectives and both <strong>Gnarlroot</strong> objectives.
 
 # Core battlepack abilities (only actual triggered abilities)
 abilities:

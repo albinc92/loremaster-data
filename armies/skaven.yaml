@@ -725,8 +725,8 @@ units:
         keywords:
           - RAMPAGE
 
-  - id: verminlord-warbringer
-    name: Verminlord Warbringer
+  - id: verminlord-unholy-glory
+    name: Verminlord Unholy Glory
     category: Hero
     abilities:
       - id: killing-blow

@@ -1028,9 +1028,9 @@ enhancements:
           - anyCombat
         effect: This unit can use 2 <strong>Fight</strong> abilities this phase. After the first is used, however, this unit has <strong>Strike-Last</strong> for the rest of the turn.
         lastsUntil: anyEndOfTurn
-      - id: radiance-of-dark-glory
+      - id: radiance-of-unholy-glory
         type: normal
-        name: Radiance of Dark Glory
+        name: Radiance of Unholy Glory
         timing: Any Hero Phase
         availablePhases:
           - anyHero

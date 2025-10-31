@@ -505,9 +505,9 @@ units:
     name: Skink Starpriest
     category: Hero
     abilities:
-      - id: serpent-staff
+      - id: serpentine-staff
         type: normal
-        name: Serpent Staff
+        name: Serpentine Staff
         timing: Your Hero Phase
         effect: Roll a dice. On a 2+, the target's melee weapons have Crit (Auto-wound) until the start of your next turn.
         declare: Pick a visible friendly Seraphon unit wholly within 18" of this unit to be the target.
