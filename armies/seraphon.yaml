@@ -448,11 +448,8 @@ units:
         timing: Passive
         effect: Ignore the first damage point that would be allocated to friendly <strong>SAURUS</strong> or <strong>KROXIGOR</strong> units each phase while they are wholly within 12" of this unit.
         availablePhases:
-          - anyStartOfTurn
           - anyHero
-          - anyMovement
           - anyShooting
-          - anyCharge
           - anyCombat
           - anyEndOfTurn
       - id: venomite-swarm
