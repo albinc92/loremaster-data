@@ -370,13 +370,6 @@ units:
         effect: Add 1 to the Attacks characteristic of this unit's Ripperdactyl's Tearing Jaws while it is in combat with any units that have a Blot Toad.
         availablePhases:
           - anyCombat
-      - id: ripperdactyl-chief-dispersed-formation
-        type: passive
-        name: Dispersed Formation
-        timing: Passive
-        effect: This unit has a coherency range of 2".
-        availablePhases:
-          - anyMovement
       - id: ripperdactyl-assault
         type: normal
         name: Ripperdactyl Assault
