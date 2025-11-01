@@ -468,15 +468,6 @@ rules:
           <li><strong>Determine Damage:</strong> Attack inflicts damage points equal to weapon's Damage characteristic</li>
         </ol>
 
-    - id: visibility
-      name: Visibility
-      information: |
-        <ul>
-          <li>Draw straight line from any point on observing model to any point on target model</li>
-          <li>Models don't block visibility to other models in their own unit</li>
-          <li>If any part of a model can be seen, it is visible for rules purposes</li>
-        </ul>
-
   charge:
     - id: charge-ability-requirements
       name: Charge Ability Requirements
