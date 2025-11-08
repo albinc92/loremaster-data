@@ -1080,15 +1080,15 @@ battleTactics:
     tactics:
       - type: affray
         name: "Cut Off the Head"
-        requirement: "You complete this battle tactic at the end of your turn if an enemy HERO has been destroyed this battle."
+        requirement: "You complete this battle tactic at the end of your turn if an enemy <strong>HERO</strong> has been destroyed this battle."
         victoryPoints: 5
       - type: strike
         name: "Seize the Paths"
-        requirement: "You complete this battle tactic at the end of your turn if there are more friendly units in neutral territory than enemy units. If there is no neutral territory in the battleplan you are playing, you complete this tactic at the end of your turn if there are no enemy units within friendly territory."
+        requirement: "You complete this battle tactic at the end of your turn if there are more friendly units in <strong>neutral territory</strong> than enemy units. If there is no neutral territory in the battleplan you are playing, you complete this tactic at the end of your turn if there are no enemy units within <strong>friendly territory</strong>."
         victoryPoints: 5
       - type: domination
         name: "Envelop and Strangle"
-        requirement: "You complete this battle tactic at the end of your turn if at least 3 different friendly units are each wholly within 9\" of a different corner of the battlefield and only 1 of those corners is wholly within friendly territory. No more than 1 of those units can have been set up this turn."
+        requirement: "You complete this battle tactic at the end of your turn if at least <strong>3 different friendly units</strong> are each wholly within 9\" of a different corner of the battlefield and only 1 of those corners is wholly within friendly territory. No more than 1 of those units can have been set up this turn."
         victoryPoints: 5
 
   - id: restless-energy
@@ -1096,15 +1096,15 @@ battleTactics:
     tactics:
       - type: affray
         name: "Water with Blood"
-        requirement: "You complete this battle tactic at the end of your turn if you control an objective that was controlled by your opponent at the start of your turn."
+        requirement: "You complete this battle tactic at the end of your turn if you control an objective that was <strong>controlled by your opponent</strong> at the start of your turn."
         victoryPoints: 5
       - type: strike
         name: "Invasive Species"
-        requirement: "You complete this battle tactic at the end of your turn if you control every objective within enemy territory. If there are no objectives within enemy territory, you complete this battle tactic at the end of your turn if you control every objective that was controlled by your opponent at the start of your turn."
+        requirement: "You complete this battle tactic at the end of your turn if you control <strong>every objective within enemy territory</strong>. If there are no objectives within enemy territory, you complete this battle tactic at the end of your turn if you control every objective that was controlled by your opponent at the start of your turn."
         victoryPoints: 5
       - type: domination
         name: "All Roots Entwined"
-        requirement: "You complete this battle tactic at the end of your turn if you control every objective that can be controlled."
+        requirement: "You complete this battle tactic at the end of your turn if you control <strong>every objective</strong> that can be controlled."
         victoryPoints: 5
 
   - id: intercept-and-recover
@@ -1119,15 +1119,15 @@ battleTactics:
     tactics:
       - type: affray
         name: "Stolen Seedpod"
-        requirement: "You complete this battle tactic at the end of your turn if at least 1 enemy unit carrying a Ghyranite Treasure has been destroyed this battle."
+        requirement: "You complete this battle tactic at the end of your turn if at least <strong>1 enemy unit</strong> carrying a Ghyranite Treasure has been destroyed this battle."
         victoryPoints: 5
       - type: strike
         name: "Contraband Aqua Ghyranis"
-        requirement: "You complete this battle tactic at the end of your turn if at least 2 enemy units carrying a Ghyranite Treasure have been destroyed this battle."
+        requirement: "You complete this battle tactic at the end of your turn if at least <strong>2 enemy units</strong> carrying a Ghyranite Treasure have been destroyed this battle."
         victoryPoints: 5
       - type: domination
         name: "Ley Line Taproot"
-        requirement: "You complete this battle tactic at the end of your turn if at least 3 enemy units carrying a Ghyranite Treasure have been destroyed this battle."
+        requirement: "You complete this battle tactic at the end of your turn if at least <strong>3 enemy units</strong> carrying a Ghyranite Treasure have been destroyed this battle."
         victoryPoints: 5
 
   - id: wrathful-cycles
@@ -1135,15 +1135,15 @@ battleTactics:
     tactics:
       - type: affray
         name: "Defiant Surge"
-        requirement: "You complete this battle tactic at the end of your turn if you control more objectives than your opponent."
+        requirement: "You complete this battle tactic at the end of your turn if you control <strong>more objectives</strong> than your opponent."
         victoryPoints: 5
       - type: strike
         name: "Daring Resurgence"
-        requirement: "You complete this battle tactic at the end of your turn if you are the underdog this battle round, there is at least 1 friendly unit on the battlefield and at least half of the friendly units on the battlefield (rounding up) used a FIGHT ability this turn."
+        requirement: "You complete this battle tactic at the end of your turn if you are the <strong>underdog</strong> this battle round, there is at least 1 friendly unit on the battlefield and at least <strong>half of the friendly units</strong> on the battlefield (rounding up) used a <strong>FIGHT</strong> ability this turn."
         victoryPoints: 5
       - type: domination
         name: "Master of Strategy"
-        requirement: "You complete this battle tactic at the end of your turn if there is a different friendly unit wholly within each large quarter of the battlefield, you control more objectives than your opponent, and there are no enemy units contesting any objectives that you control."
+        requirement: "You complete this battle tactic at the end of your turn if there is a different friendly unit wholly within <strong>each large quarter</strong> of the battlefield, you control more objectives than your opponent, and there are <strong>no enemy units contesting</strong> any objectives that you control."
         victoryPoints: 5
 
   - id: scouting-force
@@ -1154,15 +1154,15 @@ battleTactics:
     tactics:
       - type: affray
         name: "Raiding Party"
-        requirement: "You complete this battle tactic at the end of your turn if there are 3 or more friendly scout units wholly outside friendly territory."
+        requirement: "You complete this battle tactic at the end of your turn if there are <strong>3 or more</strong> friendly scout units wholly outside friendly territory."
         victoryPoints: 5
       - type: strike
         name: "Bold Explorers"
-        requirement: "You complete this battle tactic at the end of your turn if 3 or more objectives or non-FACTION TERRAIN terrain features that you control, in any combination, are being contested by any friendly scout units. Those objectives and terrain features must be within enemy territory."
+        requirement: "You complete this battle tactic at the end of your turn if <strong>3 or more objectives</strong> or non-<strong>FACTION TERRAIN</strong> terrain features that you control, in any combination, are being contested by any friendly scout units. Those objectives and terrain features must be within <strong>enemy territory</strong>."
         victoryPoints: 5
       - type: domination
         name: "Courageous Adventurers"
-        requirement: "You complete this battle tactic at the end of your turn if a friendly scout unit that was not set up this turn is contesting a non-FACTION TERRAIN terrain feature that you control, that is wholly within enemy territory, and that is more than 6\" from friendly territory."
+        requirement: "You complete this battle tactic at the end of your turn if a friendly scout unit that was <strong>not set up this turn</strong> is contesting a non-<strong>FACTION TERRAIN</strong> terrain feature that you control, that is wholly within enemy territory, and that is more than 6\" from friendly territory."
         victoryPoints: 5
 
   - id: attuned-to-ghyran
@@ -1170,15 +1170,15 @@ battleTactics:
     tactics:
       - type: affray
         name: "Sacred Centrality"
-        requirement: "You complete this battle tactic at the end of your turn if there are at least 2 friendly units within 3\" of the centre of the battlefield that are not in combat."
+        requirement: "You complete this battle tactic at the end of your turn if there are at least <strong>2 friendly units</strong> within 3\" of the <strong>centre of the battlefield</strong> that are not in combat."
         victoryPoints: 5
       - type: strike
         name: "Fey Strikes"
-        requirement: "You complete this battle tactic at the end of your turn if all the following are true: At least 2 friendly units moved as part of a RETREAT ability this turn (those units are lure units). At least 2 other friendly units charged this turn and at least 1 of those units ended the charge move in combat with an enemy unit from which any lure units retreated."
+        requirement: "You complete this battle tactic at the end of your turn if all the following are true:<br>• At least <strong>2 friendly units</strong> moved as part of a <strong>RETREAT</strong> ability this turn (those units are lure units).<br>• At least <strong>2 other friendly units charged</strong> this turn and at least 1 of those units ended the charge move in combat with an enemy unit from which any lure units retreated."
         victoryPoints: 5
       - type: domination
         name: "Purification Rites"
-        requirement: "You complete this battle tactic at the end of your turn if there are no enemy units within friendly territory and no enemy units within neutral territory."
+        requirement: "You complete this battle tactic at the end of your turn if there are <strong>no enemy units</strong> within friendly territory and no enemy units within neutral territory."
         victoryPoints: 5
 
 # Battlepack terrain
