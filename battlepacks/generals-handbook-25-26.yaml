@@ -559,7 +559,7 @@ manifestationLores:
             name: Dancing Blades
             timing: "Passive"
             availablePhases:
-              - anyMovement
+              - anyCombat
             effect: "Ward rolls cannot be made for damage points inflicted by this MANIFESTATION's attacks."
 
       - id: chronomantic-cogs
