@@ -1007,6 +1007,8 @@ units:
         type: passive
         name: Volatile Ground
         timing: Passive
+        availablePhases:
+          - anyMovement
         effect: >-
           Crackling warp lightning skitters around the ruptured rocks that ring this tear in reality.<br><br>
           <strong>Effect:</strong> Models can pass through this terrain feature but cannot be set up on or end moves on any part of this terrain feature.<br><br>
